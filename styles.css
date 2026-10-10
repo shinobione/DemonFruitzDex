@@ -99,3 +99,6 @@ footer{background:#0b0f16;border-top:1px solid var(--line)}.footer-inner{min-hei
 .clip-empty.has-episode{min-height:145px}
 .clip-empty.has-episode span{font-size:28px}
 @media (max-width:660px){.clip-thumbnails{grid-template-columns:repeat(2,minmax(0,1fr))}.episode-item{align-items:flex-start}.episode-item small{display:none}}
+
+/* V4.3 · distinction extrait / episode */
+.clip-kind{color:var(--muted);font-size:10px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;margin:11px 0 4px}.source-discover{border-style:dashed!important}.filter-footer .check-label{white-space:normal}
