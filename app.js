@@ -1,4 +1,4 @@
-/* DemonFruitzDex V4.7 — curated official publisher clips + matching Crunchyroll episodes. */
+/* DemonFruitzDex V4.8 — curated official publisher clips + matching Crunchyroll episodes. */
 (() => {
   'use strict';
   const fruits = Array.isArray(window.SHINO_DATA) ? window.SHINO_DATA : [];
@@ -54,9 +54,23 @@
     if(state.sort==='clips')a.sort((a,b)=>Number(hasYoutube(b.id))-Number(hasYoutube(a.id))||Number(hasScene(b.id))-Number(hasScene(a.id))||a.fr.localeCompare(b.fr,'fr'));
     return a;
   }
-  function portrait(f, large=false){const name=enc(f.primary_user||f.u);return `<div class="portrait-frame ${large?'portrait-large':''}" style="--accent:${colors[f.t]||'#9d77fc'}" title="Portrait : ${name}"><span>${enc(f.avatar||'OP')}</span>${f.portrait?`<img loading="lazy" alt="Portrait de ${name}" src="${enc(f.portrait)}" referrerpolicy="no-referrer" onerror="this.remove()">`:''}</div>`}
-  function art(f, modal=false){return f.image?`<img class="artwork" loading="lazy" decoding="async" referrerpolicy="no-referrer" alt="Illustration de ${enc(f.fr)}" src="${enc(f.image)}" onerror="this.remove()">`:''}
-  function imageLabel(f){return f.visual==='fruit'?'FRUIT PHYSIQUE':f.visual==='pouvoir'?'POUVOIR ILLUSTRÉ':f.visual==='artificiel'?'FRUIT ARTIFICIEL':'VISUEL SYMBOLIQUE'}
+  const wikiRedirect=(filename)=> filename && /\\.(png|jpg|jpeg|webp|gif)$/i.test(filename) ? 'https://onepiece.fandom.com/wiki/Special:Redirect/file/'+encodeURIComponent(filename.replaceAll(' ','_')) : '';
+  // A remote URL in the catalogue is not proof that the image is viewable.
+  // Try the wiki's named-file redirect once, then show the styled fallback.
+  document.addEventListener('error',e=>{
+    const img=e.target;
+    if(!(img instanceof HTMLImageElement) || !img.matches('[data-media-fallback]'))return;
+    const alternative=img.dataset.mediaFallback;
+    if(alternative && img.dataset.retry!=='1' && alternative!==img.src){
+      img.dataset.retry='1';img.src=alternative;return;
+    }
+    const frame=img.closest('.portrait-frame,.card-visual,.detail-fruit-mini,.compare-fruit');
+    if(frame)frame.classList.add('media-unavailable');
+    img.remove();
+  },true);
+  function portrait(f, large=false){const name=enc(f.primary_user||f.u);return `<div class="portrait-frame ${large?'portrait-large':''}" style="--accent:${colors[f.t]||'#9d77fc'}" title="Portrait : ${name}"><span>${enc(f.avatar||'OP')}</span>${f.portrait?`<img loading="lazy" alt="Portrait de ${name}" src="${enc(f.portrait)}" data-media-fallback="${enc(wikiRedirect(f.portrait_file))}" referrerpolicy="no-referrer">`:''}</div>`}
+  function art(f, modal=false){return f.image?`<img class="artwork" loading="lazy" decoding="async" referrerpolicy="no-referrer" alt="Illustration de ${enc(f.fr)}" src="${enc(f.image)}" data-media-fallback="${enc(wikiRedirect(f.file))}">`:''}
+  function imageLabel(f){return f.visual==='fruit'?'FRUIT PHYSIQUE RÉFÉRENCÉ':f.image_kind==='pouvoir-animé'?'ANIMATION DU POUVOIR':f.visual==='pouvoir'?'ILLUSTRATION DU POUVOIR':f.visual==='artificiel'?'FRUIT ARTIFICIEL':'INTERPRÉTATION SYMBOLIQUE'}
   function card(f){
     const selected=state.compare.includes(f.id),saved=favorites.has(f.id);
     const color=colors[f.t]||'#f4c36b';
