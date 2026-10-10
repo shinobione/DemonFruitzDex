@@ -164,7 +164,9 @@
       "playback": "not-tested",
       "note": "Références historiques à confirmer par lecture et validation de l'adéquation du pouvoir."
     },
-    "verificationStatus": "legacy-unverified"
+    "verificationStatus": "publisher-metadata-verified",
+    "sourceEvidence": "https://www.youtube.com/watch?v=HBpihtBqB7I",
+    "contentKind": "clip"
   },
   "soru-soru-no-mi": {
     "youtubeId": "92Q5A0DsZjE",
@@ -459,7 +461,9 @@
       "playback": "not-tested",
       "note": "Références historiques à confirmer par lecture et validation de l'adéquation du pouvoir."
     },
-    "verificationStatus": "legacy-unverified"
+    "verificationStatus": "publisher-metadata-verified",
+    "sourceEvidence": "https://www.youtube.com/watch?v=dqAOqwOdIVE",
+    "contentKind": "clip"
   },
   "hito-hito-no-mi": {
     "youtubeId": "5reop01XCuk",
