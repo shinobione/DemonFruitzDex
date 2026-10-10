@@ -1,4 +1,4 @@
-/* DemonFruitzDex V4.6 — curated official publisher clips + matching Crunchyroll episodes. */
+/* DemonFruitzDex V4.7 — curated official publisher clips + matching Crunchyroll episodes. */
 (() => {
   'use strict';
   const fruits = Array.isArray(window.SHINO_DATA) ? window.SHINO_DATA : [];
@@ -15,7 +15,7 @@
   const videoProvenance = (video) => {
     if (video?.verificationStatus === 'legacy-unverified') return 'ANCIEN CLIP · PROVENANCE À CONFIRMER · LECTURE NON TESTÉE';
     if (video?.contentKind === 'preview') return 'BANDE-ANNONCE OFFICIELLE · PAS UN EXTRAIT DE POUVOIR';
-    if (video?.verificationStatus === 'publisher-metadata-verified') return 'SOURCE CRUNCHYROLL IDENTIFIÉE · LECTURE NON TESTÉE';
+    if (video?.verificationStatus === 'publisher-metadata-verified') return `SOURCE ${String(video.channel||'DIFFUSEUR').toUpperCase()} IDENTIFIÉE · LECTURE NON TESTÉE`;
     if (video?.sourceEvidence) return 'PUBLICATION DU DIFFUSEUR RÉFÉRENCÉE · LECTURE NON TESTÉE';
     return 'EXTRAIT CATALOGUÉ · PROVENANCE À RECONTRÔLER';
   };
@@ -54,8 +54,8 @@
     if(state.sort==='clips')a.sort((a,b)=>Number(hasYoutube(b.id))-Number(hasYoutube(a.id))||Number(hasScene(b.id))-Number(hasScene(a.id))||a.fr.localeCompare(b.fr,'fr'));
     return a;
   }
-  function portrait(f, large=false){const name=enc(f.primary_user||f.u);return `<div class="portrait-frame ${large?'portrait-large':''}" style="--accent:${colors[f.t]||'#9d77fc'}" title="Portrait : ${name}"><span>${enc(f.avatar||'OP')}</span>${f.portrait?`<img loading="lazy" alt="Portrait de ${name}" src="${enc(f.portrait)}" referrerpolicy="no-referrer">`:''}</div>`}
-  function art(f, modal=false){return f.image?`<img class="artwork" loading="lazy" decoding="async" referrerpolicy="no-referrer" alt="Illustration de ${enc(f.fr)}" src="${enc(f.image)}">`:''}
+  function portrait(f, large=false){const name=enc(f.primary_user||f.u);return `<div class="portrait-frame ${large?'portrait-large':''}" style="--accent:${colors[f.t]||'#9d77fc'}" title="Portrait : ${name}"><span>${enc(f.avatar||'OP')}</span>${f.portrait?`<img loading="lazy" alt="Portrait de ${name}" src="${enc(f.portrait)}" referrerpolicy="no-referrer" onerror="this.remove()">`:''}</div>`}
+  function art(f, modal=false){return f.image?`<img class="artwork" loading="lazy" decoding="async" referrerpolicy="no-referrer" alt="Illustration de ${enc(f.fr)}" src="${enc(f.image)}" onerror="this.remove()">`:''}
   function imageLabel(f){return f.visual==='fruit'?'FRUIT PHYSIQUE':f.visual==='pouvoir'?'POUVOIR ILLUSTRÉ':f.visual==='artificiel'?'FRUIT ARTIFICIEL':'VISUEL SYMBOLIQUE'}
   function card(f){
     const selected=state.compare.includes(f.id),saved=favorites.has(f.id);
@@ -114,8 +114,14 @@
       ${videos.length>1?`<div class="clips-playlist"><div class="playlist-label">AUTRES EXTRAITS · ${videos.length} VIDÉOS</div><div class="clip-thumbnails">${videos.map(makeVideoButton).join('')}</div></div>`:''}`:
       `<div class="clip-empty ${episodes.length?'has-episode':''}"><span>${episodes.length?'🎞':'◈'}</span><strong>${episodes.length?'Une scène officielle a été localisée dans l’anime':'Aucun extrait officiel sélectionné pour ce fruit'}</strong><p>${episodes.length?'L’épisode complet est disponible chez le diffuseur : clique sur la référence ci-dessous. Aucun lecteur intégré n’a été inventé.':'Aucun lien vérifié n’a encore été retenu. Recherche externe possible via le bouton ci-dessous.'}</p></div>`;
     const episodeBody=episodes.length?`<div class="episode-list"><div class="playlist-label">SOURCES / ÉPISODES DOCUMENTÉS · ${episodes.length}</div>${episodes.map(makeEpisodeLink).join('')}</div>`:'';
-    const searchQuery=encodeURIComponent('One Piece '+(f.primary_user||f.u)+' '+f.n+' Crunchyroll clip');
-    const openSearch=!videos.length&&!episodes.length?`<a class="episode-item source-discover" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/results?search_query=${searchQuery}">⌕ <span>Rechercher un extrait de ce pouvoir sur YouTube</span><small>RECHERCHE · NON VÉRIFIÉE</small></a>`:'';
+    const searchTerms='One Piece '+(f.primary_user||f.u)+' '+f.n+' '+f.fr+' powers anime clip';
+    const youtubeSearch='https://www.youtube.com/results?search_query='+encodeURIComponent(searchTerms);
+    const googleVideoSearch='https://www.google.com/search?tbm=vid&q='+encodeURIComponent(searchTerms);
+    const openSearch=`<div class="open-video-discovery" aria-label="Trouver d'autres scènes sur le web">
+      <div class="playlist-label">⌕ TROUVER PLUS DE SCÈNES · ACCÈS SANS CRUNCHYROLL</div>
+      <a class="episode-item source-discover source-youtube" target="_blank" rel="noopener noreferrer" href="${youtubeSearch}"><span>▶</span><span>Explorer les clips YouTube pour ce fruit<small>Chaînes officielles et vidéos de fans · résultats à vérifier</small></span><b>YOUTUBE ↗</b></a>
+      <a class="episode-item source-discover" target="_blank" rel="noopener noreferrer" href="${googleVideoSearch}"><span>⌕</span><span>Rechercher sur d'autres plateformes<small>Google Vidéos · recherche multi-sites, disponibilité variable</small></span><b>WEB ↗</b></a>
+    </div>`;
     const auditNotice=needsReview?`<p class="clip-audit-warning">⚑ RÉFÉRENCE HISTORIQUE À RECONTRÔLER — ${enc(clip.auditV46.note||'Disponibilité et adéquation au pouvoir non encore vérifiées.')}</p>`:'';
     const socialBody=clip.social?.length?`<div class="social-sources">${clip.social.map(x=>`<a href="${enc(x.url)}" rel="noopener noreferrer" target="_blank">↗ ${enc(x.title)} · ${enc(x.platform)}</a>`).join('')}</div>`:'';
     return `<div style="--accent:${color}">
@@ -134,9 +140,9 @@
           <div class="anime-section-head"><strong>▶ LE POUVOIR EN ACTION</strong><span>${videos.length?`${videos.length} CLIP${videos.length>1?'S':''}`:episodes.length?'ÉPISODE OFFICIEL':'SOURCE À COMPLÉTER'}</span></div>
           ${videoBody}
           ${episodeBody}${auditNotice}${clip.note?`<p class="clip-note">${enc(clip.note)}</p>`:''}${socialBody}${openSearch}
-          <div class="clip-note">Extraits diffusés par leurs chaînes officielles et épisodes Crunchyroll, sans copie des vidéos dans notre dépôt. Lecture selon pays et restrictions du diffuseur.</div>
-          <div class="detail-source">${f.file?`<a target="_blank" rel="noopener noreferrer" href="https://onepiece.fandom.com/wiki/File:${safeFile}">↗ Source du visuel du fruit / pouvoir</a>`:'Illustration du fruit non identifiée dans les sources retenues.'}<br>
-          ${f.portrait_file?`<a target="_blank" rel="noopener noreferrer" href="https://onepiece.fandom.com/wiki/File:${safePortraitFile}">↗ Source du portrait utilisateur</a>`:'Portrait utilisateur de secours.'}</div>
+          <div class="clip-note">YouTube est accessible indépendamment de Crunchyroll, mais certaines vidéos peuvent être limitées selon le pays. Les épisodes Crunchyroll restent des références facultatives ; le lecteur dépend des droits du diffuseur.</div>
+          <div class="detail-source">${f.file?`<a target="_blank" rel="noopener noreferrer" href="https://onepiece.fandom.com/wiki/File:${safeFile}">↗ Source du visuel du fruit / pouvoir</a>`:`Apparence officielle du fruit non documentée ici · <a target="_blank" rel="noopener noreferrer" href="https://onepiece.fandom.com/wiki/Special:Search?query=${encodeURIComponent(f.n)}">⌕ Explorer les illustrations du pouvoir</a>`}<br>
+          ${f.portrait_file?`<a target="_blank" rel="noopener noreferrer" href="https://onepiece.fandom.com/wiki/File:${safePortraitFile}">↗ Source du portrait utilisateur${f.portrait_kind==='portrait-jeu'?' (illustration de jeu)':''}</a>`:'Portrait utilisateur de secours · <a target="_blank" rel="noopener noreferrer" href="https://onepiece.fandom.com/wiki/Special:Search?query=${encodeURIComponent(f.primary_user||f.u)}">⌕ Rechercher ce personnage</a>'}</div>
           <div class="detail-action-row"><button type="button" id="detailFavorite">${favorites.has(f.id)?'♥ EN FAVORI':'♡ AJOUTER AUX FAVORIS'}</button><button type="button" id="detailCompare">${state.compare.includes(f.id)?'✓ SÉLECTIONNÉ POUR LE DUEL':'+ AJOUTER AU DUEL'}</button></div>
         </div>
       </div>
