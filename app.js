@@ -1,4 +1,4 @@
-/* DemonFruitzDex V4.2 — curated official publisher clips + matching Crunchyroll episodes. */
+/* DemonFruitzDex V4.3 — curated official publisher clips + matching Crunchyroll episodes. */
 (() => {
   'use strict';
   const fruits = Array.isArray(window.SHINO_DATA) ? window.SHINO_DATA : [];
@@ -13,9 +13,10 @@
   const clips = window.SHINO_CLIPS || {}; // source references, not media re-uploads
   const clipVideos = (entry) => entry ? [...(entry.youtubeId ? [entry] : []), ...(entry.moreVideos || [])] : [];
   const clipEpisodes = (entry) => entry ? [...(entry.episodeUrl ? [{episodeUrl:entry.episodeUrl,episodeTitle:entry.episodeTitle,host:'Crunchyroll'}] : []), ...(entry.moreEpisodes || [])] : [];
+  const hasYoutube = (id) => clipVideos(clips[id]).length > 0;
   const hasScene = (id) => Boolean(clips[id] && (clipVideos(clips[id]).length || clipEpisodes(clips[id]).length));
   const motionLabels = {fire:'Flammes',magma:'Magma',lightning:'Éclairs',darkness:'Ténèbres',ice:'Glace',gravity:'Gravité',rubber:'Élasticité',room:'Espace',magnet:'Magnétisme',nature:'Végétation',sand:'Sable',smoke:'Fumée',quake:'Onde de choc',petals:'Éclosion',strings:'Fils',repulse:'Répulsion',barrier:'Barrière',toxin:'Toxines',time:'Temps',ghost:'Fantômes',heart:'Émotions',toy:'Métamorphose',dragon:'Dragon',beast:'Transformation',light:'Lumière'};
-  const state = {search:'',type:'all',tier:'',sort:'default',awake:false,favoritesOnly:false,illustrated:false,videosOnly:false,display:24,all:fruits,compare:[],active:null,motionRunning:true,animId:null,animStarted:0,animCanvas:null,video:null,videoFailed:false};
+  const state = {search:'',type:'all',tier:'',sort:'default',awake:false,favoritesOnly:false,illustrated:false,videosOnly:false,youtubeOnly:false,display:24,all:fruits,compare:[],active:null,motionRunning:true,animId:null,animStarted:0,animCanvas:null,video:null,videoFailed:false};
   const storageKey='demonfruitzdex.favorites.v4';
   let favorites = new Set();
   try { const raw=JSON.parse(localStorage.getItem(storageKey)||'[]'); if(Array.isArray(raw)) favorites=new Set(raw.filter(id=>byId.has(id))); }catch(_){}
@@ -35,12 +36,14 @@
       if(state.favoritesOnly && !favorites.has(f.id))return false;
       if(state.illustrated && !f.image)return false;
       if(state.videosOnly && !hasScene(f.id))return false;
+      if(state.youtubeOnly && !hasYoutube(f.id))return false;
       return true;
     });
     if(state.sort==='az')a.sort((a,b)=>a.fr.localeCompare(b.fr,'fr'));
     if(state.sort==='za')a.sort((a,b)=>b.fr.localeCompare(a.fr,'fr'));
     if(state.sort==='tier')a.sort((a,b)=>tiers.indexOf(a.r)-tiers.indexOf(b.r)||a.fr.localeCompare(b.fr,'fr'));
     if(state.sort==='awake')a.sort((a,b)=>Number(b.w)-Number(a.w)||a.fr.localeCompare(b.fr,'fr'));
+    if(state.sort==='clips')a.sort((a,b)=>Number(hasYoutube(b.id))-Number(hasYoutube(a.id))||Number(hasScene(b.id))-Number(hasScene(a.id))||a.fr.localeCompare(b.fr,'fr'));
     return a;
   }
   function portrait(f, large=false){const name=enc(f.primary_user||f.u);return `<div class="portrait-frame ${large?'portrait-large':''}" style="--accent:${colors[f.t]||'#9d77fc'}" title="Portrait : ${name}"><span>${enc(f.avatar||'OP')}</span>${f.portrait?`<img loading="lazy" alt="Portrait de ${name}" src="${enc(f.portrait)}" referrerpolicy="no-referrer">`:''}</div>`}
@@ -72,8 +75,8 @@
     const more=$('loadMore');more.hidden=visibleResults.length<=state.display;more.textContent=`CHARGER PLUS DE FRUITS (${Math.min(24,visibleResults.length-state.display)} RESTANTS À AFFICHER) ↓`;
   }
   function updateCards(){render(false)}
-  function reset(){state.search='';state.type='all';state.tier='';state.sort='default';state.awake=false;state.favoritesOnly=false;state.illustrated=false;state.videosOnly=false;
-    $('search').value='';$('tier').value='';$('sort').value='default';$('onlyAwakened').checked=false;$('onlyFavorite').checked=false;$('onlyIllustrated').checked=false;$('onlyVideos').checked=false;
+  function reset(){state.search='';state.type='all';state.tier='';state.sort='default';state.awake=false;state.favoritesOnly=false;state.illustrated=false;state.videosOnly=false;state.youtubeOnly=false;
+    $('search').value='';$('tier').value='';$('sort').value='default';$('onlyAwakened').checked=false;$('onlyFavorite').checked=false;$('onlyIllustrated').checked=false;$('onlyVideos').checked=false;$('onlyYoutube').checked=false;
     document.querySelectorAll('[data-type]').forEach(b=>b.classList.toggle('active',b.dataset.type==='all'));
     $('favoritesTop').classList.remove('is-active');render();
   }
@@ -98,9 +101,12 @@
         <span class="official-play-icon" aria-hidden="true">▶</span><span class="official-play-title">${enc(initial.title)}</span><span class="official-play-by">${enc(initial.channel)} · ${enc(initial.episode||'')}</span>
       </button></div>
       <div class="clip-actions"><a id="clipYoutubeSource" href="${enc(initial.source)}" rel="noopener noreferrer" target="_blank">↗ Ouvrir sur YouTube</a></div>
+      <p id="clipKind" class="clip-kind">${clip.contentKind==='preview'?'BANDE-ANNONCE OFFICIELLE · PAS UN EXTRAIT COMPLET':'EXTRAIT OFFICIEL FOURNI PAR LE DIFFUSEUR'}</p>
       ${videos.length>1?`<div class="clips-playlist"><div class="playlist-label">AUTRES EXTRAITS · ${videos.length} VIDÉOS</div><div class="clip-thumbnails">${videos.map(makeVideoButton).join('')}</div></div>`:''}`:
-      `<div class="clip-empty ${episodes.length?'has-episode':''}"><span>${episodes.length?'🎞':'◈'}</span><strong>${episodes.length?'Une scène officielle a été localisée dans l’anime':'Aucun extrait officiel sélectionné pour ce fruit'}</strong><p>${episodes.length?'L’épisode complet est disponible chez le diffuseur : clique sur la référence ci-dessous. Aucun lecteur intégré n’a été inventé.':'L’emplacement reste disponible lorsqu’un extrait officiel fiable sera trouvé.'}</p></div>`;
+      `<div class="clip-empty ${episodes.length?'has-episode':''}"><span>${episodes.length?'🎞':'◈'}</span><strong>${episodes.length?'Une scène officielle a été localisée dans l’anime':'Aucun extrait officiel sélectionné pour ce fruit'}</strong><p>${episodes.length?'L’épisode complet est disponible chez le diffuseur : clique sur la référence ci-dessous. Aucun lecteur intégré n’a été inventé.':'Aucun lien vérifié n’a encore été retenu. Recherche externe possible via le bouton ci-dessous.'}</p></div>`;
     const episodeBody=episodes.length?`<div class="episode-list"><div class="playlist-label">SOURCES / ÉPISODES DOCUMENTÉS · ${episodes.length}</div>${episodes.map(makeEpisodeLink).join('')}</div>`:'';
+    const searchQuery=encodeURIComponent('One Piece '+(f.primary_user||f.u)+' '+f.n+' Crunchyroll clip');
+    const openSearch=!videos.length&&!episodes.length?`<a class="episode-item source-discover" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/results?search_query=${searchQuery}">⌕ <span>Rechercher un extrait de ce pouvoir sur YouTube</span><small>RECHERCHE · NON VÉRIFIÉE</small></a>`:'';
     const socialBody=clip.social?.length?`<div class="social-sources">${clip.social.map(x=>`<a href="${enc(x.url)}" rel="noopener noreferrer" target="_blank">↗ ${enc(x.title)} · ${enc(x.platform)}</a>`).join('')}</div>`:'';
     return `<div style="--accent:${color}">
       <header class="detail-top"><div><div class="detail-overline">DEMONFRUITZDEX / ${enc(f.t).toUpperCase()} / TIER ${enc(f.r)}</div><h2 class="detail-title">${enc(f.fr)}</h2><div class="detail-jp">${enc(f.n)}</div></div><div class="detail-header-actions"><button type="button" class="action-icon" id="detailShare" title="Copier le lien" aria-label="Copier le lien">↗</button><button type="button" class="round-close" id="detailClose" aria-label="Fermer">×</button></div></header>
@@ -117,7 +123,7 @@
           <div class="detail-power-label">✦ / EXPRESSION DU POUVOIR</div><p class="detail-power">${enc(f.p)}</p>
           <div class="anime-section-head"><strong>▶ LE POUVOIR EN ACTION</strong><span>${videos.length?`${videos.length} CLIP${videos.length>1?'S':''}`:episodes.length?'ÉPISODE OFFICIEL':'SOURCE À COMPLÉTER'}</span></div>
           ${videoBody}
-          ${episodeBody}${socialBody}
+          ${episodeBody}${socialBody}${openSearch}
           <div class="clip-note">Extraits diffusés par leurs chaînes officielles et épisodes Crunchyroll, sans copie des vidéos dans notre dépôt. Lecture selon pays et restrictions du diffuseur.</div>
           <div class="detail-source">${f.file?`<a target="_blank" rel="noopener noreferrer" href="https://onepiece.fandom.com/wiki/File:${safeFile}">↗ Source du visuel du fruit / pouvoir</a>`:'Illustration du fruit non identifiée dans les sources retenues.'}<br>
           ${f.portrait_file?`<a target="_blank" rel="noopener noreferrer" href="https://onepiece.fandom.com/wiki/File:${safePortraitFile}">↗ Source du portrait utilisateur</a>`:'Portrait utilisateur de secours.'}</div>
@@ -158,6 +164,7 @@
       button.innerHTML=`<span class="official-play-icon" aria-hidden="true">▶</span><span class="official-play-title">${enc(selected.title)}</span><span class="official-play-by">${enc(selected.channel)} · ${enc(selected.episode||'')}</span>`;
       box.replaceChildren(button);
       const source=$('clipYoutubeSource');if(source)source.href=selected.source;
+      const kind=$('clipKind');if(kind)kind.textContent=meta?.contentKind==='preview'?'BANDE-ANNONCE OFFICIELLE · PAS UN EXTRAIT COMPLET':'EXTRAIT OFFICIEL FOURNI PAR LE DIFFUSEUR';
       document.querySelectorAll('[data-video-index]').forEach(x=>{
         const active=Number(x.dataset.videoIndex)===index;
         x.classList.toggle('active',active);x.setAttribute('aria-pressed',String(active));
@@ -185,6 +192,7 @@
     $('tier').addEventListener('change',e=>{state.tier=e.target.value;render()});$('sort').addEventListener('change',e=>{state.sort=e.target.value;render()});
     $('onlyAwakened').addEventListener('change',e=>{state.awake=e.target.checked;render()});$('onlyIllustrated').addEventListener('change',e=>{state.illustrated=e.target.checked;render()});
     $('onlyVideos').addEventListener('change',e=>{state.videosOnly=e.target.checked;render()});
+    $('onlyYoutube').addEventListener('change',e=>{state.youtubeOnly=e.target.checked;render()});
     $('onlyFavorite').addEventListener('change',e=>{state.favoritesOnly=e.target.checked;$('favoritesTop').classList.toggle('is-active',state.favoritesOnly);render()});
     $('favoritesTop').addEventListener('click',()=>setFavoriteOnly(!state.favoritesOnly));
     $('reset').addEventListener('click',reset);$('emptyReset').addEventListener('click',reset);
@@ -206,6 +214,7 @@
   }
   // Stats count exactly what is represented in this data source, including artificial/unknown.
   $('clipInventory').textContent=fruits.filter(f=>hasScene(f.id)).length;
+  $('ytInventory').textContent=fruits.filter(f=>hasYoutube(f.id)).length;
   $('statTotal').textContent=fruits.length;$('statLogia').textContent=fruits.filter(f=>f.t==='Logia').length;
   $('statZoan').textContent=fruits.filter(f=>String(f.t).startsWith('Zoan')).length;
   $('statParamecia').textContent=fruits.filter(f=>f.t==='Paramecia').length;
