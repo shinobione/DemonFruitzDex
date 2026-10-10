@@ -140,3 +140,10 @@ footer{background:#0b0f16;border-top:1px solid var(--line)}.footer-inner{min-hei
 .open-video-discovery .source-discover>b{font-size:10px;white-space:nowrap;letter-spacing:.04em;color:#f4c36b}
 .open-video-discovery .source-discover>span:first-child{min-width:25px;text-align:center}
 @media(max-width:500px){.open-video-discovery{padding:10px}.open-video-discovery .source-discover>b{font-size:9px}}
+
+
+/* V4.8 — remote-image resilience; a URL on a wiki is not proof of a successful load */
+.portrait-frame.media-unavailable:after{content:"◌";position:absolute;bottom:0;right:0;font:900 11px/1 system-ui;color:#f5c676;z-index:3;text-shadow:0 1px 4px #000}
+.card-visual.media-unavailable .art-meta{border-color:#cf9d4b86;background:#231c16df;color:#f2cf96}
+.detail-fruit-mini.media-unavailable{outline:1px dashed #cf9d4b6c}
+@media(prefers-reduced-motion:reduce){.media-unavailable .art-fallback{animation:none!important}}
