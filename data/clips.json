@@ -290,7 +290,15 @@
     "source": "https://www.youtube.com/watch?v=5reop01XCuk",
     "note": "Le pouvoir est montré dans cet extrait publié par le diffuseur.",
     "sourcePolicy": "publisher-linked",
-    "reviewedOn": "2026-10-10"
+    "reviewedOn": "2026-10-10",
+    "moreEpisodes": [
+      {
+        "episodeUrl": "https://www.crunchyroll.com/watch/GY8VM7QWY/zoan-type-devil-fruit-choppers-seven-form-transformation",
+        "episodeTitle": "Épisode 88 — Chopper et les transformations du Zoan humain",
+        "episode": "88",
+        "host": "Crunchyroll"
+      }
+    ]
   },
   "ryu-ryu-no-mi-mod-le-pteranodon": {
     "youtubeId": "Zuu6ClXRabE",
@@ -645,5 +653,147 @@
     "episodeEvidence": "https://www.crunchyroll.com/fr/watch/G31UXW511/the-coming-of-the-new-era-the-red-haireds-imperial-rage",
     "sourcePolicy": "publisher-linked",
     "reviewedOn": "2026-10-10"
+  },
+  "baku-baku-no-mi": {
+    "episodeUrl": "https://www.crunchyroll.com/watch/G6NQJKVJ6/fight-wapols-crew-the-power-of-the-munch-munch-fruit",
+    "episodeTitle": "Épisode 87 — Wapol et le pouvoir du Fruit du Glouton",
+    "episodeEvidence": "https://www.crunchyroll.com/watch/G6NQJKVJ6/fight-wapols-crew-the-power-of-the-munch-munch-fruit",
+    "evidenceLevel": "publisher-episode-page",
+    "sourcePolicy": "publisher-linked",
+    "reviewedOn": "2026-10-10",
+    "note": "Épisode identifié dans le catalogue Crunchyroll ; minutage du pouvoir non vérifié."
+  },
+  "doru-doru-no-mi": {
+    "episodeUrl": "https://www.crunchyroll.com/watch/GYNQJKPJY/the-key-to-a-great-comeback-escape-the-wax-wax-ball",
+    "episodeTitle": "Épisode 109 — Mr. 3 : la boule de cire",
+    "episodeEvidence": "https://www.crunchyroll.com/watch/GYNQJKPJY/the-key-to-a-great-comeback-escape-the-wax-wax-ball",
+    "evidenceLevel": "publisher-episode-page",
+    "sourcePolicy": "publisher-linked",
+    "reviewedOn": "2026-10-10",
+    "note": "Épisode identifié dans le catalogue Crunchyroll ; minutage du pouvoir non vérifié."
+  },
+  "mane-mane-no-mi": {
+    "episodeUrl": "https://www.crunchyroll.com/watch/GR097Z14R/transformed-into-nami-bon-clays-rapid-fire-ballet-kenpo",
+    "episodeTitle": "Épisode 116 — Bon Clay imite Nami face à Sanji",
+    "episodeEvidence": "https://www.crunchyroll.com/watch/GR097Z14R/transformed-into-nami-bon-clays-rapid-fire-ballet-kenpo",
+    "evidenceLevel": "publisher-episode-page",
+    "sourcePolicy": "publisher-linked",
+    "reviewedOn": "2026-10-10",
+    "note": "Épisode identifié dans le catalogue Crunchyroll ; minutage du pouvoir non vérifié.",
+    "youtubeId": "XDaXKCqhlJY",
+    "title": "Bon Clay imite l’équipage du Chapeau de paille",
+    "channel": "Crunchyroll",
+    "episode": "Épisode 92",
+    "source": "https://www.youtube.com/watch?v=XDaXKCqhlJY",
+    "sourceEvidence": "https://www.youtube.com/watch?v=XDaXKCqhlJY",
+    "contentKind": "clip"
+  },
+  "supa-supa-no-mi": {
+    "episodeUrl": "https://www.crunchyroll.com/watch/GY19QP09R/secret-of-powerful-swordplay-ability-to-cut-steel-and-the-rhythm-things-have",
+    "episodeTitle": "Épisode 119 — Zoro contre le corps-lame de Mr. 1",
+    "episodeEvidence": "https://www.crunchyroll.com/watch/GY19QP09R/secret-of-powerful-swordplay-ability-to-cut-steel-and-the-rhythm-things-have",
+    "evidenceLevel": "publisher-episode-page",
+    "sourcePolicy": "publisher-linked",
+    "reviewedOn": "2026-10-10",
+    "note": "Épisode identifié dans le catalogue Crunchyroll ; minutage du pouvoir non vérifié.",
+    "youtubeId": "XUTCR8XoyTc",
+    "title": "Zoro contre Mr. 1 — Partie 1",
+    "channel": "Crunchyroll",
+    "episode": "Épisode 119",
+    "source": "https://www.youtube.com/watch?v=XUTCR8XoyTc",
+    "sourceEvidence": "https://www.youtube.com/watch?v=XUTCR8XoyTc",
+    "contentKind": "clip",
+    "moreVideos": [
+      {
+        "youtubeId": "DSbeGEIANcM",
+        "title": "Zoro contre Mr. 1 — Partie 2",
+        "channel": "Crunchyroll",
+        "episode": "Épisode 119",
+        "source": "https://www.youtube.com/watch?v=DSbeGEIANcM",
+        "sourceEvidence": "https://www.youtube.com/watch?v=DSbeGEIANcM",
+        "contentKind": "clip"
+      }
+    ]
+  },
+  "toge-toge-no-mi": {
+    "episodeUrl": "https://www.crunchyroll.com/watch/GR751D70Y/namis-cyclone-advisory-clima-takt-burst",
+    "episodeTitle": "Épisode 117 — Nami contre Miss Doublefinger et ses pointes",
+    "episodeEvidence": "https://www.crunchyroll.com/watch/GR751D70Y/namis-cyclone-advisory-clima-takt-burst",
+    "evidenceLevel": "publisher-episode-page",
+    "sourcePolicy": "publisher-linked",
+    "reviewedOn": "2026-10-10",
+    "note": "Épisode identifié dans le catalogue Crunchyroll ; minutage du pouvoir non vérifié."
+  },
+  "mogu-mogu-no-mi": {
+    "episodeUrl": "https://www.crunchyroll.com/watch/G6Q495KZR/sworn-on-a-friends-dream-the-battle-of-molehill-block-4",
+    "episodeTitle": "Épisode 114 — Miss Merry Christmas se bat sous terre",
+    "episodeEvidence": "https://www.crunchyroll.com/watch/G6Q495KZR/sworn-on-a-friends-dream-the-battle-of-molehill-block-4",
+    "evidenceLevel": "publisher-episode-page",
+    "sourcePolicy": "publisher-linked",
+    "reviewedOn": "2026-10-10",
+    "note": "Épisode identifié dans le catalogue Crunchyroll ; minutage du pouvoir non vérifié."
+  },
+  "noro-noro-no-mi": {
+    "episodeUrl": "https://www.crunchyroll.com/watch/GYWEMJ2KY/full-blast-slow-slow-onslaught-vs-invulnerable-luffy",
+    "episodeTitle": "Épisode 218 — Foxy lance son rayon ralentissant contre Luffy",
+    "episodeEvidence": "https://www.crunchyroll.com/watch/GYWEMJ2KY/full-blast-slow-slow-onslaught-vs-invulnerable-luffy",
+    "evidenceLevel": "publisher-episode-page",
+    "sourcePolicy": "publisher-linked",
+    "reviewedOn": "2026-10-10",
+    "note": "Épisode identifié dans le catalogue Crunchyroll ; minutage du pouvoir non vérifié."
+  },
+  "doa-doa-no-mi": {
+    "episodeUrl": "https://www.crunchyroll.com/watch/GYQ49E036/give-robin-back-luffy-vs-blueno",
+    "episodeTitle": "Épisode 270 — Blueno et ses portes contre Luffy",
+    "episodeEvidence": "https://www.crunchyroll.com/watch/GYQ49E036/give-robin-back-luffy-vs-blueno",
+    "evidenceLevel": "publisher-episode-page",
+    "sourcePolicy": "publisher-linked",
+    "reviewedOn": "2026-10-10",
+    "note": "Épisode identifié dans le catalogue Crunchyroll ; minutage du pouvoir non vérifié."
+  },
+  "awa-awa-no-mi": {
+    "episodeUrl": "https://www.crunchyroll.com/watch/GR751JDJY/bubble-master-kalifa-the-soap-trap-closes-in-on-nami",
+    "episodeTitle": "Épisode 293 — Kalifa utilise ses bulles savonneuses contre Nami",
+    "episodeEvidence": "https://www.crunchyroll.com/watch/GR751JDJY/bubble-master-kalifa-the-soap-trap-closes-in-on-nami",
+    "evidenceLevel": "publisher-episode-page",
+    "sourcePolicy": "publisher-linked",
+    "reviewedOn": "2026-10-10",
+    "note": "Épisode identifié dans le catalogue Crunchyroll ; minutage du pouvoir non vérifié."
+  },
+  "bane-bane-no-mi": {
+    "episodeUrl": "https://www.crunchyroll.com/watch/GR2P58KKR/the-mans-pride-bellamys-last-charge",
+    "episodeTitle": "Épisode 711 — Bellamy charge Luffy avec ses ressorts",
+    "episodeEvidence": "https://www.crunchyroll.com/watch/GR2P58KKR/the-mans-pride-bellamys-last-charge",
+    "evidenceLevel": "publisher-episode-page",
+    "sourcePolicy": "publisher-linked",
+    "reviewedOn": "2026-10-10",
+    "note": "Épisode identifié dans le catalogue Crunchyroll ; minutage du pouvoir non vérifié."
+  },
+  "inu-inu-no-mi-mod-le-loup": {
+    "episodeUrl": "https://www.crunchyroll.com/watch/GEVUZMQM2/fiery-kicks-sanjis-full-course-of-foot-techniques",
+    "episodeTitle": "Épisode 298 — Jabra en forme de loup contre Sanji",
+    "episodeEvidence": "https://www.crunchyroll.com/watch/GEVUZMQM2/fiery-kicks-sanjis-full-course-of-foot-techniques",
+    "evidenceLevel": "publisher-episode-page",
+    "sourcePolicy": "publisher-linked",
+    "reviewedOn": "2026-10-10",
+    "note": "Épisode identifié dans le catalogue Crunchyroll ; minutage du pouvoir non vérifié."
+  },
+  "zo-zo-no-mi-mod-le-mammouth": {
+    "episodeUrl": "https://www.crunchyroll.com/watch/GR19Q2QQ6/a-threat-descends-the-beast-pirates-jack",
+    "episodeTitle": "Épisode 757 — Jack et sa forme de mammouth attaquent Zou",
+    "episodeEvidence": "https://www.crunchyroll.com/watch/GR19Q2QQ6/a-threat-descends-the-beast-pirates-jack",
+    "evidenceLevel": "publisher-episode-page",
+    "sourcePolicy": "publisher-linked",
+    "reviewedOn": "2026-10-10",
+    "note": "Épisode identifié dans le catalogue Crunchyroll ; minutage du pouvoir non vérifié."
+  },
+  "tama-tama-no-mi": {
+    "episodeUrl": "https://www.crunchyroll.com/watch/G0DUN79DE/the-history-of-the-left-eye-pedro-vs-baron-tamago",
+    "episodeTitle": "Épisode 816 — Pedro contre Baron Tamago",
+    "episodeEvidence": "https://www.crunchyroll.com/watch/G0DUN79DE/the-history-of-the-left-eye-pedro-vs-baron-tamago",
+    "evidenceLevel": "publisher-episode-page",
+    "sourcePolicy": "publisher-linked",
+    "reviewedOn": "2026-10-10",
+    "note": "Épisode identifié dans le catalogue Crunchyroll ; minutage du pouvoir non vérifié."
   }
 }
