@@ -27,7 +27,7 @@ for fruit,entry in clips.items():
         if v.get('verificationStatus')=='publisher-metadata-verified':
             verified+=1
             if v.get('sourceEvidence')!=v.get('source'):errors.append(f'{fruit}: publisher evidence missing')
-            if v.get('channel') not in ('Crunchyroll','Crunchyroll FR','Toei Animation','Crunchyroll in Spanish'):
+            if v.get('channel') not in ('Crunchyroll','Crunchyroll FR','Toei Animation','Crunchyroll in Spanish','ADN – Animation Digital Network'):
                 errors.append(f'{fruit}: unknown claimed publisher')
             if v.get('contentKind')!='clip':errors.append(f'{fruit}: unexpected media kind')
 for vid in re.findall(r'https://i\.ytimg\.com/vi/([A-Za-z0-9_-]{11})/',index):
