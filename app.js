@@ -1,4 +1,4 @@
-/* DemonFruitzDex V4.4 — curated official publisher clips + matching Crunchyroll episodes. */
+/* DemonFruitzDex V4.5 — curated official publisher clips + matching Crunchyroll episodes. */
 (() => {
   'use strict';
   const fruits = Array.isArray(window.SHINO_DATA) ? window.SHINO_DATA : [];
@@ -12,6 +12,12 @@
   const byId = new Map(fruits.map(f=>[f.id, f]));
   const clips = window.SHINO_CLIPS || {}; // source references, not media re-uploads
   const clipVideos = (entry) => entry ? [...(entry.youtubeId ? [entry] : []), ...(entry.moreVideos || [])] : [];
+  const videoProvenance = (video) => {
+    if (video?.contentKind === 'preview') return 'BANDE-ANNONCE OFFICIELLE · PAS UN EXTRAIT DE POUVOIR';
+    if (video?.verificationStatus === 'publisher-metadata-verified') return 'SOURCE CRUNCHYROLL IDENTIFIÉE · LECTURE NON TESTÉE';
+    if (video?.sourceEvidence) return 'PUBLICATION DU DIFFUSEUR RÉFÉRENCÉE · LECTURE NON TESTÉE';
+    return 'EXTRAIT CATALOGUÉ · PROVENANCE À RECONTRÔLER';
+  };
   const clipEpisodes = (entry) => entry ? [...(entry.episodeUrl ? [{episodeUrl:entry.episodeUrl,episodeTitle:entry.episodeTitle,host:'Crunchyroll'}] : []), ...(entry.moreEpisodes || [])] : [];
   const hasYoutube = (id) => clipVideos(clips[id]).length > 0;
   const hasScene = (id) => Boolean(clips[id] && (clipVideos(clips[id]).length || clipEpisodes(clips[id]).length));
@@ -59,7 +65,7 @@
           <button type="button" aria-label="${saved?'Enlever des favoris':'Ajouter aux favoris'}" aria-pressed="${saved}" class="mini-action fav-btn ${saved?'saved':''}" data-id="${enc(f.id)}">${saved?'♥':'♡'}</button>
           <button type="button" aria-label="${selected?'Retirer du comparateur':'Ajouter au comparateur'}" aria-pressed="${selected}" class="mini-action cmp-btn ${selected?'selected':''}" data-id="${enc(f.id)}">${selected?'✓':'+'}</button>
         </div>
-        <div class="art-fallback">${enc(f.icon||'✦')}</div>${art(f)}<div class="art-meta">${imageLabel(f)}</div>${clips[f.id]?.youtubeId?'<div class="anime-ribbon">▶ CLIP OFFICIEL</div>':hasScene(f.id)?'<div class="anime-ribbon ribbon-episode">↗ ÉPISODE</div>':''}
+        <div class="art-fallback">${enc(f.icon||'✦')}</div>${art(f)}<div class="art-meta">${imageLabel(f)}</div>${hasYoutube(f.id)?'<div class="anime-ribbon">▶ CLIP VIDÉO</div>':hasScene(f.id)?'<div class="anime-ribbon ribbon-episode">↗ ÉPISODE</div>':''}
       </div>
       <div class="card-body"><div class="category">${enc(f.t)}</div><h3 class="card-title">${enc(f.fr)}</h3><div class="card-jp">${enc(f.n)}</div>
       <div class="card-user">${portrait(f)}<div class="user-name"><span>Utilisateur</span><b>${enc(f.primary_user||f.u)}</b></div></div>
@@ -92,7 +98,7 @@
     const activeIndex=visibleResults.findIndex(x=>x.id===f.id);
     const videos=clipVideos(clip), episodes=clipEpisodes(clip);
     const yt=videos[0]?.youtubeId;
-    const makeVideoButton=(video,index)=>`<button type="button" class="official-choice ${index===0?'active':''}" data-video-index="${index}" title="${enc(video.title)}" aria-pressed="${index===0}"><img loading="lazy" src="https://i.ytimg.com/vi/${enc(video.youtubeId)}/mqdefault.jpg" alt=""><span>${enc(video.title)}</span><small>${enc(video.channel||'Source officielle')} · ${enc(video.episode||'')}</small></button>`;
+    const makeVideoButton=(video,index)=>`<button type="button" class="official-choice ${index===0?'active':''}" data-video-index="${index}" title="${enc(video.title)}" aria-pressed="${index===0}"><img loading="lazy" src="https://i.ytimg.com/vi/${enc(video.youtubeId)}/mqdefault.jpg" alt=""><span>${enc(video.title)}</span><small>${enc(video.channel||'Diffuseur')} · ${enc(video.episode||'')}</small></button>`;
     const makeEpisodeLink=(item)=>`<a href="${enc(item.episodeUrl)}" rel="noopener noreferrer" target="_blank" class="episode-item"><span>↗</span><span>${enc(item.episodeTitle||'Voir l’épisode officiel')}</span><small>CRUNCHYROLL</small></a>`;
     const ytThumb=yt?`https://i.ytimg.com/vi/${enc(yt)}/hqdefault.jpg`:'';
     const initial=videos[0];
@@ -101,7 +107,7 @@
         <span class="official-play-icon" aria-hidden="true">▶</span><span class="official-play-title">${enc(initial.title)}</span><span class="official-play-by">${enc(initial.channel)} · ${enc(initial.episode||'')}</span>
       </button></div>
       <div class="clip-actions"><a id="clipYoutubeSource" href="${enc(initial.source)}" rel="noopener noreferrer" target="_blank">↗ Ouvrir sur YouTube</a></div>
-      <p id="clipKind" class="clip-kind">${clip.contentKind==='preview'?'BANDE-ANNONCE OFFICIELLE · PAS UN EXTRAIT COMPLET':'EXTRAIT OFFICIEL FOURNI PAR LE DIFFUSEUR'}</p>
+      <p id="clipKind" class="clip-kind">${videoProvenance(initial)}</p>
       ${videos.length>1?`<div class="clips-playlist"><div class="playlist-label">AUTRES EXTRAITS · ${videos.length} VIDÉOS</div><div class="clip-thumbnails">${videos.map(makeVideoButton).join('')}</div></div>`:''}`:
       `<div class="clip-empty ${episodes.length?'has-episode':''}"><span>${episodes.length?'🎞':'◈'}</span><strong>${episodes.length?'Une scène officielle a été localisée dans l’anime':'Aucun extrait officiel sélectionné pour ce fruit'}</strong><p>${episodes.length?'L’épisode complet est disponible chez le diffuseur : clique sur la référence ci-dessous. Aucun lecteur intégré n’a été inventé.':'Aucun lien vérifié n’a encore été retenu. Recherche externe possible via le bouton ci-dessous.'}</p></div>`;
     const episodeBody=episodes.length?`<div class="episode-list"><div class="playlist-label">SOURCES / ÉPISODES DOCUMENTÉS · ${episodes.length}</div>${episodes.map(makeEpisodeLink).join('')}</div>`:'';
@@ -164,7 +170,7 @@
       button.innerHTML=`<span class="official-play-icon" aria-hidden="true">▶</span><span class="official-play-title">${enc(selected.title)}</span><span class="official-play-by">${enc(selected.channel)} · ${enc(selected.episode||'')}</span>`;
       box.replaceChildren(button);
       const source=$('clipYoutubeSource');if(source)source.href=selected.source;
-      const kind=$('clipKind');if(kind)kind.textContent=meta?.contentKind==='preview'?'BANDE-ANNONCE OFFICIELLE · PAS UN EXTRAIT COMPLET':'EXTRAIT OFFICIEL FOURNI PAR LE DIFFUSEUR';
+      const kind=$('clipKind');if(kind)kind.textContent=videoProvenance(selected);
       document.querySelectorAll('[data-video-index]').forEach(x=>{
         const active=Number(x.dataset.videoIndex)===index;
         x.classList.toggle('active',active);x.setAttribute('aria-pressed',String(active));
