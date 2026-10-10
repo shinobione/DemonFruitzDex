@@ -361,6 +361,30 @@
         "verificationStatus": "publisher-metadata-verified",
         "reviewedOn": "2026-10-10",
         "powerEvidence": "scene-description"
+      },
+      {
+        "youtubeId": "aLG9XoxJE7g",
+        "title": "Luffy atteint son apogée : Gear 5 !",
+        "channel": "ADN – Animation Digital Network",
+        "source": "https://www.youtube.com/watch?v=aLG9XoxJE7g",
+        "sourceEvidence": "https://www.youtube.com/watch?v=aLG9XoxJE7g",
+        "verificationStatus": "publisher-metadata-verified",
+        "reviewedOn": "2026-10-10",
+        "contentKind": "clip",
+        "powerEvidence": "publisher-title",
+        "playback": "not-tested"
+      },
+      {
+        "youtubeId": "SJtADPK0fKQ",
+        "title": "Luffy Gear 5 à Elbaph (VOSTFR)",
+        "channel": "ADN – Animation Digital Network",
+        "source": "https://www.youtube.com/watch?v=SJtADPK0fKQ",
+        "sourceEvidence": "https://www.youtube.com/watch?v=SJtADPK0fKQ",
+        "verificationStatus": "publisher-metadata-verified",
+        "reviewedOn": "2026-10-10",
+        "contentKind": "clip",
+        "powerEvidence": "publisher-title",
+        "playback": "not-tested"
       }
     ],
     "episodeUrl": "https://www.crunchyroll.com/watch/GK9U3KDXK/powers-on-a-different-level-luffy-vs-lucci",
@@ -463,7 +487,21 @@
     },
     "verificationStatus": "publisher-metadata-verified",
     "sourceEvidence": "https://www.youtube.com/watch?v=dqAOqwOdIVE",
-    "contentKind": "clip"
+    "contentKind": "clip",
+    "moreVideos": [
+      {
+        "youtubeId": "IRXco8fXxBE",
+        "title": "Robin dévoile Demonio Fleur",
+        "channel": "ADN – Animation Digital Network",
+        "source": "https://www.youtube.com/watch?v=IRXco8fXxBE",
+        "sourceEvidence": "https://www.youtube.com/watch?v=IRXco8fXxBE",
+        "verificationStatus": "publisher-metadata-verified",
+        "reviewedOn": "2026-10-10",
+        "contentKind": "clip",
+        "powerEvidence": "publisher-title",
+        "playback": "not-tested"
+      }
+    ]
   },
   "hito-hito-no-mi": {
     "youtubeId": "5reop01XCuk",
