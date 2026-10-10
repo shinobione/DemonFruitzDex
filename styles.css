@@ -122,3 +122,8 @@ footer{background:#0b0f16;border-top:1px solid var(--line)}.footer-inner{min-hei
 @media(max-width:1100px){.spotlight-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:600px){.spotlight-grid{grid-template-columns:1fr 1fr;gap:9px}.spotlight-card{min-height:220px}.spotlight-info{padding:13px}.spotlight-info strong{font-size:20px}.spotlight-info span{font-size:10px}.spotlight-play{width:32px;height:32px;font-size:12px;right:8px;top:8px}.spotlight-info small{font-size:8px}}
 @media(prefers-reduced-motion:reduce){.spotlight-card,.spotlight-card img{transition:none}}
+
+
+/* V4.6 — transparent provenance status */
+.source-review-badge{position:absolute;right:11px;bottom:35px;z-index:6;border:1px solid #f7c879aa;border-radius:8px;background:#1f1725e8;color:#ffe4a7;padding:6px 8px;font-size:9px;font-weight:900;letter-spacing:.07em;box-shadow:0 5px 14px #0009;pointer-events:none}
+.clip-audit-warning{padding:12px 14px;border:1px solid #e7aa5760;border-radius:12px;background:rgba(229,139,45,.10);font:600 12px/1.6 'DM Sans',sans-serif;color:#f3d3a0;margin:13px 0}
