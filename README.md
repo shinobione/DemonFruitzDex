@@ -130,7 +130,7 @@ Cette étape privilégie la **fiabilité** plutôt que de rajouter des extraits 
 - Les doublons des épisodes **796 (Big Mom), 1121 (Kuzan) et 913 (Kaido)** ont été éliminés sur la base de l'identifiant Crunchyroll (indépendamment du préfixe de langue).
 - Les fiches concernées arborent **« À REVOIR »**, une explication et une réserve sur les liens d'épisodes ; nouveau filtre **« Sources à contrôler »**.
 - Bilan : **69 fruits documentés**, **33 associations YouTube** représentant **28 vidéos distinctes**, **81 liens d'épisodes** représentant **71 épisodes distincts**.
-- Deux vidéos historiques ont des métadonnées publiées par Crunchyroll identifiées indépendamment (Gear 5 contre Kaido et Barbe Blanche contre Akainu). Cela **ne constitue pas un contrôle de lecture**.
+- Quatre vidéos historiques ont des métadonnées identifiées indépendamment (Gear 5 contre Kaido, Barbe Blanche contre Akainu, Kid et Law contre Big Mom, Robin et Demonio Fleur). Cela **ne constitue pas un contrôle de lecture**.
 - Audit détaillé : [reports/media-audit-v46.md](reports/media-audit-v46.md), [version JSON](reports/media-audit-v46.json).
 - Qualité reproductible : `python scripts/check_v46.py` (en plus des validateurs précédents).
 
