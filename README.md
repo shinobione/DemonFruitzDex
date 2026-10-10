@@ -96,3 +96,14 @@ Ce validateur vérifie la structure, l’unicité des liens par fiche, les IDs Y
 ### Points restant à auditer
 
 Le validateur vérifie la **structure**, les IDs, les doublons et les domaines, pas la lecture réelle ou les droits des vidéos. Toutes les anciennes références n'ont pas encore fait l'objet du contrôle documentaire que reçoivent les nouvelles entrées.
+
+## Mise à jour V4.4 — extrait documentaire et contrôle qualité
+
+- **69 fruits avec au moins une référence** sur 166, contre 56 dans la version précédente.
+- **29 associations YouTube** correspondant à 26 vidéos distinctes ; **84 associations à des épisodes** correspondant à 75 épisodes distincts.
+- Nouveaux fruits documentés notamment : Baku Baku (Wapol), Doru Doru (Mr. 3), Mane Mane (Bon Clay), Supa Supa (Mr. 1), Toge Toge (Miss Doublefinger), Mogu Mogu (Miss Merry Christmas), Noro Noro (Foxy), Doa Doa (Blueno), Awa Awa (Kalifa), Bane Bane (Bellamy), Inu Inu Loup (Jabra), Zo Zo Mammouth (Jack) et Tama Tama (Baron Tamago).
+- **Trois clips YouTube publiés par Crunchyroll** : Bon Clay imite les Mugiwara ; Zoro contre Mr. 1 parties 1 et 2. Le fruit de Chopper reçoit aussi un épisode de référence.
+- Les nouvelles pages d’épisode sont identifiées dans le catalogue officiel **Crunchyroll**, mais le minutage exact des pouvoirs n'a pas été contrôlé.
+- Générer un audit documentaire : `python scripts/audit_sources.py`. Résultats dans [reports/media-audit.md](reports/media-audit.md) et [reports/media-audit.json](reports/media-audit.json).
+- Le contrôle structurel reste : `python scripts/validate_clips.py`. Il ne certifie ni le fonctionnement du lecteur intégré, ni l'absence de blocage régional.
+- Il reste **97 fiches sans extrait ou épisode retenu** et **40 fiches historiques** dont la provenance à la racine nécessite un contrôle éditorial complémentaire.
