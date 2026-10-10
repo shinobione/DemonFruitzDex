@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#090c13"><title>Media Check · DemonFruitzDex</title>
+<style>
+:root{color-scheme:dark}*{box-sizing:border-box}body{margin:0;background:#090c13;color:#f5f0e8;font:15px/1.55 system-ui,-apple-system,sans-serif}
+main{max-width:1050px;margin:auto;padding:32px 20px 90px}a{color:#f4c36b}h1{font-size:clamp(32px,5vw,62px);letter-spacing:-.06em;line-height:1;margin:24px 0 15px}
+p{color:#b0b8c8}.note{border:1px solid #ffffff24;background:#1b202c;border-radius:16px;padding:16px 18px}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin:23px 0}button{border:1px solid #ffffff26;border-radius:12px;background:#29213e;color:white;font:750 14px system-ui;padding:12px 17px;cursor:pointer}
+button:hover{background:#3e305d}button:disabled{opacity:.5;cursor:wait}.stat{display:inline-block;border:1px solid #ffffff25;border-radius:9px;padding:9px 12px;margin:0 8px 8px 0}
+small{color:#aab7c9}table{width:100%;border-collapse:collapse}td,th{padding:11px 8px;border-bottom:1px solid #ffffff13;text-align:left;font-size:12px}
+th{color:#f4c36b;letter-spacing:.08em}.ok{color:#84dfb0}.failed{color:#f2a49b}.pending{color:#c5b1ff}.muted{color:#9eabba}td a{word-break:break-all}
+progress{width:100%;height:10px;accent-color:#b68cff;margin:16px 0}#results{overflow:auto;max-height:65vh;border:1px solid #ffffff22;border-radius:12px}h2{font-size:20px}
+</style>
+<script src="data/fruits.js?v=4.8" defer></script>
+<script src="data/portrait-sources.js?v=4.8" defer></script>
+<script src="data/portraits-v48.js?v=4.8" defer></script>
+<script src="data/power-art-v48.js?v=4.8" defer></script>
+<script defer>
+document.addEventListener('DOMContentLoaded',()=>{
+ const all=Array.isArray(window.SHINO_DATA)?window.SHINO_DATA:[];
+ const root=document.getElementById('results'),tbody=document.getElementById('rows');
+ const summary=document.getElementById('summary'),progress=document.getElementById('progress');
+ const runSample=document.getElementById('sample'),runAll=document.getElementById('all'),exporter=document.getElementById('export');
+ let running=false,results=[];
+ const safe=(s)=>String(s||'');
+ const redirect=(file)=>file?'https://onepiece.fandom.com/wiki/Special:Redirect/file/'+encodeURIComponent(file.replaceAll(' ','_')):'';
+ function check(url,alt){return new Promise(resolve=>{
+   let done=false;let img=new Image();let timeout;
+   function finish(ok,final,reason){if(done)return;done=true;clearTimeout(timeout);img.onload=img.onerror=null;resolve({ok,final,reason});}
+   function tryOne(u,second){img.onload=()=>finish(true,u,second?'redirect':'direct');img.onerror=()=>{if(!second&&alt&&alt!==url)tryOne(alt,true);else finish(false,u,'error')};
+     timeout=setTimeout(()=>{if(!second&&alt&&alt!==url)tryOne(alt,true);else finish(false,u,'timeout')},10000);img.src=u;
+   }
+   tryOne(url,false);
+ })}
+ const getItems=()=>all.flatMap(f=>[['portrait',f.portrait,f.portrait_file],['art',f.image,f.file]].filter(([type,url])=>!!url).map(([type,url,file])=>({fruit:f.fr,id:f.id,type,url,alt:redirect(file)})));
+ async function launch(sample){
+   if(running)return;running=true;results=[];tbody.textContent='';exporter.disabled=true;runSample.disabled=runAll.disabled=true;
+   let items=getItems();if(sample){const favorites=window.SHINO_EXTRA_PORTRAITS?.map(x=>x.id)||[];const prefer=items.filter(x=>favorites.includes(x.id));items=[...prefer,...items.filter(x=>!favorites.includes(x.id))].slice(0,30)}
+   progress.max=Math.max(1,items.length);progress.value=0;
+   let index=0,ok=0,failed=0;
+   function append(item,check){
+     const row=document.createElement('tr');const cols=[item.type,item.fruit,check.ok?'VISIBLE':'ÉCHEC',check.reason];
+     for(const value of cols){const td=document.createElement('td');td.textContent=safe(value);row.appendChild(td)}
+     row.children[2].className=check.ok?'ok':'failed';const td=document.createElement('td'),a=document.createElement('a');a.textContent='Voir fichier';a.href=check.final;a.target='_blank';a.rel='noopener noreferrer';td.append(a);row.append(td);tbody.append(row);
+   }
+   async function worker(){
+     while(index<items.length){const item=items[index++],status=await check(item.url,item.alt);results.push({...item,...status});status.ok?ok++:failed++;
+       append(item,status);progress.value=results.length;summary.textContent=results.length+' / '+items.length+' testés · '+ok+' visibles · '+failed+' en échec';
+     }
+   }
+   await Promise.all(Array.from({length:Math.min(4,items.length)},worker));
+   running=false;exporter.disabled=false;runSample.disabled=runAll.disabled=false;
+ }
+ runSample.onclick=()=>launch(true);runAll.onclick=()=>launch(false);
+ exporter.onclick=()=>{
+   const payload={date:new Date().toISOString(),origin:location.origin,userAgent:navigator.userAgent,note:'Contrôle image effectué depuis le navigateur client, sans validation des droits ni de la nature de l’image.',results};
+   const blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json'});const u=URL.createObjectURL(blob),a=document.createElement('a');a.href=u;a.download='demonfruitzdex-image-audit.json';a.click();setTimeout(()=>URL.revokeObjectURL(u),1500);
+ };
+ summary.textContent=all.length+' fiches chargées · '+getItems().length+' URL d’images référencées (chargement non encore testé).';
+});
+</script></head>
+<body><main><a href="./">← Retour au DemonFruitzDex</a><h1>MEDIA CHECK<span style="color:#b68cff">.</span></h1>
+<p>Une adresse d'image enregistrée dans le catalogue n'est pas une image qui s'affiche. Cet outil vérifie le chargement réel <strong>depuis ton navigateur</strong> et tente une redirection du wiki en cas d'échec.</p>
+<div class="note"><strong>Test à la demande.</strong> Les portraits One Piece sont hébergés chez des tiers. Un échec peut être lié à un blocage de hotlink, à une ressource déplacée ou à la connexion. Aucun visuel n'est automatiquement téléchargé ni redistribué.</div>
+<div class="actions"><button id="sample">Tester 30 images (nouveaux portraits d'abord)</button><button id="all">Tester toutes les images</button><button id="export" disabled>Exporter le rapport JSON</button></div>
+<p id="summary" aria-live="polite"></p><progress id="progress" value="0" max="1"></progress>
+<h2>Résultats du navigateur</h2><div id="results"><table><thead><tr><th>Type</th><th>Fiche</th><th>État</th><th>Chemin</th><th>Source</th></tr></thead><tbody id="rows"></tbody></table></div>
+</main></body></html>
