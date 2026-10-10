@@ -65,7 +65,7 @@
       img.dataset.retry='1';img.src=alternative;return;
     }
     const frame=img.closest('.portrait-frame,.card-visual,.detail-fruit-mini,.compare-fruit');
-    if(frame)frame.classList.add('media-unavailable');
+    if(frame){frame.classList.add('media-unavailable');const badge=frame.querySelector('.art-meta');if(badge)badge.textContent='IMAGE EXTERNE INDISPONIBLE';}
     img.remove();
   },true);
   function portrait(f, large=false){const name=enc(f.primary_user||f.u);return `<div class="portrait-frame ${large?'portrait-large':''}" style="--accent:${colors[f.t]||'#9d77fc'}" title="Portrait : ${name}"><span>${enc(f.avatar||'OP')}</span>${f.portrait?`<img loading="lazy" alt="Portrait de ${name}" src="${enc(f.portrait)}" data-media-fallback="${enc(wikiRedirect(f.portrait_file))}" referrerpolicy="no-referrer">`:''}</div>`}
