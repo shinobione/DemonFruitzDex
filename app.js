@@ -88,7 +88,7 @@
   }
   function setFavoriteOnly(next){state.favoritesOnly=next;$('onlyFavorite').checked=next;$('favoritesTop').classList.toggle('is-active',next);render();document.querySelector('#catalogue').scrollIntoView({behavior:'smooth',block:'start'});}
   const escapeForUrl=(s)=>encodeURIComponent(s);
-  function setUrlId(id){try{const u=new URL(window.location.href);if(id)u.searchParams.set('fruit',id);else u.searchParams.delete('fruit');history.replaceState({},'',u.toString());}catch(_){}}
+  function setUrlId(id){try{const u=new URL(window.location.href);if(id){if(u.searchParams.get('fruit')!==id)u.searchParams.delete('clip');u.searchParams.set('fruit',id)}else{u.searchParams.delete('fruit');u.searchParams.delete('clip')}history.replaceState({},'',u.toString());}catch(_){}}
   function refreshDetailActions(){const f=byId.get(state.active);if(!f)return;const fav=$('detailFavorite'),cmp=$('detailCompare');if(fav){fav.textContent=favorites.has(f.id)?'♥ EN FAVORI':'♡ AJOUTER AUX FAVORIS';fav.classList.toggle('active',favorites.has(f.id))}if(cmp){cmp.textContent=state.compare.includes(f.id)?'✓ SÉLECTIONNÉ POUR LE DUEL':'+ AJOUTER AU DUEL';}}
   function makeDetail(f){
     const color=colors[f.t]||'#f4c36b';
@@ -159,9 +159,11 @@
   function wireOfficialClip(f){
     const meta=clips[f.id],choices=clipVideos(meta);if(!choices.length)return;
     let currentIndex=0;
+    try { const requested=new URL(location.href).searchParams.get('clip'); const ix=choices.findIndex(x=>x.youtubeId===requested); if(ix>=0)currentIndex=ix; } catch(_){}
     function selectVideo(index){
       const selected=choices[index];if(!selected)return;
       currentIndex=index;
+      try {const url=new URL(location.href);if(url.searchParams.get('fruit')===f.id){url.searchParams.set('clip',selected.youtubeId);history.replaceState({},'',url.toString());}}catch(_){}
       stopMotion();
       const box=$('officialPlayer');if(!box)return;
       const button=document.createElement('button');button.type='button';button.className='official-play';button.id='officialPlay';
