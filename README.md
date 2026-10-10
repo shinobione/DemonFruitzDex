@@ -107,3 +107,15 @@ Le validateur vérifie la **structure**, les IDs, les doublons et les domaines, 
 - Générer un audit documentaire : `python scripts/audit_sources.py`. Résultats dans [reports/media-audit.md](reports/media-audit.md) et [reports/media-audit.json](reports/media-audit.json).
 - Le contrôle structurel reste : `python scripts/validate_clips.py`. Il ne certifie ni le fonctionnement du lecteur intégré, ni l'absence de blocage régional.
 - Il reste **97 fiches sans extrait ou épisode retenu** et **40 fiches historiques** dont la provenance à la racine nécessite un contrôle éditorial complémentaire.
+
+
+## Mise à jour V4.5 — clips courts vérifiés au niveau des métadonnées
+
+- 69 fruits avec scène sur 166, dont 25 avec un clip YouTube.
+- 34 associations YouTube / 29 vidéos distinctes, et 84 références d'épisodes.
+- Cinq nouvelles associations : Gear 5 à Egghead (deux séquences), Law et Kid contre Big Mom (deux fiches), Akainu contre Barbe Blanche.
+- Quatre scènes mises en avant sur l'accueil, en ouvrant la fiche du fruit correspondant.
+- Métadonnée `verificationStatus: publisher-metadata-verified` sur les nouvelles associations : **provenance du diffuseur identifiée**, lecture/iframe/géoblocage non testés.
+- Correctif de l'étiquette « Clip vidéo » pour les fiches dont les vidéos figurent uniquement dans `moreVideos`.
+- Nouveau contrôle `python scripts/check_v45.py` ; détails dans [l'audit V4.5](reports/clip-review-v45.md).
+- Aucun extrait d'anime n'est réhébergé.
