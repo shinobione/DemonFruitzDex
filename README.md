@@ -144,3 +144,25 @@ Cette étape privilégie la **fiabilité** plutôt que de rajouter des extraits 
 - 134 fiches avec URL de portrait, 32 sans. 136 fiches avec visuel de fruit ou de pouvoir référencé, 30 sans. Trois nouvelles images de pouvoir : Numa Numa, Wapu Wapu (GIF) et forme Zoan loup de Jabra.
 - 36 associations YouTube dans la sélection éditoriale, sur 69 fruits disposant de scènes référencées.
 - Les vidéos restent chez leurs diffuseurs. Disponibilité par pays, intégration et affichage des images distantes non certifiés.
+
+
+## V4.8 — Portraits sourcés et fiabilité des visuels
+
+Cette édition ajoute **20 nouvelles références de portraits** provenant de noms de fichiers réellement listés dans les galeries du One Piece Wiki : Kizaru, Kabu, plusieurs membres de la famille Charlotte, les trois Séraphins S-Hawk/S-Bear/S-Shark, les quatre gardiens Zoan d'Impel Down, Sharinguru, Shu et Tama. Fichier : [data/portraits-v48.js](data/portraits-v48.js).
+
+Elle ajoute également **4 illustrations de pouvoirs des Séraphins**, clairement étiquetées comme telles (aucune n'est l'apparence d'un « fruit Green Blood ») : [data/power-art-v48.js](data/power-art-v48.js).
+
+**Bilan de présence de références (et NON de chargement effectif) :** 154 / 166 portraits, 140 / 166 illustrations de fruit/pouvoir ; il reste 12 portraits et 26 illustrations à documenter.
+
+Les images distantes sont fragiles : le site tente maintenant une seconde URL de redirection MediaWiki quand un lien direct échoue, puis affiche un indicateur d'indisponibilité au lieu de masquer le défaut. Un fichier référencé n'est pas nécessairement visible en France ou dans tous les navigateurs.
+
+**Nouveau : [MEDIA CHECK](media-check.html)** — outil intégré qui teste le chargement réel depuis ton navigateur (30 images ou toutes les images), puis permet d'exporter les échecs au format JSON. L'outil ne télécharge pas les images dans le dépôt.
+
+Contrôles :
+```bash
+python scripts/check_v48.py
+node --check app.js
+node --check data/portraits-v48.js
+node --check data/power-art-v48.js
+```
+Rapport détaillé : [reports/media-audit-v48.md](reports/media-audit-v48.md).
