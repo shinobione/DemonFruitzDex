@@ -135,3 +135,12 @@ Cette étape privilégie la **fiabilité** plutôt que de rajouter des extraits 
 - Qualité reproductible : `python scripts/check_v46.py` (en plus des validateurs précédents).
 
 **Limite :** le navigateur de l'utilisateur peut rencontrer des blocages d'intégration ou de territoire ; aucune compatibilité de lecture en France n'a été certifiée.
+
+## V4.7 — Sources vidéo et portraits
+
+- Recherche YouTube et Google Vidéos désormais disponible dans les 166 fiches, y compris celles qui proposent déjà un épisode Crunchyroll.
+- Trois extraits ADN sur YouTube ajoutés : Luffy Gear 5 (aLG9XoxJE7g), Gear 5 à Elbaph (SJtADPK0fKQ), Robin Demonio Fleur (IRXco8fXxBE).
+- Onze portraits supplémentaires attribués à des fichiers présents dans des catégories One Piece Wiki. Voir `data/portrait-sources.js`.
+- 132 fiches avec URL de portrait, 34 sans. 33 fiches sans référence de visuel de fruit ou de pouvoir.
+- 36 associations YouTube dans la sélection éditoriale, sur 69 fruits disposant de scènes référencées.
+- Les vidéos restent chez leurs diffuseurs. Disponibilité par pays, intégration et affichage des images distantes non certifiés.
