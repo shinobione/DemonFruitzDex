@@ -11,10 +11,11 @@ small{color:#aab7c9}table{width:100%;border-collapse:collapse}td,th{padding:11px
 th{color:#f4c36b;letter-spacing:.08em}.ok{color:#84dfb0}.failed{color:#f2a49b}.pending{color:#c5b1ff}.muted{color:#9eabba}td a{word-break:break-all}
 progress{width:100%;height:10px;accent-color:#b68cff;margin:16px 0}#results{overflow:auto;max-height:65vh;border:1px solid #ffffff22;border-radius:12px}h2{font-size:20px}
 </style>
-<script src="data/fruits.js?v=4.8" defer></script>
-<script src="data/portrait-sources.js?v=4.8" defer></script>
-<script src="data/portraits-v48.js?v=4.8" defer></script>
-<script src="data/power-art-v48.js?v=4.8" defer></script>
+<script src="data/fruits.js?v=4.9" defer></script>
+<script src="data/portrait-sources.js?v=4.9" defer></script>
+<script src="data/portraits-v48.js?v=4.9" defer></script>
+<script src="data/portraits-v49.js?v=4.9" defer></script>
+<script src="data/power-art-v48.js?v=4.9" defer></script>
 <script defer>
 document.addEventListener('DOMContentLoaded',()=>{
  const all=Array.isArray(window.SHINO_DATA)?window.SHINO_DATA:[];
@@ -35,7 +36,7 @@ document.addEventListener('DOMContentLoaded',()=>{
  const getItems=()=>all.flatMap(f=>[['portrait',f.portrait,f.portrait_file],['art',f.image,f.file]].filter(([type,url])=>!!url).map(([type,url,file])=>({fruit:f.fr,id:f.id,type,url,alt:redirect(file)})));
  async function launch(sample){
    if(running)return;running=true;results=[];tbody.textContent='';exporter.disabled=true;runSample.disabled=runAll.disabled=true;
-   let items=getItems();if(sample){const favorites=window.SHINO_EXTRA_PORTRAITS?.map(x=>x.id)||[];const prefer=items.filter(x=>favorites.includes(x.id));items=[...prefer,...items.filter(x=>!favorites.includes(x.id))].slice(0,30)}
+   let items=getItems();if(sample){const favorites=[...(window.SHINO_PORTRAITS_V49||[]),...(window.SHINO_EXTRA_PORTRAITS||[])].map(x=>x.id);const prefer=items.filter(x=>favorites.includes(x.id));items=[...prefer,...items.filter(x=>!favorites.includes(x.id))].slice(0,30)}
    progress.max=Math.max(1,items.length);progress.value=0;
    let index=0,ok=0,failed=0;
    function append(item,check){
@@ -62,7 +63,7 @@ document.addEventListener('DOMContentLoaded',()=>{
 <body><main><a href="./">← Retour au DemonFruitzDex</a><h1>MEDIA CHECK<span style="color:#b68cff">.</span></h1>
 <p>Une adresse d'image enregistrée dans le catalogue n'est pas une image qui s'affiche. Cet outil vérifie le chargement réel <strong>depuis ton navigateur</strong> et tente une redirection du wiki en cas d'échec.</p>
 <div class="note"><strong>Test à la demande.</strong> Les portraits One Piece sont hébergés chez des tiers. Un échec peut être lié à un blocage de hotlink, à une ressource déplacée ou à la connexion. Aucun visuel n'est automatiquement téléchargé ni redistribué.</div>
-<div class="actions"><button id="sample">Tester 30 images (nouveaux portraits d'abord)</button><button id="all">Tester toutes les images</button><button id="export" disabled>Exporter le rapport JSON</button></div>
+<div class="actions"><button id="sample">Tester 30 images (V4.9 d'abord)</button><button id="all">Tester toutes les images</button><button id="export" disabled>Exporter le rapport JSON</button></div>
 <p id="summary" aria-live="polite"></p><progress id="progress" value="0" max="1"></progress>
 <h2>Résultats du navigateur</h2><div id="results"><table><thead><tr><th>Type</th><th>Fiche</th><th>État</th><th>Chemin</th><th>Source</th></tr></thead><tbody id="rows"></tbody></table></div>
 </main></body></html>
