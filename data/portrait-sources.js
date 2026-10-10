@@ -68,3 +68,10 @@ window.SHINO_PORTRAIT_SOURCES = {
   }
 };
 if(Array.isArray(window.SHINO_DATA))for(const f of window.SHINO_DATA){const x=window.SHINO_PORTRAIT_SOURCES[f.id];if(x && !f.portrait)Object.assign(f,x)}
+
+/* Additional user infobox illustrations: these are character images, not fruit appearances. */
+const extraPortraits=[{"id":"inu-inu-no-mi-mod-le-dachshund","portrait_file":"Lassoo Anime Infobox.png","portrait":"https://static.wikia.nocookie.net/onepiece/images/e/ea/Lassoo_Anime_Infobox.png/revision/latest","portrait_source":"One Piece Wiki","portrait_kind":"illustration-infobox"},{"id":"inu-inu-no-mi-mod-le-tanuki","portrait_file":"Bunbuku Manga Infobox.png","portrait":"https://static.wikia.nocookie.net/onepiece/images/3/33/Bunbuku_Manga_Infobox.png/revision/latest","portrait_source":"One Piece Wiki","portrait_kind":"illustration-infobox"}];
+if(Array.isArray(window.SHINO_DATA))for(const p of extraPortraits){const f=window.SHINO_DATA.find(f=>f.id===p.id);if(f&&!f.portrait)Object.assign(f,p)}
+/* Verified Wiki image filenames for visualized powers; not necessarily the physical fruit. */
+window.SHINO_POWER_IMAGES=[{"id":"numa-numa-no-mi","file":"Numa Numa no Mi Infobox.png","image":"https://static.wikia.nocookie.net/onepiece/images/d/d3/Numa_Numa_no_Mi_Infobox.png/revision/latest","visual":"pouvoir","image_kind":"pouvoir-illustré"},{"id":"wapu-wapu-no-mi","file":"Wapu Wapu no Mi.gif","image":"https://static.wikia.nocookie.net/onepiece/images/5/5e/Wapu_Wapu_no_Mi.gif/revision/latest","visual":"pouvoir","image_kind":"pouvoir-animé"},{"id":"inu-inu-no-mi-mod-le-loup","file":"Full-Beast Form of Jabra's fruit.png","image":"https://static.wikia.nocookie.net/onepiece/images/e/e1/Full-Beast_Form_of_Jabra%27s_fruit.png/revision/latest","visual":"pouvoir","image_kind":"forme-zoan"}];
+if(Array.isArray(window.SHINO_DATA))for(const p of window.SHINO_POWER_IMAGES){const f=window.SHINO_DATA.find(f=>f.id===p.id);if(f&&!f.image)Object.assign(f,p)}
