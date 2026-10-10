@@ -22,7 +22,7 @@
 1. **Doflamingo — Ito Ito no Mi :** retrait du lien YouTube `I752TYMkM7Y` (*Luffy and Law Combo*), non pertinent comme démonstration spécifique des fils de Doflamingo. Les épisodes 727 (éveil) et 731 (Birdcage) restent dans la fiche.
 2. **Big Mom, Kuzan et Kaido :** suppression de trois doublons d'épisodes dus à des URL Crunchyroll avec ou sans préfixe de langue.
 3. **40 fiches historiques :** enregistrement de l'état d'audit dans les 40 fiches concernées ; chaque fiche concernée affiche une alerte et figure dans le filtre « Sources à contrôler ».
-4. **Deux extraits** ont une corroboration additionnelle de métadonnées publiques Crunchyroll : `63kiupuR7p8` (Gear 5 / Kaido) et `IL2yBUx2Lpc` (Barbe Blanche / Akainu). Aucun contrôle de lecture effectué.
+4. **Quatre extraits** ont une corroboration additionnelle de métadonnées publiques : `63kiupuR7p8` (Gear 5 / Kaido — Crunchyroll FR), `IL2yBUx2Lpc` (Barbe Blanche / Akainu — Crunchyroll), `HBpihtBqB7I` (Kid et Law contre Big Mom — Crunchyroll) et `dqAOqwOdIVE` (Robin — Demonio Fleur — Toei Animation). Aucun contrôle de lecture effectué.
 
 ## File de vérification des 40 entrées historiques
 
