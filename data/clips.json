@@ -16,7 +16,21 @@
       }
     ],
     "sourcePolicy": "publisher-linked",
-    "reviewedOn": "2026-10-10"
+    "reviewedOn": "2026-10-10",
+    "moreVideos": [
+      {
+        "youtubeId": "R_tBf1ByqYo",
+        "title": "Law et Kid affrontent Big Mom — final",
+        "channel": "Crunchyroll",
+        "episode": "Épisode 1067",
+        "source": "https://www.youtube.com/watch?v=R_tBf1ByqYo",
+        "sourceEvidence": "https://www.youtube.com/watch?v=R_tBf1ByqYo",
+        "contentKind": "clip",
+        "verificationStatus": "publisher-metadata-verified",
+        "reviewedOn": "2026-10-10",
+        "powerEvidence": "scene-description"
+      }
+    ]
   },
   "yami-yami-no-mi": {
     "youtubeId": "QAxaniV3zIM",
@@ -95,7 +109,21 @@
     "episodeUrl": "https://www.crunchyroll.com/fr/watch/GWDU8QVDJ/a-countercharge-law-and-kids-return-attack-combination",
     "episodeTitle": "Law et Kid — épisode 1056",
     "sourcePolicy": "publisher-linked",
-    "reviewedOn": "2026-10-10"
+    "reviewedOn": "2026-10-10",
+    "moreVideos": [
+      {
+        "youtubeId": "R_tBf1ByqYo",
+        "title": "Law et Kid affrontent Big Mom — final",
+        "channel": "Crunchyroll",
+        "episode": "Épisode 1067",
+        "source": "https://www.youtube.com/watch?v=R_tBf1ByqYo",
+        "sourceEvidence": "https://www.youtube.com/watch?v=R_tBf1ByqYo",
+        "contentKind": "clip",
+        "verificationStatus": "publisher-metadata-verified",
+        "reviewedOn": "2026-10-10",
+        "powerEvidence": "scene-description"
+      }
+    ]
   },
   "soru-soru-no-mi": {
     "youtubeId": "92Q5A0DsZjE",
@@ -192,7 +220,21 @@
     "episodeUrl": "https://www.crunchyroll.com/watch/GRJQKP0EY/the-power-that-can-burn-even-fire-akainus-ruthless-pursuit",
     "episodeTitle": "Akainu à Marineford — épisode 482",
     "sourcePolicy": "publisher-linked",
-    "reviewedOn": "2026-10-10"
+    "reviewedOn": "2026-10-10",
+    "moreVideos": [
+      {
+        "youtubeId": "IL2yBUx2Lpc",
+        "title": "Akainu contre Barbe Blanche — partie 1",
+        "channel": "Crunchyroll",
+        "episode": "Épisode 484",
+        "source": "https://www.youtube.com/watch?v=IL2yBUx2Lpc",
+        "sourceEvidence": "https://www.youtube.com/watch?v=IL2yBUx2Lpc",
+        "contentKind": "clip",
+        "verificationStatus": "publisher-metadata-verified",
+        "reviewedOn": "2026-10-10",
+        "powerEvidence": "scene-description"
+      }
+    ]
   },
   "hito-hito-no-mi-mod-le-nika": {
     "youtubeId": "63kiupuR7p8",
@@ -216,6 +258,30 @@
         "episode": "1101",
         "source": "https://www.youtube.com/watch?v=zC6zyDlF8sQ",
         "note": "Le pouvoir est montré dans cet extrait publié par le diffuseur."
+      },
+      {
+        "youtubeId": "5L_Ek_CcREc",
+        "title": "Gear 5 transforme Saturn et Kizaru en pizza",
+        "channel": "Crunchyroll",
+        "episode": "Épisode 1142",
+        "source": "https://www.youtube.com/watch?v=5L_Ek_CcREc",
+        "sourceEvidence": "https://www.youtube.com/watch?v=5L_Ek_CcREc",
+        "contentKind": "clip",
+        "verificationStatus": "publisher-metadata-verified",
+        "reviewedOn": "2026-10-10",
+        "powerEvidence": "scene-description"
+      },
+      {
+        "youtubeId": "MK2DHUoD8pE",
+        "title": "Gear 5 attaque Saturn",
+        "channel": "Crunchyroll",
+        "episode": "Épisode 1141",
+        "source": "https://www.youtube.com/watch?v=MK2DHUoD8pE",
+        "sourceEvidence": "https://www.youtube.com/watch?v=MK2DHUoD8pE",
+        "contentKind": "clip",
+        "verificationStatus": "publisher-metadata-verified",
+        "reviewedOn": "2026-10-10",
+        "powerEvidence": "scene-description"
       }
     ],
     "episodeUrl": "https://www.crunchyroll.com/watch/GK9U3KDXK/powers-on-a-different-level-luffy-vs-lucci",
