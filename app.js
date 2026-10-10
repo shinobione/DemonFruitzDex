@@ -1,4 +1,4 @@
-/* DemonFruitzDex V4.3 — curated official publisher clips + matching Crunchyroll episodes. */
+/* DemonFruitzDex V4.4 — curated official publisher clips + matching Crunchyroll episodes. */
 (() => {
   'use strict';
   const fruits = Array.isArray(window.SHINO_DATA) ? window.SHINO_DATA : [];
@@ -123,7 +123,7 @@
           <div class="detail-power-label">✦ / EXPRESSION DU POUVOIR</div><p class="detail-power">${enc(f.p)}</p>
           <div class="anime-section-head"><strong>▶ LE POUVOIR EN ACTION</strong><span>${videos.length?`${videos.length} CLIP${videos.length>1?'S':''}`:episodes.length?'ÉPISODE OFFICIEL':'SOURCE À COMPLÉTER'}</span></div>
           ${videoBody}
-          ${episodeBody}${socialBody}${openSearch}
+          ${episodeBody}${clip.note?`<p class="clip-note">${enc(clip.note)}</p>`:''}${socialBody}${openSearch}
           <div class="clip-note">Extraits diffusés par leurs chaînes officielles et épisodes Crunchyroll, sans copie des vidéos dans notre dépôt. Lecture selon pays et restrictions du diffuseur.</div>
           <div class="detail-source">${f.file?`<a target="_blank" rel="noopener noreferrer" href="https://onepiece.fandom.com/wiki/File:${safeFile}">↗ Source du visuel du fruit / pouvoir</a>`:'Illustration du fruit non identifiée dans les sources retenues.'}<br>
           ${f.portrait_file?`<a target="_blank" rel="noopener noreferrer" href="https://onepiece.fandom.com/wiki/File:${safePortraitFile}">↗ Source du portrait utilisateur</a>`:'Portrait utilisateur de secours.'}</div>
