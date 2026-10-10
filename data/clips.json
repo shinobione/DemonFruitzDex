@@ -100,10 +100,43 @@
   },
   "hie-hie-no-mi": {
     "episodeUrl": "https://www.crunchyroll.com/fr/watch/GX9U312XQ/garp-and-kuzan---a-master-and-a-pupils-beliefs-clash",
-    "episodeTitle": "Garp contre Kuzan · épisode 1121"
+    "episodeTitle": "Garp contre Kuzan · épisode 1121",
+    "youtubeId": "yjfG8iyvYW4",
+    "title": "Garp contre Kuzan (doublage anglais)",
+    "channel": "Toei Animation",
+    "episode": "Épisode 1115",
+    "source": "https://www.youtube.com/watch?v=yjfG8iyvYW4"
   },
   "magu-magu-no-mi": {
     "episodeUrl": "https://www.crunchyroll.com/watch/GRJQKP0EY/the-power-that-can-burn-even-fire-akainus-ruthless-pursuit",
     "episodeTitle": "Akainu à Marineford · épisode 482"
+  },
+  "suna-suna-no-mi": {
+    "youtubeId": "rmRzTBY-8EY",
+    "title": "Luffy contre Crocodile",
+    "channel": "Crunchyroll",
+    "episode": "Épisode 126",
+    "source": "https://www.youtube.com/watch?v=rmRzTBY-8EY"
+  },
+  "hito-hito-no-mi": {
+    "youtubeId": "5reop01XCuk",
+    "title": "Chopper : Monster Point",
+    "channel": "Crunchyroll",
+    "episode": "Épisode 290",
+    "source": "https://www.youtube.com/watch?v=5reop01XCuk"
+  },
+  "yomi-yomi-no-mi": {
+    "youtubeId": "dZ3C9KhI3Lc",
+    "title": "Brook gèle l'enfer",
+    "channel": "Crunchyroll",
+    "episode": "Épisode 1043",
+    "source": "https://www.youtube.com/watch?v=dZ3C9KhI3Lc"
+  },
+  "neko-neko-no-mi-mod-le-l-opard": {
+    "youtubeId": "scPBmrzdD0g",
+    "title": "Gear 5 contre Rob Lucci",
+    "channel": "Crunchyroll",
+    "episode": "Épisode 1100",
+    "source": "https://www.youtube.com/watch?v=scPBmrzdD0g"
   }
 }
