@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """Offline validation of the V4.5 media catalogue; NOT a playback or geoblock check."""
 from pathlib import Path
+from html import unescape
+from urllib.parse import urlsplit,parse_qs
 import json,re,sys
 ROOT=Path(__file__).resolve().parents[1]
 fruits=json.loads((ROOT/'data/fruits.json').read_text(encoding='utf-8'))
@@ -31,6 +33,13 @@ for fruit,entry in clips.items():
 for vid in re.findall(r'https://i\.ytimg\.com/vi/([A-Za-z0-9_-]{11})/',index):
     if not any(vid in [v.get('youtubeId') for v in ([e] if e.get('youtubeId') else [])+e.get('moreVideos',[])] for e in clips.values()):
         errors.append(f'Spotlight ID {vid} not in catalogue')
+for link in re.findall(r'class="spotlight-card" href="([^"]+)"',index):
+    query=parse_qs(urlsplit(unescape(link)).query)
+    fruit=query.get('fruit',[''])[0];clip=query.get('clip',[''])[0]
+    entry=clips.get(fruit,{})
+    choices=([entry] if entry.get('youtubeId') else [])+entry.get('moreVideos',[])
+    if not clip or not any(c.get('youtubeId')==clip for c in choices):
+        errors.append(f'Spotlight route invalid: {fruit} / {clip}')
 if index.count('class="spotlight-card"')!=4:errors.append('Four curated spotlight items required')
 if '04.5' not in index:errors.append('Wrong displayed version')
 if errors:
