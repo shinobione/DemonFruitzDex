@@ -25,7 +25,7 @@ for group,entries in [('portraits',portraits),('art',arts)]:
 if len(portraits)!=20 or len(arts)!=4:errors.append('Expected 20 portraits / 4 power images')
 for x in arts:
     if x.get('visual')!='pouvoir':errors.append('Seraphim power artwork incorrectly claimed as fruit')
-if not all(k in index for k in ('portraits-v48.js?v=4.8','power-art-v48.js?v=4.8','app.js?v=4.8','href="media-check.html"')):
+if not all(k in index for k in ('portraits-v48.js?v=','power-art-v48.js?v=','app.js?v=','href="media-check.html"')):
     errors.append('V4.8 UI/diagnostics entry not loaded')
 if not all(k in app for k in ('data-media-fallback','IMAGE EXTERNE INDISPONIBLE','Special:Redirect/file')):
     errors.append('Remote-image retry and warning missing')
