@@ -13,6 +13,7 @@
   const clips = window.SHINO_CLIPS || {}; // source references, not media re-uploads
   const clipVideos = (entry) => entry ? [...(entry.youtubeId ? [entry] : []), ...(entry.moreVideos || [])] : [];
   const videoProvenance = (video) => {
+    if (video?.contentKind === 'live-action') return 'ADAPTATION NETFLIX LIVE-ACTION · PAS UNE SCÈNE DE L’ANIMÉ · LECTURE NON TESTÉE';
     if (video?.verificationStatus === 'legacy-unverified') return 'ANCIEN CLIP · PROVENANCE À CONFIRMER · LECTURE NON TESTÉE';
     if (video?.contentKind === 'preview') return 'BANDE-ANNONCE OFFICIELLE · PAS UN EXTRAIT DE POUVOIR';
     if (video?.verificationStatus === 'publisher-metadata-verified') return `SOURCE ${String(video.channel||'DIFFUSEUR').toUpperCase()} IDENTIFIÉE · LECTURE NON TESTÉE`;
