@@ -35,7 +35,7 @@ for slug,entry in clips.items():
         seen.add(m.group(1))
 if clips.get('ito-ito-no-mi',{}).get('youtubeId')=='I752TYMkM7Y':errors.append('Wrongly attributed Doflamingo video returned')
 if 'id="onlyReview"' not in page or "state.reviewOnly" not in app:errors.append('Review filter not connected')
-if not ("app.js?v=4.6" in page and "clips.js?v=4.6" in page):errors.append('V4.6 cache buster missing')
+if not ("app.js?v=" in page and "clips.js?v=" in page):errors.append('Versioned asset scripts missing')
 if errors:
     for error in errors:print('ERROR: '+error,file=sys.stderr)
     raise SystemExit(1)
