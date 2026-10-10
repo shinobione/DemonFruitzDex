@@ -166,3 +166,14 @@ node --check data/portraits-v48.js
 node --check data/power-art-v48.js
 ```
 Rapport détaillé : [reports/media-audit-v48.md](reports/media-audit-v48.md).
+
+
+## V4.9 — portraits d'utilisateurs et vraie provenance vidéo
+
+- **162 / 166 portraits avec une URL**, contre 154 auparavant : huit nouveaux fichiers sourcés via les galeries du One Piece Wiki. Voir [data/portraits-v49.js](data/portraits-v49.js).
+- **140 / 166 images de fruits et pouvoirs avec une URL**, inchangé. Pour **24 des 26 cartes** sans illustration propre, le site affiche désormais **le portrait de l'utilisateur en grand**, accompagné de « PORTEUR · FRUIT NON REPRÉSENTÉ » : jamais présenté comme une photo du fruit.
+- **37 associations YouTube** (32 vidéos distinctes). L'extrait **Smoker contre Luffy** est publié par *Still Watching Netflix*. Il est **explicitement classé live-action**, pas anime, afin de ne pas brouiller la vidéothèque.
+- **Media Check** utilise aussi les huit nouvelles références et les teste en priorité lors du test de 30 images. Le précédent résultat **294/294** concerne uniquement la V4.8 : **il ne valide pas les nouvelles images V4.9**.
+- Les quatre portraits encore sans référence sont l'épée Cerbère (identité/canon à clarifier), Morley, les utilisateurs collectifs des SMILE (pas de portrait unique) et Urban.
+- Les anciens contrôles QA reconnaissent désormais les versions d'assets postérieures et le type de vidéo live-action distinct.
+- Validation : `python scripts/check_v49.py` et [rapport d'audit V4.9](reports/media-audit-v49.md).
