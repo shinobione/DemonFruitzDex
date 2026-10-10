@@ -119,3 +119,19 @@ Le validateur vérifie la **structure**, les IDs, les doublons et les domaines, 
 - Correctif de l'étiquette « Clip vidéo » pour les fiches dont les vidéos figurent uniquement dans `moreVideos`.
 - Nouveau contrôle `python scripts/check_v45.py` ; détails dans [l'audit V4.5](reports/clip-review-v45.md).
 - Aucun extrait d'anime n'est réhébergé.
+
+
+## V4.6 — audit des sources historiques
+
+Cette étape privilégie la **fiabilité** plutôt que de rajouter des extraits non contrôlés.
+
+- 40 fiches historiques ont subi des contrôles automatiques de structure et de cohérence ; **39 nécessitent encore une revue éditoriale**, une attribution a été corrigée.
+- Le clip `I752TYMkM7Y` (*Luffy and Law Combo*) est retiré de la fiche **Doflamingo / Ito Ito** : il n'illustrait pas suffisamment le pouvoir de ses fils. Les épisodes 727 et 731 restent disponibles.
+- Les doublons des épisodes **796 (Big Mom), 1121 (Kuzan) et 913 (Kaido)** ont été éliminés sur la base de l'identifiant Crunchyroll (indépendamment du préfixe de langue).
+- Les fiches concernées arborent **« À REVOIR »**, une explication et une réserve sur les liens d'épisodes ; nouveau filtre **« Sources à contrôler »**.
+- Bilan : **69 fruits documentés**, **33 associations YouTube** représentant **28 vidéos distinctes**, **81 liens d'épisodes** représentant **71 épisodes distincts**.
+- Deux vidéos historiques ont des métadonnées publiées par Crunchyroll identifiées indépendamment (Gear 5 contre Kaido et Barbe Blanche contre Akainu). Cela **ne constitue pas un contrôle de lecture**.
+- Audit détaillé : [reports/media-audit-v46.md](reports/media-audit-v46.md), [version JSON](reports/media-audit-v46.json).
+- Qualité reproductible : `python scripts/check_v46.py` (en plus des validateurs précédents).
+
+**Limite :** le navigateur de l'utilisateur peut rencontrer des blocages d'intégration ou de territoire ; aucune compatibilité de lecture en France n'a été certifiée.
