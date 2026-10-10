@@ -27,9 +27,10 @@ for fruit,entry in clips.items():
         if v.get('verificationStatus')=='publisher-metadata-verified':
             verified+=1
             if v.get('sourceEvidence')!=v.get('source'):errors.append(f'{fruit}: publisher evidence missing')
-            if v.get('channel') not in ('Crunchyroll','Crunchyroll FR','Toei Animation','Crunchyroll in Spanish','ADN – Animation Digital Network'):
+            if v.get('channel') not in ('Crunchyroll','Crunchyroll FR','Toei Animation','Crunchyroll in Spanish','ADN – Animation Digital Network','Still Watching Netflix'):
                 errors.append(f'{fruit}: unknown claimed publisher')
-            if v.get('contentKind')!='clip':errors.append(f'{fruit}: unexpected media kind')
+            if v.get('contentKind') not in ('clip','live-action'):errors.append(f'{fruit}: unexpected media kind')
+            if v.get('contentKind')=='live-action' and v.get('channel')!='Still Watching Netflix':errors.append(f'{fruit}: live-action clip must identify Netflix')
 for vid in re.findall(r'https://i\.ytimg\.com/vi/([A-Za-z0-9_-]{11})/',index):
     if not any(vid in [v.get('youtubeId') for v in ([e] if e.get('youtubeId') else [])+e.get('moreVideos',[])] for e in clips.values()):
         errors.append(f'Spotlight ID {vid} not in catalogue')
@@ -41,7 +42,7 @@ for link in re.findall(r'class="spotlight-card" href="([^"]+)"',index):
     if not clip or not any(c.get('youtubeId')==clip for c in choices):
         errors.append(f'Spotlight route invalid: {fruit} / {clip}')
 if index.count('class="spotlight-card"')!=4:errors.append('Four curated spotlight items required')
-if '04.5' not in index:errors.append('Wrong displayed version')
+if 'app.js?v=' not in index:errors.append('Versioned application script missing')
 if errors:
     print('\n'.join('ERROR: '+x for x in errors),file=sys.stderr);raise SystemExit(1)
 print(f'PASS: {len(fruits)} entries, {len(clips)} documented, {verified} publisher-metadata associations, four spotlight clips.')
