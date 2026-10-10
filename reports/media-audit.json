@@ -1,0 +1,98 @@
+{
+  "scope": "Provenance documentaire uniquement; aucune garantie de lecture, de géoblocage ou d'intégration.",
+  "fruitCards": 166,
+  "documentedFruits": 69,
+  "uncovered": 97,
+  "youtubeAssociations": 29,
+  "uniqueYoutubeVideos": 26,
+  "episodeAssociations": 84,
+  "uniqueEpisodes": 75,
+  "legacyEntriesWithoutRootEvidence": [
+    "ope-ope-no-mi",
+    "yami-yami-no-mi",
+    "mochi-mochi-no-mi",
+    "pika-pika-no-mi",
+    "ito-ito-no-mi",
+    "jiki-jiki-no-mi",
+    "soru-soru-no-mi",
+    "gura-gura-no-mi",
+    "mera-mera-no-mi",
+    "moku-moku-no-mi",
+    "hie-hie-no-mi",
+    "magu-magu-no-mi",
+    "hito-hito-no-mi-mod-le-nika",
+    "tori-tori-no-mi-mod-le-phoenix",
+    "uo-uo-no-mi-mod-le-seiryu",
+    "goro-goro-no-mi",
+    "hana-hana-no-mi",
+    "hito-hito-no-mi",
+    "ryu-ryu-no-mi-mod-le-pteranodon",
+    "neko-neko-no-mi-mod-le-l-opard",
+    "suna-suna-no-mi",
+    "gasu-gasu-no-mi",
+    "inu-inu-no-mi-mod-le-okuchi-no-makami",
+    "ushi-ushi-no-mi-mod-le-girafe",
+    "kumo-kumo-no-mi-mod-le-rosamygale-grauvogeli",
+    "yomi-yomi-no-mi",
+    "kage-kage-no-mi",
+    "nikyu-nikyu-no-mi",
+    "bara-bara-no-mi",
+    "doku-doku-no-mi",
+    "mero-mero-no-mi",
+    "zushi-zushi-no-mi",
+    "hobi-hobi-no-mi",
+    "ishi-ishi-no-mi",
+    "fude-fude-no-mi",
+    "chiyu-chiyu-no-mi",
+    "green-blood-mero-mero",
+    "green-blood-supa-supa",
+    "green-blood-nikyu-nikyu",
+    "green-blood-sui-sui"
+  ],
+  "sharedYoutubeVideos": {
+    "QAxaniV3zIM": [
+      "ope-ope-no-mi",
+      "yami-yami-no-mi"
+    ],
+    "63kiupuR7p8": [
+      "hito-hito-no-mi-mod-le-nika",
+      "uo-uo-no-mi-mod-le-seiryu"
+    ],
+    "scPBmrzdD0g": [
+      "hito-hito-no-mi-mod-le-nika",
+      "neko-neko-no-mi-mod-le-l-opard"
+    ]
+  },
+  "sharedEpisodes": {
+    "https://www.crunchyroll.com/fr/watch/G50UZPNXD/the-heroes-reunion-his-name-is-fire-fist-ace": [
+      "mera-mera-no-mi",
+      "moku-moku-no-mi"
+    ],
+    "https://www.crunchyroll.com/watch/G6K5K4Q7Y/a-big-collision-chief-of-staff---sabo-vs-admiral-fujitora": [
+      "mera-mera-no-mi",
+      "zushi-zushi-no-mi"
+    ],
+    "https://www.crunchyroll.com/watch/GK9U3KDXK/powers-on-a-different-level-luffy-vs-lucci": [
+      "hito-hito-no-mi-mod-le-nika",
+      "neko-neko-no-mi-mod-le-l-opard"
+    ],
+    "https://www.crunchyroll.com/watch/GJWU2ZJGM/clutch-a-demon-incarnate-robin": [
+      "hana-hana-no-mi",
+      "kumo-kumo-no-mi-mod-le-rosamygale-grauvogeli"
+    ],
+    "https://www.crunchyroll.com/watch/GVWU0744N/the-strongest-form-of-humanity-the-seraphims-powers": [
+      "green-blood-mero-mero",
+      "green-blood-supa-supa",
+      "green-blood-nikyu-nikyu",
+      "green-blood-sui-sui"
+    ],
+    "https://www.crunchyroll.com/fr/watch/G31UXW511/the-coming-of-the-new-era-the-red-haireds-imperial-rage": [
+      "mori-mori-no-mi",
+      "fruit-artificiel-seiryu"
+    ],
+    "https://www.crunchyroll.com/fr/watch/GG1U2EEEW/nami-surrenders-ultis-fierce-headbutt": [
+      "ryu-ryu-no-mi-mod-le-pachycephalosaurus",
+      "ryu-ryu-no-mi-mod-le-spinosaurus"
+    ]
+  }
+}
