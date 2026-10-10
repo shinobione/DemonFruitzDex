@@ -127,3 +127,16 @@ footer{background:#0b0f16;border-top:1px solid var(--line)}.footer-inner{min-hei
 /* V4.6 — transparent provenance status */
 .source-review-badge{position:absolute;right:11px;bottom:35px;z-index:6;border:1px solid #f7c879aa;border-radius:8px;background:#1f1725e8;color:#ffe4a7;padding:6px 8px;font-size:9px;font-weight:900;letter-spacing:.07em;box-shadow:0 5px 14px #0009;pointer-events:none}
 .clip-audit-warning{padding:12px 14px;border:1px solid #e7aa5760;border-radius:12px;background:rgba(229,139,45,.10);font:600 12px/1.6 'DM Sans',sans-serif;color:#f3d3a0;margin:13px 0}
+
+
+/* V4.7 — friction-free scene discovery from free/open video platforms */
+.open-video-discovery{display:grid;gap:8px;margin-top:17px;padding:15px;border-radius:15px;border:1px solid #ab83ff36;background:linear-gradient(135deg,#241d3238,#101720)}
+.open-video-discovery .playlist-label{margin:0 0 2px;color:#e2ccff}
+.open-video-discovery .source-discover{border:1px solid #ffffff22!important;background:#151d2a}
+.open-video-discovery .source-youtube{border-color:#f15c7270!important;background:#301e2b}
+.open-video-discovery .source-youtube:hover{background:#452435}
+.open-video-discovery .source-discover span:nth-child(2){display:flex;flex-direction:column;gap:5px;font-weight:800;font-size:12px}
+.open-video-discovery .source-discover small{font-size:10px;letter-spacing:normal;font-weight:500;line-height:1.45;color:#aeb9c8}
+.open-video-discovery .source-discover>b{font-size:10px;white-space:nowrap;letter-spacing:.04em;color:#f4c36b}
+.open-video-discovery .source-discover>span:first-child{min-width:25px;text-align:center}
+@media(max-width:500px){.open-video-discovery{padding:10px}.open-video-discovery .source-discover>b{font-size:9px}}
