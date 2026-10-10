@@ -7,12 +7,12 @@
   <meta name="description" content="DemonFruitzDex — encyclopédie interactive des Fruits du Démon de One Piece, avec illustrations, utilisateurs, animations et comparateur." />
   <meta property="og:title" content="DemonFruitzDex — l'encyclopédie des Fruits du Démon" />
   <meta property="og:description" content="166 fiches, portraits immersifs et extraits officiels intégrés depuis Crunchyroll." />
-  <title>DemonFruitzDex — SHINO-DEX V4.5</title>
+  <title>DemonFruitzDex — SHINO-DEX V4.6</title>
   <link rel="icon" type="image/svg+xml" href="assets/icon.svg" />
-  <link rel="stylesheet" href="styles.css?v=4.5" />
-  <script src="data/fruits.js?v=4.5" defer></script>
-  <script src="data/clips.js?v=4.5" defer></script>
-  <script src="app.js?v=4.5" defer></script>
+  <link rel="stylesheet" href="styles.css?v=4.6" />
+  <script src="data/fruits.js?v=4.6" defer></script>
+  <script src="data/clips.js?v=4.6" defer></script>
+  <script src="app.js?v=4.6" defer></script>
 </head>
 <body>
   <div class="ambient ambient-1" aria-hidden="true"></div>
@@ -21,7 +21,7 @@
     <div class="container header-content">
       <a class="brand" href="#accueil" aria-label="DemonFruitzDex — Accueil">
         <img src="assets/icon.svg" alt="" width="40" height="40" />
-        <span><strong>DEMON<span>FRUITZ</span>DEX</strong><small>SHINO EDITION <i>04.5</i></small></span>
+        <span><strong>DEMON<span>FRUITZ</span>DEX</strong><small>SHINO EDITION <i>04.6</i></small></span>
       </a>
       <nav class="desktop-nav" aria-label="Navigation principale">
         <a href="#catalogue">Encyclopédie</a>
@@ -67,7 +67,7 @@
     </section>
 
     <section class="spotlight container" id="nouveaux-clips" aria-labelledby="spotlightTitle">
-      <div class="section-title-row"><div><div class="eyebrow">✦ SÉLECTION V4.5 / VIDÉOS DU DIFFUSEUR</div><h2 id="spotlightTitle">LE POUVOIR EN <span class="dot">ACTION.</span></h2></div><p class="section-aside">Clips publiés par Crunchyroll · vidéos intégrées au clic dans chaque fiche.<br>La disponibilité dépend du diffuseur et de ta région.</p></div>
+      <div class="section-title-row"><div><div class="eyebrow">✦ SÉLECTION V4.6 / VIDÉOS DU DIFFUSEUR</div><h2 id="spotlightTitle">LE POUVOIR EN <span class="dot">ACTION.</span></h2></div><p class="section-aside">Clips publiés par Crunchyroll · vidéos intégrées au clic dans chaque fiche.<br>La disponibilité dépend du diffuseur et de ta région.</p></div>
       <div class="spotlight-grid">
         <a class="spotlight-card" href="?fruit=hito-hito-no-mi-mod-le-nika&amp;clip=5L_Ek_CcREc" aria-label="Voir Gear 5 de Luffy à Egghead">
           <img loading="lazy" src="https://i.ytimg.com/vi/5L_Ek_CcREc/hqdefault.jpg" alt="Gear 5 de Luffy à Egghead">
@@ -106,7 +106,7 @@
           <div class="selects"><select id="tier" aria-label="Filtrer par niveau"><option value="">Tous les tiers</option><option value="S+">S+</option><option value="S">S</option><option value="A">A</option><option value="B">B</option><option value="C">C</option></select>
             <select id="sort" aria-label="Trier"><option value="default">Ordre du Dex</option><option value="az">Nom A–Z</option><option value="za">Nom Z–A</option><option value="tier">Puissance ↓</option><option value="awake">Éveil confirmé</option><option value="clips">Extraits d’abord</option></select></div>
         </div>
-        <div class="filter-footer"><label class="check-label"><input id="onlyAwakened" type="checkbox" /> <span>Éveil confirmé</span></label><label class="check-label"><input id="onlyFavorite" type="checkbox" /> <span>Mes favoris</span></label><label class="check-label"><input id="onlyIllustrated" type="checkbox" /> <span>Image du pouvoir</span></label><label class="check-label"><input id="onlyVideos" type="checkbox" /> <span>🎞 Scène documentée</span></label><label class="check-label"><input id="onlyYoutube" type="checkbox" /> <span>▶ Extrait YouTube uniquement</span></label><button id="reset" class="reset-filter">Réinitialiser ↺</button></div>
+        <div class="filter-footer"><label class="check-label"><input id="onlyAwakened" type="checkbox" /> <span>Éveil confirmé</span></label><label class="check-label"><input id="onlyFavorite" type="checkbox" /> <span>Mes favoris</span></label><label class="check-label"><input id="onlyIllustrated" type="checkbox" /> <span>Image du pouvoir</span></label><label class="check-label"><input id="onlyVideos" type="checkbox" /> <span>🎞 Scène documentée</span></label><label class="check-label"><input id="onlyYoutube" type="checkbox" /> <span>▶ Extrait YouTube uniquement</span></label><label class="check-label"><input id="onlyReview" type="checkbox" /> <span>⚑ Sources à contrôler</span></label><button id="reset" class="reset-filter">Réinitialiser ↺</button></div>
       </div>
       <div class="results-bar"><div><span id="resultsCount">—</span> <span class="dim">résultats</span><span class="separator">·</span><span class="dim">Clique sur une carte pour explorer son pouvoir</span></div><div class="results-hint"><strong id="clipInventory">—</strong> fruits avec une scène · <strong id="ytInventory">—</strong> avec extrait YouTube &nbsp;·&nbsp; ♥ Favoris &nbsp; + Comparer</div></div>
       <div id="cards" class="cards" aria-live="polite"></div>
@@ -130,7 +130,7 @@
       <p class="legal-note">Clips courts de One Piece intégrés sur clic depuis YouTube officiel (Crunchyroll, Crunchyroll FR et Toei Animation), ou liens externes vers les épisodes de Crunchyroll. La lecture intégrée dépend du pays, de l’autorisation du diffuseur et des réglages YouTube. Les illustrations de fruits et portraits sont référencés depuis des sources tierces ; leur disponibilité peut varier. Droits One Piece © Eiichiro Oda / Shueisha / Toei Animation.</p>
     </section>
   </main>
-  <footer><div class="container footer-inner"><div><strong>DEMON<span>FRUITZ</span>DEX</strong><small>Made for the Grand Line · SHINO EDITION V4.5 · SCÈNES D’ANIME</small></div><span>Fan project indépendant · Images externes créditées sur les fiches</span><a href="https://github.com/shinobione/DemonFruitzDex" target="_blank" rel="noopener noreferrer">SOURCE ↗</a></div></footer>
+  <footer><div class="container footer-inner"><div><strong>DEMON<span>FRUITZ</span>DEX</strong><small>Made for the Grand Line · SHINO EDITION V4.6 · SCÈNES D’ANIME</small></div><span>Fan project indépendant · Images externes créditées sur les fiches</span><a href="https://github.com/shinobione/DemonFruitzDex" target="_blank" rel="noopener noreferrer">SOURCE ↗</a></div></footer>
 
   <div class="compare-dock" id="compareDock" hidden><div><span class="dock-icon">⚔</span> <strong id="compareCount">0 / 2</strong><small>fruits sélectionnés</small></div><div class="dock-actions"><button id="compareOpen" disabled>Comparer →</button><button id="compareClear" title="Vider la sélection" aria-label="Vider la sélection">×</button></div></div>
 
