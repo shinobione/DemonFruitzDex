@@ -246,7 +246,23 @@
       "metadata": "record-shape-and-source-urls-checked",
       "playback": "not-tested",
       "note": "Références historiques à confirmer par lecture et validation de l'adéquation du pouvoir."
-    }
+    },
+    "moreVideos": [
+      {
+        "youtubeId": "4frfkxIubLc",
+        "title": "Luffy contre Smoker — les pouvoirs de fumée (adaptation Netflix)",
+        "channel": "Still Watching Netflix",
+        "episode": "One Piece live-action · Saison 2",
+        "source": "https://www.youtube.com/watch?v=4frfkxIubLc",
+        "sourceEvidence": "https://www.youtube.com/watch?v=4frfkxIubLc",
+        "verificationStatus": "publisher-metadata-verified",
+        "reviewedOn": "2026-10-11",
+        "contentKind": "live-action",
+        "powerEvidence": "official-publisher-title",
+        "playback": "not-tested",
+        "notice": "Extrait de l'adaptation Netflix, pas de l'animé."
+      }
+    ]
   },
   "hie-hie-no-mi": {
     "episodeUrl": "https://www.crunchyroll.com/fr/watch/GX9U312XQ/garp-and-kuzan---a-master-and-a-pupils-beliefs-clash",
