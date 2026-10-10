@@ -30,7 +30,15 @@
         "reviewedOn": "2026-10-10",
         "powerEvidence": "scene-description"
       }
-    ]
+    ],
+    "auditV46": {
+      "state": "legacy-pending-editorial-review",
+      "checkedOn": "2026-10-10",
+      "metadata": "record-shape-and-source-urls-checked",
+      "playback": "not-tested",
+      "note": "Références historiques à confirmer par lecture et validation de l'adéquation du pouvoir."
+    },
+    "verificationStatus": "legacy-unverified"
   },
   "yami-yami-no-mi": {
     "youtubeId": "QAxaniV3zIM",
@@ -41,7 +49,15 @@
     "episodeUrl": "https://www.crunchyroll.com/watch/GG1U29VZ2/the-most-heinous-power-blackbeards-darkness-attacks-ace",
     "episodeTitle": "Barbe Noire contre Ace — épisode 325",
     "sourcePolicy": "publisher-linked",
-    "reviewedOn": "2026-10-10"
+    "reviewedOn": "2026-10-10",
+    "auditV46": {
+      "state": "legacy-pending-editorial-review",
+      "checkedOn": "2026-10-10",
+      "metadata": "record-shape-and-source-urls-checked",
+      "playback": "not-tested",
+      "note": "Références historiques à confirmer par lecture et validation de l'adéquation du pouvoir."
+    },
+    "verificationStatus": "legacy-unverified"
   },
   "mochi-mochi-no-mi": {
     "youtubeId": "wz1H3jxl_tA",
@@ -60,7 +76,15 @@
       }
     ],
     "sourcePolicy": "publisher-linked",
-    "reviewedOn": "2026-10-10"
+    "reviewedOn": "2026-10-10",
+    "auditV46": {
+      "state": "legacy-pending-editorial-review",
+      "checkedOn": "2026-10-10",
+      "metadata": "record-shape-and-source-urls-checked",
+      "playback": "not-tested",
+      "note": "Références historiques à confirmer par lecture et validation de l'adéquation du pouvoir."
+    },
+    "verificationStatus": "legacy-unverified"
   },
   "pika-pika-no-mi": {
     "youtubeId": "nowY_icRZsQ",
@@ -79,14 +103,17 @@
       }
     ],
     "sourcePolicy": "publisher-linked",
-    "reviewedOn": "2026-10-10"
+    "reviewedOn": "2026-10-10",
+    "auditV46": {
+      "state": "legacy-pending-editorial-review",
+      "checkedOn": "2026-10-10",
+      "metadata": "record-shape-and-source-urls-checked",
+      "playback": "not-tested",
+      "note": "Références historiques à confirmer par lecture et validation de l'adéquation du pouvoir."
+    },
+    "verificationStatus": "legacy-unverified"
   },
   "ito-ito-no-mi": {
-    "youtubeId": "I752TYMkM7Y",
-    "title": "Luffy et Law contre Doflamingo",
-    "channel": "Crunchyroll",
-    "episode": "Épisode 698",
-    "source": "https://www.youtube.com/watch?v=I752TYMkM7Y",
     "episodeUrl": "https://www.crunchyroll.com/watch/G63VWQ1EY/a-massive-counterattack-doflamingos-awakening",
     "episodeTitle": "Épisode 727 — Doflamingo et l’éveil des fils",
     "moreEpisodes": [
@@ -98,7 +125,13 @@
       }
     ],
     "sourcePolicy": "publisher-linked",
-    "reviewedOn": "2026-10-10"
+    "reviewedOn": "2026-10-10",
+    "auditV46": {
+      "state": "clip-corrected",
+      "checkedOn": "2026-10-10",
+      "note": "Ancien lien vidéo retiré : montre surtout l'attaque combinée de Luffy et Law, et non une démonstration des fils de Doflamingo. Épisodes 727 et 731 conservés; lecture non contrôlée.",
+      "playback": "not-tested"
+    }
   },
   "jiki-jiki-no-mi": {
     "youtubeId": "HBpihtBqB7I",
@@ -123,7 +156,15 @@
         "reviewedOn": "2026-10-10",
         "powerEvidence": "scene-description"
       }
-    ]
+    ],
+    "auditV46": {
+      "state": "legacy-pending-editorial-review",
+      "checkedOn": "2026-10-10",
+      "metadata": "record-shape-and-source-urls-checked",
+      "playback": "not-tested",
+      "note": "Références historiques à confirmer par lecture et validation de l'adéquation du pouvoir."
+    },
+    "verificationStatus": "legacy-unverified"
   },
   "soru-soru-no-mi": {
     "youtubeId": "92Q5A0DsZjE",
@@ -142,7 +183,15 @@
       }
     ],
     "sourcePolicy": "publisher-linked",
-    "reviewedOn": "2026-10-10"
+    "reviewedOn": "2026-10-10",
+    "auditV46": {
+      "state": "legacy-pending-editorial-review",
+      "checkedOn": "2026-10-10",
+      "metadata": "record-shape-and-source-urls-checked",
+      "playback": "not-tested",
+      "note": "Références historiques à confirmer par lecture et validation de l'adéquation du pouvoir."
+    },
+    "verificationStatus": "legacy-unverified"
   },
   "gura-gura-no-mi": {
     "youtubeId": "IL2yBUx2Lpc",
@@ -153,7 +202,17 @@
     "episodeUrl": "https://www.crunchyroll.com/id/watch/GY8VMP2DY/the-force-that-could-destroy-the-world-the-power-of-the-tremor-tremor-fruit",
     "episodeTitle": "Barbe Blanche déchaîne le Gura Gura — épisode 462",
     "sourcePolicy": "publisher-linked",
-    "reviewedOn": "2026-10-10"
+    "reviewedOn": "2026-10-10",
+    "auditV46": {
+      "state": "legacy-pending-editorial-review",
+      "checkedOn": "2026-10-10",
+      "metadata": "record-shape-and-source-urls-checked",
+      "playback": "not-tested",
+      "note": "Références historiques à confirmer par lecture et validation de l'adéquation du pouvoir."
+    },
+    "verificationStatus": "publisher-metadata-verified",
+    "sourceEvidence": "https://www.youtube.com/watch?v=IL2yBUx2Lpc",
+    "contentKind": "clip"
   },
   "mera-mera-no-mi": {
     "episodeUrl": "https://www.crunchyroll.com/fr/watch/G50UZPNXD/the-heroes-reunion-his-name-is-fire-fist-ace",
@@ -173,13 +232,27 @@
       }
     ],
     "sourcePolicy": "publisher-linked",
-    "reviewedOn": "2026-10-10"
+    "reviewedOn": "2026-10-10",
+    "auditV46": {
+      "state": "legacy-pending-editorial-review",
+      "checkedOn": "2026-10-10",
+      "metadata": "record-shape-and-source-urls-checked",
+      "playback": "not-tested",
+      "note": "Références historiques à confirmer par lecture et validation de l'adéquation du pouvoir."
+    }
   },
   "moku-moku-no-mi": {
     "episodeUrl": "https://www.crunchyroll.com/fr/watch/G50UZPNXD/the-heroes-reunion-his-name-is-fire-fist-ace",
     "episodeTitle": "Smoker et Ace — épisode 94",
     "sourcePolicy": "publisher-linked",
-    "reviewedOn": "2026-10-10"
+    "reviewedOn": "2026-10-10",
+    "auditV46": {
+      "state": "legacy-pending-editorial-review",
+      "checkedOn": "2026-10-10",
+      "metadata": "record-shape-and-source-urls-checked",
+      "playback": "not-tested",
+      "note": "Références historiques à confirmer par lecture et validation de l'adéquation du pouvoir."
+    }
   },
   "hie-hie-no-mi": {
     "episodeUrl": "https://www.crunchyroll.com/fr/watch/GX9U312XQ/garp-and-kuzan---a-master-and-a-pupils-beliefs-clash",
@@ -212,9 +285,18 @@
         "title": "Garp contre Kuzan (doublage anglais)",
         "channel": "Toei Animation",
         "episode": "1115",
-        "source": "https://www.youtube.com/watch?v=yjfG8iyvYW4"
+        "source": "https://www.youtube.com/watch?v=yjfG8iyvYW4",
+        "verificationStatus": "legacy-unverified"
       }
-    ]
+    ],
+    "auditV46": {
+      "state": "legacy-pending-editorial-review",
+      "checkedOn": "2026-10-10",
+      "metadata": "record-shape-and-source-urls-checked",
+      "playback": "not-tested",
+      "note": "Références historiques à confirmer par lecture et validation de l'adéquation du pouvoir."
+    },
+    "verificationStatus": "legacy-unverified"
   },
   "magu-magu-no-mi": {
     "episodeUrl": "https://www.crunchyroll.com/watch/GRJQKP0EY/the-power-that-can-burn-even-fire-akainus-ruthless-pursuit",
@@ -234,7 +316,14 @@
         "reviewedOn": "2026-10-10",
         "powerEvidence": "scene-description"
       }
-    ]
+    ],
+    "auditV46": {
+      "state": "legacy-pending-editorial-review",
+      "checkedOn": "2026-10-10",
+      "metadata": "record-shape-and-source-urls-checked",
+      "playback": "not-tested",
+      "note": "Références historiques à confirmer par lecture et validation de l'adéquation du pouvoir."
+    }
   },
   "hito-hito-no-mi-mod-le-nika": {
     "youtubeId": "63kiupuR7p8",
@@ -249,7 +338,8 @@
         "channel": "Crunchyroll",
         "episode": "1100",
         "source": "https://www.youtube.com/watch?v=scPBmrzdD0g",
-        "note": "Le pouvoir est montré dans cet extrait publié par le diffuseur."
+        "note": "Le pouvoir est montré dans cet extrait publié par le diffuseur.",
+        "verificationStatus": "legacy-unverified"
       },
       {
         "youtubeId": "zC6zyDlF8sQ",
@@ -257,7 +347,8 @@
         "channel": "Crunchyroll",
         "episode": "1101",
         "source": "https://www.youtube.com/watch?v=zC6zyDlF8sQ",
-        "note": "Le pouvoir est montré dans cet extrait publié par le diffuseur."
+        "note": "Le pouvoir est montré dans cet extrait publié par le diffuseur.",
+        "verificationStatus": "legacy-unverified"
       },
       {
         "youtubeId": "5L_Ek_CcREc",
@@ -287,7 +378,17 @@
     "episodeUrl": "https://www.crunchyroll.com/watch/GK9U3KDXK/powers-on-a-different-level-luffy-vs-lucci",
     "episodeTitle": "Épisode 1100 — Gear 5 contre Léopard éveillé",
     "sourcePolicy": "publisher-linked",
-    "reviewedOn": "2026-10-10"
+    "reviewedOn": "2026-10-10",
+    "auditV46": {
+      "state": "legacy-pending-editorial-review",
+      "checkedOn": "2026-10-10",
+      "metadata": "record-shape-and-source-urls-checked",
+      "playback": "not-tested",
+      "note": "Références historiques à confirmer par lecture et validation de l'adéquation du pouvoir."
+    },
+    "verificationStatus": "publisher-metadata-verified",
+    "sourceEvidence": "https://www.youtube.com/watch?v=63kiupuR7p8",
+    "contentKind": "clip"
   },
   "tori-tori-no-mi-mod-le-phoenix": {
     "youtubeId": "ws9XLcg4qdE",
@@ -298,7 +399,15 @@
     "episodeUrl": "https://www.crunchyroll.com/watch/GQJUGEJ11/reinforcements-arrive-the-commander-of-the-whitebeard-pirates",
     "episodeTitle": "Épisode 988 — Marco le Phénix entre en scène",
     "sourcePolicy": "publisher-linked",
-    "reviewedOn": "2026-10-10"
+    "reviewedOn": "2026-10-10",
+    "auditV46": {
+      "state": "legacy-pending-editorial-review",
+      "checkedOn": "2026-10-10",
+      "metadata": "record-shape-and-source-urls-checked",
+      "playback": "not-tested",
+      "note": "Références historiques à confirmer par lecture et validation de l'adéquation du pouvoir."
+    },
+    "verificationStatus": "legacy-unverified"
   },
   "uo-uo-no-mi-mod-le-seiryu": {
     "youtubeId": "63kiupuR7p8",
@@ -317,7 +426,17 @@
       }
     ],
     "sourcePolicy": "publisher-linked",
-    "reviewedOn": "2026-10-10"
+    "reviewedOn": "2026-10-10",
+    "auditV46": {
+      "state": "legacy-pending-editorial-review",
+      "checkedOn": "2026-10-10",
+      "metadata": "record-shape-and-source-urls-checked",
+      "playback": "not-tested",
+      "note": "Références historiques à confirmer par lecture et validation de l'adéquation du pouvoir."
+    },
+    "verificationStatus": "publisher-metadata-verified",
+    "sourceEvidence": "https://www.youtube.com/watch?v=63kiupuR7p8",
+    "contentKind": "clip"
   },
   "goro-goro-no-mi": {
     "youtubeId": "-qC60miA8JE",
@@ -327,7 +446,15 @@
     "source": "https://www.youtube.com/watch?v=-qC60miA8JE",
     "note": "Le pouvoir est montré dans cet extrait publié par le diffuseur.",
     "sourcePolicy": "publisher-linked",
-    "reviewedOn": "2026-10-10"
+    "reviewedOn": "2026-10-10",
+    "auditV46": {
+      "state": "legacy-pending-editorial-review",
+      "checkedOn": "2026-10-10",
+      "metadata": "record-shape-and-source-urls-checked",
+      "playback": "not-tested",
+      "note": "Références historiques à confirmer par lecture et validation de l'adéquation du pouvoir."
+    },
+    "verificationStatus": "legacy-unverified"
   },
   "hana-hana-no-mi": {
     "youtubeId": "dqAOqwOdIVE",
@@ -346,7 +473,15 @@
       }
     ],
     "sourcePolicy": "publisher-linked",
-    "reviewedOn": "2026-10-10"
+    "reviewedOn": "2026-10-10",
+    "auditV46": {
+      "state": "legacy-pending-editorial-review",
+      "checkedOn": "2026-10-10",
+      "metadata": "record-shape-and-source-urls-checked",
+      "playback": "not-tested",
+      "note": "Références historiques à confirmer par lecture et validation de l'adéquation du pouvoir."
+    },
+    "verificationStatus": "legacy-unverified"
   },
   "hito-hito-no-mi": {
     "youtubeId": "5reop01XCuk",
@@ -364,7 +499,15 @@
         "episode": "88",
         "host": "Crunchyroll"
       }
-    ]
+    ],
+    "auditV46": {
+      "state": "legacy-pending-editorial-review",
+      "checkedOn": "2026-10-10",
+      "metadata": "record-shape-and-source-urls-checked",
+      "playback": "not-tested",
+      "note": "Références historiques à confirmer par lecture et validation de l'adéquation du pouvoir."
+    },
+    "verificationStatus": "legacy-unverified"
   },
   "ryu-ryu-no-mi-mod-le-pteranodon": {
     "youtubeId": "Zuu6ClXRabE",
@@ -374,7 +517,15 @@
     "source": "https://www.youtube.com/watch?v=Zuu6ClXRabE",
     "note": "Le pouvoir est montré dans cet extrait publié par le diffuseur.",
     "sourcePolicy": "publisher-linked",
-    "reviewedOn": "2026-10-10"
+    "reviewedOn": "2026-10-10",
+    "auditV46": {
+      "state": "legacy-pending-editorial-review",
+      "checkedOn": "2026-10-10",
+      "metadata": "record-shape-and-source-urls-checked",
+      "playback": "not-tested",
+      "note": "Références historiques à confirmer par lecture et validation de l'adéquation du pouvoir."
+    },
+    "verificationStatus": "legacy-unverified"
   },
   "neko-neko-no-mi-mod-le-l-opard": {
     "youtubeId": "dNbs0IIiS1E",
@@ -393,9 +544,18 @@
         "title": "Gear 5 contre Rob Lucci",
         "channel": "Crunchyroll",
         "episode": "1100",
-        "source": "https://www.youtube.com/watch?v=scPBmrzdD0g"
+        "source": "https://www.youtube.com/watch?v=scPBmrzdD0g",
+        "verificationStatus": "legacy-unverified"
       }
-    ]
+    ],
+    "auditV46": {
+      "state": "legacy-pending-editorial-review",
+      "checkedOn": "2026-10-10",
+      "metadata": "record-shape-and-source-urls-checked",
+      "playback": "not-tested",
+      "note": "Références historiques à confirmer par lecture et validation de l'adéquation du pouvoir."
+    },
+    "verificationStatus": "legacy-unverified"
   },
   "suna-suna-no-mi": {
     "episodeUrl": "https://www.crunchyroll.com/watch/GJWU23708/merciless-mortal-combat-luffy-vs-crocodile",
@@ -406,7 +566,15 @@
     "title": "Luffy contre Crocodile",
     "channel": "Crunchyroll",
     "episode": "126",
-    "source": "https://www.youtube.com/watch?v=rmRzTBY-8EY"
+    "source": "https://www.youtube.com/watch?v=rmRzTBY-8EY",
+    "auditV46": {
+      "state": "legacy-pending-editorial-review",
+      "checkedOn": "2026-10-10",
+      "metadata": "record-shape-and-source-urls-checked",
+      "playback": "not-tested",
+      "note": "Références historiques à confirmer par lecture et validation de l'adéquation du pouvoir."
+    },
+    "verificationStatus": "legacy-unverified"
   },
   "gasu-gasu-no-mi": {
     "episodeUrl": "https://www.crunchyroll.com/watch/GRGGVE55R/an-intense-battle-caesar-exercises-his-true-power",
@@ -420,25 +588,53 @@
       }
     ],
     "sourcePolicy": "publisher-linked",
-    "reviewedOn": "2026-10-10"
+    "reviewedOn": "2026-10-10",
+    "auditV46": {
+      "state": "legacy-pending-editorial-review",
+      "checkedOn": "2026-10-10",
+      "metadata": "record-shape-and-source-urls-checked",
+      "playback": "not-tested",
+      "note": "Références historiques à confirmer par lecture et validation de l'adéquation du pouvoir."
+    }
   },
   "inu-inu-no-mi-mod-le-okuchi-no-makami": {
     "episodeUrl": "https://www.crunchyroll.com/watch/GX9UQ5KG8/showdown-battles-of-the-monsters-yamato-and-franky",
     "episodeTitle": "Épisode 1041 — Yamato révèle sa transformation",
     "sourcePolicy": "publisher-linked",
-    "reviewedOn": "2026-10-10"
+    "reviewedOn": "2026-10-10",
+    "auditV46": {
+      "state": "legacy-pending-editorial-review",
+      "checkedOn": "2026-10-10",
+      "metadata": "record-shape-and-source-urls-checked",
+      "playback": "not-tested",
+      "note": "Références historiques à confirmer par lecture et validation de l'adéquation du pouvoir."
+    }
   },
   "ushi-ushi-no-mi-mod-le-girafe": {
     "episodeUrl": "https://www.crunchyroll.com/watch/G649GXXJY/fierce-sword-attacks-zoro-vs-kaku-powerful-sword-fighting-showdown",
     "episodeTitle": "Épisode 299 — Kaku en girafe contre Zoro",
     "sourcePolicy": "publisher-linked",
-    "reviewedOn": "2026-10-10"
+    "reviewedOn": "2026-10-10",
+    "auditV46": {
+      "state": "legacy-pending-editorial-review",
+      "checkedOn": "2026-10-10",
+      "metadata": "record-shape-and-source-urls-checked",
+      "playback": "not-tested",
+      "note": "Références historiques à confirmer par lecture et validation de l'adéquation du pouvoir."
+    }
   },
   "kumo-kumo-no-mi-mod-le-rosamygale-grauvogeli": {
     "episodeUrl": "https://www.crunchyroll.com/watch/GJWU2ZJGM/clutch-a-demon-incarnate-robin",
     "episodeTitle": "Épisode 1044 — Black Maria affronte Robin sous sa forme araignée",
     "sourcePolicy": "publisher-linked",
-    "reviewedOn": "2026-10-10"
+    "reviewedOn": "2026-10-10",
+    "auditV46": {
+      "state": "legacy-pending-editorial-review",
+      "checkedOn": "2026-10-10",
+      "metadata": "record-shape-and-source-urls-checked",
+      "playback": "not-tested",
+      "note": "Références historiques à confirmer par lecture et validation de l'adéquation du pouvoir."
+    }
   },
   "yomi-yomi-no-mi": {
     "episodeUrl": "https://www.crunchyroll.com/watch/G14U4NX08/slash-the-nightmare---brook-draws-his-freezing-sword",
@@ -457,7 +653,15 @@
     "title": "Brook gèle l’enfer",
     "channel": "Crunchyroll",
     "episode": "1043",
-    "source": "https://www.youtube.com/watch?v=dZ3C9KhI3Lc"
+    "source": "https://www.youtube.com/watch?v=dZ3C9KhI3Lc",
+    "auditV46": {
+      "state": "legacy-pending-editorial-review",
+      "checkedOn": "2026-10-10",
+      "metadata": "record-shape-and-source-urls-checked",
+      "playback": "not-tested",
+      "note": "Références historiques à confirmer par lecture et validation de l'adéquation du pouvoir."
+    },
+    "verificationStatus": "legacy-unverified"
   },
   "kage-kage-no-mi": {
     "episodeUrl": "https://www.crunchyroll.com/watch/G649GQM3Y/the-straw-hat-crew-gets-wiped-out-the-shadow-shadows-powers-in-full-swing",
@@ -471,19 +675,40 @@
       }
     ],
     "sourcePolicy": "publisher-linked",
-    "reviewedOn": "2026-10-10"
+    "reviewedOn": "2026-10-10",
+    "auditV46": {
+      "state": "legacy-pending-editorial-review",
+      "checkedOn": "2026-10-10",
+      "metadata": "record-shape-and-source-urls-checked",
+      "playback": "not-tested",
+      "note": "Références historiques à confirmer par lecture et validation de l'adéquation du pouvoir."
+    }
   },
   "nikyu-nikyu-no-mi": {
     "episodeUrl": "https://www.crunchyroll.com/watch/GJWU232Q1/eliminated-friends--the-final-day-of-the-straw-hat-crew",
     "episodeTitle": "Épisode 405 — Kuma disperse les Chapeaux de paille",
     "sourcePolicy": "publisher-linked",
-    "reviewedOn": "2026-10-10"
+    "reviewedOn": "2026-10-10",
+    "auditV46": {
+      "state": "legacy-pending-editorial-review",
+      "checkedOn": "2026-10-10",
+      "metadata": "record-shape-and-source-urls-checked",
+      "playback": "not-tested",
+      "note": "Références historiques à confirmer par lecture et validation de l'adéquation du pouvoir."
+    }
   },
   "bara-bara-no-mi": {
     "episodeUrl": "https://www.crunchyroll.com/watch/GMKUX2X0G/a-reunion-in-hell-the-man-who-ate-the-chop-chop-fruit",
     "episodeTitle": "Épisode 423 — Baggy utilise le Morcellement",
     "sourcePolicy": "publisher-linked",
-    "reviewedOn": "2026-10-10"
+    "reviewedOn": "2026-10-10",
+    "auditV46": {
+      "state": "legacy-pending-editorial-review",
+      "checkedOn": "2026-10-10",
+      "metadata": "record-shape-and-source-urls-checked",
+      "playback": "not-tested",
+      "note": "Références historiques à confirmer par lecture et validation de l'adéquation du pouvoir."
+    }
   },
   "doku-doku-no-mi": {
     "episodeUrl": "https://www.crunchyroll.com/watch/G8WUNXNQV/the-strongest-man-in-the-prison-poison-man-magellan-appears",
@@ -497,19 +722,40 @@
       }
     ],
     "sourcePolicy": "publisher-linked",
-    "reviewedOn": "2026-10-10"
+    "reviewedOn": "2026-10-10",
+    "auditV46": {
+      "state": "legacy-pending-editorial-review",
+      "checkedOn": "2026-10-10",
+      "metadata": "record-shape-and-source-urls-checked",
+      "playback": "not-tested",
+      "note": "Références historiques à confirmer par lecture et validation de l'adéquation du pouvoir."
+    }
   },
   "mero-mero-no-mi": {
     "episodeUrl": "https://www.crunchyroll.com/watch/GG1U292X8/heartless-judgment-margaret-is-turned-to-stone",
     "episodeTitle": "Épisode 412 — Boa Hancock pétrifie Margaret",
     "sourcePolicy": "publisher-linked",
-    "reviewedOn": "2026-10-10"
+    "reviewedOn": "2026-10-10",
+    "auditV46": {
+      "state": "legacy-pending-editorial-review",
+      "checkedOn": "2026-10-10",
+      "metadata": "record-shape-and-source-urls-checked",
+      "playback": "not-tested",
+      "note": "Références historiques à confirmer par lecture et validation de l'adéquation du pouvoir."
+    }
   },
   "zushi-zushi-no-mi": {
     "episodeUrl": "https://www.crunchyroll.com/watch/G6K5K4Q7Y/a-big-collision-chief-of-staff---sabo-vs-admiral-fujitora",
     "episodeTitle": "Épisode 687 — Fujitora attire une météorite",
     "sourcePolicy": "publisher-linked",
-    "reviewedOn": "2026-10-10"
+    "reviewedOn": "2026-10-10",
+    "auditV46": {
+      "state": "legacy-pending-editorial-review",
+      "checkedOn": "2026-10-10",
+      "metadata": "record-shape-and-source-urls-checked",
+      "playback": "not-tested",
+      "note": "Références historiques à confirmer par lecture et validation de l'adéquation du pouvoir."
+    }
   },
   "hobi-hobi-no-mi": {
     "episodeUrl": "https://www.crunchyroll.com/watch/GY751XD06/defeat-sugar-the-army-of-the-little-people-charges",
@@ -523,49 +769,105 @@
       }
     ],
     "sourcePolicy": "publisher-linked",
-    "reviewedOn": "2026-10-10"
+    "reviewedOn": "2026-10-10",
+    "auditV46": {
+      "state": "legacy-pending-editorial-review",
+      "checkedOn": "2026-10-10",
+      "metadata": "record-shape-and-source-urls-checked",
+      "playback": "not-tested",
+      "note": "Références historiques à confirmer par lecture et validation de l'adéquation du pouvoir."
+    }
   },
   "ishi-ishi-no-mi": {
     "episodeUrl": "https://www.crunchyroll.com/watch/G50UZPG4Z/a-moving-castle-the-top-executive-pica-rises-up",
     "episodeTitle": "Épisode 669 — Pica devient un géant de pierre",
     "sourcePolicy": "publisher-linked",
-    "reviewedOn": "2026-10-10"
+    "reviewedOn": "2026-10-10",
+    "auditV46": {
+      "state": "legacy-pending-editorial-review",
+      "checkedOn": "2026-10-10",
+      "metadata": "record-shape-and-source-urls-checked",
+      "playback": "not-tested",
+      "note": "Références historiques à confirmer par lecture et validation de l'adéquation du pouvoir."
+    }
   },
   "fude-fude-no-mi": {
     "episodeUrl": "https://www.crunchyroll.com/watch/G14U4D5W4/the-second-samurai-evening-shower-kanjuro-appears",
     "episodeTitle": "Épisode 691 — Kanjuro donne vie à ses dessins",
     "sourcePolicy": "publisher-linked",
-    "reviewedOn": "2026-10-10"
+    "reviewedOn": "2026-10-10",
+    "auditV46": {
+      "state": "legacy-pending-editorial-review",
+      "checkedOn": "2026-10-10",
+      "metadata": "record-shape-and-source-urls-checked",
+      "playback": "not-tested",
+      "note": "Références historiques à confirmer par lecture et validation de l'adéquation du pouvoir."
+    }
   },
   "chiyu-chiyu-no-mi": {
     "episodeUrl": "https://www.crunchyroll.com/watch/G6Q491JER/tears-of-miracles-mansherrys-fight",
     "episodeTitle": "Épisode 730 — Mansherry soigne ses alliés",
     "sourcePolicy": "publisher-linked",
-    "reviewedOn": "2026-10-10"
+    "reviewedOn": "2026-10-10",
+    "auditV46": {
+      "state": "legacy-pending-editorial-review",
+      "checkedOn": "2026-10-10",
+      "metadata": "record-shape-and-source-urls-checked",
+      "playback": "not-tested",
+      "note": "Références historiques à confirmer par lecture et validation de l'adéquation du pouvoir."
+    }
   },
   "green-blood-mero-mero": {
     "episodeUrl": "https://www.crunchyroll.com/watch/GVWU0744N/the-strongest-form-of-humanity-the-seraphims-powers",
     "episodeTitle": "Épisode 1101 — Explication des pouvoirs des Séraphins",
     "sourcePolicy": "publisher-linked",
-    "reviewedOn": "2026-10-10"
+    "reviewedOn": "2026-10-10",
+    "auditV46": {
+      "state": "legacy-pending-editorial-review",
+      "checkedOn": "2026-10-10",
+      "metadata": "record-shape-and-source-urls-checked",
+      "playback": "not-tested",
+      "note": "Références historiques à confirmer par lecture et validation de l'adéquation du pouvoir."
+    }
   },
   "green-blood-supa-supa": {
     "episodeUrl": "https://www.crunchyroll.com/watch/GVWU0744N/the-strongest-form-of-humanity-the-seraphims-powers",
     "episodeTitle": "Épisode 1101 — Explication des pouvoirs des Séraphins",
     "sourcePolicy": "publisher-linked",
-    "reviewedOn": "2026-10-10"
+    "reviewedOn": "2026-10-10",
+    "auditV46": {
+      "state": "legacy-pending-editorial-review",
+      "checkedOn": "2026-10-10",
+      "metadata": "record-shape-and-source-urls-checked",
+      "playback": "not-tested",
+      "note": "Références historiques à confirmer par lecture et validation de l'adéquation du pouvoir."
+    }
   },
   "green-blood-nikyu-nikyu": {
     "episodeUrl": "https://www.crunchyroll.com/watch/GVWU0744N/the-strongest-form-of-humanity-the-seraphims-powers",
     "episodeTitle": "Épisode 1101 — Explication des pouvoirs des Séraphins",
     "sourcePolicy": "publisher-linked",
-    "reviewedOn": "2026-10-10"
+    "reviewedOn": "2026-10-10",
+    "auditV46": {
+      "state": "legacy-pending-editorial-review",
+      "checkedOn": "2026-10-10",
+      "metadata": "record-shape-and-source-urls-checked",
+      "playback": "not-tested",
+      "note": "Références historiques à confirmer par lecture et validation de l'adéquation du pouvoir."
+    }
   },
   "green-blood-sui-sui": {
     "episodeUrl": "https://www.crunchyroll.com/watch/GVWU0744N/the-strongest-form-of-humanity-the-seraphims-powers",
     "episodeTitle": "Épisode 1101 — Explication des pouvoirs des Séraphins",
     "sourcePolicy": "publisher-linked",
-    "reviewedOn": "2026-10-10"
+    "reviewedOn": "2026-10-10",
+    "auditV46": {
+      "state": "legacy-pending-editorial-review",
+      "checkedOn": "2026-10-10",
+      "metadata": "record-shape-and-source-urls-checked",
+      "playback": "not-tested",
+      "note": "Références historiques à confirmer par lecture et validation de l'adéquation du pouvoir."
+    }
   },
   "mori-mori-no-mi": {
     "episodeUrl": "https://www.crunchyroll.com/fr/watch/G31UXW511/the-coming-of-the-new-era-the-red-haireds-imperial-rage",
