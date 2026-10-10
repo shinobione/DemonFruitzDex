@@ -1,364 +1,118 @@
 <!doctype html>
 <html lang="fr">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#090b10">
-<title>SHINO-DEX • One Piece Devil Fruit Encyclopedia</title>
-<style>
-:root{
-  --bg:#07090d;
-  --panel:#0d1118;
-  --panel2:#111722;
-  --ink:#f5f7fb;
-  --muted:#8e9aab;
-  --line:rgba(255,255,255,.08);
-  --gold:#e8b653;
-  --red:#ff5c64;
-  --violet:#a777ff;
-  --blue:#58b6ff;
-  --green:#62d48f;
-  --orange:#ff995f;
-  --radius:22px;
-  --shadow:0 24px 70px rgba(0,0,0,.42);
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  margin:0;
-  color:var(--ink);
-  background:
-    radial-gradient(circle at 10% 0%,rgba(167,119,255,.12),transparent 28%),
-    radial-gradient(circle at 100% 10%,rgba(232,182,83,.08),transparent 28%),
-    var(--bg);
-  font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-}
-button,input,select{font:inherit}
-a{color:inherit}
-.wrap{width:min(1400px,calc(100% - 32px));margin:auto}
-.topbar{
-  position:sticky;top:0;z-index:50;
-  backdrop-filter:blur(18px);
-  background:rgba(7,9,13,.78);
-  border-bottom:1px solid var(--line);
-}
-.topbar .inner{height:68px;display:flex;align-items:center;gap:18px;justify-content:space-between}
-.brand{display:flex;align-items:center;gap:12px;font-weight:900;letter-spacing:.04em}
-.brand-mark{
-  width:38px;height:38px;border-radius:13px;
-  display:grid;place-items:center;
-  background:linear-gradient(135deg,#181c26,#0b0e14);
-  border:1px solid var(--line);
-  box-shadow:inset 0 0 0 1px rgba(255,255,255,.02);
-}
-.brand small{display:block;color:var(--muted);font-size:10px;letter-spacing:.18em;font-weight:700}
-.nav{display:flex;align-items:center;gap:8px}
-.nav a{
-  text-decoration:none;color:var(--muted);padding:9px 12px;border-radius:12px;font-size:14px
-}
-.nav a:hover{background:rgba(255,255,255,.05);color:var(--ink)}
-.hero{
-  padding:70px 0 36px;
-  display:grid;grid-template-columns:1.3fr .7fr;gap:34px;align-items:end;
-}
-.eyebrow{color:var(--gold);font-weight:800;letter-spacing:.16em;font-size:12px;text-transform:uppercase}
-h1{font-size:clamp(42px,7vw,96px);line-height:.88;margin:12px 0 22px;letter-spacing:-.055em}
-.hero p{max-width:760px;color:#b8c1cf;font-size:18px;line-height:1.65;margin:0}
-.hero-card{
-  border:1px solid var(--line);background:linear-gradient(145deg,rgba(255,255,255,.05),rgba(255,255,255,.015));
-  border-radius:30px;padding:24px;box-shadow:var(--shadow);position:relative;overflow:hidden
-}
-.hero-card:after{
-  content:"";position:absolute;inset:auto -40px -70px auto;width:180px;height:180px;border-radius:50%;
-  background:radial-gradient(circle,rgba(232,182,83,.2),transparent 60%);
-}
-.kicker{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.14em}
-.big-number{font-size:64px;font-weight:900;line-height:1;margin:8px 0 4px}
-.micro{color:var(--muted);font-size:13px;line-height:1.5}
-.stats{
-  display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:18px 0 0
-}
-.stat{
-  padding:14px;border:1px solid var(--line);background:rgba(255,255,255,.025);border-radius:16px
-}
-.stat b{font-size:20px}.stat span{display:block;font-size:11px;color:var(--muted);margin-top:3px}
-.section{padding:34px 0}
-.section-head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:18px}
-.section-head h2{font-size:30px;letter-spacing:-.03em;margin:0}
-.section-head p{margin:4px 0 0;color:var(--muted)}
-.controls{
-  padding:16px;border:1px solid var(--line);background:rgba(13,17,24,.88);border-radius:20px;
-  display:grid;grid-template-columns:2fr repeat(3,1fr) auto;gap:10px;margin-bottom:18px
-}
-.control{
-  height:44px;border-radius:12px;border:1px solid var(--line);background:#0b0f16;color:var(--ink);padding:0 13px;outline:none
-}
-.control:focus{border-color:rgba(232,182,83,.45);box-shadow:0 0 0 3px rgba(232,182,83,.08)}
-.reset{
-  border:1px solid var(--line);background:#161c28;color:#dfe6ef;border-radius:12px;padding:0 15px;cursor:pointer
-}
-.reset:hover{background:#202838}
-.meta-row{display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:13px;margin:12px 2px 18px}
-.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
-.card{
-  min-height:250px;border:1px solid var(--line);background:linear-gradient(160deg,#10151e,#0b0f15);
-  border-radius:22px;padding:18px;position:relative;overflow:hidden;cursor:pointer;transition:.22s ease
-}
-.card:hover{transform:translateY(-4px);border-color:rgba(255,255,255,.16);box-shadow:0 16px 40px rgba(0,0,0,.28)}
-.card:before{
-  content:"";position:absolute;width:130px;height:130px;border-radius:50%;right:-50px;top:-50px;filter:blur(2px);opacity:.18;
-  background:var(--accent,#888)
-}
-.card-top{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
-.type{font-size:10px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:var(--accent,#ddd)}
-.tier{font-weight:900;border:1px solid var(--line);padding:6px 9px;border-radius:10px;background:rgba(255,255,255,.035)}
-.fruit-orb{
-  width:58px;height:58px;border-radius:48% 52% 55% 45%/49% 42% 58% 51%;margin:18px 0 14px;
-  background:
-   radial-gradient(circle at 34% 26%,rgba(255,255,255,.32),transparent 12%),
-   repeating-radial-gradient(circle at 45% 55%,transparent 0 6px,rgba(255,255,255,.13) 7px 8px),
-   linear-gradient(145deg,var(--accent),#1a1e29);
-  box-shadow:inset -10px -12px 20px rgba(0,0,0,.32),0 8px 22px rgba(0,0,0,.2);
-  position:relative
-}
-.fruit-orb:before{
-  content:"";position:absolute;width:22px;height:10px;border:4px solid var(--accent);border-left-color:transparent;border-bottom-color:transparent;
-  border-radius:50%;top:-10px;left:31px;transform:rotate(-22deg)
-}
-.card h3{font-size:18px;margin:0 0 6px;letter-spacing:-.02em}
-.user{font-size:13px;color:#d6dce6}
-.power{font-size:13px;color:var(--muted);line-height:1.5;margin-top:12px}
-.tags{position:absolute;bottom:14px;left:18px;right:18px;display:flex;gap:7px;flex-wrap:wrap}
-.tag{font-size:10px;color:#bec8d6;border:1px solid var(--line);background:rgba(255,255,255,.03);padding:5px 7px;border-radius:999px}
-.empty{padding:60px;border:1px dashed var(--line);border-radius:22px;text-align:center;color:var(--muted);grid-column:1/-1}
-.top20{
-  display:grid;grid-template-columns:repeat(2,1fr);gap:10px
-}
-.rank{
-  border:1px solid var(--line);background:rgba(255,255,255,.025);border-radius:16px;padding:15px;
-  display:grid;grid-template-columns:44px 1fr auto;align-items:center;gap:12px
-}
-.rank-no{font-size:22px;font-weight:900;color:var(--gold)}
-.rank small{color:var(--muted)}
-.info-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
-.info{
-  border:1px solid var(--line);background:rgba(255,255,255,.025);border-radius:20px;padding:20px
-}
-.info h3{margin:0 0 8px}.info p{margin:0;color:var(--muted);line-height:1.6;font-size:14px}
-footer{padding:44px 0 70px;color:var(--muted);font-size:12px;text-align:center}
-.dialog{
-  border:0;padding:0;width:min(720px,calc(100% - 24px));border-radius:26px;background:#0c1119;color:var(--ink);
-  box-shadow:0 32px 110px rgba(0,0,0,.7)
-}
-.dialog::backdrop{background:rgba(0,0,0,.7);backdrop-filter:blur(5px)}
-.modal{padding:26px}
-.modal-head{display:flex;justify-content:space-between;gap:16px}
-.close{
-  width:38px;height:38px;border-radius:12px;border:1px solid var(--line);background:#141a24;color:#fff;cursor:pointer
-}
-.modal h2{font-size:34px;margin:8px 0 8px;letter-spacing:-.04em}
-.modal-user{color:#c7cfdb}
-.modal-power{font-size:17px;line-height:1.65;color:#dfe5ed;margin:22px 0}
-.detail-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
-.detail{
-  border:1px solid var(--line);background:rgba(255,255,255,.025);border-radius:15px;padding:13px
-}
-.detail span{display:block;color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:.12em;margin-bottom:5px}
-.badge-line{display:flex;gap:8px;flex-wrap:wrap;margin-top:13px}
-.pill{padding:7px 10px;border:1px solid var(--line);border-radius:999px;font-size:11px;background:rgba(255,255,255,.03)}
-@media(max-width:1050px){.grid{grid-template-columns:repeat(3,1fr)}.controls{grid-template-columns:1fr 1fr 1fr}.controls input{grid-column:1/-1}.reset{height:44px}.hero{grid-template-columns:1fr}.hero-card{max-width:560px}.info-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:760px){.nav{display:none}.wrap{width:min(100% - 20px,1400px)}.hero{padding-top:44px}.stats{grid-template-columns:1fr 1fr}.grid{grid-template-columns:1fr 1fr}.controls{grid-template-columns:1fr}.controls input{grid-column:auto}.top20{grid-template-columns:1fr}.info-grid{grid-template-columns:1fr}}
-@media(max-width:520px){.grid{grid-template-columns:1fr}.section-head{align-items:flex-start;flex-direction:column}.big-number{font-size:52px}.detail-grid{grid-template-columns:1fr}}
-
-/* V2 — Illustrated archive layout */
-.hero{padding-top:54px}.hero-card{background:linear-gradient(135deg,#171321,#111923)}
-.hero h1{background:linear-gradient(105deg,#fff5d0,#ffffff 45%,#ba9efc 90%);color:transparent;background-clip:text}
-.controls{grid-template-columns:2fr repeat(3,minmax(110px,1fr));gap:9px}
-.reset{height:44px}.card{display:flex;flex-direction:column;min-height:390px;padding:14px 14px 16px}
-.card-top{padding:0 2px}.card h3{line-height:1.2;font-size:17px;min-height:41px}
-.card .power{font-size:12px;margin:7px 0 15px;max-height:54px;overflow:hidden;line-height:1.5}
-.card .tags{position:static;margin-top:auto;left:auto;right:auto;bottom:auto}
-.mediaFrame{position:relative;isolation:isolate;display:flex;align-items:center;justify-content:center;
-  height:173px;margin:13px 0 15px;overflow:hidden;border-radius:16px;
-  border:1px solid rgba(255,255,255,.09);
-  background:radial-gradient(circle at 50% 45%,color-mix(in srgb,var(--media-color),transparent 80%) 0%,rgba(13,17,24,.95) 70%)}
-.mediaFrame:before{content:"";position:absolute;inset:0;z-index:-1;background:repeating-linear-gradient(0deg,transparent 0 16px,rgba(255,255,255,.015) 17px)}
-.mediaImage{max-width:100%;max-height:100%;width:100%;height:100%;object-fit:contain;position:relative;z-index:2;padding:8px;filter:drop-shadow(0 9px 16px rgba(0,0,0,.45))}
-.mediaFallback{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:15px}
-.mediaFallback span{font-size:68px;filter:drop-shadow(0 8px 20px rgba(0,0,0,.3))}
-.mediaFallback small{font-weight:700;font-size:9px;letter-spacing:.13em;color:#8c95aa}
-.mediaStatus{position:absolute;left:8px;bottom:8px;z-index:5;color:#edf1f7;background:rgba(5,8,13,.82);border:1px solid rgba(255,255,255,.13);border-radius:9px;font-size:9px;letter-spacing:.09em;font-weight:900;padding:5px 7px;backdrop-filter:blur(4px)}
-.modalMedia{height:280px;position:relative;margin:20px 0 8px;display:flex;align-items:center;justify-content:center;overflow:hidden;
- border:1px solid var(--line);border-radius:20px;background:radial-gradient(circle at 50% 40%,color-mix(in srgb,var(--media-color),transparent 80%),#0c1119 80%)}
-.modalMedia img{width:100%;height:100%;object-fit:contain;padding:14px;filter:drop-shadow(0 12px 25px #0008)}
-.modalMedia>span{font-size:90px}.modalMediaLegend{position:absolute;bottom:8px;left:10px;font-size:10px;font-weight:900;letter-spacing:.1em;color:#e3e9f5;background:#0c1119c9;border-radius:8px;padding:6px}
-.sourceRow{margin-top:16px;color:#a9b4c4;font-size:12px}.sourceRow a{color:var(--gold);text-decoration:none}.sourceRow a:hover{text-decoration:underline}
-@media(max-width:1050px){.controls{grid-template-columns:repeat(3,minmax(100px,1fr))}.controls input{grid-column:1/-1}}
-@media(max-width:760px){.controls{grid-template-columns:1fr 1fr}.controls input{grid-column:1/-1}.card{min-height:390px}}
-@media(max-width:520px){.controls{grid-template-columns:1fr}.controls input{grid-column:auto}.mediaFrame{height:200px}}
-
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#080b10" />
+  <meta name="description" content="DemonFruitzDex — encyclopédie interactive des Fruits du Démon de One Piece, avec illustrations, utilisateurs, animations et comparateur." />
+  <meta property="og:title" content="DemonFruitzDex — l'encyclopédie des Fruits du Démon" />
+  <meta property="og:description" content="166 fiches, portraits, animations originales, favoris et comparateur." />
+  <title>DemonFruitzDex — SHINO-DEX V4</title>
+  <link rel="icon" type="image/svg+xml" href="assets/icon.svg" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="data/fruits.js" defer></script>
+  <script src="app.js" defer></script>
 </head>
 <body>
-<header class="topbar">
-  <div class="wrap inner">
-    <div class="brand"><div class="brand-mark">🍎</div><div>SHINO-DEX<small>DEVIL FRUIT ENCYCLOPEDIA</small></div></div>
-    <nav class="nav"><a href="#catalogue">Catalogue</a><a href="#top20">Top 20</a><a href="#rules">Règles</a></nav>
-  </div>
-</header>
-
-<main class="wrap">
-  <section class="hero">
-    <div>
-      <div class="eyebrow">One Piece • Devil Fruits • manga canon • édition illustrée</div>
-      <h1>LE SHINO-DEX</h1>
-      <p>Une encyclopédie interactive des Fruits du Démon : recherche instantanée, vrais visuels des fruits quand connus, illustrations des pouvoirs et filtres avancés. Clique sur une carte pour ouvrir sa fiche complète.</p>
-    </div>
-    <aside class="hero-card">
-      <div class="kicker">Catalogue de référence</div>
-      <div class="big-number" id="totalCount">166</div>
-      <div class="micro">fiches accessibles dans cette édition, dont fruits naturels, pouvoirs sans nom et technologies artificielles. Images de référence liées à leurs sources.</div>
-      <div class="stats">
-        <div class="stat"><b id="statShown">0</b><span>entrées affichées</span></div>
-        <div class="stat"><b id="statLogia">0</b><span>Logia</span></div>
-        <div class="stat"><b id="statZoan">0</b><span>Zoan</span></div>
-        <div class="stat"><b id="statPara">0</b><span>Paramecia</span></div>
+  <div class="ambient ambient-1" aria-hidden="true"></div>
+  <div class="ambient ambient-2" aria-hidden="true"></div>
+  <header class="site-header">
+    <div class="container header-content">
+      <a class="brand" href="#accueil" aria-label="DemonFruitzDex — Accueil">
+        <img src="assets/icon.svg" alt="" width="40" height="40" />
+        <span><strong>DEMON<span>FRUITZ</span>DEX</strong><small>SHINO EDITION <i>04</i></small></span>
+      </a>
+      <nav class="desktop-nav" aria-label="Navigation principale">
+        <a href="#catalogue">Encyclopédie</a>
+        <a href="#classement">Classement</a>
+        <a href="#guide">Guide</a>
+      </nav>
+      <div class="header-actions">
+        <button id="favoritesTop" class="header-control" title="Afficher les favoris" aria-label="Afficher les favoris">♡ <span id="favoriteCount">0</span></button>
+        <a class="github-link" href="https://github.com/shinobione/DemonFruitzDex" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
       </div>
-    </aside>
-  </section>
-
-  <div class="sourceRow"><strong>Sources visuelles :</strong> <a href="https://onepiece.fandom.com/wiki/Category:Devil_Fruit_Infobox_Images" target="_blank" rel="noopener noreferrer">Fandom — galerie des illustrations</a>. Images distantes et susceptibles de ne plus être disponibles ; jamais remplacées par des faux « visuels officiels ».</div><section class="section" id="catalogue">
-    <div class="section-head">
-      <div><h2>Catalogue</h2><p>Canon manga • visuels issus des galeries du wiki One Piece quand disponibles.</p></div>
     </div>
-    <div class="controls">
-      <input id="q" class="control" type="search" placeholder="Rechercher : Nika, Law, foudre, dragon…">
-      <select id="type" class="control"><option value="">Tous les types</option></select>
-      <select id="tier" class="control"><option value="">Tous les tiers</option><option>S+</option><option>S</option><option>A</option><option>B</option><option>C</option></select>
-      <select id="awakening" class="control"><option value="">Éveil : tous</option><option value="yes">Éveil confirmé</option><option value="no">Pas d'éveil confirmé</option></select>
-      <select id="visualFilter" class="control"><option value="">Toutes les images</option><option value="fruit">Fruit physique connu</option><option value="pouvoir">Pouvoir illustré</option><option value="absent">Visuel à compléter</option></select><select id="order" class="control"><option value="default">Tri : encyclopédie</option><option value="alpha">Tri : A → Z</option><option value="tier">Tri : danger</option></select><button id="reset" class="reset">Réinitialiser</button>
-    </div>
-    <div class="meta-row"><span id="resultCount"></span><span>Images : 133 références • clique sur une carte</span></div>
-    <div id="grid" class="grid"></div>
-  </section>
+  </header>
 
-  <section class="section" id="top20">
-    <div class="section-head"><div><h2>Top 20 — potentiel brut</h2><p>Classement éditorial du SHINO-DEX, basé sur le potentiel intrinsèque du pouvoir.</p></div></div>
-    <div id="topList" class="top20"></div>
-  </section>
+  <main id="accueil">
+    <section class="hero container" aria-label="Bienvenue">
+      <div class="hero-copy">
+        <div class="hero-overline"><span class="live-dot"></span> GRAND LINE DATABASE <span class="hero-sep">/</span> ÉDITION INTERACTIVE</div>
+        <h1>LES FRUITS<br>DU <em>DÉMON<span class="punct">.</span></em></h1>
+        <p>Explore l'univers de One Piece à travers ses pouvoirs les plus mythiques. Fruits illustrés, portraits des utilisateurs, <strong>animations originales</strong> et confrontations de pouvoirs.</p>
+        <div class="hero-cta">
+          <a class="btn btn-gold" href="#catalogue">EXPLORER LE DEX <span>↗</span></a>
+          <button id="randomButton" class="btn btn-quiet"><span aria-hidden="true">✦</span> Fruit aléatoire</button>
+        </div>
+        <div class="hero-meta"><span class="meta-spark">✧</span> Un fan-project indépendant, pensé pour l'exploration.</div>
+      </div>
+      <div class="hero-stage" aria-hidden="true">
+        <div class="stage-orbit orbit-1"></div><div class="stage-orbit orbit-2"></div><div class="stage-orbit orbit-3"></div>
+        <div class="stage-halo"></div>
+        <div class="stage-fruit"><div class="fruit-stem"></div><div class="fruit-body">✺</div></div>
+        <div class="stage-tag tag-a"><span>01 / LOGIA</span><strong>Puissance élémentaire</strong></div>
+        <div class="stage-tag tag-b"><span>02 / ZOAN</span><strong>Instinct & métamorphose</strong></div>
+        <div class="stage-tag tag-c"><span>03 / PARAMECIA</span><strong>L'impossible devient réel</strong></div>
+        <div class="stage-coord">OP-DF // ARCHIVE 001 → ∞</div>
+      </div>
+    </section>
 
-  <section class="section" id="rules">
-    <div class="section-head"><div><h2>Règles du système</h2><p>Les repères utiles pour lire le Pokédex.</p></div></div>
-    <div class="info-grid">
-      <article class="info"><h3>🌊 Faiblesse à la mer</h3><p>Les utilisateurs perdent leur énergie lorsqu'ils sont suffisamment immergés. Le granit marin exploite la même faiblesse.</p></article>
-      <article class="info"><h3>♻️ Réincarnation</h3><p>À la mort du détenteur, le pouvoir réapparaît dans un nouveau fruit. Certaines transmissions ont été observées directement.</p></article>
-      <article class="info"><h3>⚡ Éveil</h3><p>L'éveil pousse un Fruit au-delà de son fonctionnement normal. Les effets varient fortement entre Paramecia et Zoan.</p></article>
-      <article class="info"><h3>🧬 Copies scientifiques</h3><p>Vegapunk a reproduit des pouvoirs grâce au facteur de lignée, aux fruits artificiels et au Green Blood des Séraphins.</p></article>
-      <article class="info"><h3>🌑 Exception Teach</h3><p>Marshall D. Teach reste l'anomalie connue capable de posséder simultanément plus d'un pouvoir de Fruit du Démon.</p></article>
-      <article class="info"><h3>👁 Aspect connu</h3><p>Le fait de connaître le pouvoir ne veut pas dire que le fruit physique a été montré. Le catalogue le signale explicitement.</p></article>
-    </div>
-  </section>
-</main>
+    <section class="stats-band container" aria-label="Statistiques">
+      <div class="stat"><strong id="statTotal">166</strong><span>Fiches dans le Dex</span></div>
+      <div class="stat"><strong id="statLogia">13</strong><span>Logia</span></div>
+      <div class="stat"><strong id="statZoan">—</strong><span>Zoan</span></div>
+      <div class="stat"><strong id="statParamecia">—</strong><span>Paramecia</span></div>
+      <div class="stat stat-special"><span class="stat-mark">∞</span><span>Pouvoirs à découvrir</span></div>
+    </section>
 
-<footer class="wrap">SHINO-DEX • fan-made interface • One Piece © Eiichiro Oda / Shueisha • Illustrations liées au One Piece Wiki/Fandom, droits aux auteurs respectifs • aucune affiliation officielle</footer>
+    <section class="catalogue container" id="catalogue">
+      <div class="section-title-row">
+        <div><div class="eyebrow">01 / LA COLLECTION</div><h2>L'ENCYCLOPÉDIE<span class="dot">.</span></h2></div>
+        <div class="section-aside">Les noms français sont des traductions descriptives.<br>Le nom original japonais romanisé figure juste dessous.</div>
+      </div>
+      <div class="filter-panel">
+        <div class="search-wrap"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Rechercher un fruit, un utilisateur, un pouvoir..." aria-label="Rechercher un fruit" autocomplete="off" /><kbd>/</kbd></div>
+        <div class="filter-row">
+          <div id="typeFilters" class="type-filters" role="group" aria-label="Type de fruit">
+            <button type="button" data-type="all" class="type-chip active">Tous</button>
+            <button type="button" data-type="Logia" class="type-chip">Logia</button>
+            <button type="button" data-type="Zoan" class="type-chip">Zoan</button>
+            <button type="button" data-type="Paramecia" class="type-chip">Paramecia</button>
+            <button type="button" data-type="Indéterminé" class="type-chip">Autres</button>
+          </div>
+          <div class="selects"><select id="tier" aria-label="Filtrer par niveau"><option value="">Tous les tiers</option><option value="S+">S+</option><option value="S">S</option><option value="A">A</option><option value="B">B</option><option value="C">C</option></select>
+            <select id="sort" aria-label="Trier"><option value="default">Ordre du Dex</option><option value="az">Nom A–Z</option><option value="za">Nom Z–A</option><option value="tier">Puissance ↓</option><option value="awake">Éveil confirmé</option></select></div>
+        </div>
+        <div class="filter-footer"><label class="check-label"><input id="onlyAwakened" type="checkbox" /> <span>Éveil confirmé</span></label><label class="check-label"><input id="onlyFavorite" type="checkbox" /> <span>Mes favoris</span></label><label class="check-label"><input id="onlyIllustrated" type="checkbox" /> <span>Image du pouvoir</span></label><button id="reset" class="reset-filter">Réinitialiser ↺</button></div>
+      </div>
+      <div class="results-bar"><div><span id="resultsCount">—</span> <span class="dim">résultats</span><span class="separator">·</span><span class="dim">Clique sur une carte pour explorer son pouvoir</span></div><div class="results-hint">♥ Favoris &nbsp; + Comparer</div></div>
+      <div id="cards" class="cards" aria-live="polite"></div>
+      <div id="emptyState" class="empty-state" hidden><div>◇</div><h3>Aucun fruit trouvé</h3><p>Essaie une autre recherche ou désactive certains filtres.</p><button id="emptyReset" class="btn btn-quiet">Effacer les filtres</button></div>
+      <div class="load-more-wrap"><button id="loadMore" class="load-more" hidden>CHARGER PLUS DE FRUITS <span>↓</span></button></div>
+    </section>
 
-<dialog id="dialog" class="dialog"><div class="modal" id="modal"></div></dialog>
+    <section class="leaderboard container" id="classement">
+      <div class="section-title-row"><div><div class="eyebrow">02 / LE CLASSEMENT</div><h2>LES PLUS DANGEREUX<span class="dot">.</span></h2></div><p class="section-aside">Tier list éditoriale, non officielle.<br>Le fruit ne fait pas tout : le porteur compte.</p></div>
+      <div class="ranking" id="ranking"></div>
+    </section>
 
-<script>
-const fruits = [{"n":"Moku Moku no Mi","t":"Logia","u":"Smoker","p":"Fumée : le corps devient fumée, permet de produire et contrôler celle-ci.","a":"Connu — fruit blanc/gris, aspect nuageux.","w":false,"r":"A","image":"https://static.wikia.nocookie.net/onepiece/images/8/8d/Moku_Moku_no_Mi_Infobox.png/revision/latest","file":"Moku Moku no Mi Infobox.png","visual":"fruit","icon":"⚡"},{"n":"Suna Suna no Mi","t":"Logia","u":"Crocodile","p":"Sable, tempêtes et dessiccation par contact.","a":"Connu — silhouette de cactus couleur sable.","w":false,"r":"S","image":"https://static.wikia.nocookie.net/onepiece/images/7/7d/Suna_Suna_no_Mi_Infobox.png/revision/latest","file":"Suna Suna no Mi Infobox.png","visual":"fruit","icon":"🏜️"},{"n":"Mera Mera no Mi","t":"Logia","u":"Ace † → Sabo","p":"Feu : production, contrôle et transformation corporelle en flammes.","a":"Connu — orange/rouge, excroissances en forme de flammes.","w":false,"r":"S","image":"https://static.wikia.nocookie.net/onepiece/images/8/8c/Mera_Mera_no_Mi_Infobox.png/revision/latest","file":"Mera Mera no Mi Infobox.png","visual":"fruit","icon":"🔥"},{"n":"Goro Goro no Mi","t":"Logia","u":"Enel","p":"Foudre et électricité à très grande portée.","a":"Connu — jaune, pointes et tige évoquant l'éclair.","w":false,"r":"S+","image":"https://static.wikia.nocookie.net/onepiece/images/d/d2/Goro_Goro_no_Mi_Infobox.png/revision/latest","file":"Goro Goro no Mi Infobox.png","visual":"fruit","icon":"⚡"},{"n":"Hie Hie no Mi","t":"Logia","u":"Kuzan","p":"Glace : gel massif, création et transformation en glace.","a":"Non montré clairement.","w":false,"r":"S","image":"https://static.wikia.nocookie.net/onepiece/images/5/56/Hie_Hie_no_Mi_Infobox.png/revision/latest","file":"Hie Hie no Mi Infobox.png","visual":"pouvoir","icon":"❄️"},{"n":"Yami Yami no Mi","t":"Logia","u":"Marshall D. Teach","p":"Ténèbres, attraction gravitationnelle et neutralisation des pouvoirs par contact.","a":"Connu — masse violette sombre.","w":false,"r":"S+","image":"https://static.wikia.nocookie.net/onepiece/images/f/f5/Yami_Yami_no_Mi_Infobox.png/revision/latest","file":"Yami Yami no Mi Infobox.png","visual":"fruit","icon":"🌑"},{"n":"Pika Pika no Mi","t":"Logia","u":"Borsalino / Kizaru","p":"Lumière : lasers, déplacement extrêmement rapide et transformation lumineuse.","a":"Non montré clairement.","w":false,"r":"S+","image":"https://static.wikia.nocookie.net/onepiece/images/6/66/Pika_Pika_no_Mi_Infobox.png/revision/latest","file":"Pika Pika no Mi Infobox.png","visual":"pouvoir","icon":"💡"},{"n":"Magu Magu no Mi","t":"Logia","u":"Sakazuki / Akainu","p":"Magma : puissance thermique et destructive extrême.","a":"Non montré clairement.","w":false,"r":"S+","image":"https://static.wikia.nocookie.net/onepiece/images/0/07/Magu_Magu_no_Mi_Infobox.png/revision/latest","file":"Magu Magu no Mi Infobox.png","visual":"pouvoir","icon":"🌋"},{"n":"Susu Susu no Mi","t":"Logia","u":"Karasu","p":"Suie : création, contrôle et transformation en nuées de suie.","a":"Non montré clairement.","w":false,"r":"A","image":"https://static.wikia.nocookie.net/onepiece/images/0/0c/Susu_Susu_no_Mi_Infobox.png/revision/latest","file":"Susu Susu no Mi Infobox.png","visual":"pouvoir","icon":"⚡"},{"n":"Numa Numa no Mi","t":"Logia","u":"Caribou","p":"Marais : corps boueux et capacité de stockage interne massive.","a":"Non montré clairement.","w":false,"r":"A","image":"","file":"","visual":"pouvoir","icon":"⚡"},{"n":"Gasu Gasu no Mi","t":"Logia","u":"Caesar Clown","p":"Gaz : contrôle de l'atmosphère locale, poisons et explosions.","a":"Non montré clairement.","w":false,"r":"S","image":"https://static.wikia.nocookie.net/onepiece/images/c/cf/Gasu_Gasu_no_Mi_Infobox.png/revision/latest","file":"Gasu Gasu no Mi Infobox.png","visual":"pouvoir","icon":"💨"},{"n":"Yuki Yuki no Mi","t":"Logia","u":"Monet †","p":"Neige : création, contrôle et transformation en neige.","a":"Non montré clairement.","w":false,"r":"A","image":"https://static.wikia.nocookie.net/onepiece/images/a/a9/Yuki_Yuki_no_Mi_Infobox.png/revision/latest","file":"Yuki Yuki no Mi Infobox.png","visual":"pouvoir","icon":"⚡"},{"n":"Mori Mori no Mi","t":"Logia","u":"Aramaki / Ryokugyu","p":"Forêt et végétation : croissance massive, absorption et régénération.","a":"Non montré clairement.","w":false,"r":"S","image":"https://static.wikia.nocookie.net/onepiece/images/2/23/Mori_Mori_no_Mi_Infobox.png/revision/latest","file":"Mori Mori no Mi Infobox.png","visual":"pouvoir","icon":"⚡"},{"n":"Hito Hito no Mi, modèle Nika","t":"Zoan Mythique","u":"Joy Boy † → Monkey D. Luffy","p":"Transformation en Nika ; corps élastique et liberté physique extraordinaire à l'éveil.","a":"Connu — fruit violet, rond, couvert de spirales.","w":true,"r":"S+","image":"https://static.wikia.nocookie.net/onepiece/images/1/12/Gomu_Gomu_no_Mi_Infobox.png/revision/latest","file":"Gomu Gomu no Mi Infobox.png","visual":"fruit","icon":"☀️"},{"n":"Tori Tori no Mi, modèle Phoenix","t":"Zoan Mythique","u":"Marco","p":"Phénix : vol, transformation et flammes régénératrices.","a":"Connu.","w":false,"r":"S","image":"https://static.wikia.nocookie.net/onepiece/images/5/51/Tori_Tori_no_Mi%2C_Model_Phoenix_Infobox.png/revision/latest","file":"Tori Tori no Mi, Model Phoenix Infobox.png","visual":"fruit","icon":"🐉"},{"n":"Hito Hito no Mi, modèle Daibutsu","t":"Zoan Mythique","u":"Sengoku","p":"Bouddha géant doré et puissantes ondes de choc.","a":"Non montré clairement.","w":false,"r":"S","image":"https://static.wikia.nocookie.net/onepiece/images/4/45/Hito_Hito_no_Mi%2C_Model_Daibutsu_Infobox.png/revision/latest","file":"Hito Hito no Mi, Model Daibutsu Infobox.png","visual":"pouvoir","icon":"🐉"},{"n":"Uo Uo no Mi, modèle Seiryu","t":"Zoan Mythique","u":"Kaido","p":"Dragon azur : vol, Boro Breath, nuages de flammes, vent et foudre.","a":"Connu — bleu, forme écailleuse.","w":false,"r":"S+","image":"https://static.wikia.nocookie.net/onepiece/images/f/f9/Uo_Uo_no_Mi%2C_Model_Seiryu_Infobox.png/revision/latest","file":"Uo Uo no Mi, Model Seiryu Infobox.png","visual":"fruit","icon":"🐉"},{"n":"Inu Inu no Mi, modèle Kyubi no Kitsune","t":"Zoan Mythique","u":"Catarina Devon","p":"Renard à neuf queues et imitation extrêmement précise de personnes.","a":"Non montré clairement.","w":false,"r":"S","image":"https://static.wikia.nocookie.net/onepiece/images/4/4d/Inu_Inu_no_Mi%2C_Model_Kyubi_no_Kitsune_Infobox.png/revision/latest","file":"Inu Inu no Mi, Model Kyubi no Kitsune Infobox.png","visual":"pouvoir","icon":"🐉"},{"n":"Hebi Hebi no Mi, modèle Yamata no Orochi","t":"Zoan Mythique","u":"Kurozumi Orochi †","p":"Serpent à huit têtes avec survie à plusieurs décapitations.","a":"Connu.","w":false,"r":"A","image":"https://static.wikia.nocookie.net/onepiece/images/3/3e/Hebi_Hebi_no_Mi%2C_Model_Yamata_no_Orochi_Infobox.png/revision/latest","file":"Hebi Hebi no Mi, Model Yamata no Orochi Infobox.png","visual":"fruit","icon":"🐉"},{"n":"Hito Hito no Mi, modèle Onyudo","t":"Zoan Mythique","u":"Onimaru","p":"Transformation en gigantesque moine guerrier ōnyūdō.","a":"Non montré clairement.","w":false,"r":"B","image":"","file":"","visual":"absent","icon":"🐉"},{"n":"Inu Inu no Mi, modèle Okuchi no Makami","t":"Zoan Mythique","u":"Yamato","p":"Loup divin gardien de Wano avec techniques de froid.","a":"Connu.","w":false,"r":"S","image":"https://static.wikia.nocookie.net/onepiece/images/1/1d/Inu_Inu_no_Mi%2C_Model_Okuchi_no_Makami_Infobox.png/revision/latest","file":"Inu Inu no Mi, Model Okuchi no Makami Infobox.png","visual":"fruit","icon":"🐉"},{"n":"Uma Uma no Mi, modèle Pegasus","t":"Zoan Mythique","u":"Stronger","p":"Transformation en Pégase ; donne le vol au cheval de Doc Q.","a":"Non montré clairement.","w":false,"r":"B","image":"https://static.wikia.nocookie.net/onepiece/images/7/7e/Uma_Uma_no_Mi%2C_Model_Pegasus_Infobox.png/revision/latest","file":"Uma Uma no Mi, Model Pegasus Infobox.png","visual":"pouvoir","icon":"💨"},{"n":"Ryu Ryu no Mi, modèle Kirin","t":"Zoan Mythique","u":"Killingham","p":"Kirin/Qilin ; capacités liées au sommeil et à la matérialisation des rêves.","a":"Non montré clairement.","w":true,"r":"S+","image":"","file":"","visual":"absent","icon":"🐉"},{"n":"Ryu Ryu no Mi, modèle Nidhöggr","t":"Zoan Mythique","u":"Warrior God † → Loki","p":"Dragon colossal associé à la foudre ; taille particulièrement monstrueuse avec un géant.","a":"Connu.","w":false,"r":"S+","image":"https://static.wikia.nocookie.net/onepiece/images/7/7a/Ryu_Ryu_no_Mi%2C_Model_Nidh%C3%B6ggr_Infobox.png/revision/latest","file":"Ryu Ryu no Mi, Model Nidhöggr Infobox.png","visual":"fruit","icon":"🐲"},{"n":"Risu Risu no Mi, modèle Ratatoskr","t":"Zoan Mythique","u":"Ragnir","p":"Écureuil mythique associé au froid et à la neige.","a":"Non montré clairement.","w":false,"r":"S","image":"","file":"","visual":"absent","icon":"🐉"},{"n":"Fruit mythique — Gyūki","t":"Zoan Mythique","u":"Jaygarcia Saturn †","p":"Transformation démoniaque de type bœuf/araignée.","a":"Nom complet du fruit non révélé.","w":true,"r":"S+","image":"","file":"","visual":"absent","icon":"🐉"},{"n":"Fruit mythique — Sandworm","t":"Zoan Mythique","u":"Shepherd Ju Peter","p":"Transformation en ver des sables gigantesque.","a":"Nom complet du fruit non révélé.","w":true,"r":"S+","image":"","file":"","visual":"absent","icon":"🐉"},{"n":"Fruit mythique — Bakotsu","t":"Zoan Mythique","u":"Ethanbaron V. Nusjuro","p":"Transformation en cheval squelettique mythologique.","a":"Nom complet du fruit non révélé.","w":true,"r":"S+","image":"","file":"","visual":"absent","icon":"🐉"},{"n":"Fruit mythique — Itsumade","t":"Zoan Mythique","u":"Marcus Mars","p":"Transformation en créature ailée yōkai.","a":"Nom complet du fruit non révélé.","w":true,"r":"S+","image":"","file":"","visual":"absent","icon":"🐉"},{"n":"Fruit mythique — Fengxi","t":"Zoan Mythique","u":"Topman Warcury","p":"Transformation en sanglier démoniaque géant.","a":"Nom complet du fruit non révélé.","w":true,"r":"S+","image":"","file":"","visual":"absent","icon":"🐉"},{"n":"Fruit mythique — Cerbère","t":"Zoan Mythique","u":"Épée Cerberus","p":"Zoan mythique mangé par une épée ; trois têtes capables d'attaquer.","a":"Nom complet du fruit non révélé.","w":true,"r":"S","image":"","file":"","visual":"absent","icon":"🐉"},{"n":"Ryu Ryu no Mi, modèle Allosaurus","t":"Zoan Ancien","u":"X Drake","p":"Transformation en allosaure.","a":"Non montré clairement.","w":false,"r":"A","image":"https://static.wikia.nocookie.net/onepiece/images/a/a3/Ryu_Ryu_no_Mi%2C_Model_Allosaurus_Beast_Form.png/revision/latest","file":"Ryu Ryu no Mi, Model Allosaurus Beast Form.png","visual":"pouvoir","icon":"🦖"},{"n":"Zo Zo no Mi, modèle Mammouth","t":"Zoan Ancien","u":"Jack","p":"Transformation en mammouth.","a":"Non montré clairement.","w":false,"r":"A","image":"https://static.wikia.nocookie.net/onepiece/images/d/d4/Zou_Zou_no_Mi%2C_Model_Mammoth_Beast_Form.png/revision/latest","file":"Zou Zou no Mi, Model Mammoth Beast Form.png","visual":"pouvoir","icon":"🦖"},{"n":"Ryu Ryu no Mi, modèle Spinosaurus","t":"Zoan Ancien","u":"Page One","p":"Transformation en spinosaure.","a":"Non montré clairement.","w":false,"r":"A","image":"https://static.wikia.nocookie.net/onepiece/images/9/92/Ryu_Ryu_no_Mi%2C_Model_Spinosaurus_Beast_Form.png/revision/latest","file":"Ryu Ryu no Mi, Model Spinosaurus Beast Form.png","visual":"pouvoir","icon":"🦖"},{"n":"Ryu Ryu no Mi, modèle Pteranodon","t":"Zoan Ancien","u":"King","p":"Transformation en ptéranodon.","a":"Non montré clairement.","w":false,"r":"S","image":"https://static.wikia.nocookie.net/onepiece/images/9/96/Ryu_Ryu_no_Mi%2C_Model_Pteranodon_Beast_Form.png/revision/latest","file":"Ryu Ryu no Mi, Model Pteranodon Beast Form.png","visual":"pouvoir","icon":"🦖"},{"n":"Ryu Ryu no Mi, modèle Brachiosaurus","t":"Zoan Ancien","u":"Queen","p":"Transformation en brachiosaure.","a":"Non montré clairement.","w":false,"r":"A","image":"https://static.wikia.nocookie.net/onepiece/images/4/40/Ryu_Ryu_no_Mi%2C_Model_Brachiosaurus_Beast_Form.png/revision/latest","file":"Ryu Ryu no Mi, Model Brachiosaurus Beast Form.png","visual":"pouvoir","icon":"🦖"},{"n":"Ryu Ryu no Mi, modèle Pachycephalosaurus","t":"Zoan Ancien","u":"Ulti","p":"Transformation en pachycéphalosaure.","a":"Non montré clairement.","w":false,"r":"A","image":"https://static.wikia.nocookie.net/onepiece/images/4/4b/Ryu_Ryu_no_Mi%2C_Model_Pachycephalosaurus_Beast_Form.png/revision/latest","file":"Ryu Ryu no Mi, Model Pachycephalosaurus Beast Form.png","visual":"pouvoir","icon":"🦖"},{"n":"Ryu Ryu no Mi, modèle Triceratops","t":"Zoan Ancien","u":"Sasaki","p":"Transformation en tricératops.","a":"Non montré clairement.","w":false,"r":"A","image":"https://static.wikia.nocookie.net/onepiece/images/5/58/Ryu_Ryu_no_Mi%2C_Model_Triceratops_Beast_Form.png/revision/latest","file":"Ryu Ryu no Mi, Model Triceratops Beast Form.png","visual":"pouvoir","icon":"🦖"},{"n":"Kumo Kumo no Mi, modèle Rosamygale Grauvogeli","t":"Zoan Ancien","u":"Black Maria","p":"Transformation en araignée préhistorique.","a":"Non montré clairement.","w":false,"r":"A","image":"https://static.wikia.nocookie.net/onepiece/images/7/7c/Kumo_Kumo_no_Mi_Model_Rosamygale_Grauvogeli_Infobox.png/revision/latest","file":"Kumo Kumo no Mi Model Rosamygale Grauvogeli Infobox.png","visual":"pouvoir","icon":"🦖"},{"n":"Neko Neko no Mi, modèle Saber Tiger","t":"Zoan Ancien","u":"Who's-Who","p":"Transformation en smilodon.","a":"Non montré clairement.","w":false,"r":"A","image":"https://static.wikia.nocookie.net/onepiece/images/2/2a/Neko_Neko_no_Mi%2C_Model_Saber_Tiger_Beast_Form.png/revision/latest","file":"Neko Neko no Mi, Model Saber Tiger Beast Form.png","visual":"pouvoir","icon":"🦖"},{"n":"Ushi Ushi no Mi, modèle Bison","t":"Zoan","u":"Dalton","p":"Transformation en bison.","a":"Connu.","w":false,"r":"B","image":"https://static.wikia.nocookie.net/onepiece/images/b/bf/Ushi_Ushi_no_Mi%2C_Model_Bison_Infobox.png/revision/latest","file":"Ushi Ushi no Mi, Model Bison Infobox.png","visual":"fruit","icon":"🐾"},{"n":"Hito Hito no Mi","t":"Zoan","u":"Tony Tony Chopper","p":"Permet à un animal d'adopter des formes humaines et hybrides.","a":"Connu — énorme champignon rouge et blanc.","w":false,"r":"A","image":"https://static.wikia.nocookie.net/onepiece/images/3/38/Hito_Hito_no_Mi_Infobox.png/revision/latest","file":"Hito Hito no Mi Infobox.png","visual":"fruit","icon":"🐾"},{"n":"Tori Tori no Mi, modèle Faucon","t":"Zoan","u":"Pell","p":"Transformation en faucon et vol.","a":"Non montré clairement.","w":false,"r":"B","image":"https://static.wikia.nocookie.net/onepiece/images/3/38/Tori_Tori_no_Mi%2C_Model_Falcon_Human-Beast_Form.png/revision/latest","file":"Tori Tori no Mi, Model Falcon Human-Beast Form.png","visual":"pouvoir","icon":"🐾"},{"n":"Mogu Mogu no Mi","t":"Zoan","u":"Miss Merry Christmas","p":"Transformation en taupe.","a":"Non montré clairement.","w":false,"r":"B","image":"https://static.wikia.nocookie.net/onepiece/images/9/95/Mogu_Mogu_no_Mi_Infobox.png/revision/latest","file":"Mogu Mogu no Mi Infobox.png","visual":"pouvoir","icon":"🐾"},{"n":"Inu Inu no Mi, modèle Dachshund","t":"Zoan","u":"Lassoo","p":"Bazooka ayant mangé un Zoan de teckel.","a":"Non montré clairement.","w":false,"r":"C","image":"","file":"","visual":"absent","icon":"🐾"},{"n":"Inu Inu no Mi, modèle Jackal","t":"Zoan","u":"Chaka","p":"Transformation en chacal.","a":"Non montré clairement.","w":false,"r":"B","image":"https://static.wikia.nocookie.net/onepiece/images/4/4f/Inu_Inu_no_Mi%2C_Model_Jackal_Infobox.png/revision/latest","file":"Inu Inu no Mi, Model Jackal Infobox.png","visual":"pouvoir","icon":"🐾"},{"n":"Uma Uma no Mi","t":"Zoan","u":"Pierre","p":"Transformation en cheval.","a":"Non montré clairement.","w":false,"r":"C","image":"https://static.wikia.nocookie.net/onepiece/images/3/39/Uma_Uma_no_Mi_Infobox.png/revision/latest","file":"Uma Uma no Mi Infobox.png","visual":"pouvoir","icon":"🐾"},{"n":"Zo Zo no Mi","t":"Zoan","u":"Funkfreed","p":"Épée ayant mangé le Fruit de l'Éléphant.","a":"Non montré clairement.","w":false,"r":"B","image":"https://static.wikia.nocookie.net/onepiece/images/c/c9/Zou_Zou_no_Mi_Infobox.png/revision/latest","file":"Zou Zou no Mi Infobox.png","visual":"pouvoir","icon":"🐾"},{"n":"Neko Neko no Mi, modèle Léopard","t":"Zoan","u":"Rob Lucci","p":"Transformation en léopard ; puissance physique et mobilité extrêmes.","a":"Connu.","w":true,"r":"S","image":"https://static.wikia.nocookie.net/onepiece/images/9/98/Neko_Neko_no_Mi%2C_Model_Leopard_Infobox.png/revision/latest","file":"Neko Neko no Mi, Model Leopard Infobox.png","visual":"fruit","icon":"🐾"},{"n":"Inu Inu no Mi, modèle Loup","t":"Zoan","u":"Jabra","p":"Transformation en loup.","a":"Non montré clairement.","w":false,"r":"A","image":"","file":"","visual":"absent","icon":"🐾"},{"n":"Ushi Ushi no Mi, modèle Girafe","t":"Zoan","u":"Kaku","p":"Transformation en girafe.","a":"Connu.","w":true,"r":"S","image":"https://static.wikia.nocookie.net/onepiece/images/8/8c/Ushi_Ushi_no_Mi%2C_Model_Giraffe_Infobox.png/revision/latest","file":"Ushi Ushi no Mi, Model Giraffe Infobox.png","visual":"fruit","icon":"🐾"},{"n":"Hebi Hebi no Mi, modèle Anaconda","t":"Zoan","u":"Boa Sandersonia","p":"Transformation en anaconda.","a":"Non montré clairement.","w":false,"r":"B","image":"https://static.wikia.nocookie.net/onepiece/images/3/3c/Hebi_Hebi_no_Mi%2C_Model_Anaconda_Infobox.png/revision/latest","file":"Hebi Hebi no Mi, Model Anaconda Infobox.png","visual":"pouvoir","icon":"🐾"},{"n":"Hebi Hebi no Mi, modèle Cobra Royal","t":"Zoan","u":"Boa Marigold","p":"Transformation en cobra royal.","a":"Non montré clairement.","w":false,"r":"B","image":"https://static.wikia.nocookie.net/onepiece/images/3/33/Hebi_Hebi_no_Mi%2C_Model_King_Cobra_Infobox.png/revision/latest","file":"Hebi Hebi no Mi, Model King Cobra Infobox.png","visual":"pouvoir","icon":"🐾"},{"n":"Kame Kame no Mi","t":"Zoan","u":"Pekoms","p":"Transformation en tortue.","a":"Non montré clairement.","w":false,"r":"B","image":"https://static.wikia.nocookie.net/onepiece/images/7/74/Kame_Kame_no_Mi_Infobox.png/revision/latest","file":"Kame Kame no Mi Infobox.png","visual":"pouvoir","icon":"🐾"},{"n":"Sara Sara no Mi, modèle Axolotl","t":"Zoan","u":"Smiley †","p":"Transformation en axolotl.","a":"Connu.","w":false,"r":"B","image":"https://static.wikia.nocookie.net/onepiece/images/d/db/Sara_Sara_no_Mi%2C_Model_Axolotl_Infobox.png/revision/latest","file":"Sara Sara no Mi, Model Axolotl Infobox.png","visual":"fruit","icon":"🐾"},{"n":"Mushi Mushi no Mi, modèle Kabutomushi","t":"Zoan","u":"Kabu","p":"Transformation en scarabée rhinocéros.","a":"Non montré clairement.","w":false,"r":"B","image":"https://static.wikia.nocookie.net/onepiece/images/c/ce/Mushi_Mushi_no_Mi%2C_Model_Kabutomushi_Infobox.png/revision/latest","file":"Mushi Mushi no Mi, Model Kabutomushi Infobox.png","visual":"pouvoir","icon":"🐾"},{"n":"Mushi Mushi no Mi, modèle Suzumebachi","t":"Zoan","u":"Bian","p":"Transformation en guêpe/frelon.","a":"Non montré clairement.","w":false,"r":"B","image":"https://static.wikia.nocookie.net/onepiece/images/d/d4/Mushi_Mushi_no_Mi%2C_Model_Suzumebachi_Infobox.png/revision/latest","file":"Mushi Mushi no Mi, Model Suzumebachi Infobox.png","visual":"pouvoir","icon":"🐾"},{"n":"Tama Tama no Mi","t":"Zoan","u":"Baron Tamago","p":"Cycle œuf → poussin → coq après destruction du corps.","a":"Non montré clairement.","w":false,"r":"A","image":"https://static.wikia.nocookie.net/onepiece/images/a/a9/Tama_Tama_no_Mi_Infobox.png/revision/latest","file":"Tama Tama no Mi Infobox.png","visual":"pouvoir","icon":"🐾"},{"n":"Tori Tori no Mi, modèle Albatros","t":"Zoan","u":"Morgans","p":"Transformation en albatros.","a":"Non montré clairement.","w":false,"r":"C","image":"","file":"","visual":"absent","icon":"🐾"},{"n":"Inu Inu no Mi, modèle Tanuki","t":"Zoan","u":"Bunbuku","p":"Théière ayant mangé un Zoan de tanuki.","a":"Non montré clairement.","w":false,"r":"C","image":"https://static.wikia.nocookie.net/onepiece/images/0/05/Inu_Inu_no_Mi%2C_Model_Bake-danuki_Infobox.png/revision/latest","file":"Inu Inu no Mi, Model Bake-danuki Infobox.png","visual":"pouvoir","icon":"🐾"},{"n":"Bara Bara no Mi","t":"Paramecia","u":"Buggy","p":"Séparation et contrôle des parties du corps.","a":"Connu — rouge/orangé.","w":false,"r":"A","image":"https://static.wikia.nocookie.net/onepiece/images/9/9c/Bara_Bara_no_Mi_Infobox.png/revision/latest","file":"Bara Bara no Mi Infobox.png","visual":"fruit","icon":"🔪"},{"n":"Sube Sube no Mi","t":"Paramecia","u":"Alvida","p":"Rend le corps extrêmement glissant.","a":"Connu.","w":false,"r":"B","image":"https://static.wikia.nocookie.net/onepiece/images/e/e9/Sube_Sube_no_Mi_Infobox.png/revision/latest","file":"Sube Sube no Mi Infobox.png","visual":"fruit","icon":"🌀"},{"n":"Bomu Bomu no Mi","t":"Paramecia","u":"Ganzui † → Gem","p":"Le corps devient explosif.","a":"Connu.","w":false,"r":"A","image":"https://static.wikia.nocookie.net/onepiece/images/1/1a/Bomu_Bomu_no_Mi_Infobox.png/revision/latest","file":"Bomu Bomu no Mi Infobox.png","visual":"fruit","icon":"🌀"},{"n":"Kiro Kiro no Mi","t":"Paramecia","u":"Mikita","p":"Manipulation du poids de 1 kg à 10 000 kg.","a":"Connu.","w":false,"r":"B","image":"https://static.wikia.nocookie.net/onepiece/images/8/89/Kiro_Kiro_no_Mi_Infobox.png/revision/latest","file":"Kiro Kiro no Mi Infobox.png","visual":"fruit","icon":"🌀"},{"n":"Hana Hana no Mi","t":"Paramecia","u":"Nico Robin","p":"Fait éclore des membres corporels à distance.","a":"Connu — fleur rose.","w":false,"r":"S","image":"https://static.wikia.nocookie.net/onepiece/images/2/21/Hana_Hana_no_Mi_Infobox.png/revision/latest","file":"Hana Hana no Mi Infobox.png","visual":"fruit","icon":"🌸"},{"n":"Doru Doru no Mi","t":"Paramecia","u":"Galdino / Mr. 3","p":"Création et contrôle de cire extrêmement résistante.","a":"Connu — poire blanche fondante.","w":false,"r":"A","image":"https://static.wikia.nocookie.net/onepiece/images/5/5f/Doru_Doru_no_Mi_Infobox.png/revision/latest","file":"Doru Doru no Mi Infobox.png","visual":"fruit","icon":"🌀"},{"n":"Baku Baku no Mi","t":"Paramecia","u":"Wapol","p":"Permet de manger presque n'importe quoi et de fusionner/transmuter.","a":"Connu — aspect de mâchoire.","w":false,"r":"A","image":"https://static.wikia.nocookie.net/onepiece/images/c/c6/Baku_Baku_no_Mi_Infobox.png/revision/latest","file":"Baku Baku no Mi Infobox.png","visual":"fruit","icon":"🌀"},{"n":"Mane Mane no Mi","t":"Paramecia","u":"Higurashi † → Bentham","p":"Copie parfaite de l'apparence des personnes touchées.","a":"Connu.","w":false,"r":"A","image":"https://static.wikia.nocookie.net/onepiece/images/1/12/Mane_Mane_no_Mi_Infobox.png/revision/latest","file":"Mane Mane no Mi Infobox.png","visual":"fruit","icon":"🌀"},{"n":"Supa Supa no Mi","t":"Paramecia","u":"Daz Bonez","p":"Transforme le corps en lames.","a":"Connu — régime en forme de lames.","w":false,"r":"A","image":"https://static.wikia.nocookie.net/onepiece/images/f/f9/Supa_Supa_no_Mi_Infobox.png/revision/latest","file":"Supa Supa no Mi Infobox.png","visual":"fruit","icon":"🌀"},{"n":"Toge Toge no Mi","t":"Paramecia","u":"Zala","p":"Création d'épines à partir du corps.","a":"Non montré clairement.","w":false,"r":"B","image":"https://static.wikia.nocookie.net/onepiece/images/e/ee/Toge_Toge_no_Mi_Infobox.png/revision/latest","file":"Toge Toge no Mi Infobox.png","visual":"pouvoir","icon":"🌀"},{"n":"Ori Ori no Mi","t":"Paramecia","u":"Hina","p":"Crée des entraves métalliques.","a":"Non montré clairement.","w":false,"r":"B","image":"https://static.wikia.nocookie.net/onepiece/images/7/7a/Ori_Ori_no_Mi_Infobox.png/revision/latest","file":"Ori Ori no Mi Infobox.png","visual":"pouvoir","icon":"🌀"},{"n":"Bane Bane no Mi","t":"Paramecia","u":"Bellamy","p":"Transforme les membres en ressorts.","a":"Non montré clairement.","w":false,"r":"B","image":"https://static.wikia.nocookie.net/onepiece/images/1/1d/Bane_Bane_no_Mi_Infobox.png/revision/latest","file":"Bane Bane no Mi Infobox.png","visual":"pouvoir","icon":"🌀"},{"n":"Ito Ito no Mi","t":"Paramecia","u":"Donquixote Doflamingo","p":"Création et contrôle de fils : découpe, marionnettes, déplacement aérien.","a":"Connu.","w":true,"r":"S","image":"https://static.wikia.nocookie.net/onepiece/images/a/ae/Ito_Ito_no_Mi_Infobox.png/revision/latest","file":"Ito Ito no Mi Infobox.png","visual":"fruit","icon":"🌀"},{"n":"Noro Noro no Mi","t":"Paramecia","u":"Foxy","p":"Émet des photons ralentissant leurs cibles.","a":"Non montré clairement.","w":false,"r":"A","image":"https://static.wikia.nocookie.net/onepiece/images/7/7a/Noro_Noro_no_Mi_Infobox.png/revision/latest","file":"Noro Noro no Mi Infobox.png","visual":"pouvoir","icon":"🌀"},{"n":"Doa Doa no Mi","t":"Paramecia","u":"Blueno","p":"Crée des portes dans les surfaces et l'espace.","a":"Non montré clairement.","w":false,"r":"A","image":"https://static.wikia.nocookie.net/onepiece/images/0/04/Doa_Doa_no_Mi_Infobox.png/revision/latest","file":"Doa Doa no Mi Infobox.png","visual":"pouvoir","icon":"🌀"},{"n":"Awa Awa no Mi","t":"Paramecia","u":"Kalifa","p":"Savon et bulles qui nettoient jusqu'à la force physique.","a":"Connu.","w":false,"r":"A","image":"https://static.wikia.nocookie.net/onepiece/images/5/51/Awa_Awa_no_Mi_Infobox.png/revision/latest","file":"Awa Awa no Mi Infobox.png","visual":"fruit","icon":"🌀"},{"n":"Beri Beri no Mi","t":"Paramecia","u":"Very Good","p":"Sépare le corps en sphères.","a":"Non montré clairement.","w":false,"r":"B","image":"https://static.wikia.nocookie.net/onepiece/images/2/27/Beri_Beri_no_Mi_Infobox.png/revision/latest","file":"Beri Beri no Mi Infobox.png","visual":"pouvoir","icon":"🌀"},{"n":"Sabi Sabi no Mi","t":"Paramecia","u":"Shu","p":"Fait rouiller les objets au contact.","a":"Non montré clairement.","w":false,"r":"A","image":"https://static.wikia.nocookie.net/onepiece/images/7/7c/Sabi_Sabi_no_Mi_Infobox.png/revision/latest","file":"Sabi Sabi no Mi Infobox.png","visual":"pouvoir","icon":"🌀"},{"n":"Yomi Yomi no Mi","t":"Paramecia","u":"Brook","p":"Retour de l'âme après la mort et techniques spirituelles.","a":"Connu — forme évoquant un crâne.","w":false,"r":"S","image":"https://static.wikia.nocookie.net/onepiece/images/3/3b/Yomi_Yomi_no_Mi_Infobox.png/revision/latest","file":"Yomi Yomi no Mi Infobox.png","visual":"fruit","icon":"💀"},{"n":"Kage Kage no Mi","t":"Paramecia","u":"Gecko Moria","p":"Manipule, vole et utilise les ombres.","a":"Connu.","w":false,"r":"S","image":"https://static.wikia.nocookie.net/onepiece/images/7/7b/Kage_Kage_no_Mi_Infobox.png/revision/latest","file":"Kage Kage no Mi Infobox.png","visual":"fruit","icon":"🌀"},{"n":"Horo Horo no Mi","t":"Paramecia","u":"Perona","p":"Fantômes négatifs et projection astrale.","a":"Connu.","w":false,"r":"S","image":"https://static.wikia.nocookie.net/onepiece/images/1/14/Horo_Horo_no_Mi_Infobox.png/revision/latest","file":"Horo Horo no Mi Infobox.png","visual":"fruit","icon":"🌀"},{"n":"Suke Suke no Mi","t":"Paramecia","u":"Absalom † → Shiryu","p":"Invisibilité.","a":"Non montré clairement.","w":false,"r":"S","image":"https://static.wikia.nocookie.net/onepiece/images/b/bb/Suke_Suke_no_Mi_Infobox.png/revision/latest","file":"Suke Suke no Mi Infobox.png","visual":"pouvoir","icon":"🌀"},{"n":"Nikyu Nikyu no Mi","t":"Paramecia","u":"Bartholomew Kuma","p":"Repousse matière, air, attaques, douleur et autres phénomènes par les coussinets.","a":"Connu — forme de patte.","w":false,"r":"S+","image":"https://static.wikia.nocookie.net/onepiece/images/e/e4/Nikyu_Nikyu_no_Mi_Infobox.png/revision/latest","file":"Nikyu Nikyu no Mi Infobox.png","visual":"fruit","icon":"🐾"},{"n":"Toshi Toshi no Mi","t":"Paramecia","u":"Jewelry Bonney","p":"Manipule l'âge et permet d'explorer des futurs potentiels.","a":"Non montré clairement.","w":false,"r":"S+","image":"","file":"","visual":"absent","icon":"🌀"},{"n":"Jiki Jiki no Mi","t":"Paramecia","u":"Captain John † → Eustass Kid","p":"Magnétisme et manipulation massive des métaux.","a":"Connu.","w":true,"r":"S","image":"https://static.wikia.nocookie.net/onepiece/images/1/13/Jiki_Jiki_no_Mi_Infobox.png/revision/latest","file":"Jiki Jiki no Mi Infobox.png","visual":"fruit","icon":"🧲"},{"n":"Ope Ope no Mi","t":"Paramecia","u":"Trafalgar D. Water Law","p":"ROOM : manipulation spatiale, chirurgie surnaturelle et opération d'immortalité.","a":"Connu — cœur rouge.","w":true,"r":"S+","image":"https://static.wikia.nocookie.net/onepiece/images/0/0e/Ope_Ope_no_Mi_Infobox.png/revision/latest","file":"Ope Ope no Mi Infobox.png","visual":"fruit","icon":"❤️"},{"n":"Shiro Shiro no Mi","t":"Paramecia","u":"Capone Bege","p":"Transforme le corps en forteresse vivante.","a":"Non montré clairement.","w":false,"r":"A","image":"https://static.wikia.nocookie.net/onepiece/images/e/e8/Shiro_Shiro_no_Mi_Infobox.png/revision/latest","file":"Shiro Shiro no Mi Infobox.png","visual":"pouvoir","icon":"🌀"},{"n":"Wara Wara no Mi","t":"Paramecia","u":"Basil Hawkins","p":"Paille, poupées vaudou et transfert de dégâts.","a":"Non montré clairement.","w":false,"r":"S","image":"https://static.wikia.nocookie.net/onepiece/images/b/b4/Wara_Wara_no_Mi_Infobox.png/revision/latest","file":"Wara Wara no Mi Infobox.png","visual":"pouvoir","icon":"🌀"},{"n":"Oto Oto no Mi","t":"Paramecia","u":"Scratchmen Apoo","p":"Transforme des sons musicaux en attaques physiques.","a":"Non montré clairement.","w":false,"r":"A","image":"https://static.wikia.nocookie.net/onepiece/images/1/16/Oto_Oto_no_Mi_Infobox.png/revision/latest","file":"Oto Oto no Mi Infobox.png","visual":"pouvoir","icon":"🌀"},{"n":"Mero Mero no Mi","t":"Paramecia","u":"Boa Hancock","p":"Pétrification liée au désir et aux émotions.","a":"Connu — double cœur.","w":false,"r":"S+","image":"https://static.wikia.nocookie.net/onepiece/images/9/98/Mero_Mero_no_Mi_Infobox.png/revision/latest","file":"Mero Mero no Mi Infobox.png","visual":"fruit","icon":"💘"},{"n":"Doku Doku no Mi","t":"Paramecia","u":"Magellan","p":"Production et contrôle de poisons extrêmement puissants.","a":"Non montré clairement.","w":false,"r":"S+","image":"https://static.wikia.nocookie.net/onepiece/images/2/21/Doku_Doku_no_Mi_Infobox.png/revision/latest","file":"Doku Doku no Mi Infobox.png","visual":"pouvoir","icon":"☠️"},{"n":"Horu Horu no Mi","t":"Paramecia","u":"Emporio Ivankov","p":"Manipulation hormonale du corps, guérison, métabolisme et transformation.","a":"Non montré clairement.","w":false,"r":"S","image":"https://static.wikia.nocookie.net/onepiece/images/5/53/Horu_Horu_no_Mi_Infobox.png/revision/latest","file":"Horu Horu no Mi Infobox.png","visual":"pouvoir","icon":"🌀"},{"n":"Choki Choki no Mi","t":"Paramecia","u":"Inazuma","p":"Transforme les mains en ciseaux capables de découper la matière comme du papier.","a":"Non montré clairement.","w":false,"r":"A","image":"https://static.wikia.nocookie.net/onepiece/images/0/0f/Choki_Choki_no_Mi_Infobox.png/revision/latest","file":"Choki Choki no Mi Infobox.png","visual":"pouvoir","icon":"🌀"},{"n":"Gura Gura no Mi","t":"Paramecia","u":"Edward Newgate † → Marshall D. Teach","p":"Séismes et ondes de choc capables de bouleverser le monde.","a":"Connu — fruit bleu fissuré.","w":false,"r":"S+","image":"https://static.wikia.nocookie.net/onepiece/images/e/e3/Gura_Gura_no_Mi_Infobox.png/revision/latest","file":"Gura Gura no Mi Infobox.png","visual":"fruit","icon":"🌊"},{"n":"Kira Kira no Mi","t":"Paramecia","u":"Jozu","p":"Transforme le corps en diamant.","a":"Non montré clairement.","w":false,"r":"S","image":"https://static.wikia.nocookie.net/onepiece/images/a/ad/Kira_Kira_no_Mi_Infobox.png/revision/latest","file":"Kira Kira no Mi Infobox.png","visual":"pouvoir","icon":"🌀"},{"n":"Woshu Woshu no Mi","t":"Paramecia","u":"Tsuru","p":"Lave et sèche êtres et objets comme du linge.","a":"Non montré clairement.","w":false,"r":"A","image":"https://static.wikia.nocookie.net/onepiece/images/4/4c/Woshu_Woshu_no_Mi_Infobox.png/revision/latest","file":"Woshu Woshu no Mi Infobox.png","visual":"pouvoir","icon":"🌀"},{"n":"Fuwa Fuwa no Mi","t":"Paramecia","u":"Shiki","p":"Lévitation et contrôle de la matière non vivante touchée.","a":"Non montré clairement.","w":false,"r":"S+","image":"https://static.wikia.nocookie.net/onepiece/images/d/df/Fuwa_Fuwa_no_Mi_Infobox.png/revision/latest","file":"Fuwa Fuwa no Mi Infobox.png","visual":"pouvoir","icon":"🌀"},{"n":"Deka Deka no Mi","t":"Paramecia","u":"Sanjuan Wolf","p":"Gigantification corporelle à une échelle extrême.","a":"Non montré clairement.","w":false,"r":"S","image":"https://static.wikia.nocookie.net/onepiece/images/b/b4/Deka_Deka_no_Mi_Infobox.png/revision/latest","file":"Deka Deka no Mi Infobox.png","visual":"pouvoir","icon":"🌀"},{"n":"Mato Mato no Mi","t":"Paramecia","u":"Vander Decken IX","p":"Marque une cible après contact et permet de viser automatiquement.","a":"Non montré clairement.","w":false,"r":"A","image":"https://static.wikia.nocookie.net/onepiece/images/b/b7/Mato_Mato_no_Mi_Infobox.png/revision/latest","file":"Mato Mato no Mi Infobox.png","visual":"pouvoir","icon":"🌀"},{"n":"Fuku Fuku no Mi","t":"Paramecia","u":"Kin'emon","p":"Création de vêtements et déguisements.","a":"Non montré clairement.","w":false,"r":"C","image":"https://static.wikia.nocookie.net/onepiece/images/9/9c/Fuku_Fuku_no_Mi_Infobox.png/revision/latest","file":"Fuku Fuku no Mi Infobox.png","visual":"pouvoir","icon":"🌀"},{"n":"Hobi Hobi no Mi","t":"Paramecia","u":"Sugar","p":"Transforme les personnes en jouets, impose des contrats et efface leur souvenir social.","a":"Connu.","w":false,"r":"S+","image":"https://static.wikia.nocookie.net/onepiece/images/3/3d/Hobi_Hobi_no_Mi_Infobox.png/revision/latest","file":"Hobi Hobi no Mi Infobox.png","visual":"fruit","icon":"🌀"},{"n":"Buki Buki no Mi","t":"Paramecia","u":"Baby 5","p":"Transforme des parties du corps en armes.","a":"Non montré clairement.","w":false,"r":"A","image":"https://static.wikia.nocookie.net/onepiece/images/3/3e/Buki_Buki_no_Mi_Infobox.png/revision/latest","file":"Buki Buki no Mi Infobox.png","visual":"pouvoir","icon":"🌀"},{"n":"Beta Beta no Mi","t":"Paramecia","u":"Trebol","p":"Produit une substance collante et inflammable.","a":"Non montré clairement.","w":false,"r":"A","image":"https://static.wikia.nocookie.net/onepiece/images/d/d9/Beta_Beta_no_Mi_Infobox.png/revision/latest","file":"Beta Beta no Mi Infobox.png","visual":"pouvoir","icon":"🌀"},{"n":"Zushi Zushi no Mi","t":"Paramecia","u":"Issho / Fujitora","p":"Manipule la gravité, jusqu'à attirer des météorites.","a":"Non montré clairement.","w":false,"r":"S+","image":"https://static.wikia.nocookie.net/onepiece/images/b/ba/Zushi_Zushi_no_Mi_Infobox.png/revision/latest","file":"Zushi Zushi no Mi Infobox.png","visual":"pouvoir","icon":"🌀"},{"n":"Bari Bari no Mi","t":"Paramecia","u":"Semimaru † → Bartolomeo","p":"Crée des barrières extrêmement résistantes.","a":"Non montré clairement.","w":false,"r":"S","image":"https://static.wikia.nocookie.net/onepiece/images/d/de/Bari_Bari_no_Mi_Infobox.png/revision/latest","file":"Bari Bari no Mi Infobox.png","visual":"pouvoir","icon":"🌀"},{"n":"Nui Nui no Mi","t":"Paramecia","u":"Leo","p":"Coud objets et êtres vivants ensemble.","a":"Connu.","w":false,"r":"A","image":"https://static.wikia.nocookie.net/onepiece/images/0/00/Nui_Nui_no_Mi_Infobox.png/revision/latest","file":"Nui Nui no Mi Infobox.png","visual":"fruit","icon":"🌀"},{"n":"Giro Giro no Mi","t":"Paramecia","u":"Viola","p":"Clairvoyance, lecture mentale et vision à très longue portée.","a":"Non montré clairement.","w":false,"r":"S","image":"https://static.wikia.nocookie.net/onepiece/images/2/23/Giro_Giro_no_Mi_Infobox.png/revision/latest","file":"Giro Giro no Mi Infobox.png","visual":"pouvoir","icon":"🌀"},{"n":"Ato Ato no Mi","t":"Paramecia","u":"Giolla","p":"Transforme les choses en formes d'art abstrait.","a":"Non montré clairement.","w":false,"r":"A","image":"https://static.wikia.nocookie.net/onepiece/images/0/0f/Ato_Ato_no_Mi_Infobox.png/revision/latest","file":"Ato Ato no Mi Infobox.png","visual":"pouvoir","icon":"🌀"},{"n":"Pamu Pamu no Mi","t":"Paramecia","u":"Gladius","p":"Gonfle et fait exploser matière et corps.","a":"Non montré clairement.","w":false,"r":"A","image":"https://static.wikia.nocookie.net/onepiece/images/a/a9/Pamu_Pamu_no_Mi_Infobox.png/revision/latest","file":"Pamu Pamu no Mi Infobox.png","visual":"pouvoir","icon":"🌀"},{"n":"Sui Sui no Mi","t":"Paramecia","u":"Señor Pink","p":"Permet de nager à travers les surfaces solides.","a":"Non montré clairement.","w":false,"r":"A","image":"https://static.wikia.nocookie.net/onepiece/images/9/9d/Sui_Sui_no_Mi_Infobox.png/revision/latest","file":"Sui Sui no Mi Infobox.png","visual":"pouvoir","icon":"🌀"},{"n":"Ton Ton no Mi","t":"Paramecia","u":"Machvise","p":"Augmente la masse jusqu'à des milliers de tonnes.","a":"Non montré clairement.","w":false,"r":"A","image":"https://static.wikia.nocookie.net/onepiece/images/4/40/Ton_Ton_no_Mi_Infobox.png/revision/latest","file":"Ton Ton no Mi Infobox.png","visual":"pouvoir","icon":"🌀"},{"n":"Hira Hira no Mi","t":"Paramecia","u":"Diamante","p":"Rend les objets souples comme des drapeaux.","a":"Non montré clairement.","w":false,"r":"A","image":"https://static.wikia.nocookie.net/onepiece/images/5/5a/Hira_Hira_no_Mi_Infobox.png/revision/latest","file":"Hira Hira no Mi Infobox.png","visual":"pouvoir","icon":"🌀"},{"n":"Ishi Ishi no Mi","t":"Paramecia","u":"Pica","p":"Fusionne avec la pierre et la contrôle à très grande échelle.","a":"Non montré clairement.","w":false,"r":"S","image":"https://static.wikia.nocookie.net/onepiece/images/9/90/Ishi_Ishi_no_Mi_Infobox.png/revision/latest","file":"Ishi Ishi no Mi Infobox.png","visual":"pouvoir","icon":"🌀"},{"n":"Fude Fude no Mi","t":"Paramecia","u":"Kanjuro †","p":"Donne vie aux dessins.","a":"Connu.","w":false,"r":"S","image":"https://static.wikia.nocookie.net/onepiece/images/b/b4/Fude_Fude_no_Mi_Infobox.png/revision/latest","file":"Fude Fude no Mi Infobox.png","visual":"fruit","icon":"🌀"},{"n":"Nagi Nagi no Mi","t":"Paramecia","u":"Donquixote Rosinante †","p":"Crée des zones de silence absolu.","a":"Non montré clairement.","w":false,"r":"A","image":"https://static.wikia.nocookie.net/onepiece/images/3/37/Nagi_Nagi_no_Mi_Infobox.png/revision/latest","file":"Nagi Nagi no Mi Infobox.png","visual":"pouvoir","icon":"🌀"},{"n":"Chiyu Chiyu no Mi","t":"Paramecia","u":"Mansherry","p":"Pouvoir de guérison extrêmement puissant.","a":"Non montré clairement.","w":false,"r":"S","image":"https://static.wikia.nocookie.net/onepiece/images/b/b2/Chiyu_Chiyu_no_Mi_Infobox.png/revision/latest","file":"Chiyu Chiyu no Mi Infobox.png","visual":"pouvoir","icon":"🌀"},{"n":"Soru Soru no Mi","t":"Paramecia","u":"Mother Carmel † → Big Mom","p":"Manipulation des âmes et création de Homies.","a":"Non montré clairement.","w":false,"r":"S+","image":"https://static.wikia.nocookie.net/onepiece/images/9/9d/Soru_Soru_no_Mi_Infobox.png/revision/latest","file":"Soru Soru no Mi Infobox.png","visual":"pouvoir","icon":"🌀"},{"n":"Mira Mira no Mi","t":"Paramecia","u":"Brûlée","p":"Contrôle des miroirs et accès au Mirro-World.","a":"Non montré clairement.","w":false,"r":"S","image":"https://static.wikia.nocookie.net/onepiece/images/c/c3/Mira_Mira_no_Mi_Infobox.png/revision/latest","file":"Mira Mira no Mi Infobox.png","visual":"pouvoir","icon":"🌀"},{"n":"Pero Pero no Mi","t":"Paramecia","u":"Perospero","p":"Création et contrôle de bonbon.","a":"Non montré clairement.","w":false,"r":"A","image":"https://static.wikia.nocookie.net/onepiece/images/7/77/Pero_Pero_no_Mi_Infobox.png/revision/latest","file":"Pero Pero no Mi Infobox.png","visual":"pouvoir","icon":"🌀"},{"n":"Bisu Bisu no Mi","t":"Paramecia","u":"Cracker","p":"Crée des biscuits extrêmement résistants et des soldats.","a":"Non montré clairement.","w":false,"r":"S","image":"https://static.wikia.nocookie.net/onepiece/images/8/8b/Bisu_Bisu_no_Mi_Infobox.png/revision/latest","file":"Bisu Bisu no Mi Infobox.png","visual":"pouvoir","icon":"🍪"},{"n":"Buku Buku no Mi","t":"Paramecia","u":"Mont-d'Or","p":"Manipulation de livres et enfermement dans des mondes de livres.","a":"Non montré clairement.","w":false,"r":"S","image":"https://static.wikia.nocookie.net/onepiece/images/4/44/Buku_Buku_no_Mi_Infobox.png/revision/latest","file":"Buku Buku no Mi Infobox.png","visual":"pouvoir","icon":"🌀"},{"n":"Shibo Shibo no Mi","t":"Paramecia","u":"Smoothie","p":"Essore liquides et êtres vivants pour en absorber le contenu.","a":"Non montré clairement.","w":false,"r":"S","image":"https://static.wikia.nocookie.net/onepiece/images/d/d7/Shibo_Shibo_no_Mi_Infobox.png/revision/latest","file":"Shibo Shibo no Mi Infobox.png","visual":"pouvoir","icon":"🌀"},{"n":"Memo Memo no Mi","t":"Paramecia","u":"Charlotte Pudding","p":"Extraction, modification et réinsertion de souvenirs.","a":"Non montré clairement.","w":false,"r":"S","image":"https://static.wikia.nocookie.net/onepiece/images/c/c0/Memo_Memo_no_Mi_Infobox.png/revision/latest","file":"Memo Memo no Mi Infobox.png","visual":"pouvoir","icon":"🌀"},{"n":"Mochi Mochi no Mi","t":"Paramecia","u":"Charlotte Katakuri","p":"Paramecia spécial : création, contrôle et transformation en mochi.","a":"Connu — blanc/crème.","w":true,"r":"S","image":"https://static.wikia.nocookie.net/onepiece/images/2/2c/Mochi_Mochi_no_Mi_Infobox.png/revision/latest","file":"Mochi Mochi no Mi Infobox.png","visual":"fruit","icon":"🍡"},{"n":"Hoya Hoya no Mi","t":"Paramecia","u":"Daifuku","p":"Invoque un génie combattant.","a":"Non montré clairement.","w":false,"r":"A","image":"https://static.wikia.nocookie.net/onepiece/images/9/97/Hoya_Hoya_no_Mi_Infobox.png/revision/latest","file":"Hoya Hoya no Mi Infobox.png","visual":"pouvoir","icon":"🌀"},{"n":"Netsu Netsu no Mi","t":"Paramecia","u":"Oven","p":"Chaleur corporelle extrême.","a":"Non montré clairement.","w":false,"r":"A","image":"https://static.wikia.nocookie.net/onepiece/images/c/c5/Netsu_Netsu_no_Mi_Infobox.png/revision/latest","file":"Netsu Netsu no Mi Infobox.png","visual":"pouvoir","icon":"🌀"},{"n":"Kuku Kuku no Mi","t":"Paramecia","u":"Streusen","p":"Transforme des objets en nourriture.","a":"Non montré clairement.","w":false,"r":"B","image":"https://static.wikia.nocookie.net/onepiece/images/4/47/Kuku_Kuku_no_Mi_Infobox.png/revision/latest","file":"Kuku Kuku no Mi Infobox.png","visual":"pouvoir","icon":"🌀"},{"n":"Oshi Oshi no Mi","t":"Paramecia","u":"Morley","p":"Rend le sol malléable et déplaçable.","a":"Non montré clairement.","w":false,"r":"S","image":"","file":"","visual":"absent","icon":"🌀"},{"n":"Kobu Kobu no Mi","t":"Paramecia","u":"Belo Betty","p":"Encourage et libère la puissance latente des autres.","a":"Non montré clairement.","w":false,"r":"A","image":"https://static.wikia.nocookie.net/onepiece/images/7/75/Kobu_Kobu_no_Mi_Infobox.png/revision/latest","file":"Kobu Kobu no Mi Infobox.png","visual":"pouvoir","icon":"🌀"},{"n":"Kibi Kibi no Mi","t":"Paramecia","u":"Tama","p":"Crée des dango pouvant contrôler les animaux et utilisateurs de SMILE.","a":"Non montré clairement.","w":false,"r":"A","image":"","file":"","visual":"absent","icon":"🌀"},{"n":"Toki Toki no Mi","t":"Paramecia","u":"Kozuki Toki †","p":"Permet de voyager vers le futur, jamais vers le passé.","a":"Non montré clairement.","w":false,"r":"S+","image":"https://static.wikia.nocookie.net/onepiece/images/6/6b/Toki_Toki_no_Mi_Infobox.png/revision/latest","file":"Toki Toki no Mi Infobox.png","visual":"pouvoir","icon":"⏳"},{"n":"Juku Juku no Mi","t":"Paramecia","u":"Shinobu","p":"Fait vieillir ou mûrir rapidement les êtres et objets.","a":"Non montré clairement.","w":false,"r":"S","image":"https://static.wikia.nocookie.net/onepiece/images/f/f1/Juku_Juku_no_Mi_Infobox.png/revision/latest","file":"Juku Juku no Mi Infobox.png","visual":"pouvoir","icon":"🌀"},{"n":"Maki Maki no Mi","t":"Paramecia","u":"Raizo","p":"Stockage et restitution via des parchemins.","a":"Non montré clairement.","w":false,"r":"A","image":"https://static.wikia.nocookie.net/onepiece/images/d/d1/Maki_Maki_no_Mi_Infobox.png/revision/latest","file":"Maki Maki no Mi Infobox.png","visual":"pouvoir","icon":"🌀"},{"n":"Shiku Shiku no Mi","t":"Paramecia","u":"Doc Q","p":"Crée et transmet des maladies.","a":"Non montré clairement.","w":false,"r":"S","image":"https://static.wikia.nocookie.net/onepiece/images/a/a2/Shiku_Shiku_no_Mi_Infobox.png/revision/latest","file":"Shiku Shiku no Mi Infobox.png","visual":"pouvoir","icon":"🌀"},{"n":"Wapu Wapu no Mi","t":"Paramecia","u":"Van Augur","p":"Téléportation instantanée.","a":"Non montré clairement.","w":false,"r":"S+","image":"","file":"","visual":"absent","icon":"✨"},{"n":"Riki Riki no Mi","t":"Paramecia","u":"Jesus Burgess","p":"Force physique surhumaine.","a":"Non montré clairement.","w":false,"r":"S","image":"https://static.wikia.nocookie.net/onepiece/images/e/e0/Riki_Riki_no_Mi_Infobox.png/revision/latest","file":"Riki Riki no Mi Infobox.png","visual":"pouvoir","icon":"🌀"},{"n":"Nomi Nomi no Mi","t":"Paramecia","u":"Dr. Vegapunk †","p":"Capacité de mémoire et d'accumulation de connaissances gigantesque.","a":"Non montré clairement.","w":false,"r":"S","image":"","file":"","visual":"absent","icon":"🌀"},{"n":"Shima Shima no Mi","t":"Paramecia","u":"Avalo Pizarro","p":"Fusionne avec une île et permet d'en contrôler la structure.","a":"Non montré clairement.","w":false,"r":"S+","image":"https://static.wikia.nocookie.net/onepiece/images/4/40/Shima_Shima_no_Mi_Infobox.png/revision/latest","file":"Shima Shima no Mi Infobox.png","visual":"pouvoir","icon":"🏝️"},{"n":"Gabu Gabu no Mi","t":"Paramecia","u":"Vasco Shot","p":"Pouvoir lié à l'alcool.","a":"Non montré clairement.","w":false,"r":"A","image":"","file":"","visual":"absent","icon":"🌀"},{"n":"Muchi Muchi no Mi","t":"Paramecia","u":"Kujaku","p":"Force la chose fouettée à obéir.","a":"Non montré clairement.","w":false,"r":"S","image":"https://static.wikia.nocookie.net/onepiece/images/0/0f/Muchi_Muchi_no_Mi_Infobox.png/revision/latest","file":"Muchi Muchi no Mi Infobox.png","visual":"pouvoir","icon":"🌀"},{"n":"Nori Nori no Mi","t":"Paramecia","u":"Bluegrass","p":"Permet de contrôler ce qu'elle chevauche.","a":"Non montré clairement.","w":false,"r":"A","image":"https://static.wikia.nocookie.net/onepiece/images/6/68/Nori_Nori_no_Mi_Infobox.png/revision/latest","file":"Nori Nori no Mi Infobox.png","visual":"pouvoir","icon":"🌀"},{"n":"Aro Aro no Mi","t":"Paramecia","u":"Gunko","p":"Crée et manipule des flèches vectorielles contrôlant le mouvement.","a":"Non montré clairement.","w":false,"r":"S","image":"https://static.wikia.nocookie.net/onepiece/images/3/32/Aro_Aro_no_Mi_Infobox.png/revision/latest","file":"Aro Aro no Mi Infobox.png","visual":"pouvoir","icon":"🌀"},{"n":"Iba Iba no Mi","t":"Paramecia","u":"Sommers","p":"Création et contrôle d'épines et lianes épineuses.","a":"Non montré clairement.","w":false,"r":"S","image":"https://static.wikia.nocookie.net/onepiece/images/c/c2/Iba_Iba_no_Mi_Infobox.png/revision/latest","file":"Iba Iba no Mi Infobox.png","visual":"pouvoir","icon":"🌀"},{"n":"Fruit sans nom d'Urouge","t":"Paramecia","u":"Urouge","p":"Convertit les dégâts subis en masse musculaire et puissance.","a":"Nom et fruit physique non révélés.","w":false,"r":"A","image":"","file":"","visual":"absent","icon":"🌀"},{"n":"Fruit sans nom de Laffitte","t":"Indéterminé","u":"Laffitte","p":"Permet notamment de faire pousser des ailes et voler.","a":"Nom et classification non révélés.","w":false,"r":"A","image":"","file":"","visual":"absent","icon":"❔"},{"n":"Gunyo Gunyo no Mi","t":"Indéterminé","u":"Prince Grus","p":"Produit et contrôle de l'argile.","a":"Classification exacte non stabilisée.","w":false,"r":"A","image":"https://static.wikia.nocookie.net/onepiece/images/4/49/Gunyo_Gunyo_no_Mi_Infobox.png/revision/latest","file":"Gunyo Gunyo no Mi Infobox.png","visual":"pouvoir","icon":"❔"},{"n":"Akuma no Mi","t":"Indéterminé","u":"Imu","p":"Transformation démoniaque et système de pouvoirs lié aux Covenants.","a":"Nature exacte encore atypique/incomplète.","w":false,"r":"S+","image":"https://static.wikia.nocookie.net/onepiece/images/9/9a/Akuma_no_Mi_Infobox.png/revision/latest","file":"Akuma no Mi Infobox.png","visual":"pouvoir","icon":"👹"},{"n":"Fruit artificiel Seiryu","t":"Artificiel","u":"Momonosuke","p":"Copie artificielle du Fruit de Kaido créée par Vegapunk ; transforme en dragon rose.","a":"Connu — artificiel.","w":false,"r":"S","image":"https://static.wikia.nocookie.net/onepiece/images/6/64/Artificial_Devil_Fruit_Infobox.png/revision/latest","file":"Artificial Devil Fruit Infobox.png","visual":"artificiel","icon":"🧪"},{"n":"SMILE","t":"Artificiel","u":"Gifters / consommateurs","p":"Fruits Zoan artificiels produits avec SAD ; réussite faible et effets secondaires sévères.","a":"Connu — motifs circulaires caractéristiques.","w":false,"r":"C","image":"https://static.wikia.nocookie.net/onepiece/images/e/e5/SMILE_Infobox.png/revision/latest","file":"SMILE Infobox.png","visual":"artificiel","icon":"🧪"},{"n":"Green Blood — Mero Mero","t":"Technologie","u":"S-Snake","p":"Reproduction scientifique du pouvoir de Boa Hancock.","a":"Pas un fruit naturel.","w":false,"r":"S","image":"","file":"","visual":"absent","icon":"💘"},{"n":"Green Blood — Supa Supa","t":"Technologie","u":"S-Hawk","p":"Reproduction scientifique du pouvoir de Daz Bonez.","a":"Pas un fruit naturel.","w":false,"r":"A","image":"","file":"","visual":"absent","icon":"🧬"},{"n":"Green Blood — Nikyu Nikyu","t":"Technologie","u":"S-Bear","p":"Reproduction scientifique du pouvoir de Kuma.","a":"Pas un fruit naturel.","w":false,"r":"S+","image":"","file":"","visual":"absent","icon":"🐾"},{"n":"Green Blood — Sui Sui","t":"Technologie","u":"S-Shark","p":"Reproduction scientifique du pouvoir de Señor Pink.","a":"Pas un fruit naturel.","w":false,"r":"A","image":"","file":"","visual":"absent","icon":"🧬"},{"n":"Poke Poke no Mi","t":"Paramecia","u":"Blamenco","p":"Poches dimensionnelles dans le corps permettant de ranger des objets.","a":"Nom ou visuel du fruit physique non révélé.","w":false,"r":"B","image":"","file":"","visual":"absent","icon":"🌀"},{"n":"Shari Shari no Mi","t":"Paramecia","u":"Sharinguru","p":"Transforme des parties du corps en roues.","a":"Nom ou visuel du fruit physique non révélé.","w":false,"r":"C","image":"","file":"","visual":"absent","icon":"🌀"},{"n":"Guru Guru no Mi","t":"Paramecia","u":"Buffalo","p":"Rotation corporelle permettant notamment le vol.","a":"Nom ou visuel du fruit physique non révélé.","w":false,"r":"B","image":"https://static.wikia.nocookie.net/onepiece/images/0/0a/Guru_Guru_no_Mi_Infobox.png/revision/latest","file":"Guru Guru no Mi Infobox.png","visual":"pouvoir","icon":"🌀"},{"n":"Bata Bata no Mi","t":"Paramecia","u":"Charlotte Galette","p":"Production et contrôle de beurre.","a":"Nom ou visuel du fruit physique non révélé.","w":false,"r":"B","image":"https://static.wikia.nocookie.net/onepiece/images/6/61/Bata_Bata_no_Mi_Infobox.png/revision/latest","file":"Bata Bata no Mi Infobox.png","visual":"pouvoir","icon":"🌀"},{"n":"Kuri Kuri no Mi","t":"Paramecia","u":"Charlotte Opera","p":"Production et manipulation de crème.","a":"Nom ou visuel du fruit physique non révélé.","w":false,"r":"B","image":"","file":"","visual":"absent","icon":"🌀"},{"n":"Gocha Gocha no Mi","t":"Paramecia","u":"Charlotte Newshi","p":"Permet de fusionner des personnes.","a":"Nom ou visuel du fruit physique non révélé.","w":false,"r":"A","image":"https://static.wikia.nocookie.net/onepiece/images/4/47/Gocha_Gocha_no_Mi_Infobox.png/revision/latest","file":"Gocha Gocha no Mi Infobox.png","visual":"pouvoir","icon":"🌀"},{"n":"Jake Jake no Mi","t":"Paramecia","u":"Kelly Funk","p":"Devient une veste ; peut contrôler celui qui la porte.","a":"Nom ou visuel du fruit physique non révélé.","w":false,"r":"C","image":"https://static.wikia.nocookie.net/onepiece/images/a/a1/Jake_Jake_no_Mi_Infobox.png/revision/latest","file":"Jake Jake no Mi Infobox.png","visual":"pouvoir","icon":"🌀"},{"n":"Tsutsu Tsutsu no Mi","t":"Paramecia","u":"Urban","p":"Transforme des parties du corps en canons.","a":"Nom ou visuel du fruit physique non révélé.","w":false,"r":"A","image":"https://static.wikia.nocookie.net/onepiece/images/5/5a/Tsutsu_Tsutsu_no_Mi_Infobox.png/revision/latest","file":"Tsutsu Tsutsu no Mi Infobox.png","visual":"pouvoir","icon":"🌀"},{"n":"Iku Iku no Mi","t":"Paramecia","u":"Biblo","p":"Fait grandir les objets dont il prend soin.","a":"Nom ou visuel du fruit physique non révélé.","w":false,"r":"A","image":"","file":"","visual":"absent","icon":"🌀"},{"n":"Minotaurus — fruit inconnu","t":"Zoan","u":"Minotaurus","p":"Zoan bovin éveillé, nom officiel du fruit non communiqué.","a":"Nom ou visuel du fruit physique non révélé.","w":true,"r":"A","image":"","file":"","visual":"absent","icon":"🐾"},{"n":"Minorhinoceros — fruit inconnu","t":"Zoan","u":"Minorhinoceros","p":"Zoan rhinocéros éveillé, nom officiel du fruit non communiqué.","a":"Nom ou visuel du fruit physique non révélé.","w":true,"r":"A","image":"","file":"","visual":"absent","icon":"🐾"},{"n":"Minozebra — fruit inconnu","t":"Zoan","u":"Minozebra","p":"Zoan zèbre éveillé, nom officiel du fruit non communiqué.","a":"Nom ou visuel du fruit physique non révélé.","w":true,"r":"A","image":"","file":"","visual":"absent","icon":"🐾"},{"n":"Minokoala — fruit inconnu","t":"Zoan","u":"Minokoala","p":"Zoan koala éveillé, nom officiel du fruit non communiqué.","a":"Nom ou visuel du fruit physique non révélé.","w":true,"r":"A","image":"","file":"","visual":"absent","icon":"🐾"}];
+    <section class="guide container" id="guide">
+      <div class="section-title-row"><div><div class="eyebrow">03 / LE GUIDE</div><h2>LE SAVOIR INTERDIT<span class="dot">.</span></h2></div></div>
+      <div class="guide-grid">
+        <article><span class="guide-symbol">◈</span><h3>LOGIA</h3><p>Le corps devient élément naturel : lumière, glace, ténèbres, foudre…</p></article>
+        <article><span class="guide-symbol">◉</span><h3>ZOAN</h3><p>Transformation animale, ancienne ou mythique. L'éveil peut déchaîner l'instinct.</p></article>
+        <article><span class="guide-symbol">◎</span><h3>PARAMECIA</h3><p>Des pouvoirs qui transforment les règles du réel, de l'âme à la gravité.</p></article>
+        <article><span class="guide-symbol">⌁</span><h3>LA MER</h3><p>L'immersion affaiblit les détenteurs. Le granit marin exploite la même faiblesse.</p></article>
+      </div>
+      <p class="legal-note">Animations procédurales et clips originaux créés pour ce fan-site : <strong>ce ne sont pas des extraits officiels de l'anime</strong>. Les illustrations de fruits et portraits sont référencés depuis des sources tierces ; leur disponibilité peut varier. Droits One Piece © Eiichiro Oda / Shueisha / Toei Animation.</p>
+    </section>
+  </main>
+  <footer><div class="container footer-inner"><div><strong>DEMON<span>FRUITZ</span>DEX</strong><small>Made for the Grand Line · SHINO EDITION V4</small></div><span>Fan project indépendant · Images externes créditées sur les fiches</span><a href="https://github.com/shinobione/DemonFruitzDex" target="_blank" rel="noopener noreferrer">SOURCE ↗</a></div></footer>
 
-const rank20 = [
-["Hito Hito no Mi, modèle Nika","Liberté physique + éveil + portée historique"],
-["Yami Yami no Mi","Neutralisation des autres Fruits"],
-["Gura Gura no Mi","Destruction géologique à échelle mondiale"],
-["Ope Ope no Mi","Manipulation spatiale + immortalité"],
-["Akuma no Mi","Pouvoir d'Imu encore hors cadre classique"],
-["Ryu Ryu no Mi, modèle Nidhöggr","Dragon colossal + foudre"],
-["Ryu Ryu no Mi, modèle Kirin","Matérialisation des rêves"],
-["Nikyu Nikyu no Mi","Repousse matière, attaques, douleur…"],
-["Soru Soru no Mi","Âmes + armée de Homies"],
-["Hobi Hobi no Mi","Jouet + oubli collectif"],
-["Goro Goro no Mi","Foudre, vitesse et portée immense"],
-["Zushi Zushi no Mi","Gravité + météorites"],
-["Wapu Wapu no Mi","Téléportation instantanée"],
-["Shima Shima no Mi","Contrôle d'une île entière"],
-["Magu Magu no Mi","Destruction thermique extrême"],
-["Pika Pika no Mi","Lumière et vitesse phénoménale"],
-["Toshi Toshi no Mi","Âge + futurs possibles"],
-["Shiku Shiku no Mi","Maladies à volonté"],
-["Nomi Nomi no Mi","Potentiel civilisationnel"],
-["Toki Toki no Mi","Voyage temporel vers le futur"]
-];
+  <div class="compare-dock" id="compareDock" hidden><div><span class="dock-icon">⚔</span> <strong id="compareCount">0 / 2</strong><small>fruits sélectionnés</small></div><div class="dock-actions"><button id="compareOpen" disabled>Comparer →</button><button id="compareClear" title="Vider la sélection" aria-label="Vider la sélection">×</button></div></div>
 
-const colors = {
- "Logia":"#58b6ff","Zoan Mythique":"#a777ff","Zoan Ancien":"#ff995f","Zoan":"#62d48f",
- "Paramecia":"#ff6f91","Indéterminé":"#e8b653","Artificiel":"#e8b653","Technologie":"#78e0d1"
-};
-
-const visualFilter = document.getElementById("visualFilter"), order = document.getElementById("order");
-const grid = document.getElementById("grid");
-const q = document.getElementById("q"), type = document.getElementById("type"), tier = document.getElementById("tier"), awakening = document.getElementById("awakening");
-const dialog = document.getElementById("dialog"), modal = document.getElementById("modal");
-
-[...new Set(fruits.map(x=>x.t))].sort().forEach(v=>{
-  const o=document.createElement("option");o.value=v;o.textContent=v;type.appendChild(o);
-});
-
-function esc(s){return String(s).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]))}
-function card(f){
-  const tags=[f.w?"⚡ Éveil confirmé":"Éveil non confirmé",f.visual==="fruit"?"👁 Fruit réel":f.visual==="pouvoir"?"🎨 Pouvoir":"◌ À compléter"];
-  return `<article class="card" style="--accent:${colors[f.t]||"#aaa"}" data-name="${esc(f.n)}">
-    <div class="card-top"><div class="type">${esc(f.t)}</div><div class="tier">${esc(f.r)}</div></div>
-    <div class="mediaFrame" style="--media-color:${colors[f.t]||'#a777ff'}"><div class="mediaFallback"><span>${esc(f.icon||'🍎')}</span><small>ILLUSTRATION INDISPONIBLE</small></div>${f.image?`<img class="mediaImage" loading="lazy" decoding="async" referrerpolicy="no-referrer" src="${esc(f.image)}" alt="${esc('Illustration de '+f.n)}" onerror="this.hidden=true;this.closest('.mediaFrame').classList.add('imageMissing')">`:''}<span class="mediaStatus">${f.visual==='fruit'?'FRUIT PHYSIQUE':f.visual==='pouvoir'?'POUVOIR ILLUSTRÉ':f.visual==='artificiel'?'FRUIT ARTIFICIEL':'VISUEL NON DOCUMENTÉ'}</span></div>
-    <h3>${esc(f.n)}</h3><div class="user">${esc(f.u)}</div>
-    <div class="power">${esc(f.p)}</div>
-    <div class="tags">${tags.map(t=>`<span class="tag">${t}</span>`).join("")}</div>
-  </article>`;
-}
-function filtered(){
-  const s=q.value.trim().toLowerCase();
-  return fruits.filter(f=>{
-    const hay=[f.n,f.t,f.u,f.p,f.a,f.r].join(" ").toLowerCase();
-    if(s && !hay.includes(s))return false;
-    if(type.value && f.t!==type.value)return false;
-    if(tier.value && f.r!==tier.value)return false;
-    if(awakening.value==="yes" && !f.w)return false;
-    if(awakening.value==="no" && f.w)return false;
-    if(visualFilter.value && f.visual!==visualFilter.value)return false;
-    return true;
-  }).sort((a,b)=> order.value==='alpha'?a.n.localeCompare(b.n,'fr'):order.value==='tier'?['S+','S','A','B','C'].indexOf(a.r)-['S+','S','A','B','C'].indexOf(b.r):0)
-}
-function render(){
-  const arr=filtered();
-  grid.innerHTML=arr.length?arr.map(card).join(""):`<div class="empty">Aucune fiche ne correspond à ces filtres.</div>`;
-  document.getElementById("resultCount").textContent=`${arr.length} entrée${arr.length>1?"s":""} affichée${arr.length>1?"s":""}`;
-  document.getElementById("statShown").textContent=arr.length;
-  document.getElementById("statLogia").textContent=arr.filter(x=>x.t==="Logia").length;
-  document.getElementById("statZoan").textContent=arr.filter(x=>x.t.startsWith("Zoan")).length;
-  document.getElementById("statPara").textContent=arr.filter(x=>x.t==="Paramecia").length;
-}
-[q,type,tier,awakening,visualFilter,order].forEach(el=>el.addEventListener("input",render));
-document.getElementById("reset").onclick=()=>{q.value="";type.value="";tier.value="";awakening.value="";visualFilter.value="";order.value="default";render();};
-
-grid.addEventListener("click",e=>{
-  const c=e.target.closest(".card");if(!c)return;
-  const f=fruits.find(x=>x.n===c.dataset.name);if(!f)return;
-  modal.innerHTML=`<div class="modal-head"><div><div class="type" style="color:${colors[f.t]||"#ddd"}">${esc(f.t)}</div><h2>${esc(f.n)}</h2><div class="modal-user">${esc(f.u)}</div></div><button class="close" onclick="document.getElementById('dialog').close()">✕</button></div>
-    <div class="modalMedia" style="--media-color:${colors[f.t]||'#a777ff'}">${f.image?`<img loading="lazy" src="${esc(f.image)}" alt="Illustration de ${esc(f.n)}" referrerpolicy="no-referrer" onerror="this.hidden=true">`:`<span>${esc(f.icon)}</span>`}<div class="modalMediaLegend">${f.visual==='fruit'?'APPARENCE DU FRUIT':f.visual==='pouvoir'?'VISUEL DU POUVOIR':f.visual==='artificiel'?'FRUIT ARTIFICIEL':'ILLUSTRATION NON DOCUMENTÉE'}</div></div><div class="modal-power">${esc(f.p)}</div>
-    <div class="detail-grid">
-      <div class="detail"><span>Tier</span><b>${esc(f.r)}</b></div>
-      <div class="detail"><span>Éveil</span><b>${f.w?"Confirmé ⚡":"Non confirmé"}</b></div>
-      <div class="detail"><span>Aspect physique</span><b>${esc(f.a)}</b></div>
-      <div class="detail"><span>Utilisateur</span><b>${esc(f.u)}</b></div>
-    </div>
-    <div class="sourceRow">${f.file?`<a target="_blank" rel="noopener noreferrer" href="https://onepiece.fandom.com/wiki/File:${encodeURIComponent(f.file.replaceAll(' ','_'))}">↗ Source de l'illustration • One Piece Wiki</a>`:'Aucune illustration officielle du fruit identifiée dans la galerie retenue.'}</div><div class="badge-line"><div class="pill">Canon SHINO-DEX</div><div class="pill">${esc(f.t)}</div><div class="pill">Tier ${esc(f.r)}</div></div>`;
-  dialog.showModal();
-});
-dialog.addEventListener("click",e=>{if(e.target===dialog)dialog.close()});
-
-document.getElementById("topList").innerHTML=rank20.map((x,i)=>`<div class="rank"><div class="rank-no">${String(i+1).padStart(2,"0")}</div><div><b>${esc(x[0])}</b><small>${esc(x[1])}</small></div><div class="tier">${i<4?"S+":"S"}</div></div>`).join("");
-
-render();
-</script>
+  <dialog id="detailDialog" class="detail-dialog"><div id="detailContent"></div></dialog>
+  <dialog id="compareDialog" class="compare-dialog"><div class="compare-dialog-inner"><div class="compare-head"><div><div class="eyebrow">DUEL DES POUVOIRS</div><h2>COMPARATEUR <span class="dot">⚔</span></h2></div><button id="compareClose" class="round-close" aria-label="Fermer le comparateur">×</button></div><div id="compareContent" class="compare-content"></div><p class="compare-disclaimer">Le tiers est un jugement éditorial : un personnage puissant n'implique pas que son fruit soit intrinsèquement supérieur.</p></div></dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
 </body>
 </html>

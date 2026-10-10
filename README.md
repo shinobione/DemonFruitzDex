@@ -1,49 +1,61 @@
-# DemonFruitzDex — SHINO-DEX Ultimate 🍎
+# 🍎 DemonFruitzDex — SHINO EDITION V4
 
-Encyclopédie interactive et illustrée des Fruits du Démon de **One Piece**, en français.
+Encyclopédie fan-made et interactive des Fruits du Démon de **One Piece**, en français.
 
-## Version actuelle
+**Site :** https://shinobione.github.io/DemonFruitzDex/
 
-- **166 fiches** de l'édition actuelle (fruits naturels, quelques pouvoirs sans nom et technologies artificielles). Ce nombre **n'est pas** le nombre officiel de fruits distincts : les catégories se recouvrent et des copies artificielles sont incluses.
-- **133 références visuelles externes** vers des fichiers de la galerie du One Piece Wiki ; elles ne sont ni téléchargées ni redistribuées dans ce dépôt.
-- **39 fiches** répertorient un visuel du fruit physique (selon les informations de cette édition) ; les autres visuels éventuels montrent **le pouvoir**, pas le fruit.
-- Recherche, filtres type/tier/éveil/illustration, tri, cartes et fiches détaillées.
-- Mode sombre et responsive. Aucun build ni dépendance nécessaire.
+## Édition V4
 
-## Démarrage
+- **166 fiches** dans l'édition actuelle (fruits naturels + cas non nommés + copies artificielles). Ce total **n'est pas un décompte canon officiel de fruits naturels distincts**.
+- **Français en nom principal**, suivi du nom original japonais **romanisé** (pas en kanji/kana). Les traductions françaises sont **descriptives** et peuvent différer des localisations officielles.
+- **133 références** d'images des fruits/pouvoirs tirées des noms de fichiers de la galerie *One Piece Wiki* ; ces références peuvent ne pas toutes être valides ou chargeables.
+- **121 fiches associées** à une URL de portrait d'utilisateur potentielle. Les images distantes sont non garanties : un avatar de secours reste visible si le média ne charge pas.
+- **Six clips MP4 originaux** pour les principaux effets : feu, foudre, ténèbres, glace, gravité et élasticité. Les clips sont silencieux, en boucle et stockés dans `assets/powers/`.
+- Pour les autres fruits : **moteur Canvas d'animations procédurales**, conçu pour rendre une sensation visuelle du pouvoir ; ce ne sont **pas des extraits de l'anime**.
+- Recherche en français/japonais romanisé, filtres familles/éveil/tier/images, tri, affichage progressif.
+- **Favoris** stockés localement dans le navigateur et **comparateur de deux fruits**.
+- Fiches en modal avec animation, lecteur pause/reprise, utilisateur illustré, sources, navigation et lien direct `?fruit=...`.
+- Adapté mobile et desktop, respecte `prefers-reduced-motion`.
 
-Ouvrir `index.html` dans un navigateur récent.
+## Lancer
 
-## Publication GitHub Pages
+En ligne, publier `main` avec GitHub Pages, source `/(root)`.
 
-Aller dans **Settings → Pages → Build and deployment → Deploy from a branch**. Sélectionner **main** / **/(root)** puis enregistrer.
+Localement : `python -m http.server 8000`, puis `http://localhost:8000/`. Le site ne nécessite pas de build ou npm. Une fois téléchargé comme dossier complet, les liens relatifs et clips doivent rester ensemble.
 
-La page sera généralement accessible à :
-https://shinobione.github.io/DemonFruitzDex/
+## Architecture
 
-> L'URL publique ne sera fonctionnelle que lorsque GitHub Pages sera activé et aura fini de publier.
+```
+index.html                 Interface et sémantique
+styles.css                 Responsive + direction artistique
+app.js                     Recherche, favoris, duel, animations Canvas
+data/fruits.json           Source éditoriale des fiches
+data/fruits.js             Export pour fonctionnement local sans fetch()
+assets/icon.svg           Icône SVG originale
+assets/powers/*.mp4       Vidéos originales générées procéduralement
+scripts/build_data.py     Enrichissement initial de la V3 (nécessite les fichiers source de la phase de migration)
+scripts/export_data.py    Export JSON vers JS
+scripts/render_loops.py   Générateur des animations MP4 originales
+```
 
-## Images et sources
+Éditer `data/fruits.json`, puis exécuter `python scripts/export_data.py`.
 
-Illustrations issues de liens distants vers :
-https://onepiece.fandom.com/wiki/Category:Devil_Fruit_Infobox_Images
+## Illustrations, sources et limites
 
-Les illustrations et personnages de One Piece restent la propriété de leurs titulaires respectifs. Le projet n'est ni officiel ni affilié à Shueisha, Eiichiro Oda ou Toei Animation. Les images externes peuvent disparaître, être bloquées par les règles de hotlinking, ou ne pas avoir le même statut de licence que les textes collaboratifs du wiki. Consulte les pages fichiers originales pour les crédits et droits.
+- [One Piece Wiki — galerie Fruits du Démon](https://onepiece.fandom.com/wiki/Category:Devil_Fruit_Infobox_Images)
+- [One Piece Wiki — portraits](https://onepiece.fandom.com/wiki/Category:Character_Anime_Infobox_Images)
+- [One Piece Wiki — images d'utilisation des pouvoirs](https://onepiece.fandom.com/wiki/Category:Devil_Fruit_Usage_Images)
 
-Les cartes affichent un **visuel alternatif non officiel** si la ressource distante ne charge pas. Un badge distingue :
-- `FRUIT PHYSIQUE` : design du fruit identifié dans cette édition ;
-- `POUVOIR ILLUSTRÉ` : image associée à l'utilisation / transformation ;
-- `VISUEL NON DOCUMENTÉ` : aucun fichier retenu.
+Les illustrations externes sont **liées à leur source**, non copiées dans le repo. Certains liens sont proposés à partir d'un nom de fichier présumé et doivent encore être vérifiés **un par un** : une image cassée peut déclencher l'avatar de secours, et un fichier tiers peut changer sans préavis.
 
-## Qualité et limites
+**Les six vidéos sont produites par un générateur original de motifs/particules.** Le projet **n'héberge aucune séquence copiée de l'anime, aucun GIF extrait, aucune musique ni séquence Toei**. Ne pas ajouter d'extraits officiels sans autorisation adaptée. Tous les personnages et designs de *One Piece* appartiennent à leurs ayants droit (Eiichiro Oda / Shueisha / Toei).
 
-L'ensemble des 166 fiches a fait l'objet d'un contrôle automatique basique de l'interface (JavaScript, rendu, recherche et modale). **Les 133 liens d'image n'ont pas encore pu être testés individuellement sur le réseau public** et certaines entrées très récentes du manga devront être revérifiées avant de déclarer le catalogue exhaustif ou 100 % canonique. Les tiers S+ à C sont une **appréciation éditoriale non officielle**.
+Les classements `S+` → `C` sont subjectifs ; certaines classifications récentes du manga demandent une vérification fine (notamment les formes des Doyens et des Chevaliers Divins). Ne pas utiliser la base comme référence canon certifiée sans citer les chapitres/SBS.
 
-## Roadmap proposée
+## Pistes V4.1
 
-1. Réviser chaque fiche récente (canon, nom et orthographe) avec référence au chapitre/SBS.
-2. Auditer automatiquement les URLs d'images et substituer les liens rompus par des sources stables et autorisées.
-3. Séparer le contenu dans des fichiers JSON versionnés pour faciliter les mises à jour.
-4. Ajouter personnages, plusieurs images par fruit, chapitre de première apparition et frise chronologique.
-5. Ajouter la comparaison de deux fruits, des favoris et une interface de contribution.
-
+1. Valider chaque URL de portrait/fruit et indiquer si l'illustration a été chargée.
+2. Ajouter de vrais extraits officiels **uniquement si la redistribution est autorisée**.
+3. Créer un workflow CI de validation des données et des noms uniques.
+4. Crédits par illustration et chapitres source.
+5. Importer les futurs chapitres avec une séparation canon / théorie / info à vérifier.
