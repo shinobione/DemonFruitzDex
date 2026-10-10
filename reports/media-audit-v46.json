@@ -1,0 +1,495 @@
+{
+  "edition": "V4.6",
+  "dated": "2026-10-10",
+  "scope": "Contrôle structurel exhaustif des 40 références héritées, pas de lecture ou intégration transfrontalière vérifiée.",
+  "fruitCount": 166,
+  "documentedFruits": 69,
+  "uncovered": 97,
+  "legacyAuditQueue": 40,
+  "legacyStillPending": 39,
+  "legacyClipCorrected": 1,
+  "clipAssociations": 33,
+  "uniqueClips": 28,
+  "episodeAssociations": 81,
+  "uniqueEpisodes": 71,
+  "removedVideo": {
+    "fruitId": "ito-ito-no-mi",
+    "id": "I752TYMkM7Y",
+    "reason": "Luffy and Law Combo ne permet pas d'illustrer précisément le pouvoir Ito Ito de Doflamingo."
+  },
+  "removedDuplicateEpisodes": [
+    {
+      "fruitId": "soru-soru-no-mi",
+      "crunchyrollId": "G6197XJ2Y"
+    },
+    {
+      "fruitId": "hie-hie-no-mi",
+      "crunchyrollId": "GX9U312XQ"
+    },
+    {
+      "fruitId": "uo-uo-no-mi-mod-le-seiryu",
+      "crunchyrollId": "GR0X5J3EY"
+    }
+  ],
+  "publisherMetadataIndependentlyFound": [
+    "63kiupuR7p8",
+    "IL2yBUx2Lpc"
+  ],
+  "playbackVerified": 0,
+  "editorialQueue": [
+    {
+      "fruitId": "ope-ope-no-mi",
+      "status": "legacy-pending-editorial-review",
+      "youtubeIds": [
+        "QAxaniV3zIM",
+        "R_tBf1ByqYo"
+      ],
+      "episodeIds": [
+        "G7PU3PGX7",
+        "G67510PVR"
+      ],
+      "playbackChecked": false,
+      "editorialNote": "Références historiques à confirmer par lecture et validation de l'adéquation du pouvoir."
+    },
+    {
+      "fruitId": "yami-yami-no-mi",
+      "status": "legacy-pending-editorial-review",
+      "youtubeIds": [
+        "QAxaniV3zIM"
+      ],
+      "episodeIds": [
+        "GG1U29VZ2"
+      ],
+      "playbackChecked": false,
+      "editorialNote": "Références historiques à confirmer par lecture et validation de l'adéquation du pouvoir."
+    },
+    {
+      "fruitId": "mochi-mochi-no-mi",
+      "status": "legacy-pending-editorial-review",
+      "youtubeIds": [
+        "wz1H3jxl_tA"
+      ],
+      "episodeIds": [
+        "GYNVVZDWR",
+        "GRVDMNG4R"
+      ],
+      "playbackChecked": false,
+      "editorialNote": "Références historiques à confirmer par lecture et validation de l'adéquation du pouvoir."
+    },
+    {
+      "fruitId": "pika-pika-no-mi",
+      "status": "legacy-pending-editorial-review",
+      "youtubeIds": [
+        "nowY_icRZsQ"
+      ],
+      "episodeIds": [
+        "GD9UEZQZE",
+        "G0DUNPNN8"
+      ],
+      "playbackChecked": false,
+      "editorialNote": "Références historiques à confirmer par lecture et validation de l'adéquation du pouvoir."
+    },
+    {
+      "fruitId": "ito-ito-no-mi",
+      "status": "clip-corrected",
+      "youtubeIds": [],
+      "episodeIds": [
+        "G63VWQ1EY",
+        "GYWEM3DNY"
+      ],
+      "playbackChecked": false,
+      "editorialNote": "Ancien lien vidéo retiré : montre surtout l'attaque combinée de Luffy et Law, et non une démonstration des fils de Doflamingo. Épisodes 727 et 731 conservés; lecture non contrôlée."
+    },
+    {
+      "fruitId": "jiki-jiki-no-mi",
+      "status": "legacy-pending-editorial-review",
+      "youtubeIds": [
+        "HBpihtBqB7I",
+        "R_tBf1ByqYo"
+      ],
+      "episodeIds": [
+        "GWDU8QVDJ"
+      ],
+      "playbackChecked": false,
+      "editorialNote": "Références historiques à confirmer par lecture et validation de l'adéquation du pouvoir."
+    },
+    {
+      "fruitId": "soru-soru-no-mi",
+      "status": "legacy-pending-editorial-review",
+      "youtubeIds": [
+        "92Q5A0DsZjE"
+      ],
+      "episodeIds": [
+        "G6197XJ2Y"
+      ],
+      "playbackChecked": false,
+      "editorialNote": "Références historiques à confirmer par lecture et validation de l'adéquation du pouvoir."
+    },
+    {
+      "fruitId": "gura-gura-no-mi",
+      "status": "legacy-pending-editorial-review",
+      "youtubeIds": [
+        "IL2yBUx2Lpc"
+      ],
+      "episodeIds": [
+        "GY8VMP2DY"
+      ],
+      "playbackChecked": false,
+      "editorialNote": "Références historiques à confirmer par lecture et validation de l'adéquation du pouvoir."
+    },
+    {
+      "fruitId": "mera-mera-no-mi",
+      "status": "legacy-pending-editorial-review",
+      "youtubeIds": [],
+      "episodeIds": [
+        "G50UZPNXD",
+        "G7PU4E8V7",
+        "G6K5K4Q7Y"
+      ],
+      "playbackChecked": false,
+      "editorialNote": "Références historiques à confirmer par lecture et validation de l'adéquation du pouvoir."
+    },
+    {
+      "fruitId": "moku-moku-no-mi",
+      "status": "legacy-pending-editorial-review",
+      "youtubeIds": [],
+      "episodeIds": [
+        "G50UZPNXD"
+      ],
+      "playbackChecked": false,
+      "editorialNote": "Références historiques à confirmer par lecture et validation de l'adéquation du pouvoir."
+    },
+    {
+      "fruitId": "hie-hie-no-mi",
+      "status": "legacy-pending-editorial-review",
+      "youtubeIds": [
+        "t_tbfihy0uM",
+        "yjfG8iyvYW4"
+      ],
+      "episodeIds": [
+        "GX9U312XQ",
+        "GN7UDM28E"
+      ],
+      "playbackChecked": false,
+      "editorialNote": "Références historiques à confirmer par lecture et validation de l'adéquation du pouvoir."
+    },
+    {
+      "fruitId": "magu-magu-no-mi",
+      "status": "legacy-pending-editorial-review",
+      "youtubeIds": [
+        "IL2yBUx2Lpc"
+      ],
+      "episodeIds": [
+        "GRJQKP0EY"
+      ],
+      "playbackChecked": false,
+      "editorialNote": "Références historiques à confirmer par lecture et validation de l'adéquation du pouvoir."
+    },
+    {
+      "fruitId": "hito-hito-no-mi-mod-le-nika",
+      "status": "legacy-pending-editorial-review",
+      "youtubeIds": [
+        "63kiupuR7p8",
+        "scPBmrzdD0g",
+        "zC6zyDlF8sQ",
+        "5L_Ek_CcREc",
+        "MK2DHUoD8pE"
+      ],
+      "episodeIds": [
+        "GK9U3KDXK"
+      ],
+      "playbackChecked": false,
+      "editorialNote": "Références historiques à confirmer par lecture et validation de l'adéquation du pouvoir."
+    },
+    {
+      "fruitId": "tori-tori-no-mi-mod-le-phoenix",
+      "status": "legacy-pending-editorial-review",
+      "youtubeIds": [
+        "ws9XLcg4qdE"
+      ],
+      "episodeIds": [
+        "GQJUGEJ11"
+      ],
+      "playbackChecked": false,
+      "editorialNote": "Références historiques à confirmer par lecture et validation de l'adéquation du pouvoir."
+    },
+    {
+      "fruitId": "uo-uo-no-mi-mod-le-seiryu",
+      "status": "legacy-pending-editorial-review",
+      "youtubeIds": [
+        "63kiupuR7p8"
+      ],
+      "episodeIds": [
+        "GR0X5J3EY"
+      ],
+      "playbackChecked": false,
+      "editorialNote": "Références historiques à confirmer par lecture et validation de l'adéquation du pouvoir."
+    },
+    {
+      "fruitId": "goro-goro-no-mi",
+      "status": "legacy-pending-editorial-review",
+      "youtubeIds": [
+        "-qC60miA8JE"
+      ],
+      "episodeIds": [],
+      "playbackChecked": false,
+      "editorialNote": "Références historiques à confirmer par lecture et validation de l'adéquation du pouvoir."
+    },
+    {
+      "fruitId": "hana-hana-no-mi",
+      "status": "legacy-pending-editorial-review",
+      "youtubeIds": [
+        "dqAOqwOdIVE"
+      ],
+      "episodeIds": [
+        "GJWU2ZJGM"
+      ],
+      "playbackChecked": false,
+      "editorialNote": "Références historiques à confirmer par lecture et validation de l'adéquation du pouvoir."
+    },
+    {
+      "fruitId": "hito-hito-no-mi",
+      "status": "legacy-pending-editorial-review",
+      "youtubeIds": [
+        "5reop01XCuk"
+      ],
+      "episodeIds": [
+        "GY8VM7QWY"
+      ],
+      "playbackChecked": false,
+      "editorialNote": "Références historiques à confirmer par lecture et validation de l'adéquation du pouvoir."
+    },
+    {
+      "fruitId": "ryu-ryu-no-mi-mod-le-pteranodon",
+      "status": "legacy-pending-editorial-review",
+      "youtubeIds": [
+        "Zuu6ClXRabE"
+      ],
+      "episodeIds": [],
+      "playbackChecked": false,
+      "editorialNote": "Références historiques à confirmer par lecture et validation de l'adéquation du pouvoir."
+    },
+    {
+      "fruitId": "neko-neko-no-mi-mod-le-l-opard",
+      "status": "legacy-pending-editorial-review",
+      "youtubeIds": [
+        "dNbs0IIiS1E",
+        "scPBmrzdD0g"
+      ],
+      "episodeIds": [
+        "GK9U3KDXK"
+      ],
+      "playbackChecked": false,
+      "editorialNote": "Références historiques à confirmer par lecture et validation de l'adéquation du pouvoir."
+    },
+    {
+      "fruitId": "suna-suna-no-mi",
+      "status": "legacy-pending-editorial-review",
+      "youtubeIds": [
+        "rmRzTBY-8EY"
+      ],
+      "episodeIds": [
+        "GJWU23708"
+      ],
+      "playbackChecked": false,
+      "editorialNote": "Références historiques à confirmer par lecture et validation de l'adéquation du pouvoir."
+    },
+    {
+      "fruitId": "gasu-gasu-no-mi",
+      "status": "legacy-pending-editorial-review",
+      "youtubeIds": [],
+      "episodeIds": [
+        "GRGGVE55R",
+        "G649GEGZY"
+      ],
+      "playbackChecked": false,
+      "editorialNote": "Références historiques à confirmer par lecture et validation de l'adéquation du pouvoir."
+    },
+    {
+      "fruitId": "inu-inu-no-mi-mod-le-okuchi-no-makami",
+      "status": "legacy-pending-editorial-review",
+      "youtubeIds": [],
+      "episodeIds": [
+        "GX9UQ5KG8"
+      ],
+      "playbackChecked": false,
+      "editorialNote": "Références historiques à confirmer par lecture et validation de l'adéquation du pouvoir."
+    },
+    {
+      "fruitId": "ushi-ushi-no-mi-mod-le-girafe",
+      "status": "legacy-pending-editorial-review",
+      "youtubeIds": [],
+      "episodeIds": [
+        "G649GXXJY"
+      ],
+      "playbackChecked": false,
+      "editorialNote": "Références historiques à confirmer par lecture et validation de l'adéquation du pouvoir."
+    },
+    {
+      "fruitId": "kumo-kumo-no-mi-mod-le-rosamygale-grauvogeli",
+      "status": "legacy-pending-editorial-review",
+      "youtubeIds": [],
+      "episodeIds": [
+        "GJWU2ZJGM"
+      ],
+      "playbackChecked": false,
+      "editorialNote": "Références historiques à confirmer par lecture et validation de l'adéquation du pouvoir."
+    },
+    {
+      "fruitId": "yomi-yomi-no-mi",
+      "status": "legacy-pending-editorial-review",
+      "youtubeIds": [
+        "dZ3C9KhI3Lc"
+      ],
+      "episodeIds": [
+        "G14U4NX08",
+        "G68VP8ZG6"
+      ],
+      "playbackChecked": false,
+      "editorialNote": "Références historiques à confirmer par lecture et validation de l'adéquation du pouvoir."
+    },
+    {
+      "fruitId": "kage-kage-no-mi",
+      "status": "legacy-pending-editorial-review",
+      "youtubeIds": [],
+      "episodeIds": [
+        "G649GQM3Y",
+        "GRDQV349Y"
+      ],
+      "playbackChecked": false,
+      "editorialNote": "Références historiques à confirmer par lecture et validation de l'adéquation du pouvoir."
+    },
+    {
+      "fruitId": "nikyu-nikyu-no-mi",
+      "status": "legacy-pending-editorial-review",
+      "youtubeIds": [],
+      "episodeIds": [
+        "GJWU232Q1"
+      ],
+      "playbackChecked": false,
+      "editorialNote": "Références historiques à confirmer par lecture et validation de l'adéquation du pouvoir."
+    },
+    {
+      "fruitId": "bara-bara-no-mi",
+      "status": "legacy-pending-editorial-review",
+      "youtubeIds": [],
+      "episodeIds": [
+        "GMKUX2X0G"
+      ],
+      "playbackChecked": false,
+      "editorialNote": "Références historiques à confirmer par lecture et validation de l'adéquation du pouvoir."
+    },
+    {
+      "fruitId": "doku-doku-no-mi",
+      "status": "legacy-pending-editorial-review",
+      "youtubeIds": [],
+      "episodeIds": [
+        "G8WUNXNQV",
+        "GQJUGJG4M"
+      ],
+      "playbackChecked": false,
+      "editorialNote": "Références historiques à confirmer par lecture et validation de l'adéquation du pouvoir."
+    },
+    {
+      "fruitId": "mero-mero-no-mi",
+      "status": "legacy-pending-editorial-review",
+      "youtubeIds": [],
+      "episodeIds": [
+        "GG1U292X8"
+      ],
+      "playbackChecked": false,
+      "editorialNote": "Références historiques à confirmer par lecture et validation de l'adéquation du pouvoir."
+    },
+    {
+      "fruitId": "zushi-zushi-no-mi",
+      "status": "legacy-pending-editorial-review",
+      "youtubeIds": [],
+      "episodeIds": [
+        "G6K5K4Q7Y"
+      ],
+      "playbackChecked": false,
+      "editorialNote": "Références historiques à confirmer par lecture et validation de l'adéquation du pouvoir."
+    },
+    {
+      "fruitId": "hobi-hobi-no-mi",
+      "status": "legacy-pending-editorial-review",
+      "youtubeIds": [],
+      "episodeIds": [
+        "GY751XD06",
+        "G0DUNPZ0D"
+      ],
+      "playbackChecked": false,
+      "editorialNote": "Références historiques à confirmer par lecture et validation de l'adéquation du pouvoir."
+    },
+    {
+      "fruitId": "ishi-ishi-no-mi",
+      "status": "legacy-pending-editorial-review",
+      "youtubeIds": [],
+      "episodeIds": [
+        "G50UZPG4Z"
+      ],
+      "playbackChecked": false,
+      "editorialNote": "Références historiques à confirmer par lecture et validation de l'adéquation du pouvoir."
+    },
+    {
+      "fruitId": "fude-fude-no-mi",
+      "status": "legacy-pending-editorial-review",
+      "youtubeIds": [],
+      "episodeIds": [
+        "G14U4D5W4"
+      ],
+      "playbackChecked": false,
+      "editorialNote": "Références historiques à confirmer par lecture et validation de l'adéquation du pouvoir."
+    },
+    {
+      "fruitId": "chiyu-chiyu-no-mi",
+      "status": "legacy-pending-editorial-review",
+      "youtubeIds": [],
+      "episodeIds": [
+        "G6Q491JER"
+      ],
+      "playbackChecked": false,
+      "editorialNote": "Références historiques à confirmer par lecture et validation de l'adéquation du pouvoir."
+    },
+    {
+      "fruitId": "green-blood-mero-mero",
+      "status": "legacy-pending-editorial-review",
+      "youtubeIds": [],
+      "episodeIds": [
+        "GVWU0744N"
+      ],
+      "playbackChecked": false,
+      "editorialNote": "Références historiques à confirmer par lecture et validation de l'adéquation du pouvoir."
+    },
+    {
+      "fruitId": "green-blood-supa-supa",
+      "status": "legacy-pending-editorial-review",
+      "youtubeIds": [],
+      "episodeIds": [
+        "GVWU0744N"
+      ],
+      "playbackChecked": false,
+      "editorialNote": "Références historiques à confirmer par lecture et validation de l'adéquation du pouvoir."
+    },
+    {
+      "fruitId": "green-blood-nikyu-nikyu",
+      "status": "legacy-pending-editorial-review",
+      "youtubeIds": [],
+      "episodeIds": [
+        "GVWU0744N"
+      ],
+      "playbackChecked": false,
+      "editorialNote": "Références historiques à confirmer par lecture et validation de l'adéquation du pouvoir."
+    },
+    {
+      "fruitId": "green-blood-sui-sui",
+      "status": "legacy-pending-editorial-review",
+      "youtubeIds": [],
+      "episodeIds": [
+        "GVWU0744N"
+      ],
+      "playbackChecked": false,
+      "editorialNote": "Références historiques à confirmer par lecture et validation de l'adéquation du pouvoir."
+    }
+  ]
+}
