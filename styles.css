@@ -147,3 +147,11 @@ footer{background:#0b0f16;border-top:1px solid var(--line)}.footer-inner{min-hei
 .card-visual.media-unavailable .art-meta{border-color:#cf9d4b86;background:#231c16df;color:#f2cf96}
 .detail-fruit-mini.media-unavailable{outline:1px dashed #cf9d4b6c}
 @media(prefers-reduced-motion:reduce){.media-unavailable .art-fallback{animation:none!important}}
+
+
+/* V4.9 — identifiable character art instead of empty physical-fruit cards */
+.card-visual:has(.artwork-user-substitute){background:radial-gradient(circle at 50% 28%,color-mix(in srgb,var(--accent),transparent 70%),#101624 66%);}
+.card-visual .artwork-user-substitute{position:absolute;inset:0;max-width:none;max-height:none;width:100%;height:100%;object-fit:contain;object-position:50% 33%;padding:38px 26px 39px;opacity:.95;filter:drop-shadow(0 20px 20px #000c);}
+.card-visual .art-meta{max-width:calc(100% - 20px);white-space:normal;line-height:1.25}
+.card-visual:has(.artwork-user-substitute) .art-fallback{opacity:.16}
+.card-visual:has(.artwork-user-substitute) .art-meta{border-color:#d6bc8e50;background:#12121ae8;color:#f0dfba}
