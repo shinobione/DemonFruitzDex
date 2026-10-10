@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded',()=>{
  function check(url,alt){return new Promise(resolve=>{
    let done=false;let img=new Image();let timeout;
    function finish(ok,final,reason){if(done)return;done=true;clearTimeout(timeout);img.onload=img.onerror=null;resolve({ok,final,reason});}
-   function tryOne(u,second){img.onload=()=>finish(true,u,second?'redirect':'direct');img.onerror=()=>{if(!second&&alt&&alt!==url)tryOne(alt,true);else finish(false,u,'error')};
+   function tryOne(u,second){clearTimeout(timeout);img.onload=()=>finish(true,u,second?'redirect':'direct');img.onerror=()=>{if(!second&&alt&&alt!==url)tryOne(alt,true);else finish(false,u,'error')};
      timeout=setTimeout(()=>{if(!second&&alt&&alt!==url)tryOne(alt,true);else finish(false,u,'timeout')},10000);img.src=u;
    }
    tryOne(url,false);
