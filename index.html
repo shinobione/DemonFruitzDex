@@ -6,8 +6,8 @@
   <meta name="theme-color" content="#080b10" />
   <meta name="description" content="DemonFruitzDex — encyclopédie interactive des Fruits du Démon de One Piece, avec illustrations, utilisateurs, animations et comparateur." />
   <meta property="og:title" content="DemonFruitzDex — l'encyclopédie des Fruits du Démon" />
-  <meta property="og:description" content="166 fiches, portraits grand format, vrais extraits de l’animé et comparateur." />
-  <title>DemonFruitzDex — SHINO-DEX V4</title>
+  <meta property="og:description" content="166 fiches, portraits immersifs et extraits officiels intégrés depuis Crunchyroll." />
+  <title>DemonFruitzDex — SHINO-DEX V4.1</title>
   <link rel="icon" type="image/svg+xml" href="assets/icon.svg" />
   <link rel="stylesheet" href="styles.css" />
   <script src="data/fruits.js" defer></script>
@@ -40,7 +40,7 @@
       <div class="hero-copy">
         <div class="hero-overline"><span class="live-dot"></span> GRAND LINE DATABASE <span class="hero-sep">/</span> ÉDITION INTERACTIVE</div>
         <h1>LES FRUITS<br>DU <em>DÉMON<span class="punct">.</span></em></h1>
-        <p>Explore l'univers de One Piece à travers ses pouvoirs les plus mythiques. Fruits illustrés, portraits des utilisateurs, <strong><strong>extraits officiels de l’animé</strong> et confrontations de pouvoirs.</p>
+        <p>Explore l'univers de One Piece à travers ses pouvoirs les plus mythiques. Fruits illustrés, portraits des utilisateurs, <strong><strong>extraits de l’animé</strong> hébergés par Crunchyroll et confrontations de pouvoirs.</p>
         <div class="hero-cta">
           <a class="btn btn-gold" href="#catalogue">EXPLORER LE DEX <span>↗</span></a>
           <button id="randomButton" class="btn btn-quiet"><span aria-hidden="true">✦</span> Fruit aléatoire</button>
@@ -84,9 +84,9 @@
           <div class="selects"><select id="tier" aria-label="Filtrer par niveau"><option value="">Tous les tiers</option><option value="S+">S+</option><option value="S">S</option><option value="A">A</option><option value="B">B</option><option value="C">C</option></select>
             <select id="sort" aria-label="Trier"><option value="default">Ordre du Dex</option><option value="az">Nom A–Z</option><option value="za">Nom Z–A</option><option value="tier">Puissance ↓</option><option value="awake">Éveil confirmé</option></select></div>
         </div>
-        <div class="filter-footer"><label class="check-label"><input id="onlyAwakened" type="checkbox" /> <span>Éveil confirmé</span></label><label class="check-label"><input id="onlyFavorite" type="checkbox" /> <span>Mes favoris</span></label><label class="check-label"><input id="onlyIllustrated" type="checkbox" /> <span>Image du pouvoir</span></label><button id="reset" class="reset-filter">Réinitialiser ↺</button></div>
+        <div class="filter-footer"><label class="check-label"><input id="onlyAwakened" type="checkbox" /> <span>Éveil confirmé</span></label><label class="check-label"><input id="onlyFavorite" type="checkbox" /> <span>Mes favoris</span></label><label class="check-label"><input id="onlyIllustrated" type="checkbox" /> <span>Image du pouvoir</span></label><label class="check-label"><input id="onlyVideos" type="checkbox" /> <span>🎬 Extraits / épisodes officiels</span></label><button id="reset" class="reset-filter">Réinitialiser ↺</button></div>
       </div>
-      <div class="results-bar"><div><span id="resultsCount">—</span> <span class="dim">résultats</span><span class="separator">·</span><span class="dim">Clique sur une carte pour explorer son pouvoir</span></div><div class="results-hint">♥ Favoris &nbsp; + Comparer</div></div>
+      <div class="results-bar"><div><span id="resultsCount">—</span> <span class="dim">résultats</span><span class="separator">·</span><span class="dim">Clique sur une carte pour explorer son pouvoir</span></div><div class="results-hint"><strong id="clipInventory">—</strong> fruits avec une scène officielle &nbsp;·&nbsp; ♥ Favoris &nbsp; + Comparer</div></div>
       <div id="cards" class="cards" aria-live="polite"></div>
       <div id="emptyState" class="empty-state" hidden><div>◇</div><h3>Aucun fruit trouvé</h3><p>Essaie une autre recherche ou désactive certains filtres.</p><button id="emptyReset" class="btn btn-quiet">Effacer les filtres</button></div>
       <div class="load-more-wrap"><button id="loadMore" class="load-more" hidden>CHARGER PLUS DE FRUITS <span>↓</span></button></div>
@@ -105,10 +105,10 @@
         <article><span class="guide-symbol">◎</span><h3>PARAMECIA</h3><p>Des pouvoirs qui transforment les règles du réel, de l'âme à la gravité.</p></article>
         <article><span class="guide-symbol">⌁</span><h3>LA MER</h3><p>L'immersion affaiblit les détenteurs. Le granit marin exploite la même faiblesse.</p></article>
       </div>
-      <p class="legal-note">Extraits d’anime intégrés sur demande depuis Crunchyroll et Toei Animation via leurs lecteurs officiels, selon disponibilité et conditions d’intégration. Les illustrations de fruits et portraits sont référencés depuis des sources tierces ; leur disponibilité peut varier. Droits One Piece © Eiichiro Oda / Shueisha / Toei Animation.</p>
+      <p class="legal-note">Clips courts de One Piece intégrés sur clic depuis YouTube officiel (Crunchyroll, Crunchyroll FR et Toei Animation), ou liens externes vers les épisodes de Crunchyroll. La lecture intégrée dépend du pays, de l’autorisation du diffuseur et des réglages YouTube. Les illustrations de fruits et portraits sont référencés depuis des sources tierces ; leur disponibilité peut varier. Droits One Piece © Eiichiro Oda / Shueisha / Toei Animation.</p>
     </section>
   </main>
-  <footer><div class="container footer-inner"><div><strong>DEMON<span>FRUITZ</span>DEX</strong><small>Made for the Grand Line · SHINO EDITION V4.1</small></div><span>Fan project indépendant · Images externes créditées sur les fiches</span><a href="https://github.com/shinobione/DemonFruitzDex" target="_blank" rel="noopener noreferrer">SOURCE ↗</a></div></footer>
+  <footer><div class="container footer-inner"><div><strong>DEMON<span>FRUITZ</span>DEX</strong><small>Made for the Grand Line · SHINO EDITION V4.2 · SCÈNES D’ANIME</small></div><span>Fan project indépendant · Images externes créditées sur les fiches</span><a href="https://github.com/shinobione/DemonFruitzDex" target="_blank" rel="noopener noreferrer">SOURCE ↗</a></div></footer>
 
   <div class="compare-dock" id="compareDock" hidden><div><span class="dock-icon">⚔</span> <strong id="compareCount">0 / 2</strong><small>fruits sélectionnés</small></div><div class="dock-actions"><button id="compareOpen" disabled>Comparer →</button><button id="compareClear" title="Vider la sélection" aria-label="Vider la sélection">×</button></div></div>
 
