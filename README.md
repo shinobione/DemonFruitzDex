@@ -63,7 +63,7 @@ Les classements `S+` → `C` sont subjectifs ; certaines classifications récent
 
 ## V4.1 — les pouvoirs en action (10 octobre 2026)
 
-- Les animations abstraites ne sont plus utilisées dans les fiches. À la place, **11 fiches** proposent une scène d’anime publiée par les chaînes Crunchyroll, Crunchyroll FR ou Crunchyroll Dubs sur YouTube. La vidéo n’est chargée qu’au clic, avec un lien alternatif direct vers la chaîne.
+- Les animations abstraites ne sont plus utilisées dans les fiches. À la place, **16 fiches** proposent une scène d’anime publiée par les chaînes Crunchyroll, Crunchyroll FR, Crunchyroll Dubs ou Toei Animation sur YouTube. La vidéo n’est chargée qu’au clic, avec un lien alternatif direct vers la chaîne.
 - Plusieurs autres fruits renvoient à un épisode Crunchyroll précisément référencé ; aucune vidéo non vérifiée n’est présentée comme étant la démonstration d’un pouvoir.
 - Le portrait de l’utilisateur est agrandi sur les cartes et occupe un grand panneau dans la fiche ouverte. Le fruit reste visible dans un encart distinct. Les images proviennent de liens externes du One Piece Wiki et certains portraits peuvent ne pas charger.
 - Métadonnées éditables dans `data/clips.json`, export navigateur dans `data/clips.js`.
