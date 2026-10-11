@@ -128,7 +128,7 @@
       <button type="button" class="official-play" id="officialPlay" aria-label="Lire l'extrait : ${enc(initial.title)}" style="--poster:url('${ytThumb}')">
         <span class="official-play-icon" aria-hidden="true">▶</span><span class="official-play-title">${enc(initial.title)}</span><span class="official-play-by">${enc(initial.channel)} · ${enc(initial.episode||'')}</span>
       </button></div>
-      <div class="clip-actions"><a id="clipYoutubeSource" href="${enc(initial.source)}" rel="noopener noreferrer" target="_blank">↗ Ouvrir sur YouTube</a></div>
+      <div class="clip-actions"><a id="clipYoutubeSource" href="${enc(initial.source)}" rel="noopener noreferrer" target="_blank">↗ Ouvrir sur YouTube</a> <a id="clipCheckSource" href="clip-check.html?fruit=${encodeURIComponent(f.id)}&amp;video=${encodeURIComponent(initial.youtubeId)}" target="_blank" rel="noopener noreferrer">✓ Tester / signaler cet extrait</a></div>
       <p id="clipKind" class="clip-kind">${videoProvenance(initial)}</p>
       ${videos.length>1?`<div class="clips-playlist"><div class="playlist-label">AUTRES EXTRAITS · ${videos.length} VIDÉOS</div><div class="clip-thumbnails">${videos.map(makeVideoButton).join('')}</div></div>`:''}`:
       `<div class="clip-empty"><span>◈</span><strong>Aucun extrait court sélectionné pour ce fruit</strong><p>Utilise la recherche YouTube ou Google Vidéos ci-dessous. Les liens vers les épisodes complets ne sont pas proposés.</p></div>`;
@@ -200,6 +200,7 @@
       button.innerHTML=`<span class="official-play-icon" aria-hidden="true">▶</span><span class="official-play-title">${enc(selected.title)}</span><span class="official-play-by">${enc(selected.channel)} · ${enc(selected.episode||'')}</span>`;
       box.replaceChildren(button);
       const source=$('clipYoutubeSource');if(source)source.href=selected.source;
+      const clipAudit=$('clipCheckSource');if(clipAudit)clipAudit.href='clip-check.html?fruit='+encodeURIComponent(f.id)+'&video='+encodeURIComponent(selected.youtubeId);
       const kind=$('clipKind');if(kind)kind.textContent=videoProvenance(selected);
       document.querySelectorAll('[data-video-index]').forEach(x=>{
         const active=Number(x.dataset.videoIndex)===index;
