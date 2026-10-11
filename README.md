@@ -177,3 +177,11 @@ Rapport détaillé : [reports/media-audit-v48.md](reports/media-audit-v48.md).
 - Les quatre portraits encore sans référence sont l'épée Cerbère (identité/canon à clarifier), Morley, les utilisateurs collectifs des SMILE (pas de portrait unique) et Urban.
 - Les anciens contrôles QA reconnaissent désormais les versions d'assets postérieures et le type de vidéo live-action distinct.
 - Validation : `python scripts/check_v49.py` et [rapport d'audit V4.9](reports/media-audit-v49.md).
+
+## V4.9.a — audit des sources, vidéos courtes uniquement
+
+- Audit croisé du catalogue **166 fiches** avec les planches et ressources fournies, documenté dans [l'audit V4.9.a](reports/cross-source-audit-v49a.md) et dans [l'inventaire de 166 lignes](reports/catalogue-media-gap-v49a.json). Les correspondances spécifiques aux sources graphiques externes **restent à valider** : ne pas en déduire qu'une image de fruit de fan est canonique.
+- Les **81 liens d'épisodes complets Crunchyroll** sont supprimés des données publiées et de l'interface. Les **37 associations YouTube** existantes (sur **25 fruits**) sont conservées, y compris les extraits hébergés sur YouTube par la chaîne Crunchyroll. Le site n'impose pas de compte Crunchyroll pour explorer les clips.
+- Le filtre « Extrait court sélectionné » ne comptabilise plus les **44 fiches uniquement documentées par des épisodes complets**. Les boutons de recherche YouTube / Google Vidéos restent accessibles depuis **toutes** les fiches. Les résultats de recherche ne sont pas considérés comme clips intégrables tant qu'ils ne sont pas vérifiés et attribués à la bonne fiche.
+- Sources visuelles : **162 portraits** et **140 illustrations de fruit ou pouvoir** avec URL référencée, **4 + 26** manquants. Le chargement dans le navigateur, les droits et le statut canon restent distincts et à contrôler.
+- Régression automatisable : `python scripts/check_v49a.py`. Les vérifications de structure **ne remplacent pas** la lecture réelle des vidéos ni le contrôle des images en France.
