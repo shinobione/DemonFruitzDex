@@ -73,3 +73,19 @@ La promotion d'un candidat exigera :
 5. aucune vidéo ni image de tiers réhébergée dans le dépôt.
 
 **Comptes du Dex à ce stade : toujours 166 fruits, 50 associations publiées, 36 fruits couverts, 130 fiches sans clip sélectionné ; 3 candidats distincts à vérifier. PR #8 Draft, PR #7 Draft, aucune fusion.**
+
+## V4.9.g3 — portail de vérification éditoriale renforcé (12 octobre 2026)
+
+**Problème identifié :** un verdict local « embed-ok » pouvait auparavant être sauvegardé sans aucune trace de pouvoir visible, sans timecode et sans vérification de l'origine ni de la durée. Les tests Chrome utilisaient même un faux verdict à des fins de simulation. Cela ne constituait pas une preuve utilisable pour intégrer une vidéo au Dex.
+
+**Correction livrée :** `clip-check.html` conserve les verdicts anciens et les candidatures, mais ajoute une **grille déclarative explicite** pour les trois vidéos à examiner : (1) lecture effectivement observée sans compte, (2) pouvoir du bon fruit observé dans la portion exacte, (3) chaîne/diffuseur vérifié, (4) extrait court non assimilable à un épisode entier, (5) timecode MM:SS ou HH:MM:SS constaté, et (6) notes substantielles. Un timecode mal formé est rejeté. Les déclarations sont sauvegardées localement, exportées dans le JSON et restaurées avec contrôle de validité des valeurs.
+
+Le champ `selfReportedDossierComplete` ne passe à `true` **que lorsque toutes ces déclarations sont présentes**. C'est un **signal de dossier complet à relire**, pas une certification de lecture ni un GO publication. L'iframe YouTube chargée ne déclenche jamais un verdict positif automatique. Les vieux audits exportés restent compatibles, mais sans preuve nouvelle ils ne sont pas déclarés complets. **Aucune vidéo n'est promue par ce changement.**
+
+**Vigilance source :** la description officielle de [Ace vs Blackbeard (Part 1)](https://www.youtube.com/watch?v=bAShh8lXaUI) met d'abord en avant **le nouveau pouvoir de Teach montré à Ace** et ne prouve pas la présence du Mera Mera dans cette vidéo. La fiche candidate affiche désormais explicitement cet avertissement. Les métadonnées de [Hancock](https://www.youtube.com/watch?v=h3GtlifE8CQ) et de [Yamato](https://www.youtube.com/watch?v=yJPxk-jO3Xc) ne suffisent pas non plus à identifier une technique image par image. Ces trois candidates restent `pending-manual-playback-and-power-match`.
+
+**Version synchronisée :** titre de page, bandeau, pied de page et version du script `app.js` passent à V4.9.g3. Les assets de curation `data/clip-candidates-v49g.js` et `scripts/clip-finder-v49g.js` utilisent un nouveau paramètre cache `4.9g3`. Aucun changement sur les données canoniques, les 164 portraits, les 152 illustrations ou les 50 associations vidéo.
+
+**QA attendue :** le test Chrome desktop/mobile simule délibérément un faux verdict pour vérifier qu'il **ne devient pas un dossier complet**, puis remplit les champs, refuse un mauvais timecode et vérifie l'export déclaratif. Le test ne visionne aucune vidéo et ne peut pas établir une lecture réelle. CI et captures à constater sur le commit final.
+
+**Statut :** PR #8 Draft, empilée sur PR #7 ; aucune fusion, aucun déploiement ; prochaine action : importer un vrai audit CLIP CHECK rempli sur des vidéos visionnées, ou continuer la recherche d'extraits officiels montrant explicitement leur pouvoir.
