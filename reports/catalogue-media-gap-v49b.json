@@ -1,0 +1,4740 @@
+{
+  "version": "V4.9.b",
+  "date": "2026-10-11",
+  "auditScope": "cross-reference inventory; source-specific matches pending",
+  "counts": {
+    "fruits": 166,
+    "withPortrait": 162,
+    "withVisual": 140,
+    "withYouTube": 29,
+    "youtubeAssociations": 42
+  },
+  "limitations": [
+    "References do not certify loading in user's browser",
+    "YouTube URLs have not been manually playback checked",
+    "Fan poster illustrations are not official unless verified",
+    "No newly sourced fan illustration is ingested",
+    "V4.9.b community uploads have public metadata only; embed / region / playback / duration are not certified"
+  ],
+  "records": [
+    {
+      "id": "moku-moku-no-mi",
+      "name": "Moku Moku no Mi",
+      "nom_fr": "Fruit de la Fumée",
+      "family": "Logia",
+      "holder": "Smoker",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "fruit"
+      },
+      "youtube": {
+        "associations": 1,
+        "ids": [
+          "4frfkxIubLc"
+        ]
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "medium"
+    },
+    {
+      "id": "suna-suna-no-mi",
+      "name": "Suna Suna no Mi",
+      "nom_fr": "Fruit du Sable",
+      "family": "Logia",
+      "holder": "Crocodile",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "fruit"
+      },
+      "youtube": {
+        "associations": 1,
+        "ids": [
+          "rmRzTBY-8EY"
+        ]
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "medium"
+    },
+    {
+      "id": "mera-mera-no-mi",
+      "name": "Mera Mera no Mi",
+      "nom_fr": "Fruit du Feu",
+      "family": "Logia",
+      "holder": "Sabo",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "fruit"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "goro-goro-no-mi",
+      "name": "Goro Goro no Mi",
+      "nom_fr": "Fruit de la Foudre",
+      "family": "Logia",
+      "holder": "Enel",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "fruit"
+      },
+      "youtube": {
+        "associations": 1,
+        "ids": [
+          "-qC60miA8JE"
+        ]
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "medium"
+    },
+    {
+      "id": "hie-hie-no-mi",
+      "name": "Hie Hie no Mi",
+      "nom_fr": "Fruit de la Glace",
+      "family": "Logia",
+      "holder": "Kuzan",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "pouvoir"
+      },
+      "youtube": {
+        "associations": 2,
+        "ids": [
+          "t_tbfihy0uM",
+          "yjfG8iyvYW4"
+        ]
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "medium"
+    },
+    {
+      "id": "yami-yami-no-mi",
+      "name": "Yami Yami no Mi",
+      "nom_fr": "Fruit des Ténèbres",
+      "family": "Logia",
+      "holder": "Marshall D. Teach",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "fruit"
+      },
+      "youtube": {
+        "associations": 1,
+        "ids": [
+          "QAxaniV3zIM"
+        ]
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "medium"
+    },
+    {
+      "id": "pika-pika-no-mi",
+      "name": "Pika Pika no Mi",
+      "nom_fr": "Fruit de la Lumière",
+      "family": "Logia",
+      "holder": "Kizaru",
+      "portrait": {
+        "registered": true,
+        "origin": "data/portraits-v48.js"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "pouvoir"
+      },
+      "youtube": {
+        "associations": 1,
+        "ids": [
+          "nowY_icRZsQ"
+        ]
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "medium"
+    },
+    {
+      "id": "magu-magu-no-mi",
+      "name": "Magu Magu no Mi",
+      "nom_fr": "Fruit du Magma",
+      "family": "Logia",
+      "holder": "Akainu",
+      "portrait": {
+        "registered": true,
+        "origin": "data/portrait-sources.js"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "pouvoir"
+      },
+      "youtube": {
+        "associations": 1,
+        "ids": [
+          "IL2yBUx2Lpc"
+        ]
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "medium"
+    },
+    {
+      "id": "susu-susu-no-mi",
+      "name": "Susu Susu no Mi",
+      "nom_fr": "Fruit de la Suie",
+      "family": "Logia",
+      "holder": "Karasu",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "pouvoir"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "numa-numa-no-mi",
+      "name": "Numa Numa no Mi",
+      "nom_fr": "Fruit du Marais",
+      "family": "Logia",
+      "holder": "Caribou",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/portrait-sources.js",
+        "kind": "pouvoir"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "gasu-gasu-no-mi",
+      "name": "Gasu Gasu no Mi",
+      "nom_fr": "Fruit du Gaz",
+      "family": "Logia",
+      "holder": "Caesar Clown",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "pouvoir"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "yuki-yuki-no-mi",
+      "name": "Yuki Yuki no Mi",
+      "nom_fr": "Fruit de la Neige",
+      "family": "Logia",
+      "holder": "Monet",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "pouvoir"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "mori-mori-no-mi",
+      "name": "Mori Mori no Mi",
+      "nom_fr": "Fruit de la Forêt",
+      "family": "Logia",
+      "holder": "Ryokugyu",
+      "portrait": {
+        "registered": true,
+        "origin": "data/portrait-sources.js"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "pouvoir"
+      },
+      "youtube": {
+        "associations": 1,
+        "ids": [
+          "bUqMgGyHrws"
+        ]
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "medium"
+    },
+    {
+      "id": "hito-hito-no-mi-mod-le-nika",
+      "name": "Hito Hito no Mi, modèle Nika",
+      "nom_fr": "Fruit de l'Humain — modèle Nika",
+      "family": "Zoan Mythique",
+      "holder": "Monkey D. Luffy",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "fruit"
+      },
+      "youtube": {
+        "associations": 7,
+        "ids": [
+          "63kiupuR7p8",
+          "scPBmrzdD0g",
+          "zC6zyDlF8sQ",
+          "5L_Ek_CcREc",
+          "MK2DHUoD8pE",
+          "aLG9XoxJE7g",
+          "SJtADPK0fKQ"
+        ]
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "medium"
+    },
+    {
+      "id": "tori-tori-no-mi-mod-le-phoenix",
+      "name": "Tori Tori no Mi, modèle Phoenix",
+      "nom_fr": "Fruit de l'Oiseau — modèle Phénix",
+      "family": "Zoan Mythique",
+      "holder": "Marco",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "fruit"
+      },
+      "youtube": {
+        "associations": 1,
+        "ids": [
+          "ws9XLcg4qdE"
+        ]
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "medium"
+    },
+    {
+      "id": "hito-hito-no-mi-mod-le-daibutsu",
+      "name": "Hito Hito no Mi, modèle Daibutsu",
+      "nom_fr": "Fruit de l'Humain — modèle Daibutsu",
+      "family": "Zoan Mythique",
+      "holder": "Sengoku",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "pouvoir"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "uo-uo-no-mi-mod-le-seiryu",
+      "name": "Uo Uo no Mi, modèle Seiryu",
+      "nom_fr": "Fruit du Poisson — modèle Seiryū",
+      "family": "Zoan Mythique",
+      "holder": "Kaido",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "fruit"
+      },
+      "youtube": {
+        "associations": 1,
+        "ids": [
+          "63kiupuR7p8"
+        ]
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "medium"
+    },
+    {
+      "id": "inu-inu-no-mi-mod-le-kyubi-no-kitsune",
+      "name": "Inu Inu no Mi, modèle Kyubi no Kitsune",
+      "nom_fr": "Fruit du Chien — modèle Kitsune à neuf queues",
+      "family": "Zoan Mythique",
+      "holder": "Catarina Devon",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "pouvoir"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "hebi-hebi-no-mi-mod-le-yamata-no-orochi",
+      "name": "Hebi Hebi no Mi, modèle Yamata no Orochi",
+      "nom_fr": "Hebi Hebi no Mi — modèle Yamata no Orochi",
+      "family": "Zoan Mythique",
+      "holder": "Kurozumi Orochi",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "fruit"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "hito-hito-no-mi-mod-le-onyudo",
+      "name": "Hito Hito no Mi, modèle Onyudo",
+      "nom_fr": "Fruit de l'Humain — modèle Ōnyūdō",
+      "family": "Zoan Mythique",
+      "holder": "Onimaru",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": false,
+        "origin": null,
+        "kind": "absent"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "inu-inu-no-mi-mod-le-okuchi-no-makami",
+      "name": "Inu Inu no Mi, modèle Okuchi no Makami",
+      "nom_fr": "Fruit du Chien — modèle Okuchi no Makami",
+      "family": "Zoan Mythique",
+      "holder": "Yamato",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "fruit"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "uma-uma-no-mi-mod-le-pegasus",
+      "name": "Uma Uma no Mi, modèle Pegasus",
+      "nom_fr": "Fruit du Cheval — modèle Pégase",
+      "family": "Zoan Mythique",
+      "holder": "Stronger",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "pouvoir"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "ryu-ryu-no-mi-mod-le-kirin",
+      "name": "Ryu Ryu no Mi, modèle Kirin",
+      "nom_fr": "Fruit du Dragon — modèle Kirin",
+      "family": "Zoan Mythique",
+      "holder": "Killingham",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": false,
+        "origin": null,
+        "kind": "absent"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "ryu-ryu-no-mi-mod-le-nidh-ggr",
+      "name": "Ryu Ryu no Mi, modèle Nidhöggr",
+      "nom_fr": "Fruit du Dragon — modèle Nidhöggr",
+      "family": "Zoan Mythique",
+      "holder": "Loki",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "fruit"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "risu-risu-no-mi-mod-le-ratatoskr",
+      "name": "Risu Risu no Mi, modèle Ratatoskr",
+      "nom_fr": "Fruit de l'Écureuil — modèle Ratatoskr",
+      "family": "Zoan Mythique",
+      "holder": "Ragnir",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": false,
+        "origin": null,
+        "kind": "absent"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "fruit-mythique-gyuki",
+      "name": "Fruit mythique — Gyūki",
+      "nom_fr": "Fruit mythique — Gyūki",
+      "family": "Zoan Mythique",
+      "holder": "Jaygarcia Saturn",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": false,
+        "origin": null,
+        "kind": "absent"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "fruit-mythique-sandworm",
+      "name": "Fruit mythique — Sandworm",
+      "nom_fr": "Fruit mythique — Ver des sables",
+      "family": "Zoan Mythique",
+      "holder": "Shepherd Ju Peter",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": false,
+        "origin": null,
+        "kind": "absent"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "fruit-mythique-bakotsu",
+      "name": "Fruit mythique — Bakotsu",
+      "nom_fr": "Fruit mythique — Bakotsu",
+      "family": "Zoan Mythique",
+      "holder": "Ethanbaron V. Nusjuro",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": false,
+        "origin": null,
+        "kind": "absent"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "fruit-mythique-itsumade",
+      "name": "Fruit mythique — Itsumade",
+      "nom_fr": "Fruit mythique — Itsumade",
+      "family": "Zoan Mythique",
+      "holder": "Marcus Mars",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": false,
+        "origin": null,
+        "kind": "absent"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "fruit-mythique-fengxi",
+      "name": "Fruit mythique — Fengxi",
+      "nom_fr": "Fruit mythique — Fengxi",
+      "family": "Zoan Mythique",
+      "holder": "Topman Warcury",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": false,
+        "origin": null,
+        "kind": "absent"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "fruit-mythique-cerb-re",
+      "name": "Fruit mythique — Cerbère",
+      "nom_fr": "Fruit mythique — Cerbère",
+      "family": "Zoan Mythique",
+      "holder": "Épée Cerberus",
+      "portrait": {
+        "registered": false,
+        "origin": null
+      },
+      "visual": {
+        "registered": false,
+        "origin": null,
+        "kind": "absent"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "ryu-ryu-no-mi-mod-le-allosaurus",
+      "name": "Ryu Ryu no Mi, modèle Allosaurus",
+      "nom_fr": "Fruit du Dragon — modèle Allosaure",
+      "family": "Zoan Ancien",
+      "holder": "X Drake",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "pouvoir"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "zo-zo-no-mi-mod-le-mammouth",
+      "name": "Zo Zo no Mi, modèle Mammouth",
+      "nom_fr": "Fruit de l'Éléphant — modèle Mammouth",
+      "family": "Zoan Ancien",
+      "holder": "Jack",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "pouvoir"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "ryu-ryu-no-mi-mod-le-spinosaurus",
+      "name": "Ryu Ryu no Mi, modèle Spinosaurus",
+      "nom_fr": "Fruit du Dragon — modèle Spinosaure",
+      "family": "Zoan Ancien",
+      "holder": "Page One",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "pouvoir"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "ryu-ryu-no-mi-mod-le-pteranodon",
+      "name": "Ryu Ryu no Mi, modèle Pteranodon",
+      "nom_fr": "Fruit du Dragon — modèle Ptéranodon",
+      "family": "Zoan Ancien",
+      "holder": "King",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "pouvoir"
+      },
+      "youtube": {
+        "associations": 1,
+        "ids": [
+          "Zuu6ClXRabE"
+        ]
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "medium"
+    },
+    {
+      "id": "ryu-ryu-no-mi-mod-le-brachiosaurus",
+      "name": "Ryu Ryu no Mi, modèle Brachiosaurus",
+      "nom_fr": "Fruit du Dragon — modèle Brachiosaure",
+      "family": "Zoan Ancien",
+      "holder": "Queen",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "pouvoir"
+      },
+      "youtube": {
+        "associations": 1,
+        "ids": [
+          "6qt1tyasOmM"
+        ]
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "medium"
+    },
+    {
+      "id": "ryu-ryu-no-mi-mod-le-pachycephalosaurus",
+      "name": "Ryu Ryu no Mi, modèle Pachycephalosaurus",
+      "nom_fr": "Fruit du Dragon — modèle Pachycéphalosaure",
+      "family": "Zoan Ancien",
+      "holder": "Ulti",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "pouvoir"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "ryu-ryu-no-mi-mod-le-triceratops",
+      "name": "Ryu Ryu no Mi, modèle Triceratops",
+      "nom_fr": "Fruit du Dragon — modèle Tricératops",
+      "family": "Zoan Ancien",
+      "holder": "Sasaki",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "pouvoir"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "kumo-kumo-no-mi-mod-le-rosamygale-grauvogeli",
+      "name": "Kumo Kumo no Mi, modèle Rosamygale Grauvogeli",
+      "nom_fr": "Fruit de l'Araignée — modèle Rosamygale grauvogeli",
+      "family": "Zoan Ancien",
+      "holder": "Black Maria",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "pouvoir"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "neko-neko-no-mi-mod-le-saber-tiger",
+      "name": "Neko Neko no Mi, modèle Saber Tiger",
+      "nom_fr": "Fruit du Félin — modèle Tigre à dents de sabre",
+      "family": "Zoan Ancien",
+      "holder": "Who's-Who",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "pouvoir"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "ushi-ushi-no-mi-mod-le-bison",
+      "name": "Ushi Ushi no Mi, modèle Bison",
+      "nom_fr": "Fruit du Bovin — modèle Bison",
+      "family": "Zoan",
+      "holder": "Dalton",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "fruit"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "hito-hito-no-mi",
+      "name": "Hito Hito no Mi",
+      "nom_fr": "Fruit de l'Humain",
+      "family": "Zoan",
+      "holder": "Tony Tony Chopper",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "fruit"
+      },
+      "youtube": {
+        "associations": 1,
+        "ids": [
+          "5reop01XCuk"
+        ]
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "medium"
+    },
+    {
+      "id": "tori-tori-no-mi-mod-le-faucon",
+      "name": "Tori Tori no Mi, modèle Faucon",
+      "nom_fr": "Fruit de l'Oiseau — modèle Faucon",
+      "family": "Zoan",
+      "holder": "Pell",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "pouvoir"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "mogu-mogu-no-mi",
+      "name": "Mogu Mogu no Mi",
+      "nom_fr": "Fruit de la Taupe",
+      "family": "Zoan",
+      "holder": "Miss Merry Christmas",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "pouvoir"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "inu-inu-no-mi-mod-le-dachshund",
+      "name": "Inu Inu no Mi, modèle Dachshund",
+      "nom_fr": "Fruit du Chien — modèle Teckel",
+      "family": "Zoan",
+      "holder": "Lassoo",
+      "portrait": {
+        "registered": true,
+        "origin": "data/portrait-sources.js"
+      },
+      "visual": {
+        "registered": false,
+        "origin": null,
+        "kind": "absent"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "inu-inu-no-mi-mod-le-jackal",
+      "name": "Inu Inu no Mi, modèle Jackal",
+      "nom_fr": "Fruit du Chien — modèle Chacal",
+      "family": "Zoan",
+      "holder": "Chaka",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "pouvoir"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "uma-uma-no-mi",
+      "name": "Uma Uma no Mi",
+      "nom_fr": "Fruit du Cheval",
+      "family": "Zoan",
+      "holder": "Pierre",
+      "portrait": {
+        "registered": true,
+        "origin": "data/portraits-v49.js"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "pouvoir"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "zo-zo-no-mi",
+      "name": "Zo Zo no Mi",
+      "nom_fr": "Fruit de l'Éléphant",
+      "family": "Zoan",
+      "holder": "Funkfreed",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "pouvoir"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "neko-neko-no-mi-mod-le-l-opard",
+      "name": "Neko Neko no Mi, modèle Léopard",
+      "nom_fr": "Fruit du Félin — modèle Léopard",
+      "family": "Zoan",
+      "holder": "Rob Lucci",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "fruit"
+      },
+      "youtube": {
+        "associations": 2,
+        "ids": [
+          "dNbs0IIiS1E",
+          "scPBmrzdD0g"
+        ]
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "medium"
+    },
+    {
+      "id": "inu-inu-no-mi-mod-le-loup",
+      "name": "Inu Inu no Mi, modèle Loup",
+      "nom_fr": "Fruit du Chien — modèle Loup",
+      "family": "Zoan",
+      "holder": "Jabra",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/portrait-sources.js",
+        "kind": "pouvoir"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "ushi-ushi-no-mi-mod-le-girafe",
+      "name": "Ushi Ushi no Mi, modèle Girafe",
+      "nom_fr": "Fruit du Bovin — modèle Girafe",
+      "family": "Zoan",
+      "holder": "Kaku",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "fruit"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "hebi-hebi-no-mi-mod-le-anaconda",
+      "name": "Hebi Hebi no Mi, modèle Anaconda",
+      "nom_fr": "Hebi Hebi no Mi — modèle Anaconda",
+      "family": "Zoan",
+      "holder": "Boa Sandersonia",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "pouvoir"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "hebi-hebi-no-mi-mod-le-cobra-royal",
+      "name": "Hebi Hebi no Mi, modèle Cobra Royal",
+      "nom_fr": "Hebi Hebi no Mi — modèle Cobra royal",
+      "family": "Zoan",
+      "holder": "Boa Marigold",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "pouvoir"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "kame-kame-no-mi",
+      "name": "Kame Kame no Mi",
+      "nom_fr": "Fruit de la Tortue",
+      "family": "Zoan",
+      "holder": "Pekoms",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "pouvoir"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "sara-sara-no-mi-mod-le-axolotl",
+      "name": "Sara Sara no Mi, modèle Axolotl",
+      "nom_fr": "Fruit de l'Axolotl — modèle Axolotl",
+      "family": "Zoan",
+      "holder": "Smiley",
+      "portrait": {
+        "registered": true,
+        "origin": "data/portraits-v49.js"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "fruit"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "mushi-mushi-no-mi-mod-le-kabutomushi",
+      "name": "Mushi Mushi no Mi, modèle Kabutomushi",
+      "nom_fr": "Fruit de l'Insecte — modèle Scarabée rhinocéros",
+      "family": "Zoan",
+      "holder": "Kabu",
+      "portrait": {
+        "registered": true,
+        "origin": "data/portraits-v48.js"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "pouvoir"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "mushi-mushi-no-mi-mod-le-suzumebachi",
+      "name": "Mushi Mushi no Mi, modèle Suzumebachi",
+      "nom_fr": "Fruit de l'Insecte — modèle Frelon",
+      "family": "Zoan",
+      "holder": "Bian",
+      "portrait": {
+        "registered": true,
+        "origin": "data/portrait-sources.js"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "pouvoir"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "tama-tama-no-mi",
+      "name": "Tama Tama no Mi",
+      "nom_fr": "Fruit de l'Œuf",
+      "family": "Zoan",
+      "holder": "Baron Tamago",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "pouvoir"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "tori-tori-no-mi-mod-le-albatros",
+      "name": "Tori Tori no Mi, modèle Albatros",
+      "nom_fr": "Fruit de l'Oiseau — modèle Albatros",
+      "family": "Zoan",
+      "holder": "Morgans",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": false,
+        "origin": null,
+        "kind": "absent"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "inu-inu-no-mi-mod-le-tanuki",
+      "name": "Inu Inu no Mi, modèle Tanuki",
+      "nom_fr": "Fruit du Chien — modèle Tanuki",
+      "family": "Zoan",
+      "holder": "Bunbuku",
+      "portrait": {
+        "registered": true,
+        "origin": "data/portrait-sources.js"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "pouvoir"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "bara-bara-no-mi",
+      "name": "Bara Bara no Mi",
+      "nom_fr": "Fruit du Morcellement",
+      "family": "Paramecia",
+      "holder": "Buggy",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "fruit"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "sube-sube-no-mi",
+      "name": "Sube Sube no Mi",
+      "nom_fr": "Fruit du Glissement",
+      "family": "Paramecia",
+      "holder": "Alvida",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "fruit"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "bomu-bomu-no-mi",
+      "name": "Bomu Bomu no Mi",
+      "nom_fr": "Fruit de la Bombe",
+      "family": "Paramecia",
+      "holder": "Gem",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "fruit"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "kiro-kiro-no-mi",
+      "name": "Kiro Kiro no Mi",
+      "nom_fr": "Fruit du Poids",
+      "family": "Paramecia",
+      "holder": "Mikita",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "fruit"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "hana-hana-no-mi",
+      "name": "Hana Hana no Mi",
+      "nom_fr": "Fruit de l'Éclosion",
+      "family": "Paramecia",
+      "holder": "Nico Robin",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "fruit"
+      },
+      "youtube": {
+        "associations": 2,
+        "ids": [
+          "dqAOqwOdIVE",
+          "IRXco8fXxBE"
+        ]
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "medium"
+    },
+    {
+      "id": "doru-doru-no-mi",
+      "name": "Doru Doru no Mi",
+      "nom_fr": "Fruit de la Cire",
+      "family": "Paramecia",
+      "holder": "Mr. 3",
+      "portrait": {
+        "registered": true,
+        "origin": "data/portrait-sources.js"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "fruit"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "baku-baku-no-mi",
+      "name": "Baku Baku no Mi",
+      "nom_fr": "Fruit du Glouton",
+      "family": "Paramecia",
+      "holder": "Wapol",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "fruit"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "mane-mane-no-mi",
+      "name": "Mane Mane no Mi",
+      "nom_fr": "Fruit de la Copie",
+      "family": "Paramecia",
+      "holder": "Bentham",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "fruit"
+      },
+      "youtube": {
+        "associations": 1,
+        "ids": [
+          "XDaXKCqhlJY"
+        ]
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "medium"
+    },
+    {
+      "id": "supa-supa-no-mi",
+      "name": "Supa Supa no Mi",
+      "nom_fr": "Fruit des Lames",
+      "family": "Paramecia",
+      "holder": "Daz Bonez",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "fruit"
+      },
+      "youtube": {
+        "associations": 2,
+        "ids": [
+          "XUTCR8XoyTc",
+          "DSbeGEIANcM"
+        ]
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "medium"
+    },
+    {
+      "id": "toge-toge-no-mi",
+      "name": "Toge Toge no Mi",
+      "nom_fr": "Fruit des Épines",
+      "family": "Paramecia",
+      "holder": "Zala",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "pouvoir"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "ori-ori-no-mi",
+      "name": "Ori Ori no Mi",
+      "nom_fr": "Fruit des Liens",
+      "family": "Paramecia",
+      "holder": "Hina",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "pouvoir"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "bane-bane-no-mi",
+      "name": "Bane Bane no Mi",
+      "nom_fr": "Fruit du Ressort",
+      "family": "Paramecia",
+      "holder": "Bellamy",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "pouvoir"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "ito-ito-no-mi",
+      "name": "Ito Ito no Mi",
+      "nom_fr": "Fruit des Fils",
+      "family": "Paramecia",
+      "holder": "Donquixote Doflamingo",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "fruit"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "noro-noro-no-mi",
+      "name": "Noro Noro no Mi",
+      "nom_fr": "Fruit du Ralentissement",
+      "family": "Paramecia",
+      "holder": "Foxy",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "pouvoir"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "doa-doa-no-mi",
+      "name": "Doa Doa no Mi",
+      "nom_fr": "Fruit des Portes",
+      "family": "Paramecia",
+      "holder": "Blueno",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "pouvoir"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "awa-awa-no-mi",
+      "name": "Awa Awa no Mi",
+      "nom_fr": "Fruit du Savon",
+      "family": "Paramecia",
+      "holder": "Kalifa",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "fruit"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "beri-beri-no-mi",
+      "name": "Beri Beri no Mi",
+      "nom_fr": "Fruit des Baies",
+      "family": "Paramecia",
+      "holder": "Very Good",
+      "portrait": {
+        "registered": true,
+        "origin": "data/portraits-v49.js"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "pouvoir"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "sabi-sabi-no-mi",
+      "name": "Sabi Sabi no Mi",
+      "nom_fr": "Fruit de la Rouille",
+      "family": "Paramecia",
+      "holder": "Shu",
+      "portrait": {
+        "registered": true,
+        "origin": "data/portraits-v48.js"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "pouvoir"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "yomi-yomi-no-mi",
+      "name": "Yomi Yomi no Mi",
+      "nom_fr": "Fruit de la Résurrection",
+      "family": "Paramecia",
+      "holder": "Brook",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "fruit"
+      },
+      "youtube": {
+        "associations": 1,
+        "ids": [
+          "dZ3C9KhI3Lc"
+        ]
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "medium"
+    },
+    {
+      "id": "kage-kage-no-mi",
+      "name": "Kage Kage no Mi",
+      "nom_fr": "Fruit de l'Ombre",
+      "family": "Paramecia",
+      "holder": "Gecko Moria",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "fruit"
+      },
+      "youtube": {
+        "associations": 1,
+        "ids": [
+          "fSgU4NEqa4s"
+        ]
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "medium"
+    },
+    {
+      "id": "horo-horo-no-mi",
+      "name": "Horo Horo no Mi",
+      "nom_fr": "Fruit des Fantômes",
+      "family": "Paramecia",
+      "holder": "Perona",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "fruit"
+      },
+      "youtube": {
+        "associations": 1,
+        "ids": [
+          "p5KF8XZlqEk"
+        ]
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "medium"
+    },
+    {
+      "id": "suke-suke-no-mi",
+      "name": "Suke Suke no Mi",
+      "nom_fr": "Fruit de l'Invisibilité",
+      "family": "Paramecia",
+      "holder": "Shiryu",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "pouvoir"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "nikyu-nikyu-no-mi",
+      "name": "Nikyu Nikyu no Mi",
+      "nom_fr": "Fruit des Pattes",
+      "family": "Paramecia",
+      "holder": "Bartholomew Kuma",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "fruit"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "toshi-toshi-no-mi",
+      "name": "Toshi Toshi no Mi",
+      "nom_fr": "Fruit de l'Âge",
+      "family": "Paramecia",
+      "holder": "Jewelry Bonney",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": false,
+        "origin": null,
+        "kind": "absent"
+      },
+      "youtube": {
+        "associations": 1,
+        "ids": [
+          "kbVs6x3QtQo"
+        ]
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "jiki-jiki-no-mi",
+      "name": "Jiki Jiki no Mi",
+      "nom_fr": "Fruit du Magnétisme",
+      "family": "Paramecia",
+      "holder": "Eustass Kid",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "fruit"
+      },
+      "youtube": {
+        "associations": 2,
+        "ids": [
+          "HBpihtBqB7I",
+          "R_tBf1ByqYo"
+        ]
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "medium"
+    },
+    {
+      "id": "ope-ope-no-mi",
+      "name": "Ope Ope no Mi",
+      "nom_fr": "Fruit de l'Opération",
+      "family": "Paramecia",
+      "holder": "Trafalgar D. Water Law",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "fruit"
+      },
+      "youtube": {
+        "associations": 2,
+        "ids": [
+          "QAxaniV3zIM",
+          "R_tBf1ByqYo"
+        ]
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "medium"
+    },
+    {
+      "id": "shiro-shiro-no-mi",
+      "name": "Shiro Shiro no Mi",
+      "nom_fr": "Fruit de la Forteresse",
+      "family": "Paramecia",
+      "holder": "Capone Bege",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "pouvoir"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "wara-wara-no-mi",
+      "name": "Wara Wara no Mi",
+      "nom_fr": "Fruit de la Paille",
+      "family": "Paramecia",
+      "holder": "Basil Hawkins",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "pouvoir"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "oto-oto-no-mi",
+      "name": "Oto Oto no Mi",
+      "nom_fr": "Fruit du Son",
+      "family": "Paramecia",
+      "holder": "Scratchmen Apoo",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "pouvoir"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "mero-mero-no-mi",
+      "name": "Mero Mero no Mi",
+      "nom_fr": "Fruit de l'Amour",
+      "family": "Paramecia",
+      "holder": "Boa Hancock",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "fruit"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "doku-doku-no-mi",
+      "name": "Doku Doku no Mi",
+      "nom_fr": "Fruit du Poison",
+      "family": "Paramecia",
+      "holder": "Magellan",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "pouvoir"
+      },
+      "youtube": {
+        "associations": 1,
+        "ids": [
+          "592XWC7Abkc"
+        ]
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "medium"
+    },
+    {
+      "id": "horu-horu-no-mi",
+      "name": "Horu Horu no Mi",
+      "nom_fr": "Fruit des Hormones",
+      "family": "Paramecia",
+      "holder": "Emporio Ivankov",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "pouvoir"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "choki-choki-no-mi",
+      "name": "Choki Choki no Mi",
+      "nom_fr": "Fruit des Ciseaux",
+      "family": "Paramecia",
+      "holder": "Inazuma",
+      "portrait": {
+        "registered": true,
+        "origin": "data/portrait-sources.js"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "pouvoir"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "gura-gura-no-mi",
+      "name": "Gura Gura no Mi",
+      "nom_fr": "Fruit du Séisme",
+      "family": "Paramecia",
+      "holder": "Marshall D. Teach",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "fruit"
+      },
+      "youtube": {
+        "associations": 1,
+        "ids": [
+          "IL2yBUx2Lpc"
+        ]
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "medium"
+    },
+    {
+      "id": "kira-kira-no-mi",
+      "name": "Kira Kira no Mi",
+      "nom_fr": "Fruit du Diamant",
+      "family": "Paramecia",
+      "holder": "Jozu",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "pouvoir"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "woshu-woshu-no-mi",
+      "name": "Woshu Woshu no Mi",
+      "nom_fr": "Fruit de la Lessive",
+      "family": "Paramecia",
+      "holder": "Tsuru",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "pouvoir"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "fuwa-fuwa-no-mi",
+      "name": "Fuwa Fuwa no Mi",
+      "nom_fr": "Fruit de la Flottaison",
+      "family": "Paramecia",
+      "holder": "Shiki",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "pouvoir"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "deka-deka-no-mi",
+      "name": "Deka Deka no Mi",
+      "nom_fr": "Fruit de la Gigantification",
+      "family": "Paramecia",
+      "holder": "Sanjuan Wolf",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "pouvoir"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "mato-mato-no-mi",
+      "name": "Mato Mato no Mi",
+      "nom_fr": "Fruit du Ciblage",
+      "family": "Paramecia",
+      "holder": "Vander Decken IX",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "pouvoir"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "fuku-fuku-no-mi",
+      "name": "Fuku Fuku no Mi",
+      "nom_fr": "Fruit des Vêtements",
+      "family": "Paramecia",
+      "holder": "Kin'emon",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "pouvoir"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "hobi-hobi-no-mi",
+      "name": "Hobi Hobi no Mi",
+      "nom_fr": "Fruit du Jouet",
+      "family": "Paramecia",
+      "holder": "Sugar",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "fruit"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "buki-buki-no-mi",
+      "name": "Buki Buki no Mi",
+      "nom_fr": "Fruit des Armes",
+      "family": "Paramecia",
+      "holder": "Baby 5",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "pouvoir"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "beta-beta-no-mi",
+      "name": "Beta Beta no Mi",
+      "nom_fr": "Fruit de la Glue",
+      "family": "Paramecia",
+      "holder": "Trebol",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "pouvoir"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "zushi-zushi-no-mi",
+      "name": "Zushi Zushi no Mi",
+      "nom_fr": "Fruit de la Gravité",
+      "family": "Paramecia",
+      "holder": "Fujitora",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "pouvoir"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "bari-bari-no-mi",
+      "name": "Bari Bari no Mi",
+      "nom_fr": "Fruit de la Barrière",
+      "family": "Paramecia",
+      "holder": "Bartolomeo",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "pouvoir"
+      },
+      "youtube": {
+        "associations": 2,
+        "ids": [
+          "AdM7PV5kako",
+          "Zupy-QIf-8U"
+        ]
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "medium"
+    },
+    {
+      "id": "nui-nui-no-mi",
+      "name": "Nui Nui no Mi",
+      "nom_fr": "Fruit de la Couture",
+      "family": "Paramecia",
+      "holder": "Leo",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "fruit"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "giro-giro-no-mi",
+      "name": "Giro Giro no Mi",
+      "nom_fr": "Fruit du Regard",
+      "family": "Paramecia",
+      "holder": "Viola",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "pouvoir"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "ato-ato-no-mi",
+      "name": "Ato Ato no Mi",
+      "nom_fr": "Fruit de l'Art",
+      "family": "Paramecia",
+      "holder": "Giolla",
+      "portrait": {
+        "registered": true,
+        "origin": "data/portraits-v49.js"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "pouvoir"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "pamu-pamu-no-mi",
+      "name": "Pamu Pamu no Mi",
+      "nom_fr": "Fruit du Gonflement",
+      "family": "Paramecia",
+      "holder": "Gladius",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "pouvoir"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "sui-sui-no-mi",
+      "name": "Sui Sui no Mi",
+      "nom_fr": "Fruit de la Nage",
+      "family": "Paramecia",
+      "holder": "Señor Pink",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "pouvoir"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "ton-ton-no-mi",
+      "name": "Ton Ton no Mi",
+      "nom_fr": "Fruit de la Tonne",
+      "family": "Paramecia",
+      "holder": "Machvise",
+      "portrait": {
+        "registered": true,
+        "origin": "data/portraits-v49.js"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "pouvoir"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "hira-hira-no-mi",
+      "name": "Hira Hira no Mi",
+      "nom_fr": "Fruit du Drapeau",
+      "family": "Paramecia",
+      "holder": "Diamante",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "pouvoir"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "ishi-ishi-no-mi",
+      "name": "Ishi Ishi no Mi",
+      "nom_fr": "Fruit de la Pierre",
+      "family": "Paramecia",
+      "holder": "Pica",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "pouvoir"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "fude-fude-no-mi",
+      "name": "Fude Fude no Mi",
+      "nom_fr": "Fruit du Pinceau",
+      "family": "Paramecia",
+      "holder": "Kanjuro",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "fruit"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "nagi-nagi-no-mi",
+      "name": "Nagi Nagi no Mi",
+      "nom_fr": "Fruit du Silence",
+      "family": "Paramecia",
+      "holder": "Donquixote Rosinante",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "pouvoir"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "chiyu-chiyu-no-mi",
+      "name": "Chiyu Chiyu no Mi",
+      "nom_fr": "Fruit de la Guérison",
+      "family": "Paramecia",
+      "holder": "Mansherry",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "pouvoir"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "soru-soru-no-mi",
+      "name": "Soru Soru no Mi",
+      "nom_fr": "Fruit de l'Âme",
+      "family": "Paramecia",
+      "holder": "Big Mom",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "pouvoir"
+      },
+      "youtube": {
+        "associations": 1,
+        "ids": [
+          "92Q5A0DsZjE"
+        ]
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "medium"
+    },
+    {
+      "id": "mira-mira-no-mi",
+      "name": "Mira Mira no Mi",
+      "nom_fr": "Fruit du Miroir",
+      "family": "Paramecia",
+      "holder": "Brûlée",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "pouvoir"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "pero-pero-no-mi",
+      "name": "Pero Pero no Mi",
+      "nom_fr": "Fruit du Bonbon",
+      "family": "Paramecia",
+      "holder": "Perospero",
+      "portrait": {
+        "registered": true,
+        "origin": "data/portraits-v48.js"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "pouvoir"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "bisu-bisu-no-mi",
+      "name": "Bisu Bisu no Mi",
+      "nom_fr": "Fruit du Biscuit",
+      "family": "Paramecia",
+      "holder": "Cracker",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "pouvoir"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "buku-buku-no-mi",
+      "name": "Buku Buku no Mi",
+      "nom_fr": "Fruit du Livre",
+      "family": "Paramecia",
+      "holder": "Mont-d'Or",
+      "portrait": {
+        "registered": true,
+        "origin": "data/portraits-v48.js"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "pouvoir"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "shibo-shibo-no-mi",
+      "name": "Shibo Shibo no Mi",
+      "nom_fr": "Fruit de l'Essorage",
+      "family": "Paramecia",
+      "holder": "Smoothie",
+      "portrait": {
+        "registered": true,
+        "origin": "data/portraits-v48.js"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "pouvoir"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "memo-memo-no-mi",
+      "name": "Memo Memo no Mi",
+      "nom_fr": "Fruit de la Mémoire",
+      "family": "Paramecia",
+      "holder": "Charlotte Pudding",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "pouvoir"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "mochi-mochi-no-mi",
+      "name": "Mochi Mochi no Mi",
+      "nom_fr": "Fruit du Mochi",
+      "family": "Paramecia",
+      "holder": "Charlotte Katakuri",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "fruit"
+      },
+      "youtube": {
+        "associations": 1,
+        "ids": [
+          "wz1H3jxl_tA"
+        ]
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "medium"
+    },
+    {
+      "id": "hoya-hoya-no-mi",
+      "name": "Hoya Hoya no Mi",
+      "nom_fr": "Fruit du Génie",
+      "family": "Paramecia",
+      "holder": "Daifuku",
+      "portrait": {
+        "registered": true,
+        "origin": "data/portraits-v48.js"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "pouvoir"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "netsu-netsu-no-mi",
+      "name": "Netsu Netsu no Mi",
+      "nom_fr": "Fruit de la Chaleur",
+      "family": "Paramecia",
+      "holder": "Oven",
+      "portrait": {
+        "registered": true,
+        "origin": "data/portraits-v48.js"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "pouvoir"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "kuku-kuku-no-mi",
+      "name": "Kuku Kuku no Mi",
+      "nom_fr": "Fruit de la Cuisine",
+      "family": "Paramecia",
+      "holder": "Streusen",
+      "portrait": {
+        "registered": true,
+        "origin": "data/portraits-v48.js"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "pouvoir"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "oshi-oshi-no-mi",
+      "name": "Oshi Oshi no Mi",
+      "nom_fr": "Fruit de la Pression",
+      "family": "Paramecia",
+      "holder": "Morley",
+      "portrait": {
+        "registered": false,
+        "origin": null
+      },
+      "visual": {
+        "registered": false,
+        "origin": null,
+        "kind": "absent"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "kobu-kobu-no-mi",
+      "name": "Kobu Kobu no Mi",
+      "nom_fr": "Fruit de l'Encouragement",
+      "family": "Paramecia",
+      "holder": "Belo Betty",
+      "portrait": {
+        "registered": true,
+        "origin": "data/portrait-sources.js"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "pouvoir"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "kibi-kibi-no-mi",
+      "name": "Kibi Kibi no Mi",
+      "nom_fr": "Fruit des Kibi Dango",
+      "family": "Paramecia",
+      "holder": "Tama",
+      "portrait": {
+        "registered": true,
+        "origin": "data/portraits-v48.js"
+      },
+      "visual": {
+        "registered": false,
+        "origin": null,
+        "kind": "absent"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "toki-toki-no-mi",
+      "name": "Toki Toki no Mi",
+      "nom_fr": "Fruit du Temps",
+      "family": "Paramecia",
+      "holder": "Kozuki Toki",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "pouvoir"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "juku-juku-no-mi",
+      "name": "Juku Juku no Mi",
+      "nom_fr": "Fruit du Mûrissement",
+      "family": "Paramecia",
+      "holder": "Shinobu",
+      "portrait": {
+        "registered": true,
+        "origin": "data/portrait-sources.js"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "pouvoir"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "maki-maki-no-mi",
+      "name": "Maki Maki no Mi",
+      "nom_fr": "Fruit des Parchemins",
+      "family": "Paramecia",
+      "holder": "Raizo",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "pouvoir"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "shiku-shiku-no-mi",
+      "name": "Shiku Shiku no Mi",
+      "nom_fr": "Fruit de la Maladie",
+      "family": "Paramecia",
+      "holder": "Doc Q",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "pouvoir"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "wapu-wapu-no-mi",
+      "name": "Wapu Wapu no Mi",
+      "nom_fr": "Fruit de la Téléportation",
+      "family": "Paramecia",
+      "holder": "Van Augur",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/portrait-sources.js",
+        "kind": "pouvoir"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "riki-riki-no-mi",
+      "name": "Riki Riki no Mi",
+      "nom_fr": "Fruit de la Force",
+      "family": "Paramecia",
+      "holder": "Jesus Burgess",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "pouvoir"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "nomi-nomi-no-mi",
+      "name": "Nomi Nomi no Mi",
+      "nom_fr": "Fruit du Savoir",
+      "family": "Paramecia",
+      "holder": "Dr. Vegapunk",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": false,
+        "origin": null,
+        "kind": "absent"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "shima-shima-no-mi",
+      "name": "Shima Shima no Mi",
+      "nom_fr": "Fruit de l'Île",
+      "family": "Paramecia",
+      "holder": "Avalo Pizarro",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "pouvoir"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "gabu-gabu-no-mi",
+      "name": "Gabu Gabu no Mi",
+      "nom_fr": "Fruit de l'Alcool",
+      "family": "Paramecia",
+      "holder": "Vasco Shot",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": false,
+        "origin": null,
+        "kind": "absent"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "muchi-muchi-no-mi",
+      "name": "Muchi Muchi no Mi",
+      "nom_fr": "Fruit du Fouet",
+      "family": "Paramecia",
+      "holder": "Kujaku",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "pouvoir"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "nori-nori-no-mi",
+      "name": "Nori Nori no Mi",
+      "nom_fr": "Fruit de la Monture",
+      "family": "Paramecia",
+      "holder": "Bluegrass",
+      "portrait": {
+        "registered": true,
+        "origin": "data/portrait-sources.js"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "pouvoir"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "aro-aro-no-mi",
+      "name": "Aro Aro no Mi",
+      "nom_fr": "Fruit des Flèches",
+      "family": "Paramecia",
+      "holder": "Gunko",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "pouvoir"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "iba-iba-no-mi",
+      "name": "Iba Iba no Mi",
+      "nom_fr": "Fruit des Épines",
+      "family": "Paramecia",
+      "holder": "Sommers",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "pouvoir"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "fruit-sans-nom-d-urouge",
+      "name": "Fruit sans nom d'Urouge",
+      "nom_fr": "Fruit sans nom d'Urouge",
+      "family": "Paramecia",
+      "holder": "Urouge",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": false,
+        "origin": null,
+        "kind": "absent"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "fruit-sans-nom-de-laffitte",
+      "name": "Fruit sans nom de Laffitte",
+      "nom_fr": "Fruit sans nom de Laffitte",
+      "family": "Indéterminé",
+      "holder": "Laffitte",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": false,
+        "origin": null,
+        "kind": "absent"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "gunyo-gunyo-no-mi",
+      "name": "Gunyo Gunyo no Mi",
+      "nom_fr": "Fruit de l'Argile",
+      "family": "Indéterminé",
+      "holder": "Prince Grus",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "pouvoir"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "akuma-no-mi",
+      "name": "Akuma no Mi",
+      "nom_fr": "Fruit du Démon",
+      "family": "Indéterminé",
+      "holder": "Imu",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "pouvoir"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "fruit-artificiel-seiryu",
+      "name": "Fruit artificiel Seiryu",
+      "nom_fr": "Fruit artificiel du Dragon Azur",
+      "family": "Artificiel",
+      "holder": "Momonosuke",
+      "portrait": {
+        "registered": true,
+        "origin": "data/fruits.json"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "artificiel"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "smile",
+      "name": "SMILE",
+      "nom_fr": "SMILE",
+      "family": "Artificiel",
+      "holder": "consommateurs",
+      "portrait": {
+        "registered": false,
+        "origin": null
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "artificiel"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "green-blood-mero-mero",
+      "name": "Green Blood — Mero Mero",
+      "nom_fr": "Green Blood — Mero Mero",
+      "family": "Technologie",
+      "holder": "S-Snake",
+      "portrait": {
+        "registered": true,
+        "origin": "data/portrait-sources.js"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/power-art-v48.js",
+        "kind": "pouvoir"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "green-blood-supa-supa",
+      "name": "Green Blood — Supa Supa",
+      "nom_fr": "Green Blood — Supa Supa",
+      "family": "Technologie",
+      "holder": "S-Hawk",
+      "portrait": {
+        "registered": true,
+        "origin": "data/portraits-v48.js"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/power-art-v48.js",
+        "kind": "pouvoir"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "green-blood-nikyu-nikyu",
+      "name": "Green Blood — Nikyu Nikyu",
+      "nom_fr": "Green Blood — Nikyu Nikyu",
+      "family": "Technologie",
+      "holder": "S-Bear",
+      "portrait": {
+        "registered": true,
+        "origin": "data/portraits-v48.js"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/power-art-v48.js",
+        "kind": "pouvoir"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "green-blood-sui-sui",
+      "name": "Green Blood — Sui Sui",
+      "nom_fr": "Green Blood — Sui Sui",
+      "family": "Technologie",
+      "holder": "S-Shark",
+      "portrait": {
+        "registered": true,
+        "origin": "data/portraits-v48.js"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/power-art-v48.js",
+        "kind": "pouvoir"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "poke-poke-no-mi",
+      "name": "Poke Poke no Mi",
+      "nom_fr": "Fruit des Poches",
+      "family": "Paramecia",
+      "holder": "Blamenco",
+      "portrait": {
+        "registered": true,
+        "origin": "data/portrait-sources.js"
+      },
+      "visual": {
+        "registered": false,
+        "origin": null,
+        "kind": "absent"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "shari-shari-no-mi",
+      "name": "Shari Shari no Mi",
+      "nom_fr": "Fruit de la Roue",
+      "family": "Paramecia",
+      "holder": "Sharinguru",
+      "portrait": {
+        "registered": true,
+        "origin": "data/portraits-v48.js"
+      },
+      "visual": {
+        "registered": false,
+        "origin": null,
+        "kind": "absent"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "guru-guru-no-mi",
+      "name": "Guru Guru no Mi",
+      "nom_fr": "Fruit de la Rotation",
+      "family": "Paramecia",
+      "holder": "Buffalo",
+      "portrait": {
+        "registered": true,
+        "origin": "data/portraits-v49.js"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "pouvoir"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "bata-bata-no-mi",
+      "name": "Bata Bata no Mi",
+      "nom_fr": "Fruit du Beurre",
+      "family": "Paramecia",
+      "holder": "Charlotte Galette",
+      "portrait": {
+        "registered": true,
+        "origin": "data/portraits-v48.js"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "pouvoir"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "kuri-kuri-no-mi",
+      "name": "Kuri Kuri no Mi",
+      "nom_fr": "Fruit de la Crème",
+      "family": "Paramecia",
+      "holder": "Charlotte Opera",
+      "portrait": {
+        "registered": true,
+        "origin": "data/portraits-v48.js"
+      },
+      "visual": {
+        "registered": false,
+        "origin": null,
+        "kind": "absent"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "gocha-gocha-no-mi",
+      "name": "Gocha Gocha no Mi",
+      "nom_fr": "Fruit de la Fusion",
+      "family": "Paramecia",
+      "holder": "Charlotte Newshi",
+      "portrait": {
+        "registered": true,
+        "origin": "data/portraits-v49.js"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "pouvoir"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "jake-jake-no-mi",
+      "name": "Jake Jake no Mi",
+      "nom_fr": "Fruit de la Veste",
+      "family": "Paramecia",
+      "holder": "Kelly Funk",
+      "portrait": {
+        "registered": true,
+        "origin": "data/portraits-v49.js"
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "pouvoir"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "tsutsu-tsutsu-no-mi",
+      "name": "Tsutsu Tsutsu no Mi",
+      "nom_fr": "Fruit des Canons",
+      "family": "Paramecia",
+      "holder": "Urban",
+      "portrait": {
+        "registered": false,
+        "origin": null
+      },
+      "visual": {
+        "registered": true,
+        "origin": "data/fruits.json",
+        "kind": "pouvoir"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "iku-iku-no-mi",
+      "name": "Iku Iku no Mi",
+      "nom_fr": "Fruit de la Croissance",
+      "family": "Paramecia",
+      "holder": "Biblo",
+      "portrait": {
+        "registered": true,
+        "origin": "data/portrait-sources.js"
+      },
+      "visual": {
+        "registered": false,
+        "origin": null,
+        "kind": "absent"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "minotaurus-fruit-inconnu",
+      "name": "Minotaurus — fruit inconnu",
+      "nom_fr": "Zoan éveillé — Taureau (nom inconnu)",
+      "family": "Zoan",
+      "holder": "Minotaurus",
+      "portrait": {
+        "registered": true,
+        "origin": "data/portraits-v48.js"
+      },
+      "visual": {
+        "registered": false,
+        "origin": null,
+        "kind": "absent"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "minorhinoceros-fruit-inconnu",
+      "name": "Minorhinoceros — fruit inconnu",
+      "nom_fr": "Zoan éveillé — Rhinocéros (nom inconnu)",
+      "family": "Zoan",
+      "holder": "Minorhinoceros",
+      "portrait": {
+        "registered": true,
+        "origin": "data/portraits-v48.js"
+      },
+      "visual": {
+        "registered": false,
+        "origin": null,
+        "kind": "absent"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "minozebra-fruit-inconnu",
+      "name": "Minozebra — fruit inconnu",
+      "nom_fr": "Zoan éveillé — Zèbre (nom inconnu)",
+      "family": "Zoan",
+      "holder": "Minozebra",
+      "portrait": {
+        "registered": true,
+        "origin": "data/portraits-v48.js"
+      },
+      "visual": {
+        "registered": false,
+        "origin": null,
+        "kind": "absent"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "minokoala-fruit-inconnu",
+      "name": "Minokoala — fruit inconnu",
+      "nom_fr": "Zoan éveillé — Koala (nom inconnu)",
+      "family": "Zoan",
+      "holder": "Minokoala",
+      "portrait": {
+        "registered": true,
+        "origin": "data/portraits-v48.js"
+      },
+      "visual": {
+        "registered": false,
+        "origin": null,
+        "kind": "absent"
+      },
+      "youtube": {
+        "associations": 0,
+        "ids": []
+      },
+      "sourceCrosscheck": {
+        "poster": "unverified",
+        "threads": "unverified",
+        "homebrewery": "unverified-noncanonical",
+        "imgur": "unverified",
+        "scribd": "unverified"
+      },
+      "priority": "high"
+    }
+  ]
+}
