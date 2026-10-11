@@ -46,6 +46,29 @@ Ces observations se rapportent aux **runners GitHub Actions** : elles **ne prouv
 - **Non :** le chargement d'une image ne certifie ni le personnage représenté ni les droits d'usage. Les images restent chargées depuis leurs hébergeurs externes et ne sont **jamais** téléchargées/réhébergées dans le dépôt.
 - **Non :** le correctif ne peut pas contourner à coup sûr un blocage réseau général du CDN ; dans ce cas, un fallback graphique lisible apparaît et un export de diagnostic utilisateur pourra préciser les cas à traiter.
 
+## Validation réelle du propriétaire — Chrome Windows (11 octobre 2026)
+
+Un export utilisateur de **MEDIA CHECK V4.9.d**, réalisé depuis `https://shinobione.github.io` dans **Chrome 154 sous Windows 10**, a été fourni après les validations CI. L'export contenait **332 résultats sur 332 emplacements** et ses résultats ont été agrégés localement sans réhéberger le JSON brut.
+
+| Mesure | Résultat Chrome Windows |
+|---|---:|
+| Portraits chargés directement | **164/164** |
+| Illustrations chargées directement | **152/152** |
+| Images décodées avec dimensions non nulles | **316/316** |
+| Images Wikia chargées directement | **304/304** |
+| Autres hébergeurs chargés directement | **12/12** |
+| Redirections `Special:Redirect` utilisées | **0** |
+| Échecs / délais / fausses vignettes connues 300×171 | **0** |
+| Emplacements sans URL (non-établis, pas cassés) | **16** : 2 portraits et 14 illustrations |
+
+**Traçabilité :** SHA-256 du JSON fourni : `d3705897f3f436398a61059ef992df727f56ac56f93030849911326b69b446a9`. Date déclarée dans l'export : `2026-10-11T20:55:42.354Z`. Schéma : `demonfruitzdex.media-browser-review.v49d`. Aucune adresse privée ni contenu personnel n'est recopié dans le dépôt.
+
+**Interprétation :** cette mesure confirme que toutes les URL référencées ont **décodé dans le navigateur réel du propriétaire à cet instant**, sans recours au fallback. Les anciens problèmes Wikia ne sont pas actuellement reproduits par cet essai ; leur cause historique (cache, temporaire ou autre) reste **inconnue**. L'audit V4.9.d ne vérifie pas à lui seul le rendu final de chaque carte ni un blocage intermittent ultérieur. Les protections V4.9.f restent utiles en cas de futures erreurs et pour diagnostiquer celles-ci.
+
+Le JSON utilisateur étant émis par l'ancienne page **V4.9.d**, il ne teste pas l'interface **MEDIA CHECK V2 de cette PR** sur Windows ; cette vérification restera possible après publication.
+
+---
+
 ## Pour reproduire l'audit dans les CI
 
 ```bash
