@@ -107,7 +107,7 @@
     if(!modal && f.portrait && f.id!=='smile')return `<img class="artwork artwork-user-substitute" loading="lazy" decoding="async" referrerpolicy="no-referrer" alt="Portrait de ${enc(f.primary_user||f.u)} : apparence physique du fruit non documentée" src="${enc(f.portrait)}" data-media-fallback="${enc(wikiRedirect(f.portrait_file))}">`;
     return '';
   }
-  function imageLabel(f){if(!f.image)return f.portrait?'PORTEUR · FRUIT NON REPRÉSENTÉ':'APPARENCE DU FRUIT INCONNUE';return f.visual==='fruit'?'FRUIT PHYSIQUE RÉFÉRENCÉ':f.image_kind==='pouvoir-animé'?'ANIMATION DU POUVOIR':f.visual==='pouvoir'?'ILLUSTRATION DU POUVOIR':f.visual==='artificiel'?'FRUIT ARTIFICIEL':'INTERPRÉTATION SYMBOLIQUE'}
+  function imageLabel(f){if(!f.image)return f.portrait?'PORTEUR · ILLUSTRATION DU POUVOIR ABSENTE':'AUCUNE ILLUSTRATION RÉFÉRENCÉE';return f.visual==='fruit'?'FRUIT PHYSIQUE RÉFÉRENCÉ':f.image_kind==='pouvoir-animé'?'ANIMATION DU POUVOIR':f.visual==='pouvoir'?'ILLUSTRATION DU POUVOIR':f.visual==='artificiel'?'FRUIT ARTIFICIEL':'INTERPRÉTATION SYMBOLIQUE'}
   function card(f){
     const selected=state.compare.includes(f.id),saved=favorites.has(f.id);
     const color=colors[f.t]||'#f4c36b';
