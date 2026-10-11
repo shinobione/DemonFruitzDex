@@ -5,7 +5,7 @@
 const fs=require('node:fs'),vm=require('node:vm'),path=require('node:path');
 const root=path.resolve(__dirname,'..'),context={window:{}};
 vm.createContext(context);
-for(const script of ['data/fruits.js','data/portrait-sources.js','data/portraits-v48.js','data/portraits-v49.js','data/power-art-v48.js']){
+for(const script of ['data/fruits.js','data/portrait-sources.js','data/portraits-v48.js','data/portraits-v49.js','data/portraits-v49d.js','data/power-art-v48.js']){
   vm.runInContext(fs.readFileSync(path.join(root,script),'utf8'),context,{filename:script,timeout:5000});
 }
 const rows=context.window.SHINO_DATA;
@@ -30,9 +30,9 @@ const stats={entries:records.length,portraitRegistered:records.filter(x=>x.portr
  noPortrait:records.filter(x=>!x.portrait.registered).length,
  noVisual:records.filter(x=>!x.visual.registered).length,
  directReferences:records.reduce((n,x)=>n+ +x.portrait.registered+ +x.visual.registered,0)};
-if(stats.portraitRegistered!==162||stats.visualRegistered!==140)throw Error('Regression in media counts: '+JSON.stringify(stats));
+if(stats.portraitRegistered!==164||stats.visualRegistered!==140)throw Error('Regression in media counts: '+JSON.stringify(stats));
 const result={schema:'demonfruitzdex.media-inventory.v49d',generatedAt:new Date().toISOString(),
- sourceFiles:['data/fruits.js','data/portrait-sources.js','data/portraits-v48.js','data/portraits-v49.js','data/power-art-v48.js'],
+ sourceFiles:['data/fruits.js','data/portrait-sources.js','data/portraits-v48.js','data/portraits-v49.js','data/portraits-v49d.js','data/power-art-v48.js'],
  disclaimer:'registered URLs are not verified to load; browser test is a separate report; remote art not licensed for redistribution',
  stats,records};
 fs.mkdirSync(path.join(root,'reports'),{recursive:true});
