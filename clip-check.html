@@ -50,6 +50,12 @@
 .foot{margin-top:14px;display:flex;flex-wrap:wrap;gap:8px}
     .import-control{border:1px dashed #647588;padding:9px 12px;border-radius:8px;font-size:.85rem}
     .import-control input{display:block;width:min(100%,230px);font-size:.8rem;margin-top:5px;color:#c9d4e3}
+    .propose-box{border-top:1px solid var(--border);margin-top:24px;padding-top:15px;display:grid;gap:11px}
+    .propose-box h3{font-size:1rem;margin:0;color:var(--gold)}
+    .propose-box input{width:100%;background:#101824;border:1px solid #556073;border-radius:8px;color:#fff;padding:10px}
+    .propose-box textarea{min-height:65px}
+    .proposal-list{display:grid;gap:7px}
+    .proposal-list p{margin:0;padding:7px;border-radius:7px;background:#192634;font-size:.78rem;overflow-wrap:anywhere}
     #status{color:#98e1b8;min-height:1.5em;font-size:.85rem}
     @media(max-width:820px){.layout{grid-template-columns:1fr}.items{max-height:380px}.head,.layout{padding-left:13px;padding-right:13px}}
   </style>
@@ -72,6 +78,16 @@
       </select></label>
     </div>
     <div class="items" id="items"></div>
+    <section class="propose-box" id="proposeSection" aria-labelledby="proposeTitle">
+      <h3 id="proposeTitle">＋ Proposer un extrait trouvé sur YouTube</h3>
+      <p class="sub">Ta trouvaille reste sur ton appareil et <strong>n'entre pas automatiquement dans le Dex</strong>. Exporte la sélection pour qu'on la vérifie.</p>
+      <label><strong>Fruit concerné</strong><select id="proposeFruit"></select></label>
+      <label><strong>Lien YouTube de la scène</strong><input id="proposeUrl" type="url" placeholder="https://www.youtube.com/watch?v=..." autocomplete="url"></label>
+      <label><strong>Ce que montre la vidéo (facultatif)</strong><textarea id="proposeNote" maxlength="600" placeholder="Ex. 0:26 — le pouvoir crée un bouclier."></textarea></label>
+      <div class="foot"><button id="proposeAdd" class="accent">Ajouter à ma sélection</button><button id="proposeExport">Exporter mes propositions ↓</button></div>
+      <p id="proposalStatus" class="sub" role="status"></p>
+      <div id="proposalList" class="proposal-list"></div>
+    </section>
   </section>
   <section class="pane detail" aria-label="Extrait sélectionné">
     <h2 id="title">Sélectionne un clip</h2>
@@ -123,18 +139,51 @@
     });
   });
   var KEY='demonfruitzdex.clip-review.v49b';
+  var PROPOSAL_KEY='demonfruitzdex.clip-proposals.v49b';
+  var proposed={};
+  try{var stored=JSON.parse(localStorage.getItem(PROPOSAL_KEY)||'{}');if(stored&&typeof stored==='object'&&!Array.isArray(stored))proposed=stored}catch(_){proposed={}}
+
   var reviews={};
   try{reviews=JSON.parse(localStorage.getItem(KEY)||'{}')||{}}catch(_){reviews={}}
   var $=function(id){return document.getElementById(id)};
   var escaped=function(s){return String(s==null?'':s).replace(/[&<>"']/g,function(v){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[v]})};
   var key=function(c){return c.fruitId+':'+c.videoId};
   var initial=new URLSearchParams(location.search);
+  var fruitOptions=(window.SHINO_DATA||[]).filter(function(f){return typeof f.id==='string'}).slice().sort(function(a,b){return (a.fr||a.n||'').localeCompare(b.fr||b.n||'','fr')});
+  $('proposeFruit').innerHTML=fruitOptions.map(function(f){return '<option value="'+escaped(f.id)+'">'+escaped(f.fr||f.n)+'</option>'}).join('');
+  if(fruitOptions.some(function(f){return f.id===initial.get('fruit')}))$('proposeFruit').value=initial.get('fruit');
   var index=entries.findIndex(function(c){return c.fruitId===initial.get('fruit')&&c.videoId===initial.get('video')});
   if(index<0)index=entries.findIndex(function(c){return c.newCandidate});
   if(index<0)index=0;
   var filter=$('filter');
   if(initial.has('fruit'))filter.value='all';
   function saved(c){return reviews[key(c)]||{verdict:'pending',loggedOut:false,notes:''}}
+  function parseYouTube(raw){
+    try{
+      var u=new URL(String(raw).trim());
+      if(u.protocol!=='https:')return null;
+      var host=u.hostname.toLowerCase(),id=null;
+      if(host==='youtu.be'||host==='www.youtu.be')id=u.pathname.split('/')[1];
+      else if(['youtube.com','www.youtube.com','m.youtube.com','music.youtube.com','www.youtube-nocookie.com'].includes(host)){
+        if(u.pathname==='/watch')id=u.searchParams.get('v');
+        else if(/^\/(shorts|embed|live)\//.test(u.pathname))id=u.pathname.split('/')[2];
+      }
+      return /^[A-Za-z0-9_-]{11}$/.test(id||'')?id:null;
+    }catch(_){return null}
+  }
+  function renderProposals(){
+    var arr=Object.values(proposed).filter(function(p){return p&&typeof p.fruitId==='string'&&typeof p.videoId==='string'});
+    $('proposalList').innerHTML=arr.length
+      ? arr.slice(-10).reverse().map(function(p){return '<p>'+escaped(nameById.get(p.fruitId)||p.fruitId)+' : <a href="https://www.youtube.com/watch?v='+escaped(p.videoId)+'" rel="noopener noreferrer" target="_blank">'+escaped(p.videoId)+'</a> · à vérifier</p>'}).join('')
+      : '<p>Aucune proposition enregistrée.</p>';
+  }
+  function downloadJson(filename,payload){
+    var blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json;charset=utf-8'});
+    var url=URL.createObjectURL(blob),anchor=document.createElement('a');
+    anchor.href=url;anchor.download=filename;document.body.append(anchor);anchor.click();anchor.remove();
+    setTimeout(function(){URL.revokeObjectURL(url)},2000);
+  }
+
   function shown(){return entries.filter(function(c){var v=saved(c).verdict;return filter.value==='all'||(filter.value==='new'&&c.newCandidate)||(filter.value==='pending'&&v==='pending')||(filter.value==='problems'&&v!=='pending'&&v!=='embed-ok')})}
   function drawStats(){
     var validated=entries.filter(function(c){return saved(c).verdict!=='pending'}).length;
@@ -215,16 +264,38 @@
     }catch(error){$('status').textContent='Import rejeté : '+(error?.message||'fichier invalide')}
   });
   $('next').addEventListener('click',function(){if(entries.length)choose((index+1)%entries.length)});
+  $('proposeAdd').addEventListener('click',function(){
+    var fruitId=$('proposeFruit').value,videoId=parseYouTube($('proposeUrl').value);
+    if(!nameById.has(fruitId)||!videoId){$('proposalStatus').textContent='Choisis un fruit et colle un lien YouTube watch, shorts, live ou youtu.be valide.';return}
+    if(entries.some(function(c){return c.fruitId===fruitId&&c.videoId===videoId})){
+      $('proposalStatus').textContent='Ce clip est déjà référencé pour ce fruit. Utilise le contrôle de lecture à droite.';return
+    }
+    var key=fruitId+':'+videoId;
+    if(proposed[key]){$('proposalStatus').textContent='Cette proposition existe déjà dans ta sélection.';return}
+    proposed[key]={fruitId:fruitId,videoId:videoId,
+      source:'https://www.youtube.com/watch?v='+videoId,
+      notes:$('proposeNote').value.trim().slice(0,600),
+      status:'unverified-user-proposal',createdAt:new Date().toISOString()};
+    try{localStorage.setItem(PROPOSAL_KEY,JSON.stringify(proposed));$('proposalStatus').textContent='Proposition conservée localement. Exporte-la pour validation.'}
+    catch(_){$('proposalStatus').textContent='Enregistrée pour cette session ; stockage navigateur non disponible.'}
+    $('proposeUrl').value='';$('proposeNote').value='';renderProposals();
+  });
+  $('proposeExport').addEventListener('click',function(){
+    downloadJson('demonfruitzdex-clip-proposals-'+new Date().toISOString().slice(0,10)+'.json',
+      {schema:'demonfruitzdex.clip-proposals.v1',generatedAt:new Date().toISOString(),
+        disclaimer:'Unverified user submissions; none are automatically incorporated into published clips.',
+        candidates:Object.values(proposed).filter(Boolean)});
+    $('proposalStatus').textContent='Propositions exportées. Soumets le JSON pour audit avant intégration.';
+  });
   $('export').addEventListener('click',function(){
     var records=entries.map(function(c){var r=saved(c);return {fruitId:c.fruitId,videoId:c.videoId,title:c.title,channel:c.channel,verdict:r.verdict||'pending',testedWithoutAccount:Boolean(r.loggedOut),notes:r.notes||'',reviewedAt:r.reviewedAt||null}});
     var report={schema:'demonfruitzdex.clip-review.v1',generatedAt:new Date().toISOString(),catalogueCount:entries.length,disclaimer:'Human reviewer results, no automatic verification of video availability or rights.',results:records};
-    var blob=new Blob([JSON.stringify(report,null,2)],{type:'application/json;charset=utf-8'});
-    var url=URL.createObjectURL(blob),a=document.createElement('a');
-    a.href=url;a.download='demonfruitzdex-clip-check-'+new Date().toISOString().slice(0,10)+'.json';
-    document.body.append(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(url)},2000);
+    downloadJson('demonfruitzdex-clip-check-'+new Date().toISOString().slice(0,10)+'.json',report);
     $('status').textContent='Rapport généré : à relire avant de le partager.';
   });
   choose(index);
+  renderProposals();
+  if(initial.get('suggest')==='1')$('proposeSection').scrollIntoView({block:'start',behavior:'auto'});
 })();
 </script>
 </body>
