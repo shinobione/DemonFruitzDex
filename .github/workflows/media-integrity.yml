@@ -5,6 +5,7 @@ on:
   pull_request:
     paths:
       - "app.js"
+      - "styles.css"
       - "index.html"
       - "clip-check.html"
       - "data/**"
@@ -16,6 +17,7 @@ on:
       - main
     paths:
       - "app.js"
+      - "styles.css"
       - "index.html"
       - "clip-check.html"
       - "data/**"
