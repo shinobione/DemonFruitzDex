@@ -927,8 +927,22 @@
     "reviewedOn": "2026-10-10"
   },
   "yuki-yuki-no-mi": {
-    "sourcePolicy": "publisher-linked",
-    "reviewedOn": "2026-10-10"
+    "sourcePolicy": "community-video",
+    "reviewedOn": "2026-10-11",
+    "youtubeId": "oLRxJVxoWWo",
+    "title": "Monet — Yuki Yuki no Mi | All Attacks and Abilities",
+    "channel": "Rensuka Ren",
+    "episode": "Punk Hazard",
+    "source": "https://www.youtube.com/watch?v=oLRxJVxoWWo",
+    "sourceEvidence": "https://www.youtube.com/watch?v=oLRxJVxoWWo",
+    "contentKind": "compilation",
+    "powerShown": "Yuki Yuki : transformation et attaques de neige",
+    "published": "2022-11-22",
+    "verificationStatus": "public-metadata-verified",
+    "publisherType": "community-upload",
+    "playbackStatus": "not-tested",
+    "embedStatus": "not-tested",
+    "regionalStatus": "not-tested"
   },
   "fruit-artificiel-seiryu": {
     "sourcePolicy": "publisher-linked",
@@ -990,14 +1004,40 @@
     "note": "Épisode identifié dans le catalogue Crunchyroll ; minutage du pouvoir non vérifié."
   },
   "noro-noro-no-mi": {
-    "sourcePolicy": "publisher-linked",
-    "reviewedOn": "2026-10-10",
-    "note": "Épisode identifié dans le catalogue Crunchyroll ; minutage du pouvoir non vérifié."
+    "sourcePolicy": "community-video",
+    "reviewedOn": "2026-10-11",
+    "youtubeId": "1hh_5xUZ5Mw",
+    "title": "Foxy — Noro Noro no Mi | All Attacks and Abilities",
+    "channel": "Rensuka Ren",
+    "episode": "Long Ring Long Land",
+    "source": "https://www.youtube.com/watch?v=1hh_5xUZ5Mw",
+    "sourceEvidence": "https://www.youtube.com/watch?v=1hh_5xUZ5Mw",
+    "contentKind": "compilation",
+    "powerShown": "Noro Noro : rayons ralentissants",
+    "published": "2023-10-18",
+    "verificationStatus": "public-metadata-verified",
+    "publisherType": "community-upload",
+    "playbackStatus": "not-tested",
+    "embedStatus": "not-tested",
+    "regionalStatus": "not-tested"
   },
   "doa-doa-no-mi": {
-    "sourcePolicy": "publisher-linked",
-    "reviewedOn": "2026-10-10",
-    "note": "Épisode identifié dans le catalogue Crunchyroll ; minutage du pouvoir non vérifié."
+    "sourcePolicy": "community-video",
+    "reviewedOn": "2026-10-11",
+    "youtubeId": "HnsL-5GHUrc",
+    "title": "Blueno — Doa Doa no Mi | All Attacks and Abilities",
+    "channel": "Rensuka Ren",
+    "episode": "Enies Lobby",
+    "source": "https://www.youtube.com/watch?v=HnsL-5GHUrc",
+    "sourceEvidence": "https://www.youtube.com/watch?v=HnsL-5GHUrc",
+    "contentKind": "compilation",
+    "powerShown": "Doa Doa : portes créées sur les surfaces et dans l'air",
+    "published": "2023-05-30",
+    "verificationStatus": "public-metadata-verified",
+    "publisherType": "community-upload",
+    "playbackStatus": "not-tested",
+    "embedStatus": "not-tested",
+    "regionalStatus": "not-tested"
   },
   "awa-awa-no-mi": {
     "sourcePolicy": "publisher-linked",
