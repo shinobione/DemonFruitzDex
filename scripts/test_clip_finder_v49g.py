@@ -76,6 +76,27 @@ async def main():
             chosen=[row for row in report['results'] if row['videoId']=='bAShh8lXaUI']
             assert len(chosen)==1 and chosen[0]['candidate'] is True
             assert chosen[0]['verdict']=='embed-ok' and chosen[0]['testedWithoutAccount'] is True
+            assert chosen[0]['selfReportedDossierComplete'] is False, "Iframe alone cannot certify a clip"
+            assert chosen[0]['powerObserved'] is False
+            # Gate rejects a missing/invalid timestamp and requires human declarations.
+            await page.locator('#powerObserved').check()
+            await page.locator('#publisherConfirmed').check()
+            await page.locator('#shortClipConfirmed').check()
+            await page.locator('#powerTimecode').fill('bad timecode')
+            await page.locator('#save').click()
+            assert 'Timecode invalide' in (await page.locator('#status').inner_text())
+            await page.locator('#powerTimecode').fill('00:18')
+            await page.locator('#save').click()
+            assert 'Dossier déclaratif complet' in (await page.locator('#reviewGate').inner_text())
+            async with page.expect_download() as full_review_info:
+                await page.locator('#export').click()
+            full_review=await full_review_info.value
+            complete=json.loads(pathlib.Path(await full_review.path()).read_text(encoding='utf-8'))
+            record=next(x for x in complete['results'] if x['videoId']=='bAShh8lXaUI')
+            assert record['selfReportedDossierComplete'] is True
+            assert record['powerTimecode']=='00:18'
+            assert record['publisherConfirmed'] and record['powerObserved'] and record['shortClipConfirmed']
+            assert complete['catalogueCount']==50 and complete['candidateCount']==3
             await page.goto(f'http://127.0.0.1:{server.server_port}/clip-check.html?fruit=mera-mera-no-mi&suggest=1',wait_until='domcontentloaded')
             await page.wait_for_function("document.getElementById('proposeFruit')?.value==='mera-mera-no-mi'")
             assert not errors,errors
