@@ -54,6 +54,25 @@ body {
   }
 }
 
+
+/* Expose parchment around the central Devil Fruit, too; the previous
+   #30251de0/#121820f5 (88–96% opacity) hid the material here as well. */
+.hero-stage {
+  background-image:
+    radial-gradient(ellipse at 52% 47%, #10111ac0 0%, #11131b80 55%, #100e1080 100%),
+    linear-gradient(140deg, #24181042 0%, #090f18a6 100%),
+    var(--archive-texture);
+  background-size: auto, auto, 960px 640px;
+  background-position: center, center, center;
+  border-color: #d8b06a80;
+}
+
+/* Make the parchment identifiable around the cards and the archive sections,
+   while keeping their text on opaque dark panels. */
+.stats-band, .filter-panel, .fruit-card {
+  box-shadow: 0 14px 38px #07070752, inset 0 1px 0 #d8b06a24;
+}
+
 ::selection { background: #d8b06a; color: #17130e; }
 
 /* Diagnostics keep their own layout and state colors. */
