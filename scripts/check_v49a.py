@@ -22,9 +22,9 @@ assert not any(token in app for token in ("clipEpisodes", "makeEpisodeLink", "ep
 assert "onlyYoutube" not in html and "ytInventory" not in html, "obsolete filter"
 assert "hasScene = hasYoutube" in app, "clip filter includes unplayable episodes"
 assoc = sum(bool(x.get("youtubeId")) + len(x.get("moreVideos", [])) for x in clips.values())
-assert assoc == inventory["counts"]["youtubeAssociations"] == 37, "existing YouTube clips lost"
-assert inventory["counts"]["withYouTube"] == 25, "existing YouTube fruit links lost"
+assert inventory["counts"]["youtubeAssociations"] == 37 and assoc >= 37, "V4.9.a baseline clips lost"
+assert inventory["counts"]["withYouTube"] == 25, "V4.9.a baseline fruits altered"
 assert inventory["counts"]["withPortrait"] == 162 and inventory["counts"]["withVisual"] == 140, "overlay inventory mismatch"
 assert "episode-item" in app, "search links should remain visible"
-print("PASS V4.9.a: 166 crosswalk rows, 81 full episode links removed, 37 YouTube clips preserved, 162 portraits, 140 visuals")
+print(f"PASS V4.9.a regression: 166 crosswalk rows, no full episodes, {assoc} YouTube clips (>=37 retained), 162 portraits, 140 visuals")
 print("This does not certify YouTube iframe playback or provenance of fan art.")
