@@ -23,7 +23,7 @@ async def main():
             assert response and response.status==200
             await page.wait_for_function("window.SHINO_CLIP_FINDER_AUDIT?.uncovered===130")
             stats=await page.evaluate("window.SHINO_CLIP_FINDER_AUDIT")
-            assert stats=={'fruits':166,'clips':50,'covered':36,'uncovered':130},stats
+            assert stats=={'fruits':166,'clips':50,'covered':36,'uncovered':130,'candidates':3},stats
             assert await page.locator('#rows tr').count()==130
             assert await page.get_by_role('link',name='⌕ Chercher sur YouTube').count()==130
             # Ensure exact fruit matching, and safe URL to existing CLIP CHECK proposals.
@@ -49,12 +49,33 @@ async def main():
             dl=await pending.value
             content=json.loads(pathlib.Path(await dl.path()).read_text(encoding='utf-8'))
             assert content['schema']=='demonfruitzdex.clip-discovery.v49g'
-            assert content['totals']=={'fruits':166,'clips':50,'covered':36,'uncovered':130}
+            assert content['totals']=={'fruits':166,'clips':50,'covered':36,'uncovered':130,'candidates':3}
             assert len(content['items'])==130
             assert not any('youtubeId' in x for x in content['items'])
+            assert sum(len(x['publisherCandidates']) for x in content['items'])==3
+            assert {x['fruitId'] for x in content['items'] if x['publisherCandidates']}=={
+                'mera-mera-no-mi','mero-mero-no-mi','inu-inu-no-mi-mod-le-okuchi-no-makami'}
             assert not any('crunchyroll.com/watch/' in x['youtubeSearch'].lower() for x in content['items'])
             await page.screenshot(path=str(OUT/'clip-finder-desktop.jpg'),type='jpeg',quality=80,full_page=True)
             # Cross-check integration with existing user-proposal interface.
+            # Publisher clips are reviewable but not included in the 50 published videos.
+            await page.goto(f'http://127.0.0.1:{server.server_port}/clip-check.html?fruit=mera-mera-no-mi&video=bAShh8lXaUI',wait_until='domcontentloaded')
+            await page.wait_for_function("document.getElementById('external')?.href.includes('bAShh8lXaUI')")
+            assert 'CANDIDAT NON PUBLIÉ' in (await page.locator('#subtitle').inner_text())
+            assert '50 associations publiées' in (await page.locator('#stats').inner_text())
+            assert '3 candidats officiels' in (await page.locator('#stats').inner_text())
+            await page.locator('#verdict').select_option('embed-ok')
+            await page.locator('#loggedOut').check()
+            await page.locator('#notes').fill('Test navigateur automatisé : verdict de démonstration, non une validation réelle de lecture.')
+            await page.locator('#save').click()
+            async with page.expect_download() as review_info:
+                await page.locator('#export').click()
+            review=await review_info.value
+            report=json.loads(pathlib.Path(await review.path()).read_text(encoding='utf-8'))
+            assert report['catalogueCount']==50 and report['candidateCount']==3
+            chosen=[row for row in report['results'] if row['videoId']=='bAShh8lXaUI']
+            assert len(chosen)==1 and chosen[0]['candidate'] is True
+            assert chosen[0]['verdict']=='embed-ok' and chosen[0]['testedWithoutAccount'] is True
             await page.goto(f'http://127.0.0.1:{server.server_port}/clip-check.html?fruit=mera-mera-no-mi&suggest=1',wait_until='domcontentloaded')
             await page.wait_for_function("document.getElementById('proposeFruit')?.value==='mera-mera-no-mi'")
             assert not errors,errors
@@ -68,7 +89,7 @@ async def main():
             await mobile.screenshot(path=str(OUT/'clip-finder-mobile.jpg'),type='jpeg',quality=79,full_page=True)
             assert not mobile_errors,mobile_errors
             print('PASS V49G_CLIP_FINDER='+json.dumps({'stats':stats,'prioritizedA':priority_count,
-                  'desktop':'reports/screenshots/v49g/clip-finder-desktop.jpg',
+                  'publisherCandidates':3,'desktop':'reports/screenshots/v49g/clip-finder-desktop.jpg',
                   'mobile':'reports/screenshots/v49g/clip-finder-mobile.jpg','mobileWidth':width},
                   ensure_ascii=False),flush=True)
             await browser.close()
