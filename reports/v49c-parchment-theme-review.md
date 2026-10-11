@@ -139,3 +139,26 @@ distantes ni lancer une revue complète de leurs droits.
 
 Aucune régression locale du thème détectée. Prêt pour revue de la PR après CI verte.
 Fusion et publication restent soumises à l'approbation explicite du propriétaire.
+
+## Correctif V4.9.c2 — parchemin réellement visible
+
+**Origine :** revue de la première capture : le papier était presque indiscernable. La cause était le
+voile global `#0b0f14e8` à `#0b0f14f5` (91–96 % d'opacité), renforcé par une seconde vignette sombre,
+ainsi que le voile du bloc central.
+
+**Modifications :**
+- Voile du fond nettement réduit ; la texture papier reste visible à zoom normal sur les surfaces hors panneaux.
+- Papier plus perceptible autour du fruit du héros ; interfaces actives (cartes, modales, statistiques) maintenues sur panneaux sombres.
+- Gradient sombre **localisé derrière le texte du héros**, pour préserver le contraste.
+- Sections et compteurs secondaires disposant d'un fond foncé lisible sur le parchemin.
+- Cache-busting CSS `v=4.9c2` sur les trois pages ; aucun changement au catalogue de fruits ou de vidéos.
+- Contrôle de rendu **réel sous Google Chrome** sur `1440×900` et `390×844`, lancé par GitHub Actions.
+  Les captures générées sont sauvegardées dans l'artifact `DemonFruitzDex-V49c-preview`,
+  fichiers `reports/screenshots/v49c/ci-v49c2-desktop.jpg` et `ci-v49c2-mobile.jpg`.
+
+Les captures `after-*.jpg` commitées précédemment correspondent à la première V4.9.c
+(et non au correctif c2) ; utiliser **les captures CI `ci-v49c2-*`** pour valider l'intensité actuelle.
+
+**Décision :** PR laissée en brouillon pour vérifier visuellement la nouvelle texture et obtenir
+l'accord explicite du propriétaire. La vérification CSS/Chrome et la réussite des tests ne sont pas
+une approbation du rendu final.
