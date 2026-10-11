@@ -166,7 +166,7 @@
     entries.push({fruitId:candidate.fruitId,videoId:candidate.videoId,
       title:candidate.title,channel:candidate.channel,fruit:nameById.get(candidate.fruitId),
       kind:'clip',isCandidate:true,sourceEvidence:candidate.sourceEvidence,
-      powerToVerify:candidate.powerToVerify,episode:candidate.episode,newCandidate:true});
+      powerToVerify:candidate.powerToVerify,editorialCaution:candidate.editorialCaution,episode:candidate.episode,newCandidate:true});
     selectedIds.add(candidateKey);
   }
   var KEY='demonfruitzdex.clip-review.v49b';
@@ -262,6 +262,7 @@
     var r=saved(c);
     $('title').textContent=c.fruit;
     $('subtitle').textContent=c.title+' · '+c.channel+' · '+(c.isCandidate?'CANDIDAT NON PUBLIÉ':'EXTRAIT')+' · '+c.videoId+(c.powerToVerify?' · À confirmer : '+c.powerToVerify:'');
+    if(c.editorialCaution)$('subtitle').textContent+=' · ATTENTION : '+c.editorialCaution;
     $('preview').innerHTML='<div class="placeholder"><img src="https://i.ytimg.com/vi/'+c.videoId+'/hqdefault.jpg" alt="Miniature YouTube"><span>Clique sur « Tester l’intégration » pour charger la vidéo.</span></div>';
     $('external').href='https://www.youtube.com/watch?v='+c.videoId;
     $('verdict').value=r.verdict||'pending';
