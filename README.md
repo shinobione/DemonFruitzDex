@@ -185,3 +185,33 @@ Rapport détaillé : [reports/media-audit-v48.md](reports/media-audit-v48.md).
 - Le filtre « Extrait court sélectionné » ne comptabilise plus les **44 fiches uniquement documentées par des épisodes complets**. Les boutons de recherche YouTube / Google Vidéos restent accessibles depuis **toutes** les fiches. Les résultats de recherche ne sont pas considérés comme clips intégrables tant qu'ils ne sont pas vérifiés et attribués à la bonne fiche.
 - Sources visuelles : **162 portraits** et **140 illustrations de fruit ou pouvoir** avec URL référencée, **4 + 26** manquants. Le chargement dans le navigateur, les droits et le statut canon restent distincts et à contrôler.
 - Régression automatisable : `python scripts/check_v49a.py`. Les vérifications de structure **ne remplacent pas** la lecture réelle des vidéos ni le contrôle des images en France.
+
+## V4.9.b — scènes de pouvoirs YouTube
+
+- **5 associations vidéo supplémentaires** pour quatre fruits : Bari Bari (deux clips), Horo Horo, Kage Kage et Doku Doku. Total **42 associations vidéo** sur **29 fiches**.
+- Les deux vidéos Bartolomeo montrent une scène de barrière face à King Punch selon leurs métadonnées ; les trois autres sont des **montages d'attaques de l'anime**, pas des épisodes complets.
+- Les chaînes sont **communautaires**, non les diffuseurs officiels. Titres et descriptions documentés, mais **aucune vérification de lecture iframe, région ou nécessité de compte YouTube** n'a encore été menée. Ces limites figurent dans les fiches.
+- Pas de copie ni d'hébergement de séquences protégées : lecteur intégré sur clic et lien vers la vidéo source.
+- Les **liens d'épisodes complets Crunchyroll restent absents**. [Rapport V4.9.b](reports/clip-review-v49b.md), contrôle : `python scripts/check_v49b.py`.
+
+### V4.9.b2 — Kuma et CLIP CHECK
+
+- **2 clips YouTube supplémentaires** du *Nikyu Nikyu no Mi* (Kuma / Ursus Shock) : `ofJ3DkkOo7Y` et `PvODesQjMgU`. Indexés d'après titres et métadonnées publiques, **lecture/iframe non testées**.
+- Total actuel : **44 associations YouTube couvrant 30 fruits** (7 nouvelles associations depuis V4.9.a).
+- **[CLIP CHECK](clip-check.html)** : revue humaine des extraits, test d'intégration sur clic, lien YouTube direct, signalement des problèmes, navigation privée, notes/timecodes, sauvegarde locale et export JSON. Le Dex propose le lien de vérification depuis la fiche du fruit.
+- Les tests de structure `scripts/check_v49b.py` et `scripts/check_v49b2.py` sont exécutés en GitHub Actions. Aucun verdict d'accessibilité en France n'est inventé.
+
+### V4.9.b2 — extension finale du lot
+
+- **Caesar Clown / Gasu Gasu no Mi** : [montage « All Attacks and Abilities » par Rensuka Ren](https://www.youtube.com/watch?v=NKgXWO2RK-A), indexé à partir des métadonnées publiques. **Lecture effective, durée et autorisation d'intégration à contrôler.**
+- **Bilan actuel : 45 associations YouTube pour 31 fiches** (+8 vidéos, +6 fruits depuis V4.9.a). Les autres fiches gardent leur recherche externe.
+- Le contrôle utilisateur passe par **[CLIP CHECK](clip-check.html)** ; le verdict n'est jamais déduit de la simple existence de la miniature.
+
+## V4.9.b3 — 50 clips / 36 fruits, audit et proposition en un clic
+
+- **+5 montages d'attaques documentés via YouTube** : Foxy, Blueno, Monet, Doflamingo, Perospero. **50 associations sur 36 fiches**, 130 fiches sans clip sélectionné.
+- Les métadonnées concordent avec les personnages / fruits, mais la lecture et l'intégration sans compte en France ne sont **pas** certifiées. Voir [audit V4.9.b3](reports/clip-review-v49b3.md).
+- Un verdict CLIP CHECK enregistré sur ce navigateur est visible sur la fiche : un clip localement signalé indisponible/mauvais pouvoir ne peut plus démarrer dans l'iframe locale. Lien YouTube et revue disponibles. Ceci ne remplace pas une revue éditoriale globale.
+- Import d'un audit JSON CLIP CHECK antérieur (validation du schéma, des couples fruit/ID, date et taille ≤1 Mo). Les observations personnelles ne sont ni partagées ni envoyées automatiquement.
+- Depuis chaque fiche, bouton **« J'ai trouvé une vidéo de ce pouvoir »** : soumission locale avec normalisation de l'URL YouTube et export d'un dossier de candidats non vérifiés, sans modification du catalogue public.
+- Gate `python scripts/check_v49b3.py` ajouté à la CI. **PR Draft** tant qu'aucune vérification de lecture réelle n'est effectuée.
