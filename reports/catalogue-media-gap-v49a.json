@@ -1,19 +1,20 @@
 {
-  "version": "V4.9.a",
+  "version": "V4.9.b",
   "date": "2026-10-11",
   "auditScope": "cross-reference inventory; source-specific matches pending",
   "counts": {
     "fruits": 166,
     "withPortrait": 162,
     "withVisual": 140,
-    "withYouTube": 25,
-    "youtubeAssociations": 37
+    "withYouTube": 29,
+    "youtubeAssociations": 42
   },
   "limitations": [
     "References do not certify loading in user's browser",
     "YouTube URLs have not been manually playback checked",
     "Fan poster illustrations are not official unless verified",
-    "No newly sourced fan illustration is ingested"
+    "No newly sourced fan illustration is ingested",
+    "V4.9.b community uploads have public metadata only; embed / region / playback / duration are not certified"
   ],
   "records": [
     {
@@ -2292,8 +2293,10 @@
         "kind": "fruit"
       },
       "youtube": {
-        "associations": 0,
-        "ids": []
+        "associations": 1,
+        "ids": [
+          "fSgU4NEqa4s"
+        ]
       },
       "sourceCrosscheck": {
         "poster": "unverified",
@@ -2302,7 +2305,7 @@
         "imgur": "unverified",
         "scribd": "unverified"
       },
-      "priority": "high"
+      "priority": "medium"
     },
     {
       "id": "horo-horo-no-mi",
@@ -2320,8 +2323,10 @@
         "kind": "fruit"
       },
       "youtube": {
-        "associations": 0,
-        "ids": []
+        "associations": 1,
+        "ids": [
+          "p5KF8XZlqEk"
+        ]
       },
       "sourceCrosscheck": {
         "poster": "unverified",
@@ -2330,7 +2335,7 @@
         "imgur": "unverified",
         "scribd": "unverified"
       },
-      "priority": "high"
+      "priority": "medium"
     },
     {
       "id": "suke-suke-no-mi",
@@ -2608,8 +2613,10 @@
         "kind": "pouvoir"
       },
       "youtube": {
-        "associations": 0,
-        "ids": []
+        "associations": 1,
+        "ids": [
+          "592XWC7Abkc"
+        ]
       },
       "sourceCrosscheck": {
         "poster": "unverified",
@@ -2618,7 +2625,7 @@
         "imgur": "unverified",
         "scribd": "unverified"
       },
-      "priority": "high"
+      "priority": "medium"
     },
     {
       "id": "horu-horu-no-mi",
@@ -3002,8 +3009,11 @@
         "kind": "pouvoir"
       },
       "youtube": {
-        "associations": 0,
-        "ids": []
+        "associations": 2,
+        "ids": [
+          "AdM7PV5kako",
+          "Zupy-QIf-8U"
+        ]
       },
       "sourceCrosscheck": {
         "poster": "unverified",
@@ -3012,7 +3022,7 @@
         "imgur": "unverified",
         "scribd": "unverified"
       },
-      "priority": "high"
+      "priority": "medium"
     },
     {
       "id": "nui-nui-no-mi",
