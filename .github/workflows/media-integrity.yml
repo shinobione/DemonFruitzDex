@@ -54,3 +54,19 @@ jobs:
           python scripts/check_v49b.py
           python scripts/check_v49b2.py
           python scripts/check_v49b3.py
+
+      - name: Upload V4.9.b3 review preview
+        uses: actions/upload-artifact@v4
+        with:
+          name: DemonFruitzDex-V49b3-preview
+          retention-days: 7
+          if-no-files-found: error
+          path: |
+            index.html
+            app.js
+            styles.css
+            clip-check.html
+            media-check.html
+            data/*.js
+            assets/**
+            PREVIEW-README.txt
