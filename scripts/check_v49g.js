@@ -29,19 +29,26 @@ for(const c of candidates){
  assert.equal(c.editorialState,'pending-manual-playback-and-power-match');
  assert(!videos(clips[c.fruitId]).some(v=>v.youtubeId===c.videoId));
 }
-assert(checker.includes('data/clip-candidates-v49g.js?v=4.9g'));
+assert(checker.includes('data/clip-candidates-v49g.js?v=4.9g3'));
 assert(checker.includes("catalogueCount:entries.filter(function(c){return !c.isCandidate}).length"));
 assert(checker.includes("candidateCount:entries.filter(function(c){return c.isCandidate}).length"));
 assert(checker.includes("filter.value==='candidates'&&c.isCandidate"));
+assert(checker.includes("id=\"powerObserved\"") && checker.includes("id=\"publisherConfirmed\"") &&
+       checker.includes("id=\"shortClipConfirmed\"") && checker.includes("id=\"powerTimecode\""));
+assert(checker.includes("selfReportedDossierComplete:reviewGate(r,c)"));
+assert(checker.includes("reviewGate(r,c)"));
+assert(checker.includes("ATTENTION : "));
+assert(read('data/clip-candidates-v49g.js').includes("La description officielle de Crunchyroll insiste sur le NOUVEAU pouvoir de Barbe Noire"));
+
 assert(!checker.includes('crunchyroll.com/watch/'));
-assert(html.includes('scripts/clip-finder-v49g.js?v=4.9g'));
+assert(html.includes('scripts/clip-finder-v49g.js?v=4.9g3'));
 assert(html.includes('data/clips.js?v=4.9b3'));
-assert(html.includes('data/clip-candidates-v49g.js?v=4.9g'));
+assert(html.includes('data/clip-candidates-v49g.js?v=4.9g3'));
 assert(html.includes('data/fruits.js?v=4.9'));
 assert(html.includes('archive-theme.css'));
 assert(html.includes('id="rows"')&&html.includes('id="query"')&&html.includes('id="export"'));
 assert(index.includes('clip-finder.html'));
-assert(index.includes('SHINO EDITION V4.9.g')&&index.includes('app.js?v=4.9g'));
+assert(index.includes('SHINO EDITION V4.9.g3')&&index.includes('app.js?v=4.9g3'));
 assert(!html.includes('crunchyroll.com/watch/'));
 assert(!client.includes('crunchyroll.com/watch/'));
 assert(client.includes('demonfruitzdex.clip-discovery.v49g'));
