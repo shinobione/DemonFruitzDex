@@ -51,7 +51,7 @@ assert inventory["counts"]["withYouTube"]==36
 assert not re.search(r"https?://(?:www\.)?crunchyroll\.com/(?:fr/)?watch/",json.dumps(clips)), "full episode link returned"
 assert not any("episodeUrl" in c or "moreEpisodes" in c for c in clips.values()),"full episode metadata returned"
 assert "MONTAGE D’ATTAQUES" in app and "CHAÎNE COMMUNAUTAIRE" in app
-assert "app.js?v=4.9b2" in page and "clips.js?v=4.9b2" in page
+assert "app.js?v=4.9b3" in page and "clips.js?v=4.9b3" in page
 assert "clipInventory" in page and "hasScene = hasYoutube" in app
 print("PASS V4.9.b2: 13 new associations, 50 YouTube references, 36 fruits, 0 full episodes")
 print("WARNING: youtube iframe, age restriction, and no-login availability NOT TESTED")
