@@ -77,7 +77,8 @@
   // Try the wiki's named-file redirect once, then show the styled fallback.
   // Fandom also responds with a valid 300x171 generic "missing image" bitmap,
   // which triggers onload instead of error. We visually verified this exact placeholder.
-  // Treat it as broken ONLY for character portraits, never for legitimate power scenes.
+  // The rule now covers portraits AND fruit/power art from that exact Wiki host;
+  // it does not reject arbitrary 300×171 images from other sources.
   const mediaLoadFailed=(img)=>{
     const alternative=img.dataset.mediaFallback;
     if(alternative && img.dataset.retry!=='1' && alternative!==img.src){
