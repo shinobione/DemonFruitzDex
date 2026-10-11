@@ -1,0 +1,32 @@
+#!/usr/bin/env node
+'use strict';
+const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),assert=require('node:assert/strict');
+const root=path.resolve(__dirname,'..');
+const read=x=>fs.readFileSync(path.join(root,x),'utf8');
+const ctx=vm.createContext({window:{}});
+for(const file of ['data/fruits.js','data/clips.js'])
+ vm.runInContext(read(file),ctx,{filename:file,timeout:5000});
+const fruits=ctx.window.SHINO_DATA,clips=ctx.window.SHINO_CLIPS;
+const videos=entry=>(entry?.youtubeId?[entry]:[]).concat(entry?.moreVideos||[]).filter(v=>/^[\w-]{11}$/.test(v.youtubeId||''));
+assert.equal(fruits.length,166);
+assert.equal(Object.values(clips).reduce((n,r)=>n+videos(r).length,0),50);
+assert.equal(fruits.filter(f=>videos(clips[f.id]).length).length,36);
+assert.equal(fruits.filter(f=>!videos(clips[f.id]).length).length,130);
+const html=read('clip-finder.html'),index=read('index.html'),client=read('scripts/clip-finder-v49g.js');
+assert(html.includes('scripts/clip-finder-v49g.js?v=4.9g'));
+assert(html.includes('data/clips.js?v=4.9b3'));
+assert(html.includes('data/fruits.js?v=4.9'));
+assert(html.includes('archive-theme.css'));
+assert(html.includes('id="rows"')&&html.includes('id="query"')&&html.includes('id="export"'));
+assert(index.includes('clip-finder.html'));
+assert(index.includes('SHINO EDITION V4.9.g')&&index.includes('app.js?v=4.9g'));
+assert(!html.includes('crunchyroll.com/watch/'));
+assert(!client.includes('crunchyroll.com/watch/'));
+assert(client.includes('demonfruitzdex.clip-discovery.v49g'));
+assert(client.includes('demonfruitzdex.clip-proposals.v49b'));
+assert(client.includes('clip-check.html?fruit='));
+assert(client.includes('youtube.com/results?search_query='));
+const r=require('node:child_process').spawnSync(process.execPath,['--check',path.join(root,'scripts/clip-finder-v49g.js')],{encoding:'utf8'});
+assert.equal(r.status,0,r.stderr);
+console.log('PASS V49g: 166 fruits / 50 selected videos / 36 covered / 130 missing');
+console.log('PASS V49g: search-only discovery, local proposal link, no subscription episode URLs');
