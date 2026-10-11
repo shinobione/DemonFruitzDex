@@ -6,7 +6,7 @@ import json, re
 root=Path(__file__).resolve().parents[1]
 fruits=json.loads((root/"data/fruits.json").read_text(encoding="utf-8"))
 clips=json.loads((root/"data/clips.json").read_text(encoding="utf-8"))
-inventory=json.loads((root/"reports/catalogue-media-gap-v49a.json").read_text(encoding="utf-8"))
+inventory=json.loads((root/"reports/catalogue-media-gap-v49b.json").read_text(encoding="utf-8"))
 app=(root/"app.js").read_text(encoding="utf-8")
 page=(root/"index.html").read_text(encoding="utf-8")
 browser=(root/"data/clips.js").read_text(encoding="utf-8")
