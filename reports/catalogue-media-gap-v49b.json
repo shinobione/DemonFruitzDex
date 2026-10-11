@@ -6,15 +6,16 @@
     "fruits": 166,
     "withPortrait": 162,
     "withVisual": 140,
-    "withYouTube": 29,
-    "youtubeAssociations": 42
+    "withYouTube": 30,
+    "youtubeAssociations": 44
   },
   "limitations": [
     "References do not certify loading in user's browser",
     "YouTube URLs have not been manually playback checked",
     "Fan poster illustrations are not official unless verified",
     "No newly sourced fan illustration is ingested",
-    "V4.9.b community uploads have public metadata only; embed / region / playback / duration are not certified"
+    "V4.9.b community uploads have public metadata only; embed / region / playback / duration are not certified",
+    "Two Kuma Nikyu clips added from public search metadata only; actual YouTube embed playback not tested."
   ],
   "records": [
     {
@@ -2381,8 +2382,11 @@
         "kind": "fruit"
       },
       "youtube": {
-        "associations": 0,
-        "ids": []
+        "associations": 2,
+        "ids": [
+          "ofJ3DkkOo7Y",
+          "PvODesQjMgU"
+        ]
       },
       "sourceCrosscheck": {
         "poster": "unverified",
@@ -2391,7 +2395,7 @@
         "imgur": "unverified",
         "scribd": "unverified"
       },
-      "priority": "high"
+      "priority": "medium"
     },
     {
       "id": "toshi-toshi-no-mi",
