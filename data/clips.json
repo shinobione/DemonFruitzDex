@@ -601,15 +601,48 @@
     "regionalStatus": "not-tested"
   },
   "nikyu-nikyu-no-mi": {
-    "sourcePolicy": "publisher-linked",
-    "reviewedOn": "2026-10-10",
+    "sourcePolicy": "community-video",
+    "reviewedOn": "2026-10-11",
     "auditV46": {
       "state": "legacy-pending-editorial-review",
       "checkedOn": "2026-10-10",
       "metadata": "record-shape-and-source-urls-checked",
       "playback": "not-tested",
       "note": "Références historiques à confirmer par lecture et validation de l'adéquation du pouvoir."
-    }
+    },
+    "youtubeId": "ofJ3DkkOo7Y",
+    "title": "Kuma crée son Ursus Shock",
+    "channel": "DapperDarius",
+    "episode": "Thriller Bark",
+    "contentKind": "clip",
+    "powerShown": "Nikyu Nikyu no Mi — Ursus Shock",
+    "published": "2024-08-05",
+    "source": "https://www.youtube.com/watch?v=ofJ3DkkOo7Y",
+    "sourceEvidence": "https://www.youtube.com/watch?v=ofJ3DkkOo7Y",
+    "verificationStatus": "public-metadata-verified",
+    "publisherType": "community-upload",
+    "playbackStatus": "not-tested",
+    "embedStatus": "not-tested",
+    "regionalStatus": "not-tested",
+    "moreVideos": [
+      {
+        "youtubeId": "PvODesQjMgU",
+        "title": "Kuma utilise Ursus Shock contre l'équipage au chapeau de paille",
+        "channel": "Yonko Level",
+        "episode": "Thriller Bark",
+        "contentKind": "clip",
+        "powerShown": "Nikyu Nikyu no Mi — Ursus Shock",
+        "published": "2022-09-25",
+        "source": "https://www.youtube.com/watch?v=PvODesQjMgU",
+        "sourceEvidence": "https://www.youtube.com/watch?v=PvODesQjMgU",
+        "verificationStatus": "public-metadata-verified",
+        "publisherType": "community-upload",
+        "reviewedOn": "2026-10-11",
+        "playbackStatus": "not-tested",
+        "embedStatus": "not-tested",
+        "regionalStatus": "not-tested"
+      }
+    ]
   },
   "bara-bara-no-mi": {
     "sourcePolicy": "publisher-linked",
