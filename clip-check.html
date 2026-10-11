@@ -64,7 +64,7 @@
 <body class="archive-tool clip-check-page">
 <header class="head">
   <a href="index.html">← Retour au DemonFruitzDex</a>
-  <h1>▶ CLIP CHECK <small style="font-size:.45em">V4.9.b3</small></h1>
+  <h1>▶ CLIP CHECK <small style="font-size:.45em">V4.9.g · Candidats</small></h1>
   <p>Contrôle réel des clips YouTube du Dex : lisibilité en France, intégration, et surtout pouvoir réellement visible. Ce test est <strong>manuel</strong> : un lecteur iframe chargé n'atteste ni la lecture, ni l'absence de géoblocage. Teste idéalement en navigation privée, sans compte YouTube. Les clips et résultats ne sont pas envoyés à un serveur.</p>
   <div class="stats" id="stats" aria-live="polite"></div>
 </header>
@@ -72,7 +72,8 @@
   <section class="pane" aria-label="Clips à contrôler">
     <div class="filters">
       <label style="width:100%"><strong>Afficher</strong><select id="filter">
-        <option value="new">Nouveaux clips V4.9.b</option>
+        <option value="candidates">3 nouveaux candidats officiels à vérifier</option>
+        <option value="new">Clips V4.9.b</option>
         <option value="pending">Tous les clips non testés</option>
         <option value="all">Tous les clips</option>
         <option value="problems">Clips signalés (problème)</option>
@@ -125,6 +126,7 @@
 </main>
 <script src="data/fruits.js?v=4.9"></script>
 <script src="data/clips.js?v=4.9b3"></script>
+<script src="data/clip-candidates-v49g.js?v=4.9g"></script>
 <script>
 (function(){
   'use strict';
@@ -139,6 +141,20 @@
       entries.push({fruitId:fruitId,videoId:v.youtubeId,title:v.title||'Extrait sans titre',channel:v.channel||'Chaîne inconnue',fruit:nameById.get(fruitId)||fruitId,kind:v.contentKind||'clip',newCandidate:v.verificationStatus==='public-metadata-verified'});
     });
   });
+  // Shortlisted publisher videos are review-only. They are never added to SHINO_CLIPS
+  // until a human has checked playback AND that the power is visible.
+  var candidates=Array.isArray(window.SHINO_CLIP_CANDIDATES_V49G)?window.SHINO_CLIP_CANDIDATES_V49G:[];
+  var selectedIds=new Set(entries.map(function(v){return v.fruitId+':'+v.videoId}));
+  for(var candidate of candidates){
+    if(!/^[A-Za-z0-9_-]{11}$/.test(candidate.videoId||'')||!nameById.has(candidate.fruitId))continue;
+    var candidateKey=candidate.fruitId+':'+candidate.videoId;
+    if(selectedIds.has(candidateKey))continue;
+    entries.push({fruitId:candidate.fruitId,videoId:candidate.videoId,
+      title:candidate.title,channel:candidate.channel,fruit:nameById.get(candidate.fruitId),
+      kind:'clip',isCandidate:true,sourceEvidence:candidate.sourceEvidence,
+      powerToVerify:candidate.powerToVerify,episode:candidate.episode,newCandidate:true});
+    selectedIds.add(candidateKey);
+  }
   var KEY='demonfruitzdex.clip-review.v49b';
   var PROPOSAL_KEY='demonfruitzdex.clip-proposals.v49b';
   var proposed={};
@@ -158,6 +174,7 @@
   if(index<0)index=0;
   var filter=$('filter');
   if(initial.has('fruit'))filter.value='all';
+  else if(candidates.length)filter.value='candidates';
   function saved(c){return reviews[key(c)]||{verdict:'pending',loggedOut:false,notes:''}}
   function parseYouTube(raw){
     try{
@@ -185,11 +202,11 @@
     setTimeout(function(){URL.revokeObjectURL(url)},2000);
   }
 
-  function shown(){return entries.filter(function(c){var v=saved(c).verdict;return filter.value==='all'||(filter.value==='new'&&c.newCandidate)||(filter.value==='pending'&&v==='pending')||(filter.value==='problems'&&v!=='pending'&&v!=='embed-ok')})}
+  function shown(){return entries.filter(function(c){var v=saved(c).verdict;return filter.value==='all'||(filter.value==='candidates'&&c.isCandidate)||(filter.value==='new'&&c.newCandidate&&!c.isCandidate)||(filter.value==='pending'&&v==='pending')||(filter.value==='problems'&&v!=='pending'&&v!=='embed-ok')})}
   function drawStats(){
     var validated=entries.filter(function(c){return saved(c).verdict!=='pending'}).length;
     var working=entries.filter(function(c){return saved(c).verdict==='embed-ok'}).length;
-    $('stats').innerHTML='<span class="stat">'+entries.length+' associations YouTube</span><span class="stat">'+entries.filter(function(c){return c.newCandidate}).length+' clips V4.9.b</span><span class="stat">'+validated+' testés</span><span class="stat">'+working+' confirmés en intégration</span>';
+    $('stats').innerHTML='<span class="stat">'+entries.filter(function(c){return !c.isCandidate}).length+' associations publiées</span><span class="stat">'+entries.filter(function(c){return c.isCandidate}).length+' candidats officiels non publiés</span><span class="stat">'+validated+' verdicts locaux</span><span class="stat">'+working+' validés ici</span>';
   }
   function drawList(){
     $('items').innerHTML=shown().map(function(c){
@@ -205,7 +222,7 @@
     if(!c){$('title').textContent='Aucun clip';$('play').disabled=true;return}
     var r=saved(c);
     $('title').textContent=c.fruit;
-    $('subtitle').textContent=c.title+' · '+c.channel+' · '+(c.kind==='compilation'?'MONTAGE':'EXTRAIT')+' · '+c.videoId;
+    $('subtitle').textContent=c.title+' · '+c.channel+' · '+(c.isCandidate?'CANDIDAT NON PUBLIÉ':'EXTRAIT')+' · '+c.videoId+(c.powerToVerify?' · À confirmer : '+c.powerToVerify:'');
     $('preview').innerHTML='<div class="placeholder"><img src="https://i.ytimg.com/vi/'+c.videoId+'/hqdefault.jpg" alt="Miniature YouTube"><span>Clique sur « Tester l’intégration » pour charger la vidéo.</span></div>';
     $('external').href='https://www.youtube.com/watch?v='+c.videoId;
     $('verdict').value=r.verdict||'pending';
@@ -289,8 +306,8 @@
     $('proposalStatus').textContent='Propositions exportées. Soumets le JSON pour audit avant intégration.';
   });
   $('export').addEventListener('click',function(){
-    var records=entries.map(function(c){var r=saved(c);return {fruitId:c.fruitId,videoId:c.videoId,title:c.title,channel:c.channel,verdict:r.verdict||'pending',testedWithoutAccount:Boolean(r.loggedOut),notes:r.notes||'',reviewedAt:r.reviewedAt||null}});
-    var report={schema:'demonfruitzdex.clip-review.v1',generatedAt:new Date().toISOString(),catalogueCount:entries.length,disclaimer:'Human reviewer results, no automatic verification of video availability or rights.',results:records};
+    var records=entries.map(function(c){var r=saved(c);return {fruitId:c.fruitId,videoId:c.videoId,title:c.title,channel:c.channel,candidate:Boolean(c.isCandidate),verdict:r.verdict||'pending',testedWithoutAccount:Boolean(r.loggedOut),notes:r.notes||'',reviewedAt:r.reviewedAt||null}});
+    var report={schema:'demonfruitzdex.clip-review.v1',generatedAt:new Date().toISOString(),catalogueCount:entries.filter(function(c){return !c.isCandidate}).length,candidateCount:entries.filter(function(c){return c.isCandidate}).length,disclaimer:'Human reviewer results, no automatic verification of video availability or rights. Candidates are not published clips.',results:records};
     downloadJson('demonfruitzdex-clip-check-'+new Date().toISOString().slice(0,10)+'.json',report);
     $('status').textContent='Rapport généré : à relire avant de le partager.';
   });
