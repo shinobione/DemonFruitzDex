@@ -162,3 +162,15 @@ Les captures `after-*.jpg` commitées précédemment correspondent à la premiè
 **Décision :** PR laissée en brouillon pour vérifier visuellement la nouvelle texture et obtenir
 l'accord explicite du propriétaire. La vérification CSS/Chrome et la réussite des tests ne sont pas
 une approbation du rendu final.
+
+## Correctif V4.9.c3 — support non répétitif et lisibilité sur papier
+
+Nouvelle revue du propriétaire : le fond V4.9.c2 était encore trop terne et la répétition de la texture 1024×683 produisait une grille de raccords visibles sur les grandes largeurs.
+
+**Changement fondamental :** la texture d'origine `assets/bg/parchment-bg.webp` est maintenant affichée **une seule fois par vue** en `background-size: cover`, `background-repeat: no-repeat`, `background-attachment: fixed`. Aucun carrelage d'image, donc aucune jointure périodique. La couleur papier chaude reste bien plus claire que dans c2 ; seuls les panneaux contenant texte et commandes sont foncés. Le bloc du fruit conserve une vignette locale mais **pas de texture répétée**.
+
+Les titres des sections catalogue/vidéos/classement/guide sont désormais en **encre sombre sur papier clair**, les descriptions latérales sont protégées par un cartouche sombre. Tous les assets de données et médias sont inchangés.
+
+**Contrôle technique réel :** `scripts/capture_parchment_preview.py` vérifie dans Chrome sur desktop et mobile les propriétés calculées `backgroundRepeat` (`no-repeat` partout), `backgroundSize` (`cover`), `backgroundAttachment` (`fixed`), chargement WebP et absence de débordement. Il capture en haut de page **et après défilement**. Captures à utiliser pour la revue : `reports/screenshots/v49c/ci-v49c3-desktop.jpg`, `ci-v49c3-mobile.jpg`, `ci-v49c3-desktop-scrolled.jpg`, `ci-v49c3-mobile-scrolled.jpg`, disponibles dans l'artifact GitHub Actions de la dernière CI.
+
+**Statut de diffusion :** PR toujours Draft. Aucune fusion ni publication du thème avant validation visuelle du propriétaire. Le catalogue conserve 166 fiches et 50 associations vidéo.
