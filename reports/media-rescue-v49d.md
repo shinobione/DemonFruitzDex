@@ -79,3 +79,48 @@ Les **26 illustrations absentes** ne sont pas toutes des erreurs : plusieurs fru
 5. La PR reste **Draft**. Aucune fusion/publication automatique.
 
 **Prochaine étape éditoriale :** examen manuel du nouveau contact sheet et du rapport d'audit, recherche ciblée des sept portraits restants, puis vérification sur Chrome en France et Safari iOS avant promotion.
+
+---
+
+## V4.9.d2 — deuxième vague : les sept portraits restants
+
+La section précédente documente l'état **avant** cette deuxième vague (les 21 premiers remplacements). Après examen du contact sheet V4.9.d2 en Chrome, les **7 derniers placeholders Wiki ont trouvé un autre fichier réel**. Les images ont été vérifiées visuellement, puis intégrées au même sidecar avec garde `previous_portrait`.
+
+| Fruit / porteur | Nouveau fichier | Choix éditorial |
+|---|---|---|
+| Phoenix / Marco | `Marco PW Portrait.png` | Portrait officiel de jeu One Piece Pirate Warriors ; clairement distingué d'une image anime |
+| Mogu Mogu / Miss Merry Christmas | `Drophy Portrait.png` | Nom véritable du personnage ; portrait anime |
+| Fude Fude / Kanjuro | `Kurozumi Kanjuro Portrait.png` | Nom complet du personnage ; portrait anime |
+| Toki Toki / Kozuki Toki | `Kouzuki Toki Portrait.png` | Romanisation `Kouzuki` utilisée dans les fichiers Wiki |
+| Aro Aro / Gunko | `Manmayer Gunko Portrait.png` | Nom complet ; portrait anime |
+| Pouvoir d'Imu | `Imu Anime Concept Art.png` | **Silhouette de l'anime** pour limiter les révélations manga ; fichier explicitement typé silhouette |
+| Dragon artificiel / Momonosuke | `Kouzuki Momonosuke Anime Infobox.png` | **Apparence adulte** correspondant à l'histoire actuelle, plutôt que portrait enfant |
+
+Ces fichiers ont été décodés dans le navigateur Chrome CI, et le contenu de la planche contact a été revu avant sélection. Aucun fichier Wiki n'est téléchargé ou réhébergé : seuls les liens et provenances sont ajoutés.
+
+### Nouvel objectif de couverture
+
+- **28** corrections de portraits au total depuis V4.9.c4 : 26 URL Wiki placeholders remplacées, **2 portraits auparavant absents** ajoutés.
+- **164 portraits renseignés sur 166 fiches** (les 2 absences restantes sont un objet animé et un groupe SMILE collectif).
+- **0 placeholder connu** parmi les 164 portraits, sous réserve de confirmation du nouveau test intégral Chrome GitHub Actions.
+- **140 illustrations de pouvoir / fruit enregistrées** ; les **26 manques** restent des tâches de recherche et ne sont PAS comblés avec des dessins inventés.
+- Les **50 associations vidéo** ne changent pas.
+
+Le nouveau `scripts/check_actual_media_v49d2.py` charge **la vraie page `index.html`**, toutes ses sidecars et les 7 portraits depuis Chrome, contrôle `164/166` et refuse les miniatures Wiki 300×171, puis génère la capture `reports/media-actual-page-v49d2.jpg`.
+
+### Prochaine vague — 26 illustrations manquantes
+
+Le script `scripts/triage_missing_visuals_v49d2.py` produit un fichier structuré **`reports/media-illustration-backlog-v49d2.json`** classant les 26 dossiers en priorités A/B/C avec statut `not-researched-or-not-verified`. Il sépare :
+
+- les capacités nommées pour lesquelles une scène d'action vérifiable est une priorité (Bonney, Morley, Tama, Vegapunk, etc.) ;
+- les formes Zoan / mythiques à illustrer **comme transformations**, non comme apparence du fruit physique ;
+- les fruits sans nom et formes dont la documentation canon est insuffisante : ne pas inventer de fruit ni attribuer une illustration trompeuse.
+
+Le texte de la fiche sans image a été clarifié : **« illustration absente » n'implique pas « apparence du fruit canon inconnue »**.
+
+### Limites du contrôle
+
+- Les succès proviennent de Chrome dans GitHub Actions et ne certifient pas l'accès depuis chaque pays / navigateur.
+- Une image décodée, même visuellement conforme, ne signifie pas que la réutilisation ou le réhébergement sont autorisés.
+- Le fichier de portrait Marco vient d'un jeu ; Imu est représenté en silhouette ; ces distinctions doivent rester documentées.
+- Toujours **PR Draft, pas de fusion ni publication** sans validation explicite.
