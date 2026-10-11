@@ -1,4 +1,4 @@
-/* DemonFruitzDex V4.9.a — short clips only, no links to full episodes. */
+/* DemonFruitzDex V4.9.b — curated YouTube power clips with provenance. */
 (() => {
   'use strict';
   const fruits = Array.isArray(window.SHINO_DATA) ? window.SHINO_DATA : [];
@@ -12,7 +12,26 @@
   const byId = new Map(fruits.map(f=>[f.id, f]));
   const clips = window.SHINO_CLIPS || {}; // source references, not media re-uploads
   const clipVideos = (entry) => entry ? [...(entry.youtubeId ? [entry] : []), ...(entry.moreVideos || [])] : [];
+  // CLIP CHECK verdicts live only in the user's browser. Never treat them as global QA.
+  const CLIP_REVIEW_KEY='demonfruitzdex.clip-review.v49b';
+  const clipVerdict = (fruitId, videoId) => {
+    try {
+      const records=JSON.parse(localStorage.getItem(CLIP_REVIEW_KEY)||'{}');
+      const verdict=records?.[fruitId+':'+videoId]?.verdict;
+      return ['embed-ok','youtube-only','login-required','unavailable','wrong-power','other'].includes(verdict)?verdict:'pending';
+    } catch(_) { return 'pending'; }
+  };
+  const clipIsFlagged = v => ['youtube-only','login-required','unavailable','wrong-power','other'].includes(v);
+  const clipVerdictLabels={
+    'embed-ok':'✓ LECTURE VALIDÉE LOCALEMENT SUR CE NAVIGATEUR',
+    'youtube-only':'⚠ L’IFRAME A ÉTÉ SIGNALÉE BLOQUÉE SUR CE NAVIGATEUR · YOUTUBE DIRECT POSSIBLE',
+    'login-required':'⚠ CONNEXION OU RESTRICTION D’ÂGE SIGNALÉE LOCALEMENT',
+    'unavailable':'⚠ VIDÉO INDISPONIBLE SIGNALÉE LOCALEMENT',
+    'wrong-power':'⚠ MAUVAIS POUVOIR / CONTENU SIGNALÉ LOCALEMENT',
+    'other':'⚠ VIDÉO À REVOIR, PROBLÈME SIGNALÉ LOCALEMENT'
+  };
   const videoProvenance = (video) => {
+    if (video?.verificationStatus === 'public-metadata-verified') return `${video?.contentKind === 'compilation' ? 'MONTAGE D’ATTAQUES' : 'EXTRAIT DE L’ANIMÉ'} · CHAÎNE COMMUNAUTAIRE ${String(video.channel||'').toUpperCase()} · MÉTADONNÉES RECENSÉES · LECTURE/INTÉGRATION NON TESTÉES`;
     if (video?.contentKind === 'live-action') return 'ADAPTATION NETFLIX LIVE-ACTION · PAS UNE SCÈNE DE L’ANIMÉ · LECTURE NON TESTÉE';
     if (video?.verificationStatus === 'legacy-unverified') return 'ANCIEN CLIP · PROVENANCE À CONFIRMER · LECTURE NON TESTÉE';
     if (video?.contentKind === 'preview') return 'BANDE-ANNONCE OFFICIELLE · PAS UN EXTRAIT DE POUVOIR';
@@ -119,7 +138,7 @@
     const activeIndex=visibleResults.findIndex(x=>x.id===f.id);
     const videos=clipVideos(clip);
     const yt=videos[0]?.youtubeId;
-    const makeVideoButton=(video,index)=>`<button type="button" class="official-choice ${index===0?'active':''}" data-video-index="${index}" title="${enc(video.title)}" aria-pressed="${index===0}"><img loading="lazy" src="https://i.ytimg.com/vi/${enc(video.youtubeId)}/mqdefault.jpg" alt=""><span>${enc(video.title)}</span><small>${enc(video.channel||'Diffuseur')} · ${enc(video.episode||'')}</small></button>`;
+    const makeVideoButton=(video,index)=>`<button type="button" class="official-choice ${index===0?'active':''}" data-video-index="${index}" title="${enc(video.title)}" aria-pressed="${index===0}"><img loading="lazy" src="https://i.ytimg.com/vi/${enc(video.youtubeId)}/mqdefault.jpg" alt=""><span>${enc(video.title)}</span><small>${enc(video.channel||'Diffuseur')} · ${enc(video.episode||'')}${clipIsFlagged(clipVerdict(f.id,video.youtubeId))?' · ⚠ À REVOIR':''}</small></button>`;
     const needsReview=Boolean(clip.auditV46 && videos.length);
     const ytThumb=yt?`https://i.ytimg.com/vi/${enc(yt)}/hqdefault.jpg`:'';
     const initial=videos[0];
@@ -127,8 +146,8 @@
       <button type="button" class="official-play" id="officialPlay" aria-label="Lire l'extrait : ${enc(initial.title)}" style="--poster:url('${ytThumb}')">
         <span class="official-play-icon" aria-hidden="true">▶</span><span class="official-play-title">${enc(initial.title)}</span><span class="official-play-by">${enc(initial.channel)} · ${enc(initial.episode||'')}</span>
       </button></div>
-      <div class="clip-actions"><a id="clipYoutubeSource" href="${enc(initial.source)}" rel="noopener noreferrer" target="_blank">↗ Ouvrir sur YouTube</a></div>
-      <p id="clipKind" class="clip-kind">${videoProvenance(initial)}</p>
+      <div class="clip-actions"><a id="clipYoutubeSource" href="${enc(initial.source)}" rel="noopener noreferrer" target="_blank">↗ Ouvrir sur YouTube</a> <a id="clipCheckSource" href="clip-check.html?fruit=${encodeURIComponent(f.id)}&amp;video=${encodeURIComponent(initial.youtubeId)}" target="_blank" rel="noopener noreferrer">✓ Tester / signaler cet extrait</a></div>
+      <p id="clipKind" class="clip-kind">${videoProvenance(initial)}</p><p id="clipLocalNotice" class="clip-local-notice" role="status" hidden></p>
       ${videos.length>1?`<div class="clips-playlist"><div class="playlist-label">AUTRES EXTRAITS · ${videos.length} VIDÉOS</div><div class="clip-thumbnails">${videos.map(makeVideoButton).join('')}</div></div>`:''}`:
       `<div class="clip-empty"><span>◈</span><strong>Aucun extrait court sélectionné pour ce fruit</strong><p>Utilise la recherche YouTube ou Google Vidéos ci-dessous. Les liens vers les épisodes complets ne sont pas proposés.</p></div>`;
     const searchTerms='One Piece '+(f.primary_user||f.u)+' '+f.n+' '+f.fr+' powers anime clip';
@@ -138,6 +157,7 @@
       <div class="playlist-label">⌕ CHERCHER DES EXTRAITS COURTS · SANS ABONNEMENT</div>
       <a class="episode-item source-discover source-youtube" target="_blank" rel="noopener noreferrer" href="${youtubeSearch}"><span>▶</span><span>Explorer les clips YouTube pour ce fruit<small>Chaînes officielles et vidéos de fans · résultats à vérifier</small></span><b>YOUTUBE ↗</b></a>
       <a class="episode-item source-discover" target="_blank" rel="noopener noreferrer" href="${googleVideoSearch}"><span>⌕</span><span>Rechercher sur d'autres plateformes<small>Google Vidéos · recherche multi-sites, disponibilité variable</small></span><b>WEB ↗</b></a>
+      <a class="episode-item source-discover" target="_blank" rel="noopener noreferrer" href="clip-check.html?fruit=${encodeURIComponent(f.id)}&amp;suggest=1"><span>＋</span><span>J’ai trouvé une vidéo de ce pouvoir<small>Proposer un lien YouTube à contrôler avant intégration</small></span><b>PROPOSER ↗</b></a>
     </div>`;
     const auditNotice=needsReview?`<p class="clip-audit-warning">⚑ RÉFÉRENCE HISTORIQUE À RECONTRÔLER — ${enc(clip.auditV46.note||'Disponibilité et adéquation au pouvoir non encore vérifiées.')}</p>`:'';
     const socialBody=clip.social?.length?`<div class="social-sources">${clip.social.map(x=>`<a href="${enc(x.url)}" rel="noopener noreferrer" target="_blank">↗ ${enc(x.title)} · ${enc(x.platform)}</a>`).join('')}</div>`:'';
@@ -185,7 +205,9 @@
   }
   function wireOfficialClip(f){
     const meta=clips[f.id],choices=clipVideos(meta);if(!choices.length)return;
-    let currentIndex=0;
+    let currentIndex=choices.findIndex(v=>clipVerdict(f.id,v.youtubeId)==='embed-ok');
+    if(currentIndex<0) currentIndex=choices.findIndex(v=>!clipIsFlagged(clipVerdict(f.id,v.youtubeId)));
+    if(currentIndex<0) currentIndex=0;
     try { const requested=new URL(location.href).searchParams.get('clip'); const ix=choices.findIndex(x=>x.youtubeId===requested); if(ix>=0)currentIndex=ix; } catch(_){}
     function selectVideo(index){
       const selected=choices[index];if(!selected)return;
@@ -199,7 +221,16 @@
       button.innerHTML=`<span class="official-play-icon" aria-hidden="true">▶</span><span class="official-play-title">${enc(selected.title)}</span><span class="official-play-by">${enc(selected.channel)} · ${enc(selected.episode||'')}</span>`;
       box.replaceChildren(button);
       const source=$('clipYoutubeSource');if(source)source.href=selected.source;
+      const clipAudit=$('clipCheckSource');if(clipAudit)clipAudit.href='clip-check.html?fruit='+encodeURIComponent(f.id)+'&video='+encodeURIComponent(selected.youtubeId);
       const kind=$('clipKind');if(kind)kind.textContent=videoProvenance(selected);
+      const reviewStatus=clipVerdict(f.id,selected.youtubeId);
+      const localNotice=$('clipLocalNotice');
+      if(localNotice){localNotice.hidden=reviewStatus==='pending';localNotice.textContent=clipVerdictLabels[reviewStatus]||'';localNotice.classList.toggle('is-flagged',clipIsFlagged(reviewStatus));}
+      if(clipIsFlagged(reviewStatus)){
+        button.disabled=true;
+        button.title='Lecture intégrée suspendue après un signalement local. Consulter YouTube ou CLIP CHECK.';
+        button.setAttribute('aria-label','Lecture suspendue : extrait signalé dans CLIP CHECK');
+      }
       document.querySelectorAll('[data-video-index]').forEach(x=>{
         const active=Number(x.dataset.videoIndex)===index;
         x.classList.toggle('active',active);x.setAttribute('aria-pressed',String(active));
@@ -213,7 +244,7 @@
         frame.allowFullscreen=true;frame.referrerPolicy='strict-origin-when-cross-origin';
         frame.src=`https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0&playsinline=1`;
         button.replaceWith(frame);
-        toast('Lecture depuis '+selected.channel);
+        toast('Lecteur ouvert · lecture à vérifier sur YouTube');
       },{once:true});
     }
     document.querySelectorAll('[data-video-index]').forEach(button=>button.addEventListener('click',()=>selectVideo(Number(button.dataset.videoIndex))));
