@@ -41,6 +41,15 @@ assert "window.SHINO_CLIPS=" not in page, "suggestions must not publish automati
 assert "YouTube" in page and "sans compte" in page
 assert "clips.js?v=4.9b3" in site and "clips.js?v=4.9b3" in page
 assert re.search(r'<script\b[^>]*src="app\.js\?v=4\.9[a-z0-9]+"',site)
+# Keep the visible edition synchronized with the browser app cache version.
+# E.g. 4.9e (asset key) must display V4.9.e and 04.9.e in the UI.
+app_key = re.search(r'<script\\b[^>]*src="app\\.js\\?v=(4\\.9[a-z][0-9]*)"',site)
+assert app_key, "Missing versioned application script"
+release = re.sub(r'(4\\.9)([a-z])', r'\\1.\\2', app_key.group(1))
+assert f'<title>DemonFruitzDex — SHINO-DEX V{release}' in site, "Browser tab still advertises an old edition"
+assert f'SHINO EDITION <i>0{release}</i>' in site, "Header still advertises an old edition"
+assert f'SHINO EDITION V{release}' in site, "Footer still advertises an old edition"
+
 
 class InlineScripts(HTMLParser):
     def __init__(self):
