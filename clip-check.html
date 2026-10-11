@@ -211,7 +211,7 @@
     $('loggedOut').checked=Boolean(r.loggedOut);
     $('notes').value=r.notes||'';
     $('status').textContent=r.reviewedAt?'Dernière revue : '+new Date(r.reviewedAt).toLocaleString('fr-FR'):'Aucune revue enregistrée';
-    try{var next=new URL(location.href);next.searchParams.set('fruit',c.fruitId);next.searchParams.set('video',c.videoId);history.replaceState({},'',next.toString())}catch(_){}
+    try{if(initial.get('suggest')!=='1'){var next=new URL(location.href);next.searchParams.set('fruit',c.fruitId);next.searchParams.set('video',c.videoId);history.replaceState({},'',next.toString())}}catch(_){}
   }
   function choose(i){if(!entries[i])return;index=i;drawDetail();drawList()}
   filter.addEventListener('change',drawList);
