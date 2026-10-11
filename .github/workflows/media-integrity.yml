@@ -1,4 +1,5 @@
 name: DemonFruitzDex media integrity
+# V4.9.b2 includes browser Clip Check syntax and rejects full-episode URLs.
 
 on:
   pull_request:
