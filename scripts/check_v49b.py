@@ -18,6 +18,7 @@ expected={
   "horo-horo-no-mi":["p5KF8XZlqEk"],
   "kage-kage-no-mi":["fSgU4NEqa4s"],
   "doku-doku-no-mi":["592XWC7Abkc"],
+  "nikyu-nikyu-no-mi":["ofJ3DkkOo7Y","PvODesQjMgU"],
 }
 all_vids=[]
 for fruit,entry in clips.items():
@@ -38,13 +39,13 @@ for fruit,entry in clips.items():
             assert clip.get("playbackStatus")=="not-tested"
             assert clip.get("embedStatus")=="not-tested"
             assert clip.get("regionalStatus")=="not-tested"
-assert len(all_vids)==42 and len({f for f,_ in all_vids})==29, "video totals"
-assert inventory["counts"]["youtubeAssociations"]==42
-assert inventory["counts"]["withYouTube"]==29
+assert len(all_vids)==44 and len({f for f,_ in all_vids})==30, "video totals"
+assert inventory["counts"]["youtubeAssociations"]==44
+assert inventory["counts"]["withYouTube"]==30
 assert not re.search(r"https?://(?:www\.)?crunchyroll\.com/(?:fr/)?watch/",json.dumps(clips)), "full episode link returned"
 assert not any("episodeUrl" in c or "moreEpisodes" in c for c in clips.values()),"full episode metadata returned"
 assert "MONTAGE D’ATTAQUES" in app and "CHAÎNE COMMUNAUTAIRE" in app
-assert "app.js?v=4.9b" in page and "clips.js?v=4.9b" in page
+assert "app.js?v=4.9b2" in page and "clips.js?v=4.9b2" in page
 assert "clipInventory" in page and "hasScene = hasYoutube" in app
-print("PASS V4.9.b: 5 new associations, 42 YouTube references, 29 fruits, 0 full episodes")
+print("PASS V4.9.b2: 7 new associations, 44 YouTube references, 30 fruits, 0 full episodes")
 print("WARNING: youtube iframe, age restriction, and no-login availability NOT TESTED")
