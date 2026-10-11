@@ -37,7 +37,7 @@ async def run(limit=None):
             function finish(status){if(settled)return;settled=true;clearTimeout(timer);
               img.onload=img.onerror=null;
               resolve({status,width:img.naturalWidth||0,height:img.naturalHeight||0});}
-            img.onload=()=>finish(img.naturalWidth>0&&img.naturalHeight>0?'loaded':'empty');
+            img.onload=()=>finish(img.naturalWidth===300&&img.naturalHeight===171?'placeholder':img.naturalWidth>0&&img.naturalHeight>0?'loaded':'empty');
             img.onerror=()=>finish('error');
             img.src=url;
           });
@@ -50,7 +50,7 @@ async def run(limit=None):
               results[i]={...item,direct,fallback,
                 classification:direct.status==='loaded'?'direct-loaded':
                   fallback.status==='loaded'?'fallback-loaded':
-                  (direct.status==='timeout'||fallback.status==='timeout'?'timeout-unconfirmed':'browser-load-failed')};
+                  (direct.status==='placeholder'||fallback.status==='placeholder'?'wiki-placeholder':direct.status==='timeout'||fallback.status==='timeout'?'timeout-unconfirmed':'browser-load-failed')};
             }
           }
           await Promise.all(Array.from({length:Math.min(concurrency,items.length)},worker));
@@ -67,7 +67,7 @@ async def run(limit=None):
       'scope':{'fruits':166,'mediaReferencesTested':len(results),'expectedFullMediaReferences':manifest['stats']['directReferences'],
                'subset':bool(limit)},
       'outcomes':dict(counters),'byKind':kinds,
-      'disclaimer':'Browser-loaded means the image network request decoded, NOT that depicted artwork is canonically correct or licensed. Browser-load-failed can reflect hotlink/rate/geo filtering. Do not mark dead globally without independent confirmation.',
+      'disclaimer':'We visually confirmed the wiki responds with a generic blank placeholder at 300x171 for missing files; such responses are classified separately. A decoded image is not automatically the correct depicted character nor licensed. Browser failures can reflect hotlink/rate/geo filtering.',
       'results':results}
     REPORT.write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     print('MEDIA_BROWSER_AUDIT_STATS='+json.dumps({'outcomes':dict(counters),'byKind':kinds,'tested':len(results)},ensure_ascii=False),flush=True)
