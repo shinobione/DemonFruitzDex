@@ -78,6 +78,20 @@ body {
 
 ::selection { background: #d8b06a; color: #17130e; }
 
+/* Headlines outside the dark cards read as dark archival ink on parchment,
+   not ivory on ivory. Preserve the bright typography inside panels. */
+:is(.spotlight, .catalogue, .leaderboard, .guide) .section-title-row h2 {
+  color: #251a10;
+  text-shadow: 0 1px 0 #f2deafad;
+}
+:is(.spotlight, .catalogue, .leaderboard, .guide) .section-title-row h2 .dot {
+  color: #6f4321;
+}
+:is(.spotlight, .catalogue, .leaderboard, .guide) .section-title-row .eyebrow {
+  color: #4e3019;
+  text-shadow: 0 1px 0 #e9d1a0a6;
+}
+
 /* Small secondary copy now sits over textured paper: give it its own
    readable ink panel instead of low-contrast grey on mid-tone parchment. */
 .section-aside {
