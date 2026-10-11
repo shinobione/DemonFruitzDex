@@ -34,7 +34,7 @@ if not ('ADAPTATION NETFLIX LIVE-ACTION' in app and 'artwork-user-substitute' in
     errors.append('On-screen provenance of substitutes is missing')
 if not ('portraits-v49.js?v=4.9' in page and 'app.js?v=4.9' in page):
     errors.append('V4.9 sources are not loaded by the home page')
-if not ('portraits-v49.js?v=4.9' in media and 'SHINO_PORTRAITS_V49' in media):
+if not ('portraits-v49.js?v=4.9' in media and 'scripts/media-check-v49f.js?v=4.9f' in media and 'const getItems=()=>all.flatMap' in (root/'scripts/media-check-v49f.js').read_text(encoding='utf8')):
     errors.append('V4.9 portraits excluded from browser Media Check')
 if errors:
     for e in errors:print('FAIL:',e,file=sys.stderr)
