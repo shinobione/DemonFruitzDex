@@ -185,3 +185,11 @@ Rapport détaillé : [reports/media-audit-v48.md](reports/media-audit-v48.md).
 - Le filtre « Extrait court sélectionné » ne comptabilise plus les **44 fiches uniquement documentées par des épisodes complets**. Les boutons de recherche YouTube / Google Vidéos restent accessibles depuis **toutes** les fiches. Les résultats de recherche ne sont pas considérés comme clips intégrables tant qu'ils ne sont pas vérifiés et attribués à la bonne fiche.
 - Sources visuelles : **162 portraits** et **140 illustrations de fruit ou pouvoir** avec URL référencée, **4 + 26** manquants. Le chargement dans le navigateur, les droits et le statut canon restent distincts et à contrôler.
 - Régression automatisable : `python scripts/check_v49a.py`. Les vérifications de structure **ne remplacent pas** la lecture réelle des vidéos ni le contrôle des images en France.
+
+## V4.9.b — scènes de pouvoirs YouTube
+
+- **5 associations vidéo supplémentaires** pour quatre fruits : Bari Bari (deux clips), Horo Horo, Kage Kage et Doku Doku. Total **42 associations vidéo** sur **29 fiches**.
+- Les deux vidéos Bartolomeo montrent une scène de barrière face à King Punch selon leurs métadonnées ; les trois autres sont des **montages d'attaques de l'anime**, pas des épisodes complets.
+- Les chaînes sont **communautaires**, non les diffuseurs officiels. Titres et descriptions documentés, mais **aucune vérification de lecture iframe, région ou nécessité de compte YouTube** n'a encore été menée. Ces limites figurent dans les fiches.
+- Pas de copie ni d'hébergement de séquences protégées : lecteur intégré sur clic et lien vers la vidéo source.
+- Les **liens d'épisodes complets Crunchyroll restent absents**. [Rapport V4.9.b](reports/clip-review-v49b.md), contrôle : `python scripts/check_v49b.py`.
