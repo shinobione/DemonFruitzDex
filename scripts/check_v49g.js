@@ -4,17 +4,39 @@ const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),asse
 const root=path.resolve(__dirname,'..');
 const read=x=>fs.readFileSync(path.join(root,x),'utf8');
 const ctx=vm.createContext({window:{}});
-for(const file of ['data/fruits.js','data/clips.js'])
+for(const file of ['data/fruits.js','data/clips.js','data/clip-candidates-v49g.js'])
  vm.runInContext(read(file),ctx,{filename:file,timeout:5000});
-const fruits=ctx.window.SHINO_DATA,clips=ctx.window.SHINO_CLIPS;
+const fruits=ctx.window.SHINO_DATA,clips=ctx.window.SHINO_CLIPS,candidates=ctx.window.SHINO_CLIP_CANDIDATES_V49G;
 const videos=entry=>(entry?.youtubeId?[entry]:[]).concat(entry?.moreVideos||[]).filter(v=>/^[\w-]{11}$/.test(v.youtubeId||''));
 assert.equal(fruits.length,166);
 assert.equal(Object.values(clips).reduce((n,r)=>n+videos(r).length,0),50);
 assert.equal(fruits.filter(f=>videos(clips[f.id]).length).length,36);
 assert.equal(fruits.filter(f=>!videos(clips[f.id]).length).length,130);
-const html=read('clip-finder.html'),index=read('index.html'),client=read('scripts/clip-finder-v49g.js');
+const html=read('clip-finder.html'),index=read('index.html'),client=read('scripts/clip-finder-v49g.js'),checker=read('clip-check.html');
+assert(Array.isArray(candidates)&&candidates.length===3);
+const ids=new Set(fruits.map(f=>f.id));
+const unique=new Set();
+for(const c of candidates){
+ assert(ids.has(c.fruitId));
+ assert(/^[A-Za-z0-9_-]{11}$/.test(c.videoId));
+ assert(!unique.has(c.fruitId+':'+c.videoId));
+ unique.add(c.fruitId+':'+c.videoId);
+ assert.equal(c.url,'https://www.youtube.com/watch?v='+c.videoId);
+ assert(c.sourceEvidence.startsWith('https://www.youtube.com/watch?v='));
+ assert.equal(c.verificationStatus,'publisher-metadata-verified');
+ assert.equal(c.playbackStatus,'not-tested');
+ assert.equal(c.embedStatus,'not-tested');
+ assert.equal(c.editorialState,'pending-manual-playback-and-power-match');
+ assert(!videos(clips[c.fruitId]).some(v=>v.youtubeId===c.videoId));
+}
+assert(checker.includes('data/clip-candidates-v49g.js?v=4.9g'));
+assert(checker.includes("catalogueCount:entries.filter(function(c){return !c.isCandidate}).length"));
+assert(checker.includes("candidateCount:entries.filter(function(c){return c.isCandidate}).length"));
+assert(checker.includes("filter.value==='candidates'&&c.isCandidate"));
+assert(!checker.includes('crunchyroll.com/watch/'));
 assert(html.includes('scripts/clip-finder-v49g.js?v=4.9g'));
 assert(html.includes('data/clips.js?v=4.9b3'));
+assert(html.includes('data/clip-candidates-v49g.js?v=4.9g'));
 assert(html.includes('data/fruits.js?v=4.9'));
 assert(html.includes('archive-theme.css'));
 assert(html.includes('id="rows"')&&html.includes('id="query"')&&html.includes('id="export"'));
@@ -28,5 +50,5 @@ assert(client.includes('clip-check.html?fruit='));
 assert(client.includes('youtube.com/results?search_query='));
 const r=require('node:child_process').spawnSync(process.execPath,['--check',path.join(root,'scripts/clip-finder-v49g.js')],{encoding:'utf8'});
 assert.equal(r.status,0,r.stderr);
-console.log('PASS V49g: 166 fruits / 50 selected videos / 36 covered / 130 missing');
+console.log('PASS V49g: 166 fruits / 50 selected videos / 36 covered / 130 missing / 3 OFFICIAL UNPUBLISHED candidates');
 console.log('PASS V49g: search-only discovery, local proposal link, no subscription episode URLs');
