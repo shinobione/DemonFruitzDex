@@ -40,7 +40,7 @@ async def main(engine):
             assert meta=={'fruits':166,'portraits':164,'art':152},meta
             # Rendered site must degrade into its own designed placeholder rather than broken IMG icons.
             await page.wait_for_timeout(700)
-            assert await page.locator('.card').count()>0
+            assert await page.locator('.fruit-card').count()>0
             await page.screenshot(path=str(out/f'media-failover-{engine}.jpg'),type='jpeg',quality=72)
             await page.goto(f'http://127.0.0.1:{server.server_port}/media-check.html',wait_until='domcontentloaded')
             await page.locator('#rescue').click()
