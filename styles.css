@@ -155,3 +155,8 @@ footer{background:#0b0f16;border-top:1px solid var(--line)}.footer-inner{min-hei
 .card-visual .art-meta{max-width:calc(100% - 20px);white-space:normal;line-height:1.25}
 .card-visual:has(.artwork-user-substitute) .art-fallback{opacity:.16}
 .card-visual:has(.artwork-user-substitute) .art-meta{border-color:#d6bc8e50;background:#12121ae8;color:#f0dfba}
+
+/* V4.9.b3 — verdicts personnels CLIP CHECK, non publiés globalement */
+.clip-local-notice{margin:10px 0;padding:11px 13px;border:1px solid #7f98a957;border-radius:10px;background:#182c35;color:#bed9e5;font:700 11px/1.5 'DM Sans',sans-serif;letter-spacing:.03em}
+.clip-local-notice.is-flagged{color:#ffca9e;border-color:#bf765f88;background:#372b2b}
+.official-play:disabled{cursor:not-allowed;filter:grayscale(1);opacity:.48}
