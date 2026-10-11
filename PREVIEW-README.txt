@@ -1,7 +1,7 @@
-DemonFruitzDex — V4.9.b3 · PR Preview (11 octobre 2026)
-=======================================================
+DemonFruitzDex — V4.9.c4 · Manuscript Borders (11 octobre 2026)
+============================================================
 
-Ceci est un paquet de revue provenant de la PR GitHub #2.
+Ceci est un paquet de revue provenant de la PR Draft GitHub #4.
 Il n'est pas la version publique de DemonFruitzDex.
 
 DÉMARRAGE SUR WINDOWS
@@ -12,6 +12,15 @@ DÉMARRAGE SUR WINDOWS
 4. Ouvrez http://localhost:8000/
 5. Ouvrez http://localhost:8000/clip-check.html pour vérifier les 50
    associations YouTube (montages communautaires inclus).
+6. Consultez reports/v49c-parchment-theme-review.md et les captures courantes
+   dans reports/screenshots/v49c4/. Les captures du dossier v49c sont historiques.
+
+REVUE VISUELLE V4.9.c4
+- Vérifiez les bords patinés, le centre clair, le hero encadré et l'encre brune sur papier.
+- Inspectez le haut de page, le défilement, le catalogue et les fiches sur desktop/mobile.
+- Les contrôles Chrome couvrent 1920x1080, 1440x900, 768x1024, 390x844 et 360x800.
+- Les 166 fruits, les données et les comportements JavaScript restent inchangés.
+- La PR reste Draft : aucune fusion ou publication avant approbation du propriétaire.
 
 CE QU'IL FAUT TESTER
 - Dans une fiche de fruit, essayer « Lire l'extrait » puis « Ouvrir sur YouTube ».

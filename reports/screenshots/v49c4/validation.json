@@ -1,0 +1,227 @@
+[
+  {
+    "viewport": [
+      1920,
+      1080
+    ],
+    "css": {
+      "bg": "radial-gradient(at 50% 42%, rgba(255, 248, 231, 0.17) 18%, rgba(164, 119, 56, 0.22) 78%, rgba(81, 48, 27, 0.44) 100%), linear-gradient(110deg, rgba(136, 94, 43, 0.1), rgba(255, 242, 211, 0.07) 48%, rgba(107, 71, 44, 0.17)), url(\"http://127.0.0.1:50392/DemonFruitzDex/assets/bg/parchment-bg.webp\")",
+      "bgRepeat": "no-repeat, no-repeat, no-repeat",
+      "bgSize": "cover, cover, cover",
+      "bgAttachment": "fixed, fixed, fixed",
+      "stage": "radial-gradient(at 52% 46%, rgba(60, 37, 94, 0.19) 0%, rgba(89, 65, 39, 0.15) 65%, rgba(43, 24, 14, 0.44) 100%), linear-gradient(135deg, rgba(245, 230, 198, 0.17), rgba(150, 115, 59, 0.19)), url(\"http://127.0.0.1:50392/DemonFruitzDex/assets/bg/parchment-bg.webp\")",
+      "stageRepeat": "no-repeat, no-repeat, no-repeat",
+      "stageSize": "cover, cover, cover",
+      "stageGrid": "none",
+      "heroRepeat": "no-repeat",
+      "wear": "radial-gradient(134.4px 27% at 0% 22%, rgba(53, 29, 17, 0.72), rgba(0, 0, 0, 0) 78%), radial-gradient(134.4px 35% at 100% 76%, rgba(43, 24, 15, 0.66), rgba(0, 0, 0, 0) 82%), radial-gradient(28% 80px at 28% 0%, rgba(107, 60, 29, 0.5), rgba(0, 0, 0, 0) 80%), radial-gradient(36% 100px at 68% 100%, rgba(64, 38, 25, 0.533), rgba(0, 0, 0, 0) 80%), radial-gradient(at 0% 100%, rgba(57, 34, 22, 0.45), rgba(0, 0, 0, 0) 32%), radial-gradient(at 100% 0%, rgba(74, 42, 20, 0.42), rgba(0, 0, 0, 0) 30%)",
+      "wearShadow": "rgba(75, 46, 27, 0.5) 0px 0px 0px 4px inset, rgba(72, 43, 27, 0.42) 0px 0px 34px 12px inset, rgba(107, 67, 30, 0.3) 0px 0px 100px 0px inset",
+      "wearEvents": "none",
+      "frame": "1px",
+      "frameEvents": "none",
+      "heroInk": "rgb(36, 26, 17)",
+      "sectionInk": "rgb(37, 26, 16)",
+      "columns": "266.797px 266.797px 266.797px 266.797px 266.797px",
+      "fruits": 166,
+      "videos": 50,
+      "horizontalOverflow": false,
+      "title": "DemonFruitzDex — SHINO-DEX V4.9.c4 · Manuscript Borders"
+    },
+    "asset": {
+      "width": 1536,
+      "height": 1024
+    },
+    "detail": {
+      "client": 1264,
+      "scroll": 1264
+    },
+    "portraitHeight": 420,
+    "contrast": {
+      "title/paper": 7.033593076989021,
+      "copy/paper": 6.264654985788315,
+      "caption/paper": 4.875385341938991
+    },
+    "errors": [],
+    "missingLocal": []
+  },
+  {
+    "viewport": [
+      1440,
+      900
+    ],
+    "css": {
+      "bg": "radial-gradient(at 50% 42%, rgba(255, 248, 231, 0.17) 18%, rgba(164, 119, 56, 0.22) 78%, rgba(81, 48, 27, 0.44) 100%), linear-gradient(110deg, rgba(136, 94, 43, 0.1), rgba(255, 242, 211, 0.07) 48%, rgba(107, 71, 44, 0.17)), url(\"http://127.0.0.1:50392/DemonFruitzDex/assets/bg/parchment-bg.webp\")",
+      "bgRepeat": "no-repeat, no-repeat, no-repeat",
+      "bgSize": "cover, cover, cover",
+      "bgAttachment": "fixed, fixed, fixed",
+      "stage": "radial-gradient(at 52% 46%, rgba(60, 37, 94, 0.19) 0%, rgba(89, 65, 39, 0.15) 65%, rgba(43, 24, 14, 0.44) 100%), linear-gradient(135deg, rgba(245, 230, 198, 0.17), rgba(150, 115, 59, 0.19)), url(\"http://127.0.0.1:50392/DemonFruitzDex/assets/bg/parchment-bg.webp\")",
+      "stageRepeat": "no-repeat, no-repeat, no-repeat",
+      "stageSize": "cover, cover, cover",
+      "stageGrid": "none",
+      "heroRepeat": "no-repeat",
+      "wear": "radial-gradient(100.8px 27% at 0% 22%, rgba(53, 29, 17, 0.72), rgba(0, 0, 0, 0) 78%), radial-gradient(100.8px 35% at 100% 76%, rgba(43, 24, 15, 0.66), rgba(0, 0, 0, 0) 82%), radial-gradient(28% 80px at 28% 0%, rgba(107, 60, 29, 0.5), rgba(0, 0, 0, 0) 80%), radial-gradient(36% 100px at 68% 100%, rgba(64, 38, 25, 0.533), rgba(0, 0, 0, 0) 80%), radial-gradient(at 0% 100%, rgba(57, 34, 22, 0.45), rgba(0, 0, 0, 0) 32%), radial-gradient(at 100% 0%, rgba(74, 42, 20, 0.42), rgba(0, 0, 0, 0) 30%)",
+      "wearShadow": "rgba(75, 46, 27, 0.5) 0px 0px 0px 4px inset, rgba(72, 43, 27, 0.42) 0px 0px 34px 12px inset, rgba(107, 67, 30, 0.3) 0px 0px 100px 0px inset",
+      "wearEvents": "none",
+      "frame": "1px",
+      "frameEvents": "none",
+      "heroInk": "rgb(36, 26, 17)",
+      "sectionInk": "rgb(37, 26, 16)",
+      "columns": "304.297px 304.297px 304.297px 304.312px",
+      "fruits": 166,
+      "videos": 50,
+      "horizontalOverflow": false,
+      "title": "DemonFruitzDex — SHINO-DEX V4.9.c4 · Manuscript Borders"
+    },
+    "asset": {
+      "width": 1536,
+      "height": 1024
+    },
+    "detail": {
+      "client": 1264,
+      "scroll": 1264
+    },
+    "portraitHeight": 420,
+    "contrast": {
+      "title/paper": 7.033593076989021,
+      "copy/paper": 6.264654985788315,
+      "caption/paper": 4.875385341938991
+    },
+    "errors": [],
+    "missingLocal": []
+  },
+  {
+    "viewport": [
+      768,
+      1024
+    ],
+    "css": {
+      "bg": "radial-gradient(at 50% 42%, rgba(255, 248, 231, 0.17) 18%, rgba(164, 119, 56, 0.22) 78%, rgba(81, 48, 27, 0.44) 100%), linear-gradient(110deg, rgba(136, 94, 43, 0.1), rgba(255, 242, 211, 0.07) 48%, rgba(107, 71, 44, 0.17)), url(\"http://127.0.0.1:50392/DemonFruitzDex/assets/bg/parchment-bg.webp\")",
+      "bgRepeat": "no-repeat, no-repeat, no-repeat",
+      "bgSize": "cover, cover, cover",
+      "bgAttachment": "fixed, fixed, fixed",
+      "stage": "radial-gradient(at 52% 46%, rgba(60, 37, 94, 0.19) 0%, rgba(89, 65, 39, 0.15) 65%, rgba(43, 24, 14, 0.44) 100%), linear-gradient(135deg, rgba(245, 230, 198, 0.17), rgba(150, 115, 59, 0.19)), url(\"http://127.0.0.1:50392/DemonFruitzDex/assets/bg/parchment-bg.webp\")",
+      "stageRepeat": "no-repeat, no-repeat, no-repeat",
+      "stageSize": "cover, cover, cover",
+      "stageGrid": "none",
+      "heroRepeat": "no-repeat",
+      "wear": "radial-gradient(53.76px 27% at 0% 22%, rgba(53, 29, 17, 0.72), rgba(0, 0, 0, 0) 78%), radial-gradient(53.76px 35% at 100% 76%, rgba(43, 24, 15, 0.66), rgba(0, 0, 0, 0) 82%), radial-gradient(28% 80px at 28% 0%, rgba(107, 60, 29, 0.5), rgba(0, 0, 0, 0) 80%), radial-gradient(36% 100px at 68% 100%, rgba(64, 38, 25, 0.533), rgba(0, 0, 0, 0) 80%), radial-gradient(at 0% 100%, rgba(57, 34, 22, 0.45), rgba(0, 0, 0, 0) 32%), radial-gradient(at 100% 0%, rgba(74, 42, 20, 0.42), rgba(0, 0, 0, 0) 30%)",
+      "wearShadow": "rgba(75, 46, 27, 0.5) 0px 0px 0px 4px inset, rgba(72, 43, 27, 0.42) 0px 0px 34px 12px inset, rgba(107, 67, 30, 0.3) 0px 0px 100px 0px inset",
+      "wearEvents": "none",
+      "frame": "1px",
+      "frameEvents": "none",
+      "heroInk": "rgb(36, 26, 17)",
+      "sectionInk": "rgb(37, 26, 16)",
+      "columns": "327px 327px",
+      "fruits": 166,
+      "videos": 50,
+      "horizontalOverflow": false,
+      "title": "DemonFruitzDex — SHINO-DEX V4.9.c4 · Manuscript Borders"
+    },
+    "asset": {
+      "width": 1536,
+      "height": 1024
+    },
+    "detail": {
+      "client": 724,
+      "scroll": 724
+    },
+    "portraitHeight": 420,
+    "contrast": {
+      "title/paper": 7.033593076989021,
+      "copy/paper": 6.264654985788315,
+      "caption/paper": 4.875385341938991
+    },
+    "errors": [],
+    "missingLocal": []
+  },
+  {
+    "viewport": [
+      390,
+      844
+    ],
+    "css": {
+      "bg": "radial-gradient(at 50% 42%, rgba(255, 248, 231, 0.17) 18%, rgba(164, 119, 56, 0.22) 78%, rgba(81, 48, 27, 0.44) 100%), linear-gradient(110deg, rgba(136, 94, 43, 0.1), rgba(255, 242, 211, 0.07) 48%, rgba(107, 71, 44, 0.17)), url(\"http://127.0.0.1:50392/DemonFruitzDex/assets/bg/parchment-bg.webp\")",
+      "bgRepeat": "no-repeat, no-repeat, no-repeat",
+      "bgSize": "cover, cover, cover",
+      "bgAttachment": "fixed, fixed, fixed",
+      "stage": "radial-gradient(at 52% 46%, rgba(60, 37, 94, 0.19) 0%, rgba(89, 65, 39, 0.15) 65%, rgba(43, 24, 14, 0.44) 100%), linear-gradient(135deg, rgba(245, 230, 198, 0.17), rgba(150, 115, 59, 0.19)), url(\"http://127.0.0.1:50392/DemonFruitzDex/assets/bg/parchment-bg.webp\")",
+      "stageRepeat": "no-repeat, no-repeat, no-repeat",
+      "stageSize": "cover, cover, cover",
+      "stageGrid": "none",
+      "heroRepeat": "no-repeat",
+      "wear": "radial-gradient(28px 27% at 0% 22%, rgba(53, 29, 17, 0.72), rgba(0, 0, 0, 0) 78%), radial-gradient(28px 35% at 100% 76%, rgba(43, 24, 15, 0.66), rgba(0, 0, 0, 0) 82%), radial-gradient(28% 80px at 28% 0%, rgba(107, 60, 29, 0.5), rgba(0, 0, 0, 0) 80%), radial-gradient(36% 100px at 68% 100%, rgba(64, 38, 25, 0.533), rgba(0, 0, 0, 0) 80%), radial-gradient(at 0% 100%, rgba(57, 34, 22, 0.45), rgba(0, 0, 0, 0) 32%), radial-gradient(at 100% 0%, rgba(74, 42, 20, 0.42), rgba(0, 0, 0, 0) 30%)",
+      "wearShadow": "rgba(75, 46, 27, 0.5) 0px 0px 0px 2px inset, rgba(72, 43, 27, 0.42) 0px 0px 18px 5px inset",
+      "wearEvents": "none",
+      "frame": "1px",
+      "frameEvents": "none",
+      "heroInk": "rgb(36, 26, 17)",
+      "sectionInk": "rgb(37, 26, 16)",
+      "columns": "324px",
+      "fruits": 166,
+      "videos": 50,
+      "horizontalOverflow": false,
+      "title": "DemonFruitzDex — SHINO-DEX V4.9.c4 · Manuscript Borders"
+    },
+    "asset": {
+      "width": 1536,
+      "height": 1024
+    },
+    "detail": {
+      "client": 346,
+      "scroll": 346
+    },
+    "portraitHeight": 370,
+    "contrast": {
+      "title/paper": 7.033593076989021,
+      "copy/paper": 6.264654985788315,
+      "caption/paper": 4.875385341938991
+    },
+    "errors": [],
+    "missingLocal": []
+  },
+  {
+    "viewport": [
+      360,
+      800
+    ],
+    "css": {
+      "bg": "radial-gradient(at 50% 42%, rgba(255, 248, 231, 0.17) 18%, rgba(164, 119, 56, 0.22) 78%, rgba(81, 48, 27, 0.44) 100%), linear-gradient(110deg, rgba(136, 94, 43, 0.1), rgba(255, 242, 211, 0.07) 48%, rgba(107, 71, 44, 0.17)), url(\"http://127.0.0.1:50392/DemonFruitzDex/assets/bg/parchment-bg.webp\")",
+      "bgRepeat": "no-repeat, no-repeat, no-repeat",
+      "bgSize": "cover, cover, cover",
+      "bgAttachment": "fixed, fixed, fixed",
+      "stage": "radial-gradient(at 52% 46%, rgba(60, 37, 94, 0.19) 0%, rgba(89, 65, 39, 0.15) 65%, rgba(43, 24, 14, 0.44) 100%), linear-gradient(135deg, rgba(245, 230, 198, 0.17), rgba(150, 115, 59, 0.19)), url(\"http://127.0.0.1:50392/DemonFruitzDex/assets/bg/parchment-bg.webp\")",
+      "stageRepeat": "no-repeat, no-repeat, no-repeat",
+      "stageSize": "cover, cover, cover",
+      "stageGrid": "none",
+      "heroRepeat": "no-repeat",
+      "wear": "radial-gradient(28px 27% at 0% 22%, rgba(53, 29, 17, 0.72), rgba(0, 0, 0, 0) 78%), radial-gradient(28px 35% at 100% 76%, rgba(43, 24, 15, 0.66), rgba(0, 0, 0, 0) 82%), radial-gradient(28% 80px at 28% 0%, rgba(107, 60, 29, 0.5), rgba(0, 0, 0, 0) 80%), radial-gradient(36% 100px at 68% 100%, rgba(64, 38, 25, 0.533), rgba(0, 0, 0, 0) 80%), radial-gradient(at 0% 100%, rgba(57, 34, 22, 0.45), rgba(0, 0, 0, 0) 32%), radial-gradient(at 100% 0%, rgba(74, 42, 20, 0.42), rgba(0, 0, 0, 0) 30%)",
+      "wearShadow": "rgba(75, 46, 27, 0.5) 0px 0px 0px 2px inset, rgba(72, 43, 27, 0.42) 0px 0px 18px 5px inset",
+      "wearEvents": "none",
+      "frame": "1px",
+      "frameEvents": "none",
+      "heroInk": "rgb(36, 26, 17)",
+      "sectionInk": "rgb(37, 26, 16)",
+      "columns": "294px",
+      "fruits": 166,
+      "videos": 50,
+      "horizontalOverflow": false,
+      "title": "DemonFruitzDex — SHINO-DEX V4.9.c4 · Manuscript Borders"
+    },
+    "asset": {
+      "width": 1536,
+      "height": 1024
+    },
+    "detail": {
+      "client": 316,
+      "scroll": 316
+    },
+    "portraitHeight": 370,
+    "contrast": {
+      "title/paper": 7.033593076989021,
+      "copy/paper": 6.264654985788315,
+      "caption/paper": 4.875385341938991
+    },
+    "errors": [],
+    "missingLocal": []
+  }
+]

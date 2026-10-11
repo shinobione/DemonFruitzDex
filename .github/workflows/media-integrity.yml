@@ -1,5 +1,5 @@
 name: DemonFruitzDex media integrity
-# V4.9.c themes the archive while retaining the V4.9.b3 catalogue safety gates.
+# V4.9.c4 frames the manuscript while retaining the catalogue safety gates.
 
 on:
   pull_request:
@@ -14,6 +14,7 @@ on:
       - "data/**"
       - "reports/catalogue-media-gap-v49*.json"
       - "scripts/check_v49*.py"
+      - "scripts/capture_parchment_preview.py"
       - ".github/workflows/media-integrity.yml"
   push:
     branches:
@@ -29,6 +30,7 @@ on:
       - "data/**"
       - "reports/catalogue-media-gap-v49*.json"
       - "scripts/check_v49*.py"
+      - "scripts/capture_parchment_preview.py"
       - ".github/workflows/media-integrity.yml"
 
 jobs:
@@ -61,15 +63,15 @@ jobs:
           python scripts/check_v49b2.py
           python scripts/check_v49b3.py
 
-      - name: Capture actual parchment in desktop and mobile Chrome
+      - name: Verify manuscript borders and capture five Chrome viewports
         run: |
           python -m pip install --quiet playwright
           python scripts/capture_parchment_preview.py
 
-      - name: Upload V4.9.c review preview
+      - name: Upload V4.9.c4 review preview
         uses: actions/upload-artifact@v4
         with:
-          name: DemonFruitzDex-V49c-preview
+          name: DemonFruitzDex-V49c4-preview
           retention-days: 7
           if-no-files-found: error
           path: |
@@ -82,4 +84,5 @@ jobs:
             assets/**
             reports/v49c-parchment-theme-review.md
             reports/screenshots/v49c/**
+            reports/screenshots/v49c4/**
             PREVIEW-README.txt

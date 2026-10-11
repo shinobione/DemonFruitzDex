@@ -1,4 +1,4 @@
-/* V4.9.c — shared archive palette and paper. No catalogue/category colors here. */
+/* V4.9.c4 — manuscript sheet, worn borders and mounted archive panels. */
 :root {
   color-scheme: dark;
   --bg: #0b0f14;
@@ -15,66 +15,195 @@
   --archive-surface: #171b20;
   --archive-panel: linear-gradient(145deg, #29231dec, #121820f5 65%);
   --archive-texture: url('../bg/parchment-bg.webp');
+  --archive-ink: #241a11;
+  --archive-ink-muted: #4d3120;
+  --archive-rule: #75502c80;
+  --page-gutter: clamp(28px, 3.4vw, 64px);
+  --sheet-inset: clamp(10px, 1.2vw, 24px);
+  --edge-wear: clamp(28px, 7vw, 145px);
 }
 
-/* V4.9.c3 — ONE continuous sheet, NEVER a repeated tile.
-   The c2 1024x683 repeat produced a visible orthogonal grid at wide sizes.
-   A viewport-fixed cover crop uses the original 1536x1024 WebP without seams.
-   Keep the material warm and luminous; let the panels do the text protection. */
+/* One viewport-sized sheet. The paper image and all patina layers never tile.
+   The two fixed pseudo-elements sit behind content in the body's own stack;
+   they cannot capture input or cover sticky navigation / modal top layers. */
 body {
-  background-color: #ae9069;
+  position: relative;
+  isolation: isolate;
+  background-color: #d8bd8f;
   background-image:
-    radial-gradient(ellipse at 50% 42%, #090b0900 28%, #24170e36 76%, #1b110b70 100%),
-    linear-gradient(115deg, #61402224 0%, #33211130 60%, #16141b47 100%),
+    radial-gradient(ellipse at 50% 42%, #fff8e72b 18%, #a4773838 78%, #51301b70 100%),
+    linear-gradient(110deg, #885e2b1a, #fff2d312 48%, #6b472c2b),
     var(--archive-texture);
   background-size: cover, cover, cover;
   background-position: center center, center center, center center;
   background-repeat: no-repeat, no-repeat, no-repeat;
   background-attachment: fixed, fixed, fixed;
+  color: var(--archive-ink);
+}
+
+body::before, body::after {
+  content: "";
+  position: fixed;
+  pointer-events: none;
+  z-index: -1;
+  background-repeat: no-repeat;
+}
+body::before {
+  inset: 0;
+  background-image:
+    radial-gradient(ellipse var(--edge-wear) 27% at 0% 22%, #351d11b8, transparent 78%),
+    radial-gradient(ellipse var(--edge-wear) 35% at 100% 76%, #2b180fa8, transparent 82%),
+    radial-gradient(ellipse 28% 80px at 28% 0%, #6b3c1d80, transparent 80%),
+    radial-gradient(ellipse 36% 100px at 68% 100%, #40261988, transparent 80%),
+    radial-gradient(ellipse at 0% 100%, #39221673, transparent 32%),
+    radial-gradient(ellipse at 100% 0%, #4a2a146b, transparent 30%);
+  box-shadow: inset 0 0 0 4px #4b2e1b80, inset 0 0 34px 12px #482b1b6b,
+    inset 0 0 100px #6b431e4d;
+}
+body::after {
+  inset: var(--sheet-inset);
+  border: 1px solid #57371e73;
+  border-radius: 2px 11px 4px 8px;
+  background-image: radial-gradient(ellipse at 0% 64%, #75492020, transparent 25%),
+    radial-gradient(ellipse at 100% 24%, #76492526, transparent 23%);
+  box-shadow: 0 0 0 1px #f8e7bf52, inset 0 0 16px #6e472b33;
+}
+
+.container { width: min(1480px, calc(100% - 2 * var(--page-gutter))); }
+.site-header {
+  width: min(1480px, calc(100% - 2 * var(--page-gutter)));
+  margin: 12px auto 0;
+  top: 12px;
+  border: 1px solid #b7905c9c;
+  border-radius: 3px 7px 3px 5px;
+  box-shadow: 0 5px 18px #37200d33, inset 0 0 0 3px #d8b06a0a;
+}
+.site-header .header-content { width: 100%; padding-inline: clamp(12px, 1.6vw, 24px); }
+.site-header, .stats-band, .filter-panel, .fruit-card, .spotlight-card, .rank,
+.guide-grid article, .detail-dialog, .compare-dialog, .compare-dock, .toast, footer {
   color: var(--ink);
 }
 
-/* Focus the dark overlay on text, not on the whole parchment sheet.
-   This keeps the large background visibly fibrous without washing out
-   the encyclopaedia headings, primary CTA or body copy. */
-.hero-copy {
+/* A featured manuscript page: ink title block alongside an illustration plate.
+   Paper is left visible under the title; the c3 charcoal fade is removed. */
+.hero {
+  position: relative;
   isolation: isolate;
+  margin-top: clamp(28px, 3vw, 46px);
+  margin-bottom: 24px;
+  padding: clamp(26px, 3vw, 46px);
+  gap: clamp(24px, 3vw, 46px);
+  border: 2px solid var(--archive-rule);
+  border-radius: 3px 12px 4px 8px;
+  background-image: linear-gradient(115deg, #fff0cb82, #efd6a142 60%, #ad7e3426);
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: 0 12px 30px #38240f33, inset 0 0 28px #71491f33;
 }
-.hero-copy::before {
+.hero::before, :is(.spotlight, .catalogue, .leaderboard, .guide)::before {
   content: "";
   position: absolute;
-  inset: -28px -20px -28px -30px;
-  z-index: -1;
+  inset: 8px;
+  border: 1px solid #7957334d;
+  border-radius: 2px 7px 2px 5px;
   pointer-events: none;
-  border-radius: 24px;
-  background: linear-gradient(90deg, #0b0e13e8 0%, #0b0e13cf 68%, #0b0e1340 100%);
 }
-
-@media (max-width: 850px) {
-  .hero-copy::before {
-    inset: -22px -12px -22px -12px;
-    background: linear-gradient(120deg, #0b0e13e3, #0b0e13c7 77%, #0b0e13a1);
-  }
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 13px;
+  background: linear-gradient(#6b482d, #6b482d) left top / 32px 2px,
+    linear-gradient(#6b482d, #6b482d) left top / 2px 32px,
+    linear-gradient(#6b482d, #6b482d) right bottom / 32px 2px,
+    linear-gradient(#6b482d, #6b482d) right bottom / 2px 32px;
+  background-repeat: no-repeat;
+  opacity: .5;
+  pointer-events: none;
 }
+.hero-copy::before { content: none; }
+.hero h1 { color: var(--archive-ink); text-shadow: none; }
+.hero h1 em { color: #62391f; }
+.hero h1 .punct { color: #593673; }
+.hero-overline {
+  color: var(--archive-ink-muted);
+  padding-bottom: 15px;
+  border-bottom: 1px solid #78563352;
+  flex-wrap: wrap;
+  line-height: 1.65;
+}
+.hero-copy > p { color: #332217; }
+.hero-copy > p strong { color: var(--archive-ink); }
+.hero-meta, .hero-sep, .hero-meta .meta-spark { color: var(--archive-ink-muted); }
+.hero .btn-gold {
+  background: #442e1d;
+  border-color: #69452a;
+  color: #f9ebd0;
+  box-shadow: 0 4px 12px #38251229, inset 0 1px 0 #ebd2a32b;
+}
+.hero .btn-gold:hover { background: #5a3b23; }
 
-
-/* The fruit's display is a framed opening onto the same paper,
-   with a local purple-tinted vignette, never a tiled wallpaper. */
 .hero-stage {
+  height: clamp(380px, 32vw, 468px);
   background-image:
-    radial-gradient(ellipse at 52% 46%, #28163d78 0%, #1e203560 42%, #0d10199c 100%),
+    radial-gradient(ellipse at 52% 46%, #3c255e30 0%, #59412726 65%, #2b180e70 100%),
+    linear-gradient(135deg, #f5e6c62b, #96733b30),
     var(--archive-texture);
-  background-size: cover, cover;
+  background-size: cover, cover, cover;
   background-position: center, center;
-  background-repeat: no-repeat, no-repeat;
-  border-color: #d8b06a80;
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  border: 3px double #6f4929b3;
+  border-radius: 4px 8px 3px 7px;
+  box-shadow: 0 7px 18px #43291633, inset 0 0 24px #5d3c2866;
 }
+.hero-stage::before {
+  inset: 10px;
+  border: 1px solid #67412459;
+  border-radius: 2px 5px 2px 4px;
+  background: none;
+  opacity: 1;
+  mask-image: none;
+}
+.hero-stage::after { content: 'GRAND LINE / PLANCHE 01'; color: var(--archive-ink-muted); }
+.stage-coord { color: var(--archive-ink-muted); }
+.stage-orbit { border-color: #61432266; }
+.stage-tag { border-color: #d8b06a99; border-radius: 5px; }
+.stage-tag strong { color: var(--muted); }
 
-/* Make the parchment identifiable around the cards and the archive sections,
-   while keeping their text on opaque dark panels. */
-.stats-band, .filter-panel, .fruit-card {
-  box-shadow: 0 14px 38px #07070752, inset 0 1px 0 #d8b06a24;
+/* Strong framing belongs to the page structure; media cards stay restrained. */
+.stats-band {
+  border: 3px double #a77a45c2;
+  border-radius: 4px 8px 3px 6px;
+  background: linear-gradient(110deg, #29251d, #121820);
+  box-shadow: 0 7px 18px #37230f33, inset 0 0 0 4px #d8b06a12;
+  margin-bottom: 28px;
 }
+.stats-band .stat { border-color: #d8b06a42; }
+:is(.spotlight, .catalogue, .leaderboard, .guide) {
+  position: relative;
+  margin-block: 28px;
+  padding: clamp(24px, 2.6vw, 40px);
+  border: 1px solid var(--archive-rule);
+  border-radius: 3px 9px 4px 7px;
+  background: linear-gradient(135deg, #faedcc8f, #c2985524);
+  box-shadow: 0 6px 20px #38240f26, inset 0 0 20px #794c1b24;
+}
+:is(.spotlight, .catalogue, .leaderboard, .guide) .section-title-row {
+  padding-bottom: 18px;
+  border-bottom: 1px solid #75502c66;
+  gap: 24px;
+}
+.filter-panel { border-color: #bd935766; border-radius: 8px; }
+.fruit-card, .spotlight-card, .guide-grid article, .rank { border-color: #b9874480; }
+.fruit-card { border-radius: 10px; }
+.rank, .guide-grid article { border-radius: 6px; }
+.detail-dialog, .compare-dialog {
+  border: 3px double #b9935bab;
+  border-radius: 10px;
+  box-shadow: 0 28px 80px #000b, inset 0 0 0 4px #d8b06a0d;
+}
+.detail-top, .detail-nav { border-color: #d8b06a66; }
+.detail-character-hero, .official-player { border-color: #b9935b80; }
+.guide .legal-note, .empty-state, .empty-state h3 { color: var(--archive-ink-muted); }
 
 ::selection { background: #d8b06a; color: #17130e; }
 
@@ -82,25 +211,26 @@ body {
    not ivory on ivory. Preserve the bright typography inside panels. */
 :is(.spotlight, .catalogue, .leaderboard, .guide) .section-title-row h2 {
   color: #251a10;
-  text-shadow: 0 1px 0 #f2deafad;
+  text-shadow: none;
+  overflow-wrap: anywhere;
 }
 :is(.spotlight, .catalogue, .leaderboard, .guide) .section-title-row h2 .dot {
   color: #6f4321;
 }
 :is(.spotlight, .catalogue, .leaderboard, .guide) .section-title-row .eyebrow {
   color: #4e3019;
-  text-shadow: 0 1px 0 #e9d1a0a6;
+  text-shadow: none;
 }
 
-/* Small secondary copy now sits over textured paper: give it its own
-   readable ink panel instead of low-contrast grey on mid-tone parchment. */
+/* Paper captions use ink. Functional controls and results keep dark cores. */
 .section-aside {
-  color: #f0e6d6;
-  background: #101218d9;
-  border: 1px solid #d8b06a52;
-  border-radius: 12px;
-  padding: 12px 16px;
-  text-shadow: 0 1px 3px #0007;
+  color: #332217;
+  background: none;
+  border: 0;
+  border-left: 1px solid #75502c66;
+  border-radius: 0;
+  padding: 2px 0 2px 14px;
+  text-shadow: none;
 }
 .results-bar {
   background: #101218d9;
@@ -144,14 +274,40 @@ body {
 .archive-tool :is(.notice, .import-control) { border-color: #d8b06a66; }
 .archive-tool :is(.form, .propose-box, td, th) { border-color: var(--line); }
 .archive-tool .check input { accent-color: var(--gold); }
+.archive-tool :is(.pane, .note, .stat, #results) { color: var(--ink); }
+.archive-tool #results { background: #121820; }
+.archive-tool .head > a, .media-check-page main > a { color: var(--archive-ink-muted); }
+.archive-tool .head h1, .media-check-page h1 { color: var(--archive-ink); }
+.archive-tool .head h1 small { color: var(--archive-ink-muted); }
+.archive-tool .head > p, .archive-tool.media-check-page main > p { color: #332217; }
+.archive-tool :is(.pane, .note, #results) { border: 3px double #b9935b99; border-radius: 8px; }
+
+@media (max-width: 850px) {
+  :root { --page-gutter: 24px; }
+  .hero { padding: 28px; gap: 24px; }
+  .hero-stage { height: 340px; }
+  .section-title-row > div { min-width: 0; }
+}
 
 @media (max-width: 540px) {
-  /* A single fixed cover crop prevents phone-width tile edges as well. */
-  body {
-    background-size: cover, cover, cover;
-    background-position: center center;
-    background-repeat: no-repeat, no-repeat, no-repeat;
+  :root { --page-gutter: 18px; --sheet-inset: 6px; }
+  body::before {
+    box-shadow: inset 0 0 0 2px #4b2e1b80, inset 0 0 18px 5px #482b1b6b;
   }
+  .site-header { top: 8px; margin-top: 8px; }
+  .hero { margin-top: 24px; padding: 20px 16px; min-height: 0; }
+  .hero::before, :is(.spotlight, .catalogue, .leaderboard, .guide)::before { inset: 5px; }
+  .hero::after { inset: 10px; background-size: 20px 1px, 1px 20px, 20px 1px, 1px 20px; }
+  .hero h1 { font-size: clamp(50px, 15vw, 66px); }
+  .hero-overline { gap: 6px; padding-bottom: 10px; }
+  .hero-stage { height: 290px; }
+  .hero-stage::after { font-size: 10px; top: 20px; left: 18px; }
+  .stage-coord { font-size: 8px; right: 16px; bottom: 19px; }
+  :is(.spotlight, .catalogue, .leaderboard, .guide) { padding: 20px 14px; margin-block: 22px; }
+  :is(.spotlight, .catalogue, .leaderboard, .guide) .section-title-row h2 { font-size: clamp(30px, 8.8vw, 40px); }
+  .section-aside { max-width: none; }
+  .spotlight-info strong { font-size: 18px; }
+  .spotlight-info { padding: 11px; }
   .clip-check-page .item > span { min-width: 0; overflow-wrap: anywhere; }
   .clip-check-page .placeholder { padding: 12px; gap: 10px; font-size: .8rem; }
   .clip-check-page .preview { min-width: 0; }

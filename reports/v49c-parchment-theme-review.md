@@ -1,4 +1,133 @@
-# V4.9.c — Parchment Archive Theme
+# V4.9.c4 — Manuscript Borders
+
+## Revue courante — 11 octobre 2026
+
+Suite de la PR Draft #4, sur `feature/v4.9c-parchment-archive`, depuis la V4.9.c3
+`8e1006259bb08bb8e919f643b8e216276348a4eb`. Base de la PR : `main`,
+`cb64b52eb257b57d83f17e8ccb9a52f6b47d7ecd`.
+
+La c3 avait rendu le parchemin visible et supprimé les raccords, mais le fond évoquait encore
+un papier peint derrière une landing page moderne. La c4 donne davantage de présence à la
+feuille : centre clair, périphérie patinée, cadre intérieur, hero en page de titre et fruit violet
+en planche d'illustration. Les panneaux interactifs sombres conservent l'identité du Dex.
+Le dosage « 60 % manuscrit / 40 % premium sombre » est une direction artistique, pas une mesure.
+
+### Construction et sélecteurs
+
+Tout le vieillissement supplémentaire est produit en CSS ; aucun nouvel asset bitmap.
+La texture WebP existante reste inchangée : 1536 × 1024, 137 364 octets,
+SHA-256 `3eaae8e465ecc6ea54c74dce6e962f24ae093b738bdecb797892aff30c3ba025`.
+Sa provenance et son prompt d'origine sont conservés dans l'historique ci-dessous.
+
+| Sélecteurs dans `assets/css/archive-theme.css` | Traitement c4 |
+|---|---|
+| `body` | Une image `cover / no-repeat / fixed`, éclairage central et teinte sépia ; couleur de secours papier. |
+| `body::before` | Six gradients radiaux asymétriques près des bords, coins brunis et ombres internes pour l'usure et l'épaisseur. |
+| `body::after` | Filet intérieur à rayons légèrement différents, patine latérale et léger relief de papier. |
+| `.container`, `.site-header` | Marges de feuille visibles ; navigation sombre encadrée et inset adaptée au mobile. |
+| `.hero`, `.hero::before`, `.hero::after` | Double cadre, ombre interne, papier éclairé et deux seuls repères de coin ; suppression du voile sombre de `.hero-copy::before`. |
+| `.hero h1`, `.hero-overline`, `.hero-copy`, `.hero-meta` | Encre `#241a11`, `#332217`, `#4d3120` sur papier ; bouton principal brun avec texte ivoire. |
+| `.hero-stage`, ses pseudo-éléments, `.stage-orbit`, `.stage-coord` | Planche encadrée, légende « GRAND LINE / PLANCHE 01 », retrait de la grille moderne ; texture non répétée, fruit violet préservé. |
+| `.stats-band`, `.stat` | Cadre double sépia, cœur sombre et séparateurs couleur or ancien. |
+| `.spotlight`, `.catalogue`, `.leaderboard`, `.guide` | Sections en pages encadrées, filet intérieur et séparateurs fins. Titres et `.section-aside` en encre sombre. |
+| `.filter-panel`, `.fruit-card`, `.rank`, `.guide-grid article` | Bordures antiques plus sobres que les cadres structurels ; fonds sombres et médias préservés. |
+| `.detail-dialog`, `.compare-dialog`, `.detail-top`, `.detail-nav` | Cadres doubles autour des contenus sombres ; portraits et lecteur gardent leurs dimensions. |
+| `.archive-tool`, `.clip-check-page`, `.media-check-page` | Titres/intro sur papier en encre ; commandes, résultats et panneaux sombres en ivoire. |
+| Breakpoints 850 et 540 px | Cadres et marges resserrés, bord patiné plus fin ; titres et planche ajustés aux petits écrans. |
+
+Les deux couches de bordure sont fixes, non répétées, derrière les contenus dans un contexte
+d'empilement isolé, avec `pointer-events: none`. Elles n'interceptent ni les commandes ni les modales.
+Les filets restent réguliers ; l'impression d'usure vient de la patine asymétrique et des ombres,
+sans effet de déchirure dessiné. Les titres sur papier n'utilisent plus d'ivoire.
+
+`index.html` affiche V4.9.c4 ; les trois pages chargent le CSS avec `v=4.9c4`.
+La couleur inline claire du numéro CLIP CHECK est retirée pour laisser le thème lui appliquer l'encre.
+`app.js`, `data/**`, l'icône, la texture et les vidéos locales sont identiques à la c3.
+Les scripts inline des outils sont également identiques. Aucune dépendance d'exécution ni build ajouté.
+
+### Validation c4
+
+Chrome installé, piloté réellement par Playwright en headless, sur un serveur reproduisant
+le préfixe GitHub Pages `/DemonFruitzDex/`. L'outil existant
+`scripts/capture_parchment_preview.py` est réutilisé et étendu à cinq formats ; la CI exécute
+ce même outil et archive les nouvelles captures dans `DemonFruitzDex-V49c4-preview`.
+
+| Vue | Colonnes catalogue | Fond chargé et décodé / non répétitif | Page, fiches, comparateur, outils sans débordement |
+|---|---:|---|---|
+| 1920 × 1080 | 5 | PASS | PASS |
+| 1440 × 900 | 4 | PASS | PASS |
+| 768 × 1024 | 2 | PASS | PASS |
+| 390 × 844 | 1 | PASS | PASS |
+| 360 × 800 | 1 | PASS | PASS |
+
+Le contrôle vérifie le HTTP 200 et le décodage WebP en 1536 × 1024, `cover / no-repeat`
+sur le fond et la planche, `no-repeat` sur le hero et le maintien du cadrage après défilement.
+Il vérifie aussi les bordures calculées, l'encre des titres et l'absence d'ancienne grille,
+ainsi que les introductions des outils, le résumé MEDIA CHECK et le numéro CLIP CHECK sur papier.
+Les cinq formats conservent **166 fruits, 50 associations YouTube / 36 fruits et zéro épisode complet**.
+Aucune erreur JavaScript ni ressource locale HTTP en échec pendant ces parcours.
+
+Recherche, filtre Logia, favoris après rechargement, filtre favoris, comparaison de deux fruits,
+lien profond Nika avec clip précis, défilement de fiche, insertion du lecteur, arrêt au fruit suivant
+et fermeture par Échap : PASS aux cinq formats. Portraits de fiche à 420 px, ou 370 px sur mobile.
+CLIP CHECK, ajout de proposition locale, MEDIA CHECK et modes de mouvement normal/réduit : PASS.
+Contrôles complémentaires à 1440 et 390 px : signalement local repris dans le Dex et page utilisable
+quand la texture est volontairement bloquée. Les données de test restent dans des contextes jetables.
+
+Les neuf validations existantes passent : `validate_clips.py`, `check_v45.py`, `check_v46.py`,
+`check_v48.py`, `check_v49.py`, `check_v49a.py`, `check_v49b.py`, `check_v49b2.py`, `check_v49b3.py`.
+Syntaxe JavaScript (`app.js`, `data/clips.js` et scripts inline des deux outils), syntaxe Python du
+captureur, parité des données/scripts/médias avec c3 et `git diff --check` : PASS.
+L'état CI du commit soumis se consulte dans les checks de la PR ; les résultats ici sont locaux.
+
+Contrastes calculés des trois encres sur une teinte papier de référence `#c4a16b` : titre 7,03:1,
+texte 6,26:1, petite légende 4,88:1. Ce sont des paires de palette, pas un audit WCAG complet
+des pixels, de toutes les surfaces patinées ou des médias tiers. Les captures ont été revues visuellement.
+
+### Captures courantes c4
+
+Les captures c1/c2/c3 plus bas sont historiques. Utiliser les fichiers du dossier `screenshots/v49c4`
+pour juger cette proposition, et [validation.json](screenshots/v49c4/validation.json) pour les résultats calculés.
+
+| Vue | Référence c3 | Proposition c4 |
+|---|---|---|
+| Accueil desktop | [c3](screenshots/v49c4/before-c3-desktop.jpg) | [1440 × 900](screenshots/v49c4/ci-v49c4-desktop.jpg) |
+| Desktop après défilement | [c3](screenshots/v49c4/before-c3-desktop-scrolled.jpg) | [1440 × 900](screenshots/v49c4/ci-v49c4-desktop-scrolled.jpg) |
+| Accueil mobile | [c3](screenshots/v49c4/before-c3-mobile.jpg) | [390 × 844](screenshots/v49c4/ci-v49c4-mobile.jpg) |
+| Mobile après défilement | [c3](screenshots/v49c4/before-c3-mobile-scrolled.jpg) | [390 × 844](screenshots/v49c4/ci-v49c4-mobile-scrolled.jpg) |
+
+Autres formats : [1920](screenshots/v49c4/ci-v49c4-wide.jpg),
+[768](screenshots/v49c4/ci-v49c4-tablet.jpg), [360](screenshots/v49c4/ci-v49c4-compact.jpg),
+avec une vue après défilement pour chacun. Contrôles complémentaires :
+[catalogue desktop](screenshots/v49c4/ci-v49c4-desktop-catalogue.jpg),
+[fiche desktop](screenshots/v49c4/ci-v49c4-desktop-detail.jpg),
+[fiche mobile](screenshots/v49c4/ci-v49c4-mobile-detail.jpg),
+[bas de fiche mobile](screenshots/v49c4/ci-v49c4-mobile-detail-scrolled.jpg),
+[comparateur mobile](screenshots/v49c4/ci-v49c4-mobile-compare.jpg),
+[classement desktop](screenshots/v49c4/extra-c4-1440-leaderboard.jpg),
+[guide mobile](screenshots/v49c4/extra-c4-390-guide.jpg),
+[CLIP CHECK mobile](screenshots/v49c4/ci-v49c4-mobile-clip-check.jpg),
+[MEDIA CHECK mobile](screenshots/v49c4/ci-v49c4-mobile-media-check.jpg).
+
+![V4.9.c4 — accueil desktop](screenshots/v49c4/ci-v49c4-desktop.jpg)
+
+### Limites et décision c4
+
+Le comportement mobile décrit est vérifié dans Chrome avec viewport tactile ; Safari iOS et
+d'autres moteurs ne sont pas certifiés, notamment pour le fond fixe. La présence d'une iframe
+ne prouve pas la lecture réelle, les droits, la disponibilité France ou l'accès sans compte.
+Certains médias wiki externes utilisaient déjà les secours en c3 ; leurs URLs restent inchangées.
+Les captures montrent une validation du thème, pas une certification de tous les médias distants.
+
+La PR #4 reste **Draft**, non fusionnée et non publiée. Revue humaine du rendu et approbation
+explicite du propriétaire attendues avant fusion ou publication.
+
+---
+
+## Historique — V4.9.c initiale, c2 et c3
+
+Les descriptions et captures de cette partie documentent les versions précédentes.
+La section « Revue courante » ci-dessus décrit le rendu et les validations c4.
 
 Date : 11 octobre 2026. Branche : `feature/v4.9c-parchment-archive`.
 Base auditée : `main`, commit `cb64b52eb257b57d83f17e8ccb9a52f6b47d7ecd`.
