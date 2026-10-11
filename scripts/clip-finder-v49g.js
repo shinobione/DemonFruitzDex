@@ -18,7 +18,7 @@
  const unknown=f=>f.t==='Indéterminé'||f.t==='Technologie'||f.t==='Artificiel'||f.id.startsWith('fruit-mythique-');
  const videos=e=>(e&&e.youtubeId?[e]:[]).concat(e?.moreVideos||[]).filter(v=>/^[\w-]{11}$/.test(v.youtubeId||''));
  const count=Object.values(C).reduce((n,e)=>n+videos(e).length,0);
- const norm=s=>String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
+ const norm=s=>String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[-_]+/g,' ');
  const priority=f=>ranked.has(f.id)?'A':unknown(f)?'C':'B';
  const rows=F.map(f=>({
   id:f.id,fruit:f.fr||f.n,user:f.primary_user||f.u||'Utilisateur non confirmé',type:f.t,
