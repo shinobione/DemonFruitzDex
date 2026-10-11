@@ -10,7 +10,7 @@ button:hover{background:#3e305d}button:disabled{opacity:.5;cursor:wait}.stat{dis
 small{color:#aab7c9}table{width:100%;border-collapse:collapse}td,th{padding:11px 8px;border-bottom:1px solid #ffffff13;text-align:left;font-size:12px}
 th{color:#f4c36b;letter-spacing:.08em}.ok{color:#84dfb0}.failed{color:#f2a49b}.pending{color:#c5b1ff}.muted{color:#9eabba}td a{word-break:break-all}
 progress{width:100%;height:10px;accent-color:#b68cff;margin:16px 0}#results{overflow:auto;max-height:65vh;border:1px solid #ffffff22;border-radius:12px}h2{font-size:20px}
-.filter-failed{display:flex;align-items:center;gap:10px;padding:9px 0 15px;color:#ead5a9;font-size:14px}.filter-failed input{accent-color:#d8b06a;width:18px;height:18px}#rows td:nth-child(4){max-width:440px;overflow-wrap:anywhere}
+.filter-failed{display:flex;align-items:center;gap:10px;padding:10px 14px;margin:0 0 12px;color:#2f2116;background:#eedab599;border:1px solid #9c765d91;border-radius:10px;font-size:14px;font-weight:700}.filter-failed input{accent-color:#d8b06a;width:18px;height:18px}#rows td:nth-child(4){max-width:440px;overflow-wrap:anywhere}
 </style>
 <link rel="stylesheet" href="assets/css/archive-theme.css?v=4.9c4">
 <script src="data/fruits.js?v=4.9" defer></script>
@@ -22,7 +22,7 @@ progress{width:100%;height:10px;accent-color:#b68cff;margin:16px 0}#results{over
 <script src="data/power-art-v49e.js?v=4.9e" defer></script>
 <script src="data/media-reliability-v49f.js?v=4.9f" defer></script>
 <script src="scripts/media-check-v49f.js?v=4.9f" defer></script></head>
-<body class="archive-tool media-check-page"><main><a href="./">← Retour au DemonFruitzDex</a><h1>MEDIA CHECK<span style="color:#b68cff">.</span></h1>
+<body class="archive-tool media-check-page"><main><a href="./">← Retour au DemonFruitzDex</a><h1>MEDIA CHECK <span style="color:#7141a8">V2.</span></h1>
 <p>166 fiches × 2 emplacements = <strong>332 cases média</strong>. Cet outil distingue les références absentes des liens qui échouent réellement <strong>dans ton navigateur</strong> et tente la redirection du wiki en cas d'échec.</p>
 <div class="note"><strong>Test à la demande · Chrome, Firefox ou Safari.</strong> Une image absente du Dex n'est pas un lien cassé. Les images hébergées par des tiers peuvent échouer selon le pays, les restrictions de hotlink ou la connexion. Le résultat ne certifie ni les droits de réutilisation ni la correspondance du personnage. Aucun visuel n'est téléchargé ni redistribué.</div>
 <div class="actions"><button id="rescue">Tester les 12 illustrations V4.9.e</button><button id="sample">Tester 30 images prioritaires</button><button id="all">Auditer les 332 emplacements</button><button id="export" disabled>Exporter le rapport JSON</button></div><label class="filter-failed"><input id="failedOnly" type="checkbox"> Afficher seulement les emplacements absents, en échec ou incertains</label>
