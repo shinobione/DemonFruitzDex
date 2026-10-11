@@ -63,3 +63,11 @@ V4.9.b.2 : vérifier en conditions réelles ce lot de 5 vidéos, remplacer les v
 Le dépôt propose maintenant `clip-check.html`. Les vidéos sont chargées dans un iframe YouTube sur demande. Le réviseur ouvre aussi la page YouTube directe, idéalement en fenêtre privée et déconnecté. Il choisit un verdict explicite (iframe OK / YouTube seulement / connexion requise / indisponible / mauvais pouvoir / à revoir), ajoute éventuellement le minutage et exporte un rapport JSON. Les résultats sont stockés localement dans le navigateur et **ne changent pas automatiquement le statut public des vidéos**. L'iframe chargée ne signifie jamais « lecture certifiée ».
 
 **Contrôles hors ligne :** `python scripts/check_v49b2.py`, plus tests précédents. **Validation d'usage réelle : à effectuer sur navigateur en France.**
+
+## Extension V4.9.b2 — Caesar Clown
+
+| Fruit | Lien | Source | Forme | État |
+|---|---|---|---|---|
+| Gasu Gasu no Mi | [NKgXWO2RK-A](https://www.youtube.com/watch?v=NKgXWO2RK-A) | Rensuka Ren | Montage « All Attacks and Abilities », Punk Hazard | Métadonnées identifiées, lecture/iframe en France non vérifiées |
+
+**Bilan à jour : 45 liens YouTube sur 31 fruits**, dont huit associations supplémentaires depuis V4.9.a. Les liens Crunchyroll vers les épisodes complets sont toujours exclus.
