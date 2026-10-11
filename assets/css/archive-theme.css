@@ -75,6 +75,26 @@ body {
 
 ::selection { background: #d8b06a; color: #17130e; }
 
+/* Small secondary copy now sits over textured paper: give it its own
+   readable ink panel instead of low-contrast grey on mid-tone parchment. */
+.section-aside {
+  color: #f0e6d6;
+  background: #101218d9;
+  border: 1px solid #d8b06a52;
+  border-radius: 12px;
+  padding: 12px 16px;
+  text-shadow: 0 1px 3px #0007;
+}
+.results-bar {
+  background: #101218d9;
+  border: 1px solid #d8b06a38;
+  border-radius: 12px;
+  padding: 10px 14px;
+}
+.results-bar :is(span,small) {
+  color: #e0d2c0;
+}
+
 /* Diagnostics keep their own layout and state colors. */
 .archive-tool a { color: var(--gold); }
 .archive-tool :is(button, select, input, textarea, a):focus-visible {
