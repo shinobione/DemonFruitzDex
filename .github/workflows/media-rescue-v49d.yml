@@ -11,6 +11,7 @@ on:
       - "scripts/check_v49d.py"
       - "scripts/probe_media_candidates_v49d.py"
       - "scripts/check_actual_media_v49d2.py"
+      - "scripts/triage_missing_visuals_v49d2.py"
       - ".github/workflows/media-rescue-v49d.yml"
   workflow_dispatch:
 
@@ -38,6 +39,8 @@ jobs:
         run: python scripts/audit_media_browser_v49d.py
       - name: Inspect potential Morley / Urban sources before replacing anything
         run: python scripts/probe_media_candidates_v49d.py
+      - name: Produce prioritized 26-illustration evidence backlog
+        run: python scripts/triage_missing_visuals_v49d2.py
       - name: Verify repaired portraits in the actual Dex page
         run: python scripts/check_actual_media_v49d2.py
       - name: Check report schema and coverage
@@ -55,3 +58,4 @@ jobs:
             reports/media-candidate-probe-v49d.json
             reports/media-candidate-contact-v49d.jpg
             reports/media-actual-page-v49d2.jpg
+            reports/media-illustration-backlog-v49d2.json
