@@ -1,6 +1,7 @@
 /* V4.9.e — canon power/form references reviewed in Chrome. No physical fruit design inferred.
  * Copyrighted external references only; no original media copied or reuse licence claimed.
- * Evidence and held candidates: reports/illustration-evidence-v49e.json. */
+ * Evidence and held candidates: reports/illustration-evidence-v49e.json.
+ * Release gate: PR #5 merged into main, PR #6 retargeted to main; recheck all CI before publish. */
 window.SHINO_POWER_ART_V49E=[
   {
     "id": "gabu-gabu-no-mi",
