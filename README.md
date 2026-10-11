@@ -193,3 +193,10 @@ Rapport détaillé : [reports/media-audit-v48.md](reports/media-audit-v48.md).
 - Les chaînes sont **communautaires**, non les diffuseurs officiels. Titres et descriptions documentés, mais **aucune vérification de lecture iframe, région ou nécessité de compte YouTube** n'a encore été menée. Ces limites figurent dans les fiches.
 - Pas de copie ni d'hébergement de séquences protégées : lecteur intégré sur clic et lien vers la vidéo source.
 - Les **liens d'épisodes complets Crunchyroll restent absents**. [Rapport V4.9.b](reports/clip-review-v49b.md), contrôle : `python scripts/check_v49b.py`.
+
+### V4.9.b2 — Kuma et CLIP CHECK
+
+- **2 clips YouTube supplémentaires** du *Nikyu Nikyu no Mi* (Kuma / Ursus Shock) : `ofJ3DkkOo7Y` et `PvODesQjMgU`. Indexés d'après titres et métadonnées publiques, **lecture/iframe non testées**.
+- Total actuel : **44 associations YouTube couvrant 30 fruits** (7 nouvelles associations depuis V4.9.a).
+- **[CLIP CHECK](clip-check.html)** : revue humaine des extraits, test d'intégration sur clic, lien YouTube direct, signalement des problèmes, navigation privée, notes/timecodes, sauvegarde locale et export JSON. Le Dex propose le lien de vérification depuis la fiche du fruit.
+- Les tests de structure `scripts/check_v49b.py` et `scripts/check_v49b2.py` sont exécutés en GitHub Actions. Aucun verdict d'accessibilité en France n'est inventé.
