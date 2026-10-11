@@ -1,4 +1,4 @@
-/* DemonFruitzDex V4.9.a — short clips only, no links to full episodes. */
+/* DemonFruitzDex V4.9.b — curated YouTube power clips with provenance. */
 (() => {
   'use strict';
   const fruits = Array.isArray(window.SHINO_DATA) ? window.SHINO_DATA : [];
@@ -13,6 +13,7 @@
   const clips = window.SHINO_CLIPS || {}; // source references, not media re-uploads
   const clipVideos = (entry) => entry ? [...(entry.youtubeId ? [entry] : []), ...(entry.moreVideos || [])] : [];
   const videoProvenance = (video) => {
+    if (video?.verificationStatus === 'public-metadata-verified') return `${video?.contentKind === 'compilation' ? 'MONTAGE D’ATTAQUES' : 'EXTRAIT DE L’ANIMÉ'} · CHAÎNE COMMUNAUTAIRE ${String(video.channel||'').toUpperCase()} · MÉTADONNÉES RECENSÉES · LECTURE/INTÉGRATION NON TESTÉES`;
     if (video?.contentKind === 'live-action') return 'ADAPTATION NETFLIX LIVE-ACTION · PAS UNE SCÈNE DE L’ANIMÉ · LECTURE NON TESTÉE';
     if (video?.verificationStatus === 'legacy-unverified') return 'ANCIEN CLIP · PROVENANCE À CONFIRMER · LECTURE NON TESTÉE';
     if (video?.contentKind === 'preview') return 'BANDE-ANNONCE OFFICIELLE · PAS UN EXTRAIT DE POUVOIR';
