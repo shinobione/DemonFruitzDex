@@ -160,3 +160,151 @@ footer{background:#0b0f16;border-top:1px solid var(--line)}.footer-inner{min-hei
 .clip-local-notice{margin:10px 0;padding:11px 13px;border:1px solid #7f98a957;border-radius:10px;background:#182c35;color:#bed9e5;font:700 11px/1.5 'DM Sans',sans-serif;letter-spacing:.03em}
 .clip-local-notice.is-flagged{color:#ffca9e;border-color:#bf765f88;background:#372b2b}
 .official-play:disabled{cursor:not-allowed;filter:grayscale(1);opacity:.48}
+
+/* V4.9.c — dark parchment archive. Existing media and family accents stay intact. */
+.ambient { display: none; }
+.site-header {
+  background: #0e1217ed;
+  border-bottom-color: var(--line2);
+  backdrop-filter: blur(12px);
+}
+.brand small, .desktop-nav a { color: var(--muted); }
+.header-control, .github-link, .btn-quiet, .load-more {
+  background: var(--archive-surface);
+  border-color: var(--line2);
+  color: var(--ink);
+}
+.btn-gold { color: #21180d; box-shadow: 0 8px 26px #d8b06a1c; }
+.btn-gold:hover { box-shadow: 0 10px 30px #d8b06a30; }
+.hero-copy > p, .stage-tag strong { color: var(--muted); }
+.hero-copy > p strong { color: var(--ink); }
+.hero-meta, .stage-coord { color: var(--archive-faint); }
+.hero-sep { color: var(--archive-faint); }
+.hero h1 { text-shadow: 0 4px 24px #0005; }
+.hero-stage {
+  background-image:
+    radial-gradient(ellipse at 50% 45%, #49332236, transparent 65%),
+    linear-gradient(140deg, #30251de0, #121820f5 72%),
+    var(--archive-texture);
+  background-size: auto, auto, 768px 512px;
+  border-color: var(--line2);
+  box-shadow: inset 0 1px 0 #d8b06a18, var(--shadow);
+}
+.hero-stage::before {
+  background: repeating-linear-gradient(0deg, transparent 0 32px, #d8b06a12 33px),
+    repeating-linear-gradient(90deg, transparent 0 32px, #d8b06a12 33px);
+  opacity: .35;
+}
+.hero-stage::after { color: var(--muted); }
+.stage-orbit { border-color: #d8b06a3d; }
+.stage-tag { background: #121820f2; border-color: var(--line2); backdrop-filter: none; }
+.stats-band, .filter-panel { background: var(--archive-panel); border-color: var(--line2); }
+.stat strong { color: var(--ink); }
+.stat span:last-child, .section-aside, .dim, .results-hint { color: var(--archive-faint); }
+.search-wrap { background: #0b0f14; border-color: var(--line2); }
+.search-wrap:focus-within { border-color: var(--gold); box-shadow: 0 0 0 2px #d8b06a26; }
+.search-wrap input { color: var(--ink); }
+.search-wrap input::placeholder, .search-wrap kbd { color: var(--archive-faint); }
+.type-chip { color: var(--muted); }
+.type-chip:hover { background: #30281e; color: var(--ink); }
+.type-chip.active { background: #352c20; border-color: #d8b06a55; }
+.selects select { background: #0e131a; color: var(--muted); }
+.check-label { color: var(--muted); min-height: 28px; }
+.fruit-card {
+  background: var(--archive-panel);
+  border-color: var(--line2);
+  box-shadow: inset 0 1px 0 #d8b06a0c;
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.fruit-card:hover {
+  transform: translateY(-3px);
+  border-color: #d8b06a80;
+  box-shadow: inset 0 1px 0 #d8b06a24, 0 16px 36px #0007;
+}
+.fruit-card:focus-within { border-color: var(--gold); }
+.card-visual { border-bottom: 1px solid var(--line); }
+.card-visual::before, .art-fallback { animation: none; }
+.art-meta, .mini-action { backdrop-filter: none; background-color: #0b0f14ed; }
+.card-jp, .card-power, .card-foot > span, .user-name b { color: var(--muted); }
+.user-name span { color: var(--archive-faint); }
+.card-user { border-top-color: var(--line); }
+.portrait-frame { border-color: var(--line2); }
+.card-title { color: var(--ink); }
+.artwork { transition: transform .2s ease; }
+.fruit-card:hover .artwork { transform: scale(1.035); }
+.spotlight-card { border-color: var(--line2); }
+.spotlight-card:hover, .spotlight-card:focus-visible { border-color: var(--gold); }
+.spotlight-card:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+.spotlight-play, .anime-ribbon { background: var(--gold); color: #21180d; }
+.rank, .guide-grid article, .compare-col { background: var(--archive-panel); }
+.rank-name small, .guide-grid p, .legal-note, .footer-inner small,
+.footer-inner > span, .compare-col .compare-jp, .compare-stat, .compare-disclaimer { color: var(--archive-faint); }
+footer { background: #0b0f14d9; }
+.detail-dialog, .compare-dialog {
+  background: linear-gradient(135deg, #241f19, #121820 55%);
+  border-color: var(--line2);
+  color: var(--ink);
+  box-shadow: inset 0 1px 0 #d8b06a24, 0 40px 120px #000d;
+}
+.detail-dialog::backdrop, .compare-dialog::backdrop {
+  background: #05080ddd;
+  backdrop-filter: blur(5px);
+}
+.detail-top { background: #d8b06a05; border-bottom-color: var(--line2); }
+.detail-top > div:first-child { min-width: 0; }
+.detail-header-actions { flex-shrink: 0; }
+.detail-title { color: var(--ink); overflow-wrap: anywhere; }
+.detail-jp, .detail-power, .detail-source, .clip-note, .clip-empty p,
+.detail-fruit-strip small, .detail-info-row span, .character-overlay small,
+.official-choice small, .playlist-label, .anime-section-head span { color: var(--muted); }
+.detail-character-hero, .official-player { border-color: var(--line2); }
+.detail-fruit-strip, .detail-info-row > div { background: #d8b06a05; border-color: var(--line); }
+.detail-power-label, .anime-section-head strong { color: var(--gold); }
+.round-close, .action-icon, .detail-action-row button,
+.detail-nav button, .dock-actions button, .toast { background: #1b1e21; border-color: var(--line2); color: var(--ink); }
+.round-close:hover, .action-icon:hover, .detail-action-row button:hover { background: #342c21; }
+.detail-nav { border-top-color: var(--line2); }
+.detail-nav button:disabled { opacity: .4; }
+.official-choice { background: #131820; border-color: var(--line); color: var(--ink); }
+.official-choice:hover, .official-choice.active { background: #30281f; border-color: var(--gold); }
+.official-play-icon { background: var(--gold); color: #21180d; }
+.open-video-discovery { background: var(--archive-panel); border-color: var(--line2); }
+.open-video-discovery .playlist-label { color: var(--muted); }
+.open-video-discovery .source-discover { background: #151a20; }
+.open-video-discovery .source-youtube { background: #301e2b; }
+.open-video-discovery .source-discover small { color: var(--muted); }
+.clip-empty { background: var(--archive-panel); border-color: var(--line2); }
+.compare-dock { background: #121820f5; border-color: #d8b06a66; backdrop-filter: blur(10px); }
+.compare-dock small { color: var(--muted); }
+.dock-actions button:first-child { background: var(--gold); color: #21180d; }
+
+@media (hover: none) {
+  .fruit-card:hover, .spotlight-card:hover, .btn:hover, .rank:hover { transform: none; }
+  .fruit-card:hover .artwork, .spotlight-card:hover img { transform: none; }
+}
+@media (max-width: 540px) {
+  .site-header { backdrop-filter: none; background: #0e1217fa; }
+  .header-content { gap: 10px; }
+  .header-control, .mini-action { min-width: 44px; min-height: 44px; }
+  .mini-action { border-radius: 12px; }
+  .type-chip, .selects select, .reset-filter, .view-details, .load-more { min-height: 44px; }
+  .type-chip { padding-inline: 10px; }
+  .search-wrap { padding-inline: 10px; }
+  .search-wrap input { min-width: 0; }
+  .search-wrap input, .selects select { font-size: 16px; }
+  .results-bar > div:first-child { line-height: 1.65; }
+  .round-close, .action-icon { width: 44px; height: 44px; }
+  .detail-top { gap: 12px; }
+  .detail-title { font-size: clamp(32px, 10vw, 43px); }
+  .detail-overline { line-height: 1.5; }
+  .detail-jp, .detail-fruit-strip strong, .character-overlay strong { overflow-wrap: anywhere; }
+  .detail-nav button { min-height: 44px; padding-inline: 10px; }
+  .detail-dialog, .compare-dialog { max-height: 94vh; max-height: 94dvh; }
+  .open-video-discovery .source-discover { gap: 6px; padding-inline: 7px; }
+  .open-video-discovery .source-discover > span:nth-child(2) { min-width: 0; }
+  .compare-dock { bottom: max(12px, env(safe-area-inset-bottom)); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .fruit-card:hover, .spotlight-card:hover, .rank:hover, .btn:hover,
+  .fruit-card:hover .artwork, .spotlight-card:hover img { transform: none; }
+}
