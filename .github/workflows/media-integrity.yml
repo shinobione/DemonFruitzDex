@@ -5,6 +5,7 @@ on:
     paths:
       - "app.js"
       - "index.html"
+      - "clip-check.html"
       - "data/**"
       - "reports/catalogue-media-gap-v49*.json"
       - "scripts/check_v49*.py"
@@ -15,6 +16,7 @@ on:
     paths:
       - "app.js"
       - "index.html"
+      - "clip-check.html"
       - "data/**"
       - "reports/catalogue-media-gap-v49*.json"
       - "scripts/check_v49*.py"
@@ -47,3 +49,4 @@ jobs:
           python scripts/check_v49.py
           python scripts/check_v49a.py
           python scripts/check_v49b.py
+          python scripts/check_v49b2.py
