@@ -28,8 +28,8 @@ for slug, record in clips.items():
         ids[(slug, vid)] = ids.get((slug, vid), 0) + 1
         total += 1
 assert all(count == 1 for count in ids.values()), "duplicate videos on a fruit"
-assert total == inventory["counts"]["youtubeAssociations"] == 48
-assert len({slug for slug, _ in ids}) == inventory["counts"]["withYouTube"] == 34
+assert total == inventory["counts"]["youtubeAssociations"] == 50
+assert len({slug for slug, _ in ids}) == inventory["counts"]["withYouTube"] == 36
 assert set(ids) >= {
     ("nikyu-nikyu-no-mi", "ofJ3DkkOo7Y"),
     ("nikyu-nikyu-no-mi", "PvODesQjMgU"),
@@ -37,13 +37,15 @@ assert set(ids) >= {
     ("noro-noro-no-mi", "1hh_5xUZ5Mw"),
     ("doa-doa-no-mi", "HnsL-5GHUrc"),
     ("yuki-yuki-no-mi", "oLRxJVxoWWo"),
+    ("ito-ito-no-mi", "ow1Hpfnlri4"),
+    ("pero-pero-no-mi", "5r92RNbFpz4"),
 }, "Kuma sources missing"
 assert not re.search(r"https?://(?:www\.)?crunchyroll\.com/(?:fr/)?watch/", json.dumps(clips)), "full episode URLs present"
 assert all(not any(key in c for key in ("episodeUrl", "moreEpisodes", "episodeEvidence")) for c in clips.values()), "full-episode fields present"
 assert "clip-check.html" in page and "clip-check.html?fruit=" in app
 assert "clipCheckSource" in app, "details lack dedicated review link"
 assert "data/clips.js?v=4.9b2" in page and "app.js?v=4.9b2" in page, "stale cache busting"
-assert "data/clips.js?v=4.9b2" in checker, "clip-review catalogue version not aligned"
+assert "data/clips.js?v=4.9b3" in checker, "clip-review catalogue version not aligned"
 assert "nouveaux clips" in checker.lower() and "navigation privée" in checker.lower()
 for status in ("embed-ok", "youtube-only", "login-required", "unavailable", "wrong-power", "other"):
     assert 'value="' + status + '"' in checker, f"missing manual review status {status}"
@@ -73,6 +75,6 @@ assert js, "clip-check inline code missing"
 node = subprocess.run(["node", "--check", "-"], input=js, text=True, capture_output=True)
 assert node.returncode == 0, "clip-check JS syntax error: " + node.stderr
 
-print("PASS V4.9.b2: 48 YouTube links, 34 fruits, including Foxy/Blueno/Monet, no episode URLs")
+print("PASS V4.9.b2: 50 YouTube links, 36 fruits, including Doflamingo and Perospero, no episode URLs")
 print("PASS V4.9.b2: Clip Check linked, verdicts available, JS parser checked")
 print("WARNING: human playback tests required; iframe availability and France/no-login status remain unverified.")
