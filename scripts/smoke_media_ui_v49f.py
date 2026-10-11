@@ -41,6 +41,9 @@ async def main(engine):
             # Rendered site must degrade into its own designed placeholder rather than broken IMG icons.
             await page.wait_for_timeout(700)
             assert await page.locator('.fruit-card').count()>0
+            await page.locator('.fruit-card').first.scroll_into_view_if_needed()
+            await page.wait_for_function("document.querySelectorAll('.fruit-card .media-unavailable').length>0",timeout=15000)
+            assert await page.locator('.fruit-card .media-unavailable').count()>0, "CDN block must create styled image fallback on cards"
             await page.screenshot(path=str(out/f'media-failover-{engine}.jpg'),type='jpeg',quality=72)
             await page.goto(f'http://127.0.0.1:{server.server_port}/media-check.html',wait_until='domcontentloaded')
             await page.locator('#rescue').click()
