@@ -27,7 +27,6 @@ try:
             page.goto(url,wait_until="domcontentloaded",timeout=20000)
             page.locator(".hero-stage").wait_for(timeout=15000)
             page.wait_for_function("document.fonts.status === 'loaded'",timeout=12000)
-            page.locator(".hero").screenshot(timeout=15000) if False else None
             css=page.evaluate("""() => ({
                 bg: getComputedStyle(document.body).backgroundImage,
                 stage: getComputedStyle(document.querySelector('.hero-stage')).backgroundImage,
@@ -47,6 +46,8 @@ try:
             print(f"SCREENSHOT_{name.upper()} path={target.relative_to(ROOT)} size={len(shot)} title={css['title']}",flush=True)
             if name=="desktop":
                 print("PARCHMENT_PREVIEW_BASE64_BEGIN"+base64.b64encode(shot).decode("ascii")+"PARCHMENT_PREVIEW_BASE64_END",flush=True)
+            elif name=="mobile":
+                print("PARCHMENT_MOBILE_BASE64_BEGIN"+base64.b64encode(shot).decode("ascii")+"PARCHMENT_MOBILE_BASE64_END",flush=True)
             page.close()
         browser.close()
 finally:
