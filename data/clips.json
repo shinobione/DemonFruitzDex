@@ -515,15 +515,29 @@
     "verificationStatus": "legacy-unverified"
   },
   "gasu-gasu-no-mi": {
-    "sourcePolicy": "publisher-linked",
-    "reviewedOn": "2026-10-10",
+    "sourcePolicy": "community-video",
+    "reviewedOn": "2026-10-11",
     "auditV46": {
       "state": "legacy-pending-editorial-review",
       "checkedOn": "2026-10-10",
       "metadata": "record-shape-and-source-urls-checked",
       "playback": "not-tested",
       "note": "Références historiques à confirmer par lecture et validation de l'adéquation du pouvoir."
-    }
+    },
+    "youtubeId": "NKgXWO2RK-A",
+    "title": "Caesar Clown — Gasu Gasu no Mi, attaques et capacités",
+    "channel": "Rensuka Ren",
+    "episode": "Punk Hazard",
+    "source": "https://www.youtube.com/watch?v=NKgXWO2RK-A",
+    "sourceEvidence": "https://www.youtube.com/watch?v=NKgXWO2RK-A",
+    "contentKind": "compilation",
+    "powerShown": "Gasu Gasu no Mi : transformations et attaques gazeuses",
+    "published": "2024-09-14",
+    "verificationStatus": "public-metadata-verified",
+    "publisherType": "community-upload",
+    "playbackStatus": "not-tested",
+    "embedStatus": "not-tested",
+    "regionalStatus": "not-tested"
   },
   "inu-inu-no-mi-mod-le-okuchi-no-makami": {
     "sourcePolicy": "publisher-linked",
