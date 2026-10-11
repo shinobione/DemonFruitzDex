@@ -215,3 +215,11 @@ Rapport détaillé : [reports/media-audit-v48.md](reports/media-audit-v48.md).
 - Import d'un audit JSON CLIP CHECK antérieur (validation du schéma, des couples fruit/ID, date et taille ≤1 Mo). Les observations personnelles ne sont ni partagées ni envoyées automatiquement.
 - Depuis chaque fiche, bouton **« J'ai trouvé une vidéo de ce pouvoir »** : soumission locale avec normalisation de l'URL YouTube et export d'un dossier de candidats non vérifiés, sans modification du catalogue public.
 - Gate `python scripts/check_v49b3.py` ajouté à la CI. **PR Draft** tant qu'aucune vérification de lecture réelle n'est effectuée.
+
+## V4.9.d2 — MEDIA RESCUE (PR #5, pas encore publiée)
+
+- **166 fiches auditées en Chrome**, y compris les sidecars de portraits/illustrations. Les médias qui se chargent ne sont pas nécessairement les bons : le Wiki renvoyait **26 miniatures génériques 300×171**.
+- **28 références de portraits corrigées** après vérification sur planches contact, dont Morley et Urban auparavant absents. Après corrections : **164 portraits référencés**, contre 162 précédemment ; les 26 faux positifs initiaux sont remplacés par de véritables fichiers de personnages (test final à confirmer par CI).
+- Les **26 illustrations manquantes** sont classées dans un backlog sourcé et non publié comme images. Les transformations et les scènes de pouvoirs ne sont jamais présentées comme des fruits physiques.
+- Le pipeline `.github/workflows/media-rescue-v49d.yml` audite le catalogue effectif, contrôle les 304 URL dans Chrome, valide les sept derniers portraits sur la vraie page et conserve l'inventaire / planche contact / capture dans les artifacts.
+- **[Rapport complet](reports/media-rescue-v49d.md)**. Aucun fichier image tiers n'est réhébergé ; les 166 fruits, les 50 associations YouTube et la DA V4.9.c4 restent intacts. PR en **Draft** jusqu'à approbation.
