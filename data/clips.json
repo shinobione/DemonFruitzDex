@@ -576,15 +576,29 @@
     "verificationStatus": "legacy-unverified"
   },
   "kage-kage-no-mi": {
-    "sourcePolicy": "publisher-linked",
-    "reviewedOn": "2026-10-10",
+    "sourcePolicy": "community-video",
+    "reviewedOn": "2026-10-11",
     "auditV46": {
       "state": "legacy-pending-editorial-review",
       "checkedOn": "2026-10-10",
       "metadata": "record-shape-and-source-urls-checked",
       "playback": "not-tested",
       "note": "Références historiques à confirmer par lecture et validation de l'adéquation du pouvoir."
-    }
+    },
+    "youtubeId": "fSgU4NEqa4s",
+    "title": "Gecko Moria — techniques du Kage Kage no Mi",
+    "channel": "Rensuka Ren",
+    "episode": "Thriller Bark",
+    "source": "https://www.youtube.com/watch?v=fSgU4NEqa4s",
+    "sourceEvidence": "https://www.youtube.com/watch?v=fSgU4NEqa4s",
+    "contentKind": "compilation",
+    "powerShown": "Kage Kage : extraction et maîtrise des ombres",
+    "uploadDate": "2024-05-26",
+    "verificationStatus": "public-metadata-verified",
+    "publisherType": "community-upload",
+    "playbackStatus": "not-tested",
+    "embedStatus": "not-tested",
+    "regionalStatus": "not-tested"
   },
   "nikyu-nikyu-no-mi": {
     "sourcePolicy": "publisher-linked",
@@ -609,15 +623,29 @@
     }
   },
   "doku-doku-no-mi": {
-    "sourcePolicy": "publisher-linked",
-    "reviewedOn": "2026-10-10",
+    "sourcePolicy": "community-video",
+    "reviewedOn": "2026-10-11",
     "auditV46": {
       "state": "legacy-pending-editorial-review",
       "checkedOn": "2026-10-10",
       "metadata": "record-shape-and-source-urls-checked",
       "playback": "not-tested",
       "note": "Références historiques à confirmer par lecture et validation de l'adéquation du pouvoir."
-    }
+    },
+    "youtubeId": "592XWC7Abkc",
+    "title": "Magellan — toutes les attaques du Doku Doku no Mi",
+    "channel": "Koi 鯉",
+    "episode": "Impel Down",
+    "source": "https://www.youtube.com/watch?v=592XWC7Abkc",
+    "sourceEvidence": "https://www.youtube.com/watch?v=592XWC7Abkc",
+    "contentKind": "compilation",
+    "powerShown": "Doku Doku : hydre de poison et attaques toxiques",
+    "uploadDate": "2025-05-09",
+    "verificationStatus": "public-metadata-verified",
+    "publisherType": "community-upload",
+    "playbackStatus": "not-tested",
+    "embedStatus": "not-tested",
+    "regionalStatus": "not-tested"
   },
   "mero-mero-no-mi": {
     "sourcePolicy": "publisher-linked",
@@ -765,12 +793,59 @@
     "reviewedOn": "2026-10-10"
   },
   "horo-horo-no-mi": {
-    "sourcePolicy": "publisher-linked",
-    "reviewedOn": "2026-10-10"
+    "sourcePolicy": "community-video",
+    "reviewedOn": "2026-10-11",
+    "youtubeId": "p5KF8XZlqEk",
+    "title": "Perona — toutes les attaques du Horo Horo no Mi",
+    "channel": "Rensuka Ren",
+    "episode": "Thriller Bark",
+    "source": "https://www.youtube.com/watch?v=p5KF8XZlqEk",
+    "sourceEvidence": "https://www.youtube.com/watch?v=p5KF8XZlqEk",
+    "contentKind": "compilation",
+    "powerShown": "Horo Horo : fantômes et Negative Hollow",
+    "uploadDate": "2022-10-08",
+    "verificationStatus": "public-metadata-verified",
+    "publisherType": "community-upload",
+    "playbackStatus": "not-tested",
+    "embedStatus": "not-tested",
+    "regionalStatus": "not-tested"
   },
   "bari-bari-no-mi": {
-    "sourcePolicy": "publisher-linked",
-    "reviewedOn": "2026-10-10"
+    "sourcePolicy": "community-video",
+    "reviewedOn": "2026-10-11",
+    "youtubeId": "AdM7PV5kako",
+    "title": "Bartolomeo bloque King Punch avec sa barrière",
+    "channel": "Portgas D. Ace",
+    "episode": "Épisode 638",
+    "source": "https://www.youtube.com/watch?v=AdM7PV5kako",
+    "sourceEvidence": "https://www.youtube.com/watch?v=AdM7PV5kako",
+    "contentKind": "clip",
+    "powerShown": "Bari Bari : barrières, Barrier Crash",
+    "uploadDate": "2014-03-31",
+    "verificationStatus": "public-metadata-verified",
+    "publisherType": "community-upload",
+    "playbackStatus": "not-tested",
+    "embedStatus": "not-tested",
+    "regionalStatus": "not-tested",
+    "moreVideos": [
+      {
+        "youtubeId": "Zupy-QIf-8U",
+        "title": "Bartolomeo — sa barrière contre King Punch",
+        "channel": "BULLBOOJI",
+        "episode": "Épisode 638",
+        "source": "https://www.youtube.com/watch?v=Zupy-QIf-8U",
+        "sourceEvidence": "https://www.youtube.com/watch?v=Zupy-QIf-8U",
+        "contentKind": "clip",
+        "powerShown": "Bari Bari : barrière contre King Punch",
+        "uploadDate": "2026-01-31",
+        "verificationStatus": "public-metadata-verified",
+        "publisherType": "community-upload",
+        "reviewedOn": "2026-10-11",
+        "playbackStatus": "not-tested",
+        "embedStatus": "not-tested",
+        "regionalStatus": "not-tested"
+      }
+    ]
   },
   "bisu-bisu-no-mi": {
     "sourcePolicy": "publisher-linked",
