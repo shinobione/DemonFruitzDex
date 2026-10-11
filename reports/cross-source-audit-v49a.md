@@ -48,3 +48,15 @@ Chacun doit recevoir l'un des statuts **APPARENCE CANONIQUE**, **VISUEL DU POUVO
 ## Suite
 
 V4.9.b = lots de clips vidéo candidats vérifiés ; V4.9.c = enrichissement des illustrations, seulement après concordance source/canon et droits. L'audit documentaire ne valide pas une vidéo ou une image à lui seul.
+
+## Premiers candidats YouTube identifiés — aucun ajout automatique
+
+Ces liens montrent pourquoi une recherche manuelle dans YouTube est utile. Leur fiche doit être contrôlée avant intégration. Les pages YouTube sont trouvables publiquement, mais le test iframe, la disponibilité en France, le minutage et les droits de la chaîne n'ont pas été certifiés.
+
+| Fruit | Clip / lien | Source | Stade |
+|---|---|---|---|
+| **Bari Bari no Mi** (Bartolomeo) | [Bartolomeo — First Appearance](https://www.youtube.com/watch?v=2VwupgivJmI) | OACBVideos, vidéo de fan ; la description évoque explicitement la barrière face au King's Punch | **CANDIDAT DIRECT**, lecture/iframe et autorisation à vérifier |
+| **Bari Bari no Mi** (Bartolomeo) | [Bartolomeo — Bari Bari no Mi](https://www.youtube.com/watch?v=pXvhvzbH1-Q) | MarcoDaporta, vidéo de fan | **CANDIDAT DIRECT**, passage exact et lecture à vérifier |
+| **Baku Baku no Mi** (Wapol) | [Wapol's Munch-Munch Fruit — discussion](https://www.youtube.com/watch?v=1osMD-1SwGE) | Tekking101, analyse/commentaire de 2020 | **NE PAS intégrer comme extrait de pouvoir** : description d'une discussion, pas une scène d'anime attestée |
+
+**Règle :** Une recherche YouTube pointe sur des résultats dynamiques ; pour intégrer un clip, l'éditeur doit sélectionner et enregistrer l'ID YouTube précis dans `data/clips.json` avec statut, fruit, porteur, séquence montrée, provenance et date de revue. Le site ne peut pas deviner de manière fiable le premier résultat de recherche à ouvrir comme un clip vérifié.
