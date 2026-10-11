@@ -157,6 +157,7 @@
       <div class="playlist-label">⌕ CHERCHER DES EXTRAITS COURTS · SANS ABONNEMENT</div>
       <a class="episode-item source-discover source-youtube" target="_blank" rel="noopener noreferrer" href="${youtubeSearch}"><span>▶</span><span>Explorer les clips YouTube pour ce fruit<small>Chaînes officielles et vidéos de fans · résultats à vérifier</small></span><b>YOUTUBE ↗</b></a>
       <a class="episode-item source-discover" target="_blank" rel="noopener noreferrer" href="${googleVideoSearch}"><span>⌕</span><span>Rechercher sur d'autres plateformes<small>Google Vidéos · recherche multi-sites, disponibilité variable</small></span><b>WEB ↗</b></a>
+      <a class="episode-item source-discover" target="_blank" rel="noopener noreferrer" href="clip-check.html?fruit=${encodeURIComponent(f.id)}&amp;suggest=1"><span>＋</span><span>J’ai trouvé une vidéo de ce pouvoir<small>Proposer un lien YouTube à contrôler avant intégration</small></span><b>PROPOSER ↗</b></a>
     </div>`;
     const auditNotice=needsReview?`<p class="clip-audit-warning">⚑ RÉFÉRENCE HISTORIQUE À RECONTRÔLER — ${enc(clip.auditV46.note||'Disponibilité et adéquation au pouvoir non encore vérifiées.')}</p>`:'';
     const socialBody=clip.social?.length?`<div class="social-sources">${clip.social.map(x=>`<a href="${enc(x.url)}" rel="noopener noreferrer" target="_blank">↗ ${enc(x.title)} · ${enc(x.platform)}</a>`).join('')}</div>`:'';
