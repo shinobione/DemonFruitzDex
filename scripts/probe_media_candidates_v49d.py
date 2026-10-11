@@ -269,7 +269,7 @@ for old in audit['results']:
     names.append((old['id'],old['holder'],candidate))
     if candidate=="Kinemon Portrait.png":names.append((old['id'],old['holder'],"Kin'emon Portrait.png"))
     if candidate=="Charlotte Brulee Portrait.png":names.append((old['id'],old['holder'],"Charlotte Brûlée Portrait.png"))
-names=list(dict.fromkeys(names))
+names=list(dict.fromkeys(tuple(x) for x in names))
 
 def link(filename):
     base=filename.replace(' ','_')
