@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#090c13"><title>Media Check · DemonFruitzDex</title>
+<meta name="theme-color" content="#0b0f14"><title>Media Check · DemonFruitzDex</title>
 <style>
 :root{color-scheme:dark}*{box-sizing:border-box}body{margin:0;background:#090c13;color:#f5f0e8;font:15px/1.55 system-ui,-apple-system,sans-serif}
 main{max-width:1050px;margin:auto;padding:32px 20px 90px}a{color:#f4c36b}h1{font-size:clamp(32px,5vw,62px);letter-spacing:-.06em;line-height:1;margin:24px 0 15px}
@@ -11,6 +11,7 @@ small{color:#aab7c9}table{width:100%;border-collapse:collapse}td,th{padding:11px
 th{color:#f4c36b;letter-spacing:.08em}.ok{color:#84dfb0}.failed{color:#f2a49b}.pending{color:#c5b1ff}.muted{color:#9eabba}td a{word-break:break-all}
 progress{width:100%;height:10px;accent-color:#b68cff;margin:16px 0}#results{overflow:auto;max-height:65vh;border:1px solid #ffffff22;border-radius:12px}h2{font-size:20px}
 </style>
+<link rel="stylesheet" href="assets/css/archive-theme.css?v=4.9c">
 <script src="data/fruits.js?v=4.9" defer></script>
 <script src="data/portrait-sources.js?v=4.9" defer></script>
 <script src="data/portraits-v48.js?v=4.9" defer></script>
@@ -60,7 +61,7 @@ document.addEventListener('DOMContentLoaded',()=>{
  summary.textContent=all.length+' fiches chargées · '+getItems().length+' URL d’images référencées (chargement non encore testé).';
 });
 </script></head>
-<body><main><a href="./">← Retour au DemonFruitzDex</a><h1>MEDIA CHECK<span style="color:#b68cff">.</span></h1>
+<body class="archive-tool media-check-page"><main><a href="./">← Retour au DemonFruitzDex</a><h1>MEDIA CHECK<span style="color:#b68cff">.</span></h1>
 <p>Une adresse d'image enregistrée dans le catalogue n'est pas une image qui s'affiche. Cet outil vérifie le chargement réel <strong>depuis ton navigateur</strong> et tente une redirection du wiki en cas d'échec.</p>
 <div class="note"><strong>Test à la demande.</strong> Les portraits One Piece sont hébergés chez des tiers. Un échec peut être lié à un blocage de hotlink, à une ressource déplacée ou à la connexion. Aucun visuel n'est automatiquement téléchargé ni redistribué.</div>
 <div class="actions"><button id="sample">Tester 30 images (V4.9 d'abord)</button><button id="all">Tester toutes les images</button><button id="export" disabled>Exporter le rapport JSON</button></div>

@@ -1,5 +1,5 @@
 name: DemonFruitzDex media integrity
-# V4.9.b3 adds browser-audit import, local failure flags and unverified clip proposals.
+# V4.9.c themes the archive while retaining the V4.9.b3 catalogue safety gates.
 
 on:
   pull_request:
@@ -8,6 +8,9 @@ on:
       - "styles.css"
       - "index.html"
       - "clip-check.html"
+      - "media-check.html"
+      - "assets/css/**"
+      - "assets/bg/**"
       - "data/**"
       - "reports/catalogue-media-gap-v49*.json"
       - "scripts/check_v49*.py"
@@ -20,6 +23,9 @@ on:
       - "styles.css"
       - "index.html"
       - "clip-check.html"
+      - "media-check.html"
+      - "assets/css/**"
+      - "assets/bg/**"
       - "data/**"
       - "reports/catalogue-media-gap-v49*.json"
       - "scripts/check_v49*.py"
@@ -55,10 +61,10 @@ jobs:
           python scripts/check_v49b2.py
           python scripts/check_v49b3.py
 
-      - name: Upload V4.9.b3 review preview
+      - name: Upload V4.9.c review preview
         uses: actions/upload-artifact@v4
         with:
-          name: DemonFruitzDex-V49b3-preview
+          name: DemonFruitzDex-V49c-preview
           retention-days: 7
           if-no-files-found: error
           path: |
@@ -69,4 +75,6 @@ jobs:
             media-check.html
             data/*.js
             assets/**
+            reports/v49c-parchment-theme-review.md
+            reports/screenshots/v49c/**
             PREVIEW-README.txt

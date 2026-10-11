@@ -1,0 +1,73 @@
+/* V4.9.c — shared archive palette and paper. No catalogue/category colors here. */
+:root {
+  color-scheme: dark;
+  --bg: #0b0f14;
+  --bg2: #121820;
+  --panel: #151a20;
+  --ink: #f4efe6;
+  --text: var(--ink);
+  --muted: #d2c7b4;
+  --gold: #d8b06a;
+  --line: #d8b06a24;
+  --line2: #d8b06a40;
+  --border: var(--line2);
+  --archive-faint: #afa390;
+  --archive-surface: #171b20;
+  --archive-panel: linear-gradient(145deg, #29231dec, #121820f5 65%);
+  --archive-texture: url('../bg/parchment-bg.webp');
+}
+
+body {
+  background-color: var(--bg);
+  background-image:
+    radial-gradient(ellipse at 18% 0%, #49332255, transparent 68%),
+    radial-gradient(ellipse at 50% 35%, transparent 35%, #05080dbc 100%),
+    linear-gradient(#0b0f14e8, #0b0f14f5),
+    var(--archive-texture);
+  background-size: 100% 1000px, 100% 100%, 100% 100%, 768px 512px;
+  background-repeat: no-repeat, no-repeat, no-repeat, repeat;
+  color: var(--ink);
+}
+
+::selection { background: #d8b06a; color: #17130e; }
+
+/* Diagnostics keep their own layout and state colors. */
+.archive-tool a { color: var(--gold); }
+.archive-tool :is(button, select, input, textarea, a):focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+.archive-tool :is(.pane, .note) {
+  background: var(--archive-panel);
+  border-color: var(--line2);
+}
+.archive-tool :is(.stat, .item, .proposal-list p) {
+  background: #151a20;
+  border-color: var(--line);
+}
+.clip-check-page .item[aria-current='true'] {
+  background: #30281d;
+  border-color: var(--gold);
+}
+.archive-tool :is(.head p, .sub, .notice, p, small, .muted) { color: var(--muted); }
+.archive-tool :is(button, select, textarea, .propose-box input, .bar a) {
+  border-color: var(--line2);
+  background: #121820;
+  color: var(--ink);
+}
+.archive-tool button:hover { background: #2c261e; border-color: var(--gold); }
+.clip-check-page .accent { background: var(--gold); color: #21180d; }
+.clip-check-page .accent:hover { background: #e3bf7e; }
+.archive-tool :is(.preview, #results) { border-color: var(--line2); }
+.archive-tool :is(h1, th) { color: var(--gold); }
+.archive-tool :is(.notice, .import-control) { border-color: #d8b06a66; }
+.archive-tool :is(.form, .propose-box, td, th) { border-color: var(--line); }
+.archive-tool .check input { accent-color: var(--gold); }
+
+@media (max-width: 540px) {
+  body { background-size: 100% 700px, 100% 100%, 100% 100%, 576px 384px; }
+  .clip-check-page .item > span { min-width: 0; overflow-wrap: anywhere; }
+  .clip-check-page .placeholder { padding: 12px; gap: 10px; font-size: .8rem; }
+  .clip-check-page .preview { min-width: 0; }
+  .archive-tool :is(select, input, textarea) { font-size: 16px; }
+}
