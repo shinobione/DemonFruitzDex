@@ -1,0 +1,61 @@
+name: V4.9.d media rescue — 166-fruit browser audit
+
+on:
+  pull_request:
+    paths:
+      - "data/**"
+      - "app.js"
+      - "media-check.html"
+      - "scripts/inventory_media_v49d.js"
+      - "scripts/audit_media_browser_v49d.py"
+      - "scripts/check_v49d.py"
+      - "scripts/probe_media_candidates_v49d.py"
+      - "scripts/check_actual_media_v49d2.py"
+      - "scripts/triage_missing_visuals_v49d2.py"
+      - ".github/workflows/media-rescue-v49d.yml"
+  workflow_dispatch:
+
+jobs:
+  image-browser-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Resolve all effective catalogue sidecars
+        run: |
+          node --check scripts/inventory_media_v49d.js
+          node scripts/inventory_media_v49d.js
+      - name: Install browser runtime
+        run: python -m pip install --quiet playwright
+      - name: Test every registered portrait and artwork in Chrome
+        run: python scripts/audit_media_browser_v49d.py
+      - name: Inspect potential Morley / Urban sources before replacing anything
+        run: python scripts/probe_media_candidates_v49d.py
+      - name: Produce prioritized 26-illustration evidence backlog
+        run: python scripts/triage_missing_visuals_v49d2.py
+      - name: Verify repaired portraits in the actual Dex page
+        run: python scripts/check_actual_media_v49d2.py
+      - name: Check report schema and coverage
+        run: python scripts/check_v49d.py
+      - name: Preserve full per-fruit audit (including failed URLs)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: DemonFruitzDex-V49d-media-audit
+          retention-days: 14
+          if-no-files-found: warn
+          path: |
+            reports/media-inventory-v49d.json
+            reports/media-browser-audit-v49d.json
+            reports/media-candidate-probe-v49d.json
+            reports/media-candidate-contact-v49d.jpg
+            reports/media-actual-page-v49d2.jpg
+            reports/media-illustration-backlog-v49d2.json

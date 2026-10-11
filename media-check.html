@@ -16,6 +16,7 @@ progress{width:100%;height:10px;accent-color:#b68cff;margin:16px 0}#results{over
 <script src="data/portrait-sources.js?v=4.9" defer></script>
 <script src="data/portraits-v48.js?v=4.9" defer></script>
 <script src="data/portraits-v49.js?v=4.9" defer></script>
+<script src="data/portraits-v49d.js?v=4.9d" defer></script>
 <script src="data/power-art-v48.js?v=4.9" defer></script>
 <script defer>
 document.addEventListener('DOMContentLoaded',()=>{
@@ -24,30 +25,31 @@ document.addEventListener('DOMContentLoaded',()=>{
  const summary=document.getElementById('summary'),progress=document.getElementById('progress');
  const runSample=document.getElementById('sample'),runAll=document.getElementById('all'),exporter=document.getElementById('export');
  let running=false,results=[];
+ let missingCount=0;
  const safe=(s)=>String(s||'');
  const redirect=(file)=>file?'https://onepiece.fandom.com/wiki/Special:Redirect/file/'+encodeURIComponent(file.replaceAll(' ','_')):'';
- function check(url,alt){return new Promise(resolve=>{
+ function check(url,alt,type){return new Promise(resolve=>{
    let done=false;let img=new Image();let timeout;
    function finish(ok,final,reason){if(done)return;done=true;clearTimeout(timeout);img.onload=img.onerror=null;resolve({ok,final,reason});}
-   function tryOne(u,second){clearTimeout(timeout);img.onload=()=>finish(true,u,second?'redirect':'direct');img.onerror=()=>{if(!second&&alt&&alt!==url)tryOne(alt,true);else finish(false,u,'error')};
+   function tryOne(u,second){clearTimeout(timeout);img.onload=()=>{if(type==='portrait'&&img.naturalWidth===300&&img.naturalHeight===171){if(!second&&alt&&alt!==url)tryOne(alt,true);else finish(false,u,'wiki-placeholder')}else finish(true,u,second?'redirect':'direct')};img.onerror=()=>{if(!second&&alt&&alt!==url)tryOne(alt,true);else finish(false,u,'error')};
      timeout=setTimeout(()=>{if(!second&&alt&&alt!==url)tryOne(alt,true);else finish(false,u,'timeout')},10000);img.src=u;
    }
    tryOne(url,false);
  })}
- const getItems=()=>all.flatMap(f=>[['portrait',f.portrait,f.portrait_file],['art',f.image,f.file]].filter(([type,url])=>!!url).map(([type,url,file])=>({fruit:f.fr,id:f.id,type,url,alt:redirect(file)})));
+ const getItems=()=>all.flatMap(f=>[['portrait',f.portrait,f.portrait_file],['art',f.image,f.file]].map(([type,url,file])=>({fruit:f.fr,id:f.id,type,url:url||'',alt:redirect(file),missing:!url})));
  async function launch(sample){
    if(running)return;running=true;results=[];tbody.textContent='';exporter.disabled=true;runSample.disabled=runAll.disabled=true;
-   let items=getItems();if(sample){const favorites=[...(window.SHINO_PORTRAITS_V49||[]),...(window.SHINO_EXTRA_PORTRAITS||[])].map(x=>x.id);const prefer=items.filter(x=>favorites.includes(x.id));items=[...prefer,...items.filter(x=>!favorites.includes(x.id))].slice(0,30)}
+   let items=getItems();if(sample){const favorites=new Set([...(window.SHINO_PORTRAITS_V49||[]),...(window.SHINO_EXTRA_PORTRAITS||[])].map(x=>x.id));const missing=items.filter(x=>x.missing);const prefer=items.filter(x=>!x.missing&&favorites.has(x.id));items=[...missing,...prefer,...items.filter(x=>!x.missing&&!favorites.has(x.id))].slice(0,30)}
    progress.max=Math.max(1,items.length);progress.value=0;
-   let index=0,ok=0,failed=0;
+   let index=0,ok=0,failed=0,missing=0;
    function append(item,check){
-     const row=document.createElement('tr');const cols=[item.type,item.fruit,check.ok?'VISIBLE':'ÉCHEC',check.reason];
+     const row=document.createElement('tr');const cols=[item.type,item.fruit,check.reason==='missing-reference'?'NON RÉFÉRENCÉ':check.ok?'VISIBLE':check.reason==='timeout'?'INCERTAIN':'ÉCHEC LOCAL',check.reason];
      for(const value of cols){const td=document.createElement('td');td.textContent=safe(value);row.appendChild(td)}
-     row.children[2].className=check.ok?'ok':'failed';const td=document.createElement('td'),a=document.createElement('a');a.textContent='Voir fichier';a.href=check.final;a.target='_blank';a.rel='noopener noreferrer';td.append(a);row.append(td);tbody.append(row);
+     row.children[2].className=check.ok?'ok':check.reason==='missing-reference'?'pending':'failed';const td=document.createElement('td');if(check.final){const a=document.createElement('a');a.textContent='Voir fichier';a.href=check.final;a.target='_blank';a.rel='noopener noreferrer';td.append(a)}else td.textContent='—';row.append(td);tbody.append(row);
    }
    async function worker(){
-     while(index<items.length){const item=items[index++],status=await check(item.url,item.alt);results.push({...item,...status});status.ok?ok++:failed++;
-       append(item,status);progress.value=results.length;summary.textContent=results.length+' / '+items.length+' testés · '+ok+' visibles · '+failed+' en échec';
+     while(index<items.length){const item=items[index++],status=item.missing?{ok:false,final:'',reason:'missing-reference'}:await check(item.url,item.alt,item.type);results.push({...item,...status});if(status.ok)ok++;else if(status.reason==='missing-reference')missing++;else failed++;
+       append(item,status);progress.value=results.length;summary.textContent=results.length+' / '+items.length+' emplacements audités · '+ok+' visibles · '+missing+' sans référence · '+failed+' échecs navigateur';
      }
    }
    await Promise.all(Array.from({length:Math.min(4,items.length)},worker));
@@ -55,16 +57,17 @@ document.addEventListener('DOMContentLoaded',()=>{
  }
  runSample.onclick=()=>launch(true);runAll.onclick=()=>launch(false);
  exporter.onclick=()=>{
-   const payload={date:new Date().toISOString(),origin:location.origin,userAgent:navigator.userAgent,note:'Contrôle image effectué depuis le navigateur client, sans validation des droits ni de la nature de l’image.',results};
+   const payload={schema:'demonfruitzdex.media-browser-review.v49d',date:new Date().toISOString(),origin:location.origin,userAgent:navigator.userAgent,scope:{fruits:all.length,slots:getItems().length,examined:results.length},note:'Audit de CE navigateur : les erreurs peuvent refléter hotlink/connexion et ne prouvent pas une disparition globale du fichier. Les médias non référencés sont distincts des échecs. Aucune vérification de droits ni de correspondance visuelle.',results};
    const blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json'});const u=URL.createObjectURL(blob),a=document.createElement('a');a.href=u;a.download='demonfruitzdex-image-audit.json';a.click();setTimeout(()=>URL.revokeObjectURL(u),1500);
  };
- summary.textContent=all.length+' fiches chargées · '+getItems().length+' URL d’images référencées (chargement non encore testé).';
+ const slots=getItems(),refs=slots.filter(x=>!!x.url).length;
+ summary.textContent=all.length+' fiches · '+refs+' URL référencées · '+(slots.length-refs)+' emplacements sans image (chargement non encore testé).';
 });
 </script></head>
 <body class="archive-tool media-check-page"><main><a href="./">← Retour au DemonFruitzDex</a><h1>MEDIA CHECK<span style="color:#b68cff">.</span></h1>
-<p>Une adresse d'image enregistrée dans le catalogue n'est pas une image qui s'affiche. Cet outil vérifie le chargement réel <strong>depuis ton navigateur</strong> et tente une redirection du wiki en cas d'échec.</p>
-<div class="note"><strong>Test à la demande.</strong> Les portraits One Piece sont hébergés chez des tiers. Un échec peut être lié à un blocage de hotlink, à une ressource déplacée ou à la connexion. Aucun visuel n'est automatiquement téléchargé ni redistribué.</div>
-<div class="actions"><button id="sample">Tester 30 images (V4.9 d'abord)</button><button id="all">Tester toutes les images</button><button id="export" disabled>Exporter le rapport JSON</button></div>
+<p>166 fiches × 2 emplacements = <strong>332 cases média</strong>. Cet outil distingue les références absentes des liens qui échouent réellement <strong>dans ton navigateur</strong> et tente la redirection du wiki en cas d'échec.</p>
+<div class="note"><strong>Test à la demande.</strong> Une image absente du Dex n'est pas un lien cassé. Les images hébergées par des tiers peuvent échouer selon le pays, les restrictions de hotlink ou la connexion. Le résultat ne certifie ni les droits de réutilisation ni la correspondance du personnage. Aucun visuel n'est téléchargé ni redistribué.</div>
+<div class="actions"><button id="sample">Tester 30 images (V4.9 d'abord)</button><button id="all">Auditer les 332 emplacements</button><button id="export" disabled>Exporter le rapport JSON</button></div>
 <p id="summary" aria-live="polite"></p><progress id="progress" value="0" max="1"></progress>
 <h2>Résultats du navigateur</h2><div id="results"><table><thead><tr><th>Type</th><th>Fiche</th><th>État</th><th>Chemin</th><th>Source</th></tr></thead><tbody id="rows"></tbody></table></div>
 </main></body></html>

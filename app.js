@@ -75,9 +75,10 @@
   const wikiRedirect=(filename)=> filename && /\\.(png|jpg|jpeg|webp|gif)$/i.test(filename) ? 'https://onepiece.fandom.com/wiki/Special:Redirect/file/'+encodeURIComponent(filename.replaceAll(' ','_')) : '';
   // A remote URL in the catalogue is not proof that the image is viewable.
   // Try the wiki's named-file redirect once, then show the styled fallback.
-  document.addEventListener('error',e=>{
-    const img=e.target;
-    if(!(img instanceof HTMLImageElement) || !img.matches('[data-media-fallback]'))return;
+  // Fandom also responds with a valid 300x171 generic "missing image" bitmap,
+  // which triggers onload instead of error. We visually verified this exact placeholder.
+  // Treat it as broken ONLY for character portraits, never for legitimate power scenes.
+  const mediaLoadFailed=(img)=>{
     const alternative=img.dataset.mediaFallback;
     if(alternative && img.dataset.retry!=='1' && alternative!==img.src){
       img.dataset.retry='1';img.src=alternative;return;
@@ -85,6 +86,18 @@
     const frame=img.closest('.portrait-frame,.card-visual,.detail-fruit-mini,.compare-fruit');
     if(frame){frame.classList.add('media-unavailable');const badge=frame.querySelector('.art-meta');if(badge)badge.textContent='IMAGE EXTERNE INDISPONIBLE';}
     img.remove();
+  };
+  document.addEventListener('error',e=>{
+    const img=e.target;
+    if(!(img instanceof HTMLImageElement) || !img.matches('[data-media-fallback]'))return;
+    mediaLoadFailed(img);
+  },true);
+  document.addEventListener('load',e=>{
+    const img=e.target;
+    if(!(img instanceof HTMLImageElement) || !img.matches('[data-media-fallback]'))return;
+    const isPortrait=!!img.closest('.portrait-frame')||img.classList.contains('artwork-user-substitute');
+    const isWikia=/^(https:\/\/static\.wikia\.nocookie\.net\/onepiece\/|https:\/\/onepiece\.fandom\.com\/wiki\/Special:Redirect\/file\/)/i.test(img.src);
+    if(isPortrait&&isWikia&&img.naturalWidth===300&&img.naturalHeight===171)mediaLoadFailed(img);
   },true);
   function portrait(f, large=false){const name=enc(f.primary_user||f.u);return `<div class="portrait-frame ${large?'portrait-large':''}" style="--accent:${colors[f.t]||'#9d77fc'}" title="Portrait : ${name}"><span>${enc(f.avatar||'OP')}</span>${f.portrait?`<img loading="lazy" alt="Portrait de ${name}" src="${enc(f.portrait)}" data-media-fallback="${enc(wikiRedirect(f.portrait_file))}" referrerpolicy="no-referrer">`:''}</div>`}
   function art(f, modal=false){
@@ -94,7 +107,7 @@
     if(!modal && f.portrait && f.id!=='smile')return `<img class="artwork artwork-user-substitute" loading="lazy" decoding="async" referrerpolicy="no-referrer" alt="Portrait de ${enc(f.primary_user||f.u)} : apparence physique du fruit non documentée" src="${enc(f.portrait)}" data-media-fallback="${enc(wikiRedirect(f.portrait_file))}">`;
     return '';
   }
-  function imageLabel(f){if(!f.image)return f.portrait?'PORTEUR · FRUIT NON REPRÉSENTÉ':'APPARENCE DU FRUIT INCONNUE';return f.visual==='fruit'?'FRUIT PHYSIQUE RÉFÉRENCÉ':f.image_kind==='pouvoir-animé'?'ANIMATION DU POUVOIR':f.visual==='pouvoir'?'ILLUSTRATION DU POUVOIR':f.visual==='artificiel'?'FRUIT ARTIFICIEL':'INTERPRÉTATION SYMBOLIQUE'}
+  function imageLabel(f){if(!f.image)return f.portrait?'PORTEUR · ILLUSTRATION DU POUVOIR ABSENTE':'AUCUNE ILLUSTRATION RÉFÉRENCÉE';return f.visual==='fruit'?'FRUIT PHYSIQUE RÉFÉRENCÉ':f.image_kind==='pouvoir-animé'?'ANIMATION DU POUVOIR':f.visual==='pouvoir'?'ILLUSTRATION DU POUVOIR':f.visual==='artificiel'?'FRUIT ARTIFICIEL':'INTERPRÉTATION SYMBOLIQUE'}
   function card(f){
     const selected=state.compare.includes(f.id),saved=favorites.has(f.id);
     const color=colors[f.t]||'#f4c36b';
