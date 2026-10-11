@@ -1,5 +1,5 @@
 name: DemonFruitzDex media integrity
-# V4.9.b2 includes browser Clip Check syntax and rejects full-episode URLs.
+# V4.9.b3 adds browser-audit import, local failure flags and unverified clip proposals.
 
 on:
   pull_request:
@@ -51,3 +51,4 @@ jobs:
           python scripts/check_v49a.py
           python scripts/check_v49b.py
           python scripts/check_v49b2.py
+          python scripts/check_v49b3.py
