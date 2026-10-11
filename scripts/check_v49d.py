@@ -34,8 +34,10 @@ sidecar=(root/'data/portraits-v49d.js').read_text(encoding='utf-8')
 match=re.search(r'window\.SHINO_PORTRAITS_V49D\s*=\s*(\[.*?\]);',sidecar,re.S)
 assert match, "missing curated portrait sidecar"
 repairs=json.loads(match.group(1))
-assert len(repairs)==21 and len({x['id'] for x in repairs})==21
+assert len(repairs)==28 and len({x['id'] for x in repairs})==28
 assert sum(not x['previous_portrait'] for x in repairs)==2
+assert any(x['id']=='akuma-no-mi' and x['portrait_kind']=='silhouette-anime' for x in repairs)
+assert any(x['id']=='fruit-artificiel-seiryu' and x['portrait_kind']=='illustration-anime' for x in repairs)
 assert all(x['portrait'].startswith('https://static.wikia.nocookie.net/onepiece/images/')
            and x['portrait_file'].endswith('.png') and x['portrait_evidence'].startswith('https://onepiece.fandom.com/wiki/File:')
            for x in repairs)
@@ -66,7 +68,7 @@ parser=InlineScript();parser.feed(media)
 js='\n'.join(parser.parts)
 parsed=subprocess.run(['node','--check','-'],input=js,text=True,capture_output=True)
 assert parsed.returncode==0,parsed.stderr
-print('PASS V4.9.d: 21 curated unique portrait replacements and MEDIA CHECK JavaScript syntax')
+print('PASS V4.9.d: 28 curated unique portrait replacements and MEDIA CHECK JavaScript syntax')
 
 print('PASS V4.9.d: complete 166-fruit / 304-reference browser audit, structural coverage and honest status tags')
 print('BROWSER OBSERVATIONS (NOT GLOBAL LINK VERDICT):',audit['outcomes'])
