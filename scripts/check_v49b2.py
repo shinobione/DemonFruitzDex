@@ -28,12 +28,15 @@ for slug, record in clips.items():
         ids[(slug, vid)] = ids.get((slug, vid), 0) + 1
         total += 1
 assert all(count == 1 for count in ids.values()), "duplicate videos on a fruit"
-assert total == inventory["counts"]["youtubeAssociations"] == 45
-assert len({slug for slug, _ in ids}) == inventory["counts"]["withYouTube"] == 31
+assert total == inventory["counts"]["youtubeAssociations"] == 48
+assert len({slug for slug, _ in ids}) == inventory["counts"]["withYouTube"] == 34
 assert set(ids) >= {
     ("nikyu-nikyu-no-mi", "ofJ3DkkOo7Y"),
     ("nikyu-nikyu-no-mi", "PvODesQjMgU"),
     ("gasu-gasu-no-mi", "NKgXWO2RK-A"),
+    ("noro-noro-no-mi", "1hh_5xUZ5Mw"),
+    ("doa-doa-no-mi", "HnsL-5GHUrc"),
+    ("yuki-yuki-no-mi", "oLRxJVxoWWo"),
 }, "Kuma sources missing"
 assert not re.search(r"https?://(?:www\.)?crunchyroll\.com/(?:fr/)?watch/", json.dumps(clips)), "full episode URLs present"
 assert all(not any(key in c for key in ("episodeUrl", "moreEpisodes", "episodeEvidence")) for c in clips.values()), "full-episode fields present"
@@ -70,6 +73,6 @@ assert js, "clip-check inline code missing"
 node = subprocess.run(["node", "--check", "-"], input=js, text=True, capture_output=True)
 assert node.returncode == 0, "clip-check JS syntax error: " + node.stderr
 
-print("PASS V4.9.b2: 45 YouTube links, 31 fruits, 2 Kuma clips and 1 Caesar montage, no episode URLs")
+print("PASS V4.9.b2: 48 YouTube links, 34 fruits, including Foxy/Blueno/Monet, no episode URLs")
 print("PASS V4.9.b2: Clip Check linked, verdicts available, JS parser checked")
 print("WARNING: human playback tests required; iframe availability and France/no-login status remain unverified.")
