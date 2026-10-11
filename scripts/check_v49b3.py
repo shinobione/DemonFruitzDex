@@ -25,7 +25,7 @@ assert "clipLocalNotice" in app and "clipVerdictLabels" in app
 assert "button.disabled=true" in app and "clipIsFlagged(reviewStatus)" in app
 assert "toast('Lecture depuis '" not in app, "iframe insertion is not proof of playback"
 assert "demonfruitzdex.clip-review.v49b" in app and "demonfruitzdex.clip-review.v49b" in page
-assert "clip-review-local" in (root/"styles.css").read_text(encoding="utf-8")
+assert ".clip-local-notice" in (root/"styles.css").read_text(encoding="utf-8")
 
 assert 'id="proposeFruit"' in page and 'id="proposeUrl"' in page
 assert 'id="proposeAdd"' in page and 'id="proposeExport"' in page
