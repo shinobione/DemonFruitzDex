@@ -17,17 +17,20 @@
   --archive-texture: url('../bg/parchment-bg.webp');
 }
 
-/* V4.9.c2: the parchment MUST be discernible at normal zoom.
-   Previous overlays #0b0f14e8/#0b0f14f5 blocked 91–96% of the asset. */
+/* V4.9.c3 — ONE continuous sheet, NEVER a repeated tile.
+   The c2 1024x683 repeat produced a visible orthogonal grid at wide sizes.
+   A viewport-fixed cover crop uses the original 1536x1024 WebP without seams.
+   Keep the material warm and luminous; let the panels do the text protection. */
 body {
-  background-color: #34291e;
+  background-color: #ae9069;
   background-image:
-    radial-gradient(ellipse at 50% 42%, #090c101f 0%, #090c1050 72%, #090c1073 100%),
-    linear-gradient(180deg, #0f0d0a78 0%, #0c101090 100%),
+    radial-gradient(ellipse at 50% 42%, #090b0900 28%, #24170e36 76%, #1b110b70 100%),
+    linear-gradient(115deg, #61402224 0%, #33211130 60%, #16141b47 100%),
     var(--archive-texture);
-  background-size: 100% 100%, 100% 100%, 1024px 683px;
-  background-position: center top, center top, center top;
-  background-repeat: no-repeat, no-repeat, repeat;
+  background-size: cover, cover, cover;
+  background-position: center center, center center, center center;
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  background-attachment: fixed, fixed, fixed;
   color: var(--ink);
 }
 
@@ -55,15 +58,15 @@ body {
 }
 
 
-/* Expose parchment around the central Devil Fruit, too; the previous
-   #30251de0/#121820f5 (88–96% opacity) hid the material here as well. */
+/* The fruit's display is a framed opening onto the same paper,
+   with a local purple-tinted vignette, never a tiled wallpaper. */
 .hero-stage {
   background-image:
-    radial-gradient(ellipse at 52% 47%, #10111ac0 0%, #11131b80 55%, #100e1080 100%),
-    linear-gradient(140deg, #24181042 0%, #090f18a6 100%),
+    radial-gradient(ellipse at 52% 46%, #28163d78 0%, #1e203560 42%, #0d10199c 100%),
     var(--archive-texture);
-  background-size: auto, auto, 960px 640px;
-  background-position: center, center, center;
+  background-size: cover, cover;
+  background-position: center, center;
+  background-repeat: no-repeat, no-repeat;
   border-color: #d8b06a80;
 }
 
@@ -129,7 +132,12 @@ body {
 .archive-tool .check input { accent-color: var(--gold); }
 
 @media (max-width: 540px) {
-  body { background-size: 100% 100%, 100% 100%, 768px 512px; }
+  /* A single fixed cover crop prevents phone-width tile edges as well. */
+  body {
+    background-size: cover, cover, cover;
+    background-position: center center;
+    background-repeat: no-repeat, no-repeat, no-repeat;
+  }
   .clip-check-page .item > span { min-width: 0; overflow-wrap: anywhere; }
   .clip-check-page .placeholder { padding: 12px; gap: 10px; font-size: .8rem; }
   .clip-check-page .preview { min-width: 0; }
