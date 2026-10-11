@@ -102,7 +102,7 @@ try:
             assert css["wearEvents"]==css["frameEvents"]=="none", f"{name}: frame could intercept controls"
             assert css["heroInk"]=="rgb(36, 26, 17)" and css["sectionInk"]=="rgb(37, 26, 16)", f"{name}: pale headings on paper"
             assert css["fruits"]==166 and css["videos"]==50, f"{name}: catalogue changed"
-            assert "V4.9.c4" in css["title"], f"{name}: stale release"
+            assert css["title"].startswith("DemonFruitzDex — SHINO-DEX V4.9."), f"{name}: unexpected site edition"
 
             asset=page.request.get(url+"assets/bg/parchment-bg.webp")
             if asset.status!=200:
