@@ -6,8 +6,8 @@
     "fruits": 166,
     "withPortrait": 162,
     "withVisual": 140,
-    "withYouTube": 31,
-    "youtubeAssociations": 45
+    "withYouTube": 34,
+    "youtubeAssociations": 48
   },
   "limitations": [
     "References do not certify loading in user's browser",
@@ -16,7 +16,8 @@
     "No newly sourced fan illustration is ingested",
     "V4.9.b community uploads have public metadata only; embed / region / playback / duration are not certified",
     "Two Kuma Nikyu clips added from public search metadata only; actual YouTube embed playback not tested.",
-    "Caesar Gasu montage has publicly indexed metadata but playback/embed duration not verified"
+    "Caesar Gasu montage has publicly indexed metadata but playback/embed duration not verified",
+    "Foxy, Blueno, Monet clips are indexed by public YouTube metadata, actual iframe/France no-login playback untested."
   ],
   "records": [
     {
@@ -360,8 +361,10 @@
         "kind": "pouvoir"
       },
       "youtube": {
-        "associations": 0,
-        "ids": []
+        "associations": 1,
+        "ids": [
+          "oLRxJVxoWWo"
+        ]
       },
       "sourceCrosscheck": {
         "poster": "unverified",
@@ -370,7 +373,7 @@
         "imgur": "unverified",
         "scribd": "unverified"
       },
-      "priority": "high"
+      "priority": "medium"
     },
     {
       "id": "mori-mori-no-mi",
@@ -2127,8 +2130,10 @@
         "kind": "pouvoir"
       },
       "youtube": {
-        "associations": 0,
-        "ids": []
+        "associations": 1,
+        "ids": [
+          "1hh_5xUZ5Mw"
+        ]
       },
       "sourceCrosscheck": {
         "poster": "unverified",
@@ -2137,7 +2142,7 @@
         "imgur": "unverified",
         "scribd": "unverified"
       },
-      "priority": "high"
+      "priority": "medium"
     },
     {
       "id": "doa-doa-no-mi",
@@ -2155,8 +2160,10 @@
         "kind": "pouvoir"
       },
       "youtube": {
-        "associations": 0,
-        "ids": []
+        "associations": 1,
+        "ids": [
+          "HnsL-5GHUrc"
+        ]
       },
       "sourceCrosscheck": {
         "poster": "unverified",
@@ -2165,7 +2172,7 @@
         "imgur": "unverified",
         "scribd": "unverified"
       },
-      "priority": "high"
+      "priority": "medium"
     },
     {
       "id": "awa-awa-no-mi",
