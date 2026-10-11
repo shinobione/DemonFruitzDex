@@ -71,7 +71,9 @@ document.addEventListener('DOMContentLoaded',()=>{
   async function worker(){
    while(cursor<items.length){
     const i=cursor++,item=items[i],probe=await core.probe({url:item.url,filename:item.filename},{timeout:6500});
+    const imageResult=probe.attempts.find(a=>a.status==='loaded')||probe.attempts[probe.attempts.length-1];
     values[i]={...item,...probe,ok:probe.status==='direct-loaded'||probe.status==='fallback-loaded',
+     width:imageResult?.width||0,height:imageResult?.height||0,
      final:probe.selected||item.url,reason:probe.status};
     progress.value=values.filter(Boolean).length;
    }
