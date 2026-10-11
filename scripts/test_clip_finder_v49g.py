@@ -97,6 +97,7 @@ async def main():
             assert record['powerTimecode']=='00:18'
             assert record['publisherConfirmed'] and record['powerObserved'] and record['shortClipConfirmed']
             assert complete['catalogueCount']==50 and complete['candidateCount']==3
+            await page.screenshot(path=str(OUT/'clip-check-proof-g3-desktop.jpg'),type='jpeg',quality=81,full_page=True)
             await page.goto(f'http://127.0.0.1:{server.server_port}/clip-check.html?fruit=mera-mera-no-mi&suggest=1',wait_until='domcontentloaded')
             await page.wait_for_function("document.getElementById('proposeFruit')?.value==='mera-mera-no-mi'")
             assert not errors,errors
@@ -108,6 +109,12 @@ async def main():
             width=await mobile.evaluate("({scroll:document.documentElement.scrollWidth,client:document.documentElement.clientWidth})")
             assert width['scroll']<=width['client']+1,width
             await mobile.screenshot(path=str(OUT/'clip-finder-mobile.jpg'),type='jpeg',quality=79,full_page=True)
+            await mobile.goto(f'http://127.0.0.1:{server.server_port}/clip-check.html?fruit=mera-mera-no-mi&video=bAShh8lXaUI',wait_until='domcontentloaded')
+            await mobile.wait_for_function("document.getElementById('powerObserved')!==null")
+            audit_width=await mobile.evaluate("({scroll:document.documentElement.scrollWidth,client:document.documentElement.clientWidth})")
+            assert audit_width['scroll']<=audit_width['client']+1,audit_width
+            await mobile.screenshot(path=str(OUT/'clip-check-proof-g3-mobile.jpg'),type='jpeg',quality=80,full_page=True)
+
             assert not mobile_errors,mobile_errors
             print('PASS V49G_CLIP_FINDER='+json.dumps({'stats':stats,'prioritizedA':priority_count,
                   'publisherCandidates':3,'desktop':'reports/screenshots/v49g/clip-finder-desktop.jpg',
