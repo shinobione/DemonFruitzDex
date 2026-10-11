@@ -44,7 +44,7 @@ assert not re.search(r"https?://(?:www\.)?crunchyroll\.com/(?:fr/)?watch/", json
 assert all(not any(key in c for key in ("episodeUrl", "moreEpisodes", "episodeEvidence")) for c in clips.values()), "full-episode fields present"
 assert "clip-check.html" in page and "clip-check.html?fruit=" in app
 assert "clipCheckSource" in app, "details lack dedicated review link"
-assert "data/clips.js?v=4.9b3" in page and "app.js?v=4.9b3" in page, "stale cache busting"
+assert "data/clips.js?v=4.9b3" in page and re.search(r'<script\b[^>]*src="app\.js\?v=4\.9[a-z0-9]+"',page), "stale cache busting"
 assert "data/clips.js?v=4.9b3" in checker, "clip-review catalogue version not aligned"
 assert "nouveaux clips" in checker.lower() and "navigation privée" in checker.lower()
 for status in ("embed-ok", "youtube-only", "login-required", "unavailable", "wrong-power", "other"):

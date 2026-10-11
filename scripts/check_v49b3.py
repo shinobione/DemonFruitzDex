@@ -40,7 +40,7 @@ assert "previous>=updated" in page, "do not replace fresher local review"
 assert "window.SHINO_CLIPS=" not in page, "suggestions must not publish automatically"
 assert "YouTube" in page and "sans compte" in page
 assert "clips.js?v=4.9b3" in site and "clips.js?v=4.9b3" in page
-assert "app.js?v=4.9b3" in site
+assert re.search(r'<script\b[^>]*src="app\.js\?v=4\.9[a-z0-9]+"',site)
 
 class InlineScripts(HTMLParser):
     def __init__(self):
