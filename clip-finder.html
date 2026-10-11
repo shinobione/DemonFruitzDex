@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#39281c">
+<title>CLIP FINDER — DemonFruitzDex V4.9.g3</title>
+<link rel="stylesheet" href="assets/css/archive-theme.css?v=4.9c4">
+<style>
+:root{color-scheme:light;--paper:#ecd5ad;--ink:#352218;--gold:#a06b36;--line:#916e4e}
+*{box-sizing:border-box}body{margin:0;min-height:100vh;font:15px/1.5 Georgia,serif;color:var(--ink);background:radial-gradient(ellipse at 35% 12%,#f7e7c6 0%,#dfc69d 80%)}
+main{max-width:1380px;margin:auto;padding:24px 24px 70px}
+header{border:double 5px #886541;padding:22px;background:#f9ead0b9;box-shadow:0 15px 38px #55311e22}
+h1{font-size:clamp(30px,5vw,60px);line-height:1.04;margin:13px 0;font-weight:900;letter-spacing:-.035em}h1 span{color:#926536}
+h2{font-size:22px}.eyebrow{letter-spacing:.16em;text-transform:uppercase;font:700 11px system-ui,sans-serif}
+a{color:#654122}a:hover{color:#a05a20}
+.sub{max-width:1000px;color:#554335;font-size:15px}
+.stats{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:20px}
+.metric{padding:12px;background:#fff5df99;border:1px solid #a78963;border-radius:5px}.metric strong{display:block;font:900 28px system-ui,sans-serif}.metric small{font:600 11px system-ui,sans-serif;letter-spacing:.07em;text-transform:uppercase}
+.controls{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:23px 0;padding:14px;border:1px solid var(--line);background:#fbecd2a8}
+label{font:700 12px system-ui,sans-serif;letter-spacing:.04em}
+input,select,button{font:14px system-ui,sans-serif;padding:10px;border:1px solid #8d7357;border-radius:4px;background:#fff7e9;color:#302116}
+input{flex:1 1 230px;min-width:170px}select{max-width:190px}
+button{font-weight:700;cursor:pointer}button:hover{background:#eed2a5}
+table{width:100%;border-collapse:collapse;background:#fff4dcbb;font-size:14px}
+th,td{padding:14px 12px;text-align:left;border-bottom:1px solid #a88d6f75;vertical-align:middle}
+th{background:#38291f;color:#fff0d5;font:700 11px system-ui,sans-serif;letter-spacing:.12em;text-transform:uppercase}
+tr:hover td{background:#fff2d1}
+.priority{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border:1px solid #715432;border-radius:99px;font:800 12px system-ui,sans-serif}
+.priority[data-grade="A"]{background:#c99c5b}
+.priority[data-grade="B"]{background:#ead0a5}
+.priority[data-grade="C"]{background:#f6eddb}
+.buttonline{display:flex;flex-wrap:wrap;gap:7px}
+.buttonline a{display:inline-flex;align-items:center;white-space:nowrap;text-decoration:none;font:700 12px system-ui,sans-serif;padding:9px 11px;border-radius:5px;border:1px solid #ad8656}
+.buttonline a:first-child{background:#493528;color:#fff4dc}
+.state{font:600 12px system-ui,sans-serif;color:#675341}
+#results{font-size:13px;font-weight:700}
+.footer-note{font-size:12px;line-height:1.8;max-width:920px}
+[hidden]{display:none!important}
+@media(max-width:770px){main{padding:11px 11px 50px}header{padding:13px}.stats{grid-template-columns:repeat(2,1fr)}.controls{align-items:stretch}table,tbody,th,td,tr{display:block}thead{display:none}tr{border-bottom:3px double #957150;padding:9px 0}td{border:0;padding:4px 12px}.buttonline{margin:8px 0 5px}}
+</style>
+<script src="data/fruits.js?v=4.9" defer></script>
+<script src="data/clips.js?v=4.9b3" defer></script>
+<script src="data/clip-candidates-v49g.js?v=4.9g3" defer></script>
+<script src="scripts/clip-finder-v49g.js?v=4.9g3" defer></script>
+</head>
+<body class="archive-tool clip-finder-page">
+<main>
+<header>
+<a href="index.html">← Retour au DemonFruitzDex</a>
+<div class="eyebrow" style="margin-top:15px">SHINO ARCHIVES / VIDÉOTHÈQUE</div>
+<h1>CLIP <span>FINDER.</span></h1>
+<p class="sub">Identifier les Fruits du Démon sans extrait sélectionné, rechercher des scènes sur YouTube et proposer des clips précis pour revue. Trois extraits publiés par Crunchyroll sont maintenant proposés pour une <strong>revue manuelle</strong> : Ace, Hancock et Yamato. Aucun candidat n’est ajouté automatiquement au catalogue. <strong>Aucun lien vers des épisodes complets sous abonnement.</strong></p>
+<div class="stats" aria-label="Couverture YouTube du catalogue">
+<div class="metric"><strong id="statFruits">—</strong><small>Fiches</small></div>
+<div class="metric"><strong id="statVideos">—</strong><small>Associations YouTube</small></div>
+<div class="metric"><strong id="statCovered">—</strong><small>Fruits couverts</small></div>
+<div class="metric"><strong id="statMissing">—</strong><small>À sourcer</small></div>
+<div class="metric"><strong id="statCandidates">—</strong><small>Vidéos à vérifier</small></div>
+</div>
+</header>
+<div class="controls">
+<label for="query">Rechercher dans le Dex</label>
+<input id="query" type="search" placeholder="Fruit, utilisateur, type…" autocomplete="off">
+<label for="filter">Afficher</label>
+<select id="filter">
+<option value="missing">Sans extrait (prioritaire)</option>
+<option value="all">Toutes les fiches</option>
+<option value="covered">Avec extrait sélectionné</option>
+</select>
+<label for="tier">Priorité</label>
+<select id="tier"><option value="all">Toutes</option><option value="A">A — populaires</option><option value="B">B — autres</option><option value="C">C — ambiguës</option></select>
+<button id="export" type="button">Exporter le backlog JSON ↓</button>
+</div>
+<p id="results" role="status" aria-live="polite"></p>
+<table aria-label="Recherche des extraits de pouvoirs"><thead><tr><th>Priorité</th><th>Fruit du Démon</th><th>Utilisateur</th><th>État</th><th>Actions</th></tr></thead><tbody id="rows"></tbody></table>
+<p class="footer-note">Chaque recherche YouTube est une piste, pas une preuve. Avant intégration : vérifier que la scène montre le pouvoir du fruit, que la vidéo est un extrait public (pas un épisode complet), l'auteur/diffuseur, la lecture sans compte et l'intégration iframe. Les propositions et verdicts restent dans ton navigateur via <a href="clip-check.html">CLIP CHECK</a> jusqu’à export et revue éditoriale. Les trois nouvelles vidéos ne comptent pas parmi les 50 associations publiées.</p>
+</main>
+</body>
+</html>

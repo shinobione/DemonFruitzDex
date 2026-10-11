@@ -1,0 +1,45 @@
+name: V4.9.g clip finder — safe source discovery
+
+on:
+  pull_request:
+    paths:
+      - "clip-finder.html"
+      - "scripts/*v49g*"
+      - "index.html"
+      - "data/clips.*"
+      - "data/fruits.js"
+      - ".github/workflows/clip-finder-v49g.yml"
+  workflow_dispatch:
+
+jobs:
+  clip-discovery:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate 166-fruit / 50-clip catalogue invariants
+        run: |
+          node scripts/check_v49g.js
+          node --check scripts/clip-finder-v49g.js
+      - name: Install Chromium
+        run: |
+          python -m pip install --quiet playwright
+          python -m playwright install --with-deps chromium
+      - name: Test desktop, mobile, backlog export and CLIP CHECK linkage
+        run: python scripts/test_clip_finder_v49g.py
+      - name: Preserve desktop and mobile captures
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: DemonFruitzDex-V49g-clip-finder
+          retention-days: 14
+          if-no-files-found: warn
+          path: reports/screenshots/v49g/*.jpg
