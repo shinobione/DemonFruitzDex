@@ -223,3 +223,15 @@ Rapport détaillé : [reports/media-audit-v48.md](reports/media-audit-v48.md).
 - Les **26 illustrations manquantes** sont classées dans un backlog sourcé et non publié comme images. Les transformations et les scènes de pouvoirs ne sont jamais présentées comme des fruits physiques.
 - Le pipeline `.github/workflows/media-rescue-v49d.yml` audite le catalogue effectif, contrôle les 304 URL dans Chrome, valide les sept derniers portraits sur la vraie page et conserve l'inventaire / planche contact / capture dans les artifacts.
 - **[Rapport complet](reports/media-rescue-v49d.md)**. Aucun fichier image tiers n'est réhébergé ; les 166 fruits, les 50 associations YouTube et la DA V4.9.c4 restent intacts. PR en **Draft** jusqu'à approbation.
+
+## V4.9.f — MEDIA RELIABILITY (PR #7, Draft)
+
+- **316 images externes testées** : 164 portraits et 152 illustrations sur 166 fiches. Il reste 16 emplacements volontairement sans référence.
+- Contrôles **Chromium, Firefox et WebKit** (GitHub Actions Linux) à partir de l'origine de la page réelle. Ce sont des observations de navigateur, **pas** une garantie pour Windows en France.
+- `data/media-reliability-v49f.js` centralise la détection de la fausse image Wiki 300×171, les retentatives strictement bornées et les statuts d'audit.
+- Le Dex traite maintenant le placeholder Wiki sur les portraits **et** sur les illustrations sans supprimer les médias valides d'autres sources.
+- **MEDIA CHECK V2** : audit de 332 cases, diagnostic des tentatives, filtre des images absentes/échouées, export JSON, test ciblé des 12 nouvelles illustrations.
+- CI : panne simulée du CDN externe et fallback vérifié sur les cartes du Dex, sans réhébergement d'image et sans contourner un blocage réseau global.
+- [Rapport technique, limites et procédure de revue Windows](reports/media-reliability-v49f.md).
+
+**Non publié** : PR Draft, aucune fusion vers `main` sans approbation.

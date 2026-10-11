@@ -46,29 +46,23 @@ for file in ('index.html','media-check.html'):
     content=(root/file).read_text(encoding='utf-8')
     assert 'data/portraits-v49d.js?v=4.9d' in content, file+' did not load media corrections'
 
-# Test the actual MEDIA CHECK inline JavaScript, not only its HTML.
+# V4.9.f extracts MEDIA CHECK V2 to a checked, shared JavaScript source.
 media=(root/'media-check.html').read_text(encoding='utf-8')
-assert "const getItems=()=>all.flatMap" in media
-assert "reason:'missing-reference'" in media
-assert "img.naturalWidth===300&&img.naturalHeight===171" in media
-assert "slots:getItems().length" in media
-assert "demonfruitzdex.media-browser-review.v49d" in media
-assert "function check(url,alt,type)" in media
+checker=(root/'scripts/media-check-v49f.js').read_text(encoding='utf-8')
+core=(root/'data/media-reliability-v49f.js').read_text(encoding='utf-8')
+assert 'data/media-reliability-v49f.js?v=4.9f' in media
+assert 'scripts/media-check-v49f.js?v=4.9f' in media
+assert 'id="failedOnly"' in media
+assert "const getItems=()=>all.flatMap" in checker
+assert "scope:{fruits:all.length,slots:getItems().length,examined:results.length}" in checker
+assert "demonfruitzdex.media-browser-review.v49d" in checker
+assert "SHINO_MEDIA_RELIABILITY" in checker
+assert "fakeWikiImage" in core and "wiki-placeholder" in core
+for filename in ('scripts/media-check-v49f.js','data/media-reliability-v49f.js'):
+    parsed=subprocess.run(['node','--check',str(root/filename)],text=True,capture_output=True)
+    assert parsed.returncode==0,parsed.stderr
+print('PASS V4.9.d + V4.9.f: 28 curated portraits, shared runtime, Media Check V2 JS syntax')
 
-class InlineScript(HTMLParser):
-    def __init__(self):
-        super().__init__();self.active=False;self.parts=[]
-    def handle_starttag(self,tag,attrs):
-        if tag=='script':self.active=not dict(attrs).get('src')
-    def handle_data(self,value):
-        if self.active:self.parts.append(value)
-    def handle_endtag(self,tag):
-        if tag=='script':self.active=False
-parser=InlineScript();parser.feed(media)
-js='\n'.join(parser.parts)
-parsed=subprocess.run(['node','--check','-'],input=js,text=True,capture_output=True)
-assert parsed.returncode==0,parsed.stderr
-print('PASS V4.9.d: 28 curated unique portrait replacements and MEDIA CHECK JavaScript syntax')
 
 print('PASS V4.9.d: complete 166-fruit / 304-reference browser audit, structural coverage and honest status tags')
 print('BROWSER OBSERVATIONS (NOT GLOBAL LINK VERDICT):',audit['outcomes'])

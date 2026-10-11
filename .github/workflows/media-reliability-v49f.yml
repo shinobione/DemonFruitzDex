@@ -1,0 +1,70 @@
+name: V4.9.f media reliability — multi-browser audit
+
+on:
+  pull_request:
+    paths:
+      - "index.html"
+      - "app.js"
+      - "media-check.html"
+      - "data/**"
+      - "scripts/*v49f*"
+      - ".github/workflows/media-reliability-v49f.yml"
+  workflow_dispatch:
+
+jobs:
+  static-contract:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Validate true 166-fruit / 316-image inventory
+        run: |
+          node --check data/media-reliability-v49f.js
+          node --check scripts/media-check-v49f.js
+          node scripts/inventory_media_v49f.js
+          node scripts/check_v49f.js
+
+  browser:
+    needs: static-contract
+    strategy:
+      fail-fast: false
+      matrix:
+        engine: [chromium, firefox, webkit]
+    name: media audit / ${{ matrix.engine }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 24
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Build exact catalogue manifest
+        run: node scripts/inventory_media_v49f.js
+      - name: Install browser and image diagnostic runtime
+        run: |
+          python -m pip install --quiet playwright
+          python -m playwright install --with-deps ${{ matrix.engine }}
+      - name: Decode every remote image from the real website origin
+        run: python scripts/audit_media_multibrowser_v49f.py --engine ${{ matrix.engine }}
+      - name: Simulate CDN failure and check the Dex + MEDIA CHECK V2
+        run: python scripts/smoke_media_ui_v49f.py --engine ${{ matrix.engine }}
+      - name: Preserve individual browser audit and screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: DemonFruitzDex-V49f-${{ matrix.engine }}
+          retention-days: 14
+          if-no-files-found: warn
+          path: |
+            reports/media-inventory-v49f.json
+            reports/media-browser-v49f-${{ matrix.engine }}.json
+            reports/screenshots/v49f/*-${{ matrix.engine }}.jpg

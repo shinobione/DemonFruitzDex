@@ -77,7 +77,8 @@
   // Try the wiki's named-file redirect once, then show the styled fallback.
   // Fandom also responds with a valid 300x171 generic "missing image" bitmap,
   // which triggers onload instead of error. We visually verified this exact placeholder.
-  // Treat it as broken ONLY for character portraits, never for legitimate power scenes.
+  // The rule now covers portraits AND fruit/power art from that exact Wiki host;
+  // it does not reject arbitrary 300×171 images from other sources.
   const mediaLoadFailed=(img)=>{
     const alternative=img.dataset.mediaFallback;
     if(alternative && img.dataset.retry!=='1' && alternative!==img.src){
@@ -95,9 +96,11 @@
   document.addEventListener('load',e=>{
     const img=e.target;
     if(!(img instanceof HTMLImageElement) || !img.matches('[data-media-fallback]'))return;
-    const isPortrait=!!img.closest('.portrait-frame')||img.classList.contains('artwork-user-substitute');
-    const isWikia=/^(https:\/\/static\.wikia\.nocookie\.net\/onepiece\/|https:\/\/onepiece\.fandom\.com\/wiki\/Special:Redirect\/file\/)/i.test(img.src);
-    if(isPortrait&&isWikia&&img.naturalWidth===300&&img.naturalHeight===171)mediaLoadFailed(img);
+    // A real Wiki failure bitmap decodes successfully, even in artwork slots.
+    // Restrict the heuristic to known One Piece Wiki URLs + the confirmed 300×171 bitmap;
+    // don't reject equal-sized images from other publishers.
+    const isBad=window.SHINO_MEDIA_RELIABILITY?.fakeWikiImage(img.currentSrc||img.src,img.naturalWidth,img.naturalHeight);
+    if(isBad)mediaLoadFailed(img);
   },true);
   function portrait(f, large=false){const name=enc(f.primary_user||f.u);return `<div class="portrait-frame ${large?'portrait-large':''}" style="--accent:${colors[f.t]||'#9d77fc'}" title="Portrait : ${name}"><span>${enc(f.avatar||'OP')}</span>${f.portrait?`<img loading="lazy" alt="Portrait de ${name}" src="${enc(f.portrait)}" data-media-fallback="${enc(wikiRedirect(f.portrait_file))}" referrerpolicy="no-referrer">`:''}</div>`}
   function art(f, modal=false){
