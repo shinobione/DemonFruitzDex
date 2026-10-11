@@ -21,6 +21,240 @@ names=[
  ('tsutsu-tsutsu-no-mi','Urban','Urban Infobox.png'),
  ('tsutsu-tsutsu-no-mi','Urban','Urban Concept Art.png'),
 ]
+# V4.9.d2 expanded alternate-name / timeline candidate review. These are NOT approved media.
+names += [
+ [
+  "tori-tori-no-mi-mod-le-phoenix",
+  "Marco",
+  "Marco Anime Post Timeskip Infobox.png"
+ ],
+ [
+  "tori-tori-no-mi-mod-le-phoenix",
+  "Marco",
+  "Marco Anime Pre Timeskip Infobox.png"
+ ],
+ [
+  "tori-tori-no-mi-mod-le-phoenix",
+  "Marco",
+  "Marco Manga Post Timeskip Infobox.png"
+ ],
+ [
+  "tori-tori-no-mi-mod-le-phoenix",
+  "Marco",
+  "Marco Manga Pre Timeskip Infobox.png"
+ ],
+ [
+  "tori-tori-no-mi-mod-le-phoenix",
+  "Marco",
+  "Marco Anime Concept Art.png"
+ ],
+ [
+  "tori-tori-no-mi-mod-le-phoenix",
+  "Marco",
+  "Marco Wano Portrait.png"
+ ],
+ [
+  "tori-tori-no-mi-mod-le-phoenix",
+  "Marco",
+  "Marco PW Portrait.png"
+ ],
+ [
+  "mogu-mogu-no-mi",
+  "Miss Merry Christmas",
+  "Miss Merry Christmas Manga Infobox.png"
+ ],
+ [
+  "mogu-mogu-no-mi",
+  "Miss Merry Christmas",
+  "Miss Merry Christmas Anime Pre Timeskip Infobox.png"
+ ],
+ [
+  "mogu-mogu-no-mi",
+  "Miss Merry Christmas",
+  "Miss Merry Christmas Full Body.png"
+ ],
+ [
+  "mogu-mogu-no-mi",
+  "Miss Merry Christmas",
+  "Miss Merry Christmas Anime Concept Art.png"
+ ],
+ [
+  "mogu-mogu-no-mi",
+  "Miss Merry Christmas",
+  "Drophy Anime Infobox.png"
+ ],
+ [
+  "mogu-mogu-no-mi",
+  "Miss Merry Christmas",
+  "Drophy Portrait.png"
+ ],
+ [
+  "mogu-mogu-no-mi",
+  "Miss Merry Christmas",
+  "Drophy Manga Infobox.png"
+ ],
+ [
+  "fude-fude-no-mi",
+  "Kanjuro",
+  "Kurozumi Kanjuro Portrait.png"
+ ],
+ [
+  "fude-fude-no-mi",
+  "Kanjuro",
+  "Kurozumi Kanjuro Anime Infobox.png"
+ ],
+ [
+  "fude-fude-no-mi",
+  "Kanjuro",
+  "Kurozumi Kanjuro Manga Infobox.png"
+ ],
+ [
+  "fude-fude-no-mi",
+  "Kanjuro",
+  "Kanjuro Anime Post Timeskip Infobox.png"
+ ],
+ [
+  "fude-fude-no-mi",
+  "Kanjuro",
+  "Kanjuro Anime Concept Art.png"
+ ],
+ [
+  "fude-fude-no-mi",
+  "Kanjuro",
+  "Kanjuro Full Body.png"
+ ],
+ [
+  "toki-toki-no-mi",
+  "Kouzuki Toki",
+  "Kouzuki Toki Portrait.png"
+ ],
+ [
+  "toki-toki-no-mi",
+  "Kouzuki Toki",
+  "Kouzuki Toki Anime Infobox.png"
+ ],
+ [
+  "toki-toki-no-mi",
+  "Kouzuki Toki",
+  "Kouzuki Toki Manga Infobox.png"
+ ],
+ [
+  "toki-toki-no-mi",
+  "Kouzuki Toki",
+  "Amatsuki Toki Portrait.png"
+ ],
+ [
+  "toki-toki-no-mi",
+  "Kouzuki Toki",
+  "Amatsuki Toki Anime Infobox.png"
+ ],
+ [
+  "toki-toki-no-mi",
+  "Kouzuki Toki",
+  "Toki Anime Concept Art.png"
+ ],
+ [
+  "toki-toki-no-mi",
+  "Kouzuki Toki",
+  "Kouzuki Toki Anime Concept Art.png"
+ ],
+ [
+  "aro-aro-no-mi",
+  "Gunko",
+  "Manmayer Gunko Portrait.png"
+ ],
+ [
+  "aro-aro-no-mi",
+  "Gunko",
+  "Manmayer Gunko Manga Infobox.png"
+ ],
+ [
+  "aro-aro-no-mi",
+  "Gunko",
+  "Gunko Manga Portrait.png"
+ ],
+ [
+  "aro-aro-no-mi",
+  "Gunko",
+  "Gunko Anime Infobox.png"
+ ],
+ [
+  "aro-aro-no-mi",
+  "Gunko",
+  "Gunko Anime Concept Art.png"
+ ],
+ [
+  "aro-aro-no-mi",
+  "Gunko",
+  "Manmayer Gunko Anime Infobox.png"
+ ],
+ [
+  "akuma-no-mi",
+  "Imu",
+  "Imu Manga Infobox.png"
+ ],
+ [
+  "akuma-no-mi",
+  "Imu",
+  "Imu Anime Concept Art.png"
+ ],
+ [
+  "akuma-no-mi",
+  "Imu",
+  "Nerona Imu Portrait.png"
+ ],
+ [
+  "akuma-no-mi",
+  "Imu",
+  "Nerona Imu Manga Infobox.png"
+ ],
+ [
+  "akuma-no-mi",
+  "Imu",
+  "Imu Silhouette.png"
+ ],
+ [
+  "akuma-no-mi",
+  "Imu",
+  "Imu Anime Silhouette.png"
+ ],
+ [
+  "fruit-artificiel-seiryu",
+  "Momonosuke",
+  "Kouzuki Momonosuke Portrait.png"
+ ],
+ [
+  "fruit-artificiel-seiryu",
+  "Momonosuke",
+  "Kouzuki Momonosuke Child Portrait.png"
+ ],
+ [
+  "fruit-artificiel-seiryu",
+  "Momonosuke",
+  "Kouzuki Momonosuke Adult Portrait.png"
+ ],
+ [
+  "fruit-artificiel-seiryu",
+  "Momonosuke",
+  "Kouzuki Momonosuke Anime Infobox.png"
+ ],
+ [
+  "fruit-artificiel-seiryu",
+  "Momonosuke",
+  "Kouzuki Momonosuke Manga Infobox.png"
+ ],
+ [
+  "fruit-artificiel-seiryu",
+  "Momonosuke",
+  "Kozuki Momonosuke Adult Portrait.png"
+ ],
+ [
+  "fruit-artificiel-seiryu",
+  "Momonosuke",
+  "Momonosuke Adult Portrait.png"
+ ]
+]
+
 # Replace 26 old images that resolve to the wiki's generic 300x171 placeholder.
 audit=json.loads((ROOT/'reports'/'media-browser-audit-v49d.json').read_text(encoding='utf-8'))
 inventory=json.loads((ROOT/'reports'/'media-inventory-v49d.json').read_text(encoding='utf-8'))
