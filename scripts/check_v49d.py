@@ -21,9 +21,9 @@ assert audit['scope']['subset'] is False
 assert len(audit['results'])==302
 keys=[(x['id'],x['kind']) for x in audit['results']]
 assert len(set(keys))==302
-assert all(x['classification'] in {'direct-loaded','fallback-loaded','browser-load-failed','timeout-unconfirmed'} for x in audit['results'])
+assert all(x['classification'] in {'direct-loaded','fallback-loaded','browser-load-failed','timeout-unconfirmed','wiki-placeholder'} for x in audit['results'])
 assert sum(audit['outcomes'].values())==302
-assert all(x['direct']['status'] in {'loaded','error','timeout','empty'} for x in audit['results'])
+assert all(x['direct']['status'] in {'loaded','error','timeout','empty','placeholder'} for x in audit['results'])
 expected={(f['id'],k) for f in records for k in ('portrait','visual') if f[k]['registered']}
 assert set(keys)==expected
 assert all('France browser' not in x.get('environment','') or 'NOT a France browser' in x['environment'] for x in [audit])
