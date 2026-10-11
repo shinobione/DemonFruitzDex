@@ -60,3 +60,9 @@ Ces liens montrent pourquoi une recherche manuelle dans YouTube est utile. Leur 
 | **Baku Baku no Mi** (Wapol) | [Wapol's Munch-Munch Fruit — discussion](https://www.youtube.com/watch?v=1osMD-1SwGE) | Tekking101, analyse/commentaire de 2020 | **NE PAS intégrer comme extrait de pouvoir** : description d'une discussion, pas une scène d'anime attestée |
 
 **Règle :** Une recherche YouTube pointe sur des résultats dynamiques ; pour intégrer un clip, l'éditeur doit sélectionner et enregistrer l'ID YouTube précis dans `data/clips.json` avec statut, fruit, porteur, séquence montrée, provenance et date de revue. Le site ne peut pas deviner de manière fiable le premier résultat de recherche à ouvrir comme un clip vérifié.
+
+## Nouveau rapprochement graphique : grille transparente sur Imgur
+
+Une [galerie « Transparent Devil Fruit List »](https://imgur.com/gallery/transparent-devil-fruit-list-fTnRG4u) propose une image [de grille de fruits](https://i.imgur.com/xoKVZSVg.jpg) dont la **composition, les subdivisions et les silhouettes colorées** correspondent fortement à la planche parchemin transmise. C'est une **piste de source visuelle** plus pertinente que des recadrages du poster de qualité réduite. La galerie ne prouve **ni la propriété des illustrations, ni leur provenance canonique, ni une autorisation de réutilisation**. Il faudra identifier l'auteur exact et les fichiers originaux avant tout hébergement.
+
+Une [publication Reddit du 27 mars 2025](https://www.reddit.com/r/OnePiece/comments/1jkrt1t/) d'un tableau similaire mentionne explicitement l'utilisation de designs inventés et de sources multiples (notamment Cubely_Studio) ; cette publication **n'est pas une preuve que l'auteur de la planche téléchargée est le même**. En revanche, elle justifie la règle stricte **canon vs fan art** appliquée à toutes les représentations de fruits physiques.
