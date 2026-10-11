@@ -15,7 +15,7 @@ h1{font-size:clamp(30px,5vw,60px);line-height:1.04;margin:13px 0;font-weight:900
 h2{font-size:22px}.eyebrow{letter-spacing:.16em;text-transform:uppercase;font:700 11px system-ui,sans-serif}
 a{color:#654122}a:hover{color:#a05a20}
 .sub{max-width:1000px;color:#554335;font-size:15px}
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:20px}
+.stats{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:20px}
 .metric{padding:12px;background:#fff5df99;border:1px solid #a78963;border-radius:5px}.metric strong{display:block;font:900 28px system-ui,sans-serif}.metric small{font:600 11px system-ui,sans-serif;letter-spacing:.07em;text-transform:uppercase}
 .controls{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:23px 0;padding:14px;border:1px solid var(--line);background:#fbecd2a8}
 label{font:700 12px system-ui,sans-serif;letter-spacing:.04em}
@@ -41,6 +41,7 @@ tr:hover td{background:#fff2d1}
 </style>
 <script src="data/fruits.js?v=4.9" defer></script>
 <script src="data/clips.js?v=4.9b3" defer></script>
+<script src="data/clip-candidates-v49g.js?v=4.9g" defer></script>
 <script src="scripts/clip-finder-v49g.js?v=4.9g" defer></script>
 </head>
 <body class="archive-tool clip-finder-page">
@@ -49,12 +50,13 @@ tr:hover td{background:#fff2d1}
 <a href="index.html">← Retour au DemonFruitzDex</a>
 <div class="eyebrow" style="margin-top:15px">SHINO ARCHIVES / VIDÉOTHÈQUE</div>
 <h1>CLIP <span>FINDER.</span></h1>
-<p class="sub">Identifier les Fruits du Démon sans extrait sélectionné, rechercher des scènes sur YouTube et proposer des clips précis pour revue. Aucun résultat de recherche n'est ajouté automatiquement au catalogue. <strong>Aucun lien vers des épisodes complets sous abonnement.</strong></p>
+<p class="sub">Identifier les Fruits du Démon sans extrait sélectionné, rechercher des scènes sur YouTube et proposer des clips précis pour revue. Trois extraits publiés par Crunchyroll sont maintenant proposés pour une <strong>revue manuelle</strong> : Ace, Hancock et Yamato. Aucun candidat n’est ajouté automatiquement au catalogue. <strong>Aucun lien vers des épisodes complets sous abonnement.</strong></p>
 <div class="stats" aria-label="Couverture YouTube du catalogue">
 <div class="metric"><strong id="statFruits">—</strong><small>Fiches</small></div>
 <div class="metric"><strong id="statVideos">—</strong><small>Associations YouTube</small></div>
 <div class="metric"><strong id="statCovered">—</strong><small>Fruits couverts</small></div>
 <div class="metric"><strong id="statMissing">—</strong><small>À sourcer</small></div>
+<div class="metric"><strong id="statCandidates">—</strong><small>Vidéos à vérifier</small></div>
 </div>
 </header>
 <div class="controls">
@@ -72,7 +74,7 @@ tr:hover td{background:#fff2d1}
 </div>
 <p id="results" role="status" aria-live="polite"></p>
 <table aria-label="Recherche des extraits de pouvoirs"><thead><tr><th>Priorité</th><th>Fruit du Démon</th><th>Utilisateur</th><th>État</th><th>Actions</th></tr></thead><tbody id="rows"></tbody></table>
-<p class="footer-note">Chaque recherche YouTube est une piste, pas une preuve. Avant intégration : vérifier que la scène montre le pouvoir du fruit, que la vidéo est un extrait public (pas un épisode complet), l'auteur/diffuseur, la lecture sans compte et l'intégration iframe. Les propositions restent dans ton navigateur via <a href="clip-check.html">CLIP CHECK</a> jusqu'à export et revue éditoriale.</p>
+<p class="footer-note">Chaque recherche YouTube est une piste, pas une preuve. Avant intégration : vérifier que la scène montre le pouvoir du fruit, que la vidéo est un extrait public (pas un épisode complet), l'auteur/diffuseur, la lecture sans compte et l'intégration iframe. Les propositions et verdicts restent dans ton navigateur via <a href="clip-check.html">CLIP CHECK</a> jusqu’à export et revue éditoriale. Les trois nouvelles vidéos ne comptent pas parmi les 50 associations publiées.</p>
 </main>
 </body>
 </html>
