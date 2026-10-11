@@ -82,14 +82,28 @@
     "verificationStatus": "legacy-unverified"
   },
   "ito-ito-no-mi": {
-    "sourcePolicy": "publisher-linked",
-    "reviewedOn": "2026-10-10",
+    "sourcePolicy": "community-video",
+    "reviewedOn": "2026-10-11",
     "auditV46": {
       "state": "clip-corrected",
       "checkedOn": "2026-10-10",
       "note": "Ancien lien vidéo retiré : montre surtout l'attaque combinée de Luffy et Law, et non une démonstration des fils de Doflamingo. Épisodes 727 et 731 conservés; lecture non contrôlée.",
       "playback": "not-tested"
-    }
+    },
+    "youtubeId": "ow1Hpfnlri4",
+    "title": "Donquixote Doflamingo | All Attacks",
+    "channel": "Koi 鯉",
+    "episode": "Dressrosa",
+    "powerShown": "Ito Ito : fils, attaques et Birdcage (à confirmer au visionnage)",
+    "published": "2025-02-10",
+    "source": "https://www.youtube.com/watch?v=ow1Hpfnlri4",
+    "sourceEvidence": "https://www.youtube.com/watch?v=ow1Hpfnlri4",
+    "contentKind": "compilation",
+    "verificationStatus": "public-metadata-verified",
+    "publisherType": "community-upload",
+    "playbackStatus": "not-tested",
+    "embedStatus": "not-tested",
+    "regionalStatus": "not-tested"
   },
   "jiki-jiki-no-mi": {
     "youtubeId": "HBpihtBqB7I",
@@ -1063,5 +1077,23 @@
     "sourcePolicy": "publisher-linked",
     "reviewedOn": "2026-10-10",
     "note": "Épisode identifié dans le catalogue Crunchyroll ; minutage du pouvoir non vérifié."
+  },
+  "pero-pero-no-mi": {
+    "youtubeId": "5r92RNbFpz4",
+    "title": "Perospero | All Attacks",
+    "channel": "Koi 鯉",
+    "episode": "Whole Cake / Wano",
+    "powerShown": "Pero Pero : créations et attaques de bonbon (à confirmer au visionnage)",
+    "published": "2024-12-31",
+    "source": "https://www.youtube.com/watch?v=5r92RNbFpz4",
+    "sourceEvidence": "https://www.youtube.com/watch?v=5r92RNbFpz4",
+    "contentKind": "compilation",
+    "verificationStatus": "public-metadata-verified",
+    "publisherType": "community-upload",
+    "playbackStatus": "not-tested",
+    "embedStatus": "not-tested",
+    "regionalStatus": "not-tested",
+    "reviewedOn": "2026-10-11",
+    "sourcePolicy": "community-video"
   }
 }
