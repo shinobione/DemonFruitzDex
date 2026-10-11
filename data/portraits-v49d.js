@@ -209,7 +209,84 @@ window.SHINO_PORTRAITS_V49D = [
     "portrait_kind": "portrait-personnage",
     "portrait_evidence": "https://onepiece.fandom.com/wiki/File:Vasco_Shot_Portrait.png",
     "portrait_load_status": "Chrome decoded + character visually matched on V4.9.d contact sheet (GitHub runner; not France)"
-  }
+  },
+{
+  "id": "tori-tori-no-mi-mod-le-phoenix",
+  "portrait_file": "Marco PW Portrait.png",
+  "portrait": "https://static.wikia.nocookie.net/onepiece/images/6/6a/Marco_PW_Portrait.png/revision/latest",
+  "previous_portrait": "https://static.wikia.nocookie.net/onepiece/images/c/c2/Marco_Anime_Infobox.png/revision/latest?cb=2026",
+  "portrait_source": "One Piece Wiki",
+  "portrait_kind": "portrait-jeu",
+  "portrait_evidence": "https://onepiece.fandom.com/wiki/File:Marco_PW_Portrait.png",
+  "portrait_load_status": "Chrome decoded + visual review of contact sheet (GitHub runner; not France)",
+  "editorial_note": "One Piece Pirate Warriors (One Piece Wiki asset)"
+},
+{
+  "id": "mogu-mogu-no-mi",
+  "portrait_file": "Drophy Portrait.png",
+  "portrait": "https://static.wikia.nocookie.net/onepiece/images/d/da/Drophy_Portrait.png/revision/latest",
+  "previous_portrait": "https://static.wikia.nocookie.net/onepiece/images/1/18/Miss_Merry_Christmas_Anime_Infobox.png/revision/latest?cb=2026",
+  "portrait_source": "One Piece Wiki",
+  "portrait_kind": "portrait-personnage",
+  "portrait_evidence": "https://onepiece.fandom.com/wiki/File:Drophy_Portrait.png",
+  "portrait_load_status": "Chrome decoded + visual review of contact sheet (GitHub runner; not France)",
+  "editorial_note": "alias canon Drofy / Miss Merry Christmas"
+},
+{
+  "id": "fude-fude-no-mi",
+  "portrait_file": "Kurozumi Kanjuro Portrait.png",
+  "portrait": "https://static.wikia.nocookie.net/onepiece/images/7/77/Kurozumi_Kanjuro_Portrait.png/revision/latest",
+  "previous_portrait": "https://static.wikia.nocookie.net/onepiece/images/8/82/Kanjuro_Anime_Infobox.png/revision/latest?cb=2026",
+  "portrait_source": "One Piece Wiki",
+  "portrait_kind": "portrait-personnage",
+  "portrait_evidence": "https://onepiece.fandom.com/wiki/File:Kurozumi_Kanjuro_Portrait.png",
+  "portrait_load_status": "Chrome decoded + visual review of contact sheet (GitHub runner; not France)",
+  "editorial_note": "nom complet Kurozumi Kanjuro"
+},
+{
+  "id": "toki-toki-no-mi",
+  "portrait_file": "Kouzuki Toki Portrait.png",
+  "portrait": "https://static.wikia.nocookie.net/onepiece/images/c/c9/Kouzuki_Toki_Portrait.png/revision/latest",
+  "previous_portrait": "https://static.wikia.nocookie.net/onepiece/images/b/b0/Kozuki_Toki_Anime_Infobox.png/revision/latest?cb=2026",
+  "portrait_source": "One Piece Wiki",
+  "portrait_kind": "portrait-personnage",
+  "portrait_evidence": "https://onepiece.fandom.com/wiki/File:Kouzuki_Toki_Portrait.png",
+  "portrait_load_status": "Chrome decoded + visual review of contact sheet (GitHub runner; not France)",
+  "editorial_note": "nom complet romanisé Kouzuki Toki"
+},
+{
+  "id": "aro-aro-no-mi",
+  "portrait_file": "Manmayer Gunko Portrait.png",
+  "portrait": "https://static.wikia.nocookie.net/onepiece/images/5/5b/Manmayer_Gunko_Portrait.png/revision/latest",
+  "previous_portrait": "https://static.wikia.nocookie.net/onepiece/images/4/4b/Gunko_Manga_Infobox.png/revision/latest?cb=2026",
+  "portrait_source": "One Piece Wiki",
+  "portrait_kind": "portrait-personnage",
+  "portrait_evidence": "https://onepiece.fandom.com/wiki/File:Manmayer_Gunko_Portrait.png",
+  "portrait_load_status": "Chrome decoded + visual review of contact sheet (GitHub runner; not France)",
+  "editorial_note": "nom complet Manmayer Gunko"
+},
+{
+  "id": "akuma-no-mi",
+  "portrait_file": "Imu Anime Concept Art.png",
+  "portrait": "https://static.wikia.nocookie.net/onepiece/images/1/18/Imu_Anime_Concept_Art.png/revision/latest",
+  "previous_portrait": "https://static.wikia.nocookie.net/onepiece/images/b/bf/Imu_Anime_Infobox.png/revision/latest?cb=2026",
+  "portrait_source": "One Piece Wiki",
+  "portrait_kind": "silhouette-anime",
+  "portrait_evidence": "https://onepiece.fandom.com/wiki/File:Imu_Anime_Concept_Art.png",
+  "portrait_load_status": "Chrome decoded + visual review of contact sheet (GitHub runner; not France)",
+  "editorial_note": "silhouette de l'anime, spoiler minimisé"
+},
+{
+  "id": "fruit-artificiel-seiryu",
+  "portrait_file": "Kouzuki Momonosuke Anime Infobox.png",
+  "portrait": "https://static.wikia.nocookie.net/onepiece/images/8/8b/Kouzuki_Momonosuke_Anime_Infobox.png/revision/latest",
+  "previous_portrait": "https://static.wikia.nocookie.net/onepiece/images/5/50/Kozuki_Momonosuke_Anime_Infobox.png/revision/latest?cb=2026",
+  "portrait_source": "One Piece Wiki",
+  "portrait_kind": "illustration-anime",
+  "portrait_evidence": "https://onepiece.fandom.com/wiki/File:Kouzuki_Momonosuke_Anime_Infobox.png",
+  "portrait_load_status": "Chrome decoded + visual review of contact sheet (GitHub runner; not France)",
+  "editorial_note": "Momonosuke adulte, pas portrait enfant"
+}
 ];
 if(Array.isArray(window.SHINO_DATA)){
   const byId=new Map(window.SHINO_DATA.map(f=>[f.id,f]));
