@@ -7,11 +7,12 @@ import functools
 import http.server
 import json
 import pathlib
+import os
 import threading
 from playwright.sync_api import sync_playwright
 
 ROOT=pathlib.Path(__file__).resolve().parents[1]
-OUT=ROOT/"reports"/"screenshots"/"v49c4"
+OUT=ROOT/os.environ.get('SHINO_CAPTURE_DIR','reports/screenshots/v49c4')
 OUT.mkdir(parents=True,exist_ok=True)
 class SiteHandler(http.server.SimpleHTTPRequestHandler):
     def do_GET(self):

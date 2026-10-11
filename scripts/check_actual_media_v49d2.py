@@ -31,6 +31,7 @@ async def main():
                   count:fruits.length,
                   portraits:fruits.filter(f=>!!f.portrait).length,
                   art:fruits.filter(f=>!!f.image).length,
+                  rescued:(window.SHINO_POWER_ART_V49E||[]).filter(art=>fruits.some(f=>f.id===art.id&&f.image===art.image)).length,
                   seven:ids.map(id=>({id,fruit:fruits.find(f=>f.id===id)})).map(row=>({
                     id:row.id,user:row.fruit?.primary_user||row.fruit?.u,
                     filename:row.fruit?.portrait_file,kind:row.fruit?.portrait_kind,
@@ -38,7 +39,7 @@ async def main():
                   }))
                 }
             }""",TARGET)
-            assert facts['count']==166 and facts['portraits']==164 and facts['art']==140,facts
+            assert facts['count']==166 and facts['portraits']==164 and facts['art']==140+facts['rescued'],facts
             assert len(facts['seven'])==7
             for record in facts['seven']:
                 assert record['portrait'].startswith('https://static.wikia.nocookie.net/onepiece/images/')

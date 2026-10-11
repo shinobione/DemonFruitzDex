@@ -1,0 +1,1095 @@
+{
+  "schema": "demonfruitzdex.illustration-evidence.v49e",
+  "reviewDate": "2026-10-11",
+  "base": {
+    "branch": "feature/v4.9d-media-rescue-audit",
+    "head": "0a42057158a00a2175b835a7f91c72221a889165",
+    "pullRequest": 5
+  },
+  "counts": {
+    "fruits": 166,
+    "portraits": 164,
+    "videos": 50,
+    "baselineArt": 140,
+    "baselineMissing": 26,
+    "added": 12,
+    "effectiveArt": 152,
+    "remaining": 14
+  },
+  "review": "Agent visual review of Chrome screenshots, canonical primary text and indexed image/source associations. No fabricated human approval or global availability guarantee.",
+  "rightsPolicy": {
+    "status": "copyright-external-reference-only",
+    "license": "none-established",
+    "originalsDownloaded": false,
+    "originalsRehosted": false,
+    "publicReuseAuthorized": false,
+    "note": "Références externes pour revue Draft ; chargement navigateur et attribution ne constituent pas une licence. Aucune copie originale ni permission du titulaire ne sont revendiquées.",
+    "primaryTerms": "https://one-piece.com/agreement/index.html"
+  },
+  "decisions": [
+    {
+      "id": "gabu-gabu-no-mi",
+      "priority": "A",
+      "holder": "Vasco Shot",
+      "decision": "added",
+      "physicalFruitDepicted": false,
+      "image": "https://renote.net/files/blobs/proxy/eyJfcmFpbHMiOnsiZGF0YSI6ODU5NDY1NSwicHVyIjoiYmxvYl9pZCJ9fQ%3D%3D--3e0dde8567060aec182c081e99faf17f64f32009/latest.png",
+      "imageKind": "pouvoir-action-manga",
+      "provenance": "https://renote.net/articles/323208",
+      "canonicalEvidence": "https://one-piece.com/character/Vasco_Shot/index.html",
+      "editorialNote": "Le Gabu Gabu est nommé par la fiche officielle ; le panneau de manga reproduit la technique alcoolisée enflammée, et non un fruit physique.",
+      "browser": {
+        "width": 560,
+        "height": 421,
+        "complete": true
+      },
+      "sourcePageHttpStatus": 200,
+      "sourceInspection": "live-page-and-image",
+      "rights": "copyright-external-reference-only",
+      "reviewedDhash64": "b0b2e4889cdc98d8",
+      "visualReview": "Chrome contact sheet inspected on 2026-10-11; power/form matched to primary canonical text; no placeholder observed."
+    },
+    {
+      "id": "hito-hito-no-mi-mod-le-onyudo",
+      "priority": "A",
+      "holder": "Onimaru",
+      "decision": "added",
+      "physicalFruitDepicted": false,
+      "image": "https://cdn.shopify.com/s/files/1/0770/3425/8763/files/gyukimaru_wano_yokai_grand_moine_one_piece.jpg?v=1704381561",
+      "imageKind": "transformation-zoan-anime",
+      "provenance": "https://gear5world.com/en/blogs/one-piece-actualites-tops-analyses/le-fruit-de-l-humain-dans-one-piece",
+      "canonicalEvidence": "https://one-piece.com/character/Gyukimaru/index.html",
+      "editorialNote": "La fiche officielle identifie Gyukimaru comme Onimaru transformé par le Hito Hito, modèle Onyudo.",
+      "browser": {
+        "width": 1543,
+        "height": 867,
+        "complete": true
+      },
+      "sourcePageHttpStatus": 200,
+      "sourceInspection": "live-page-and-image",
+      "rights": "copyright-external-reference-only",
+      "reviewedDhash64": "0e2673720305d999",
+      "visualReview": "Chrome contact sheet inspected on 2026-10-11; power/form matched to primary canonical text; no placeholder observed."
+    },
+    {
+      "id": "inu-inu-no-mi-mod-le-dachshund",
+      "priority": "A",
+      "holder": "Lassoo",
+      "decision": "added",
+      "physicalFruitDepicted": false,
+      "image": "https://www.serieously.com/app/uploads/2025/06/lassou-chien-bazooka-desert-alabasta-one-piece-1024x576.jpg",
+      "imageKind": "transformation-zoan-anime",
+      "provenance": "https://www.serieously.com/one-piece-comment-un-objet-peut-il-manger-un-fruit-du-demon/",
+      "canonicalEvidence": "https://one-piece.com/character/LASSOO/index.html",
+      "editorialNote": "Transformation de l’arme en dachshund ; le modèle est confirmé par la fiche officielle. Ce n’est pas l’apparence du fruit.",
+      "browser": {
+        "width": 1024,
+        "height": 576,
+        "complete": true
+      },
+      "sourcePageHttpStatus": 200,
+      "sourceInspection": "live-page-and-image",
+      "rights": "copyright-external-reference-only",
+      "reviewedDhash64": "327b38b2f272780c",
+      "visualReview": "Chrome contact sheet inspected on 2026-10-11; power/form matched to primary canonical text; no placeholder observed."
+    },
+    {
+      "id": "kibi-kibi-no-mi",
+      "priority": "A",
+      "holder": "Tama",
+      "decision": "added",
+      "physicalFruitDepicted": false,
+      "image": "https://staticg.sportskeeda.com/editor/2022/11/a2f46-16693089648279.png",
+      "imageKind": "pouvoir-action-anime",
+      "provenance": "https://wiki.sportskeeda.com/one-piece/kibi-kibi-no-mi-in-one-piece",
+      "canonicalEvidence": "https://one-piece.com/anime/o5093/index.html",
+      "editorialNote": "Le résumé officiel de l’épisode 893 décrit le dango extrait de la joue de Tama. La boule montrée est un dango, pas un fruit du démon.",
+      "browser": {
+        "width": 1600,
+        "height": 900,
+        "complete": true
+      },
+      "sourcePageHttpStatus": 405,
+      "sourceInspection": "indexed-image-association; source-page-blocked-or-cookie-overlay",
+      "rights": "copyright-external-reference-only",
+      "reviewedDhash64": "7434b4b0b7133928",
+      "visualReview": "Chrome contact sheet inspected on 2026-10-11; power/form matched to primary canonical text; no placeholder observed."
+    },
+    {
+      "id": "nomi-nomi-no-mi",
+      "priority": "A",
+      "holder": "Dr. Vegapunk",
+      "decision": "added",
+      "physicalFruitDepicted": false,
+      "image": "https://i0.wp.com/www.animegeek.com/wp-content/uploads/2022/11/Vegapunk.jpg?fit=1200%2C535&ssl=1",
+      "imageKind": "explication-pouvoir-manga",
+      "provenance": "https://www.animegeek.com/dr-vegapunk-a-fraud-one-piece-chapter-1067-reveals-dr-vegapunks-devil-fruit-brain-brain/",
+      "canonicalEvidence": "https://one-piece.com/character/Vegapunk/index.html",
+      "editorialNote": "Extrait explicatif du chapitre 1067 crédité à Shueisha par la source. Il illustre l’explication du pouvoir, pas une attaque ni l’apparence physique du fruit.",
+      "browser": {
+        "width": 1200,
+        "height": 535,
+        "complete": true
+      },
+      "sourcePageHttpStatus": 200,
+      "sourceInspection": "live-page-and-image",
+      "rights": "copyright-external-reference-only",
+      "reviewedDhash64": "6948caeae9b6a668",
+      "visualReview": "Chrome contact sheet inspected on 2026-10-11; power/form matched to primary canonical text; no placeholder observed."
+    },
+    {
+      "id": "oshi-oshi-no-mi",
+      "priority": "A",
+      "holder": "Morley",
+      "decision": "held",
+      "physicalFruitDepicted": false,
+      "reason": "Le plan de terrain déformé est identifiable, mais sa page source renvoie 404. L’alternative ajoute un bandeau éditorial et sa page est bloquée. Les scènes officielles chargent un substitut Luffy : emplacement conservé vide.",
+      "rights": "not-established-no-integration"
+    },
+    {
+      "id": "poke-poke-no-mi",
+      "priority": "A",
+      "holder": "Blamenco",
+      "decision": "added",
+      "physicalFruitDepicted": false,
+      "image": "https://staticg.sportskeeda.com/editor/2022/10/7bd0a-16669783298797-1920.jpg",
+      "imageKind": "pouvoir-action-anime",
+      "provenance": "https://wiki.sportskeeda.com/one-piece/poke-poke-no-mi-in-one-piece",
+      "canonicalEvidence": "https://one-piece.com/character/bramenko/index.html",
+      "editorialNote": "La fiche officielle décrit précisément le maillet géant stocké dans une poche du corps. L’objet montré est un marteau, pas un tambour.",
+      "browser": {
+        "width": 1400,
+        "height": 700,
+        "complete": true
+      },
+      "sourcePageHttpStatus": 405,
+      "sourceInspection": "indexed-image-association; source-page-blocked-or-cookie-overlay",
+      "rights": "copyright-external-reference-only",
+      "reviewedDhash64": "b0f1f0b8fcf8e4a2",
+      "visualReview": "Chrome contact sheet inspected on 2026-10-11; power/form matched to primary canonical text; no placeholder observed."
+    },
+    {
+      "id": "shari-shari-no-mi",
+      "priority": "A",
+      "holder": "Sharinguru",
+      "decision": "held",
+      "physicalFruitDepicted": false,
+      "reason": "La scène des bras-roues existe dans le manga, mais le candidat est une colorisation dont l’origine officielle n’est pas établie. L’apparition anime ne prouve pas cette utilisation : aucun visuel retenu.",
+      "rights": "not-established-no-integration"
+    },
+    {
+      "id": "tori-tori-no-mi-mod-le-albatros",
+      "priority": "A",
+      "holder": "Morgans",
+      "decision": "added",
+      "physicalFruitDepicted": false,
+      "image": "https://staticg.sportskeeda.com/editor/2022/12/fd1fc-16704229609690.png",
+      "imageKind": "transformation-zoan-anime",
+      "provenance": "https://wiki.sportskeeda.com/one-piece/tori-tori-no-mi-model-albatross-in-one-piece",
+      "canonicalEvidence": "https://one-piece.com/character/Morgans/index.html",
+      "editorialNote": "Le modèle Albatros est nommé par la fiche officielle. La forme humaine n’est pas montrée et aucune capacité de vol n’est déduite.",
+      "browser": {
+        "width": 1600,
+        "height": 900,
+        "complete": true
+      },
+      "sourcePageHttpStatus": 405,
+      "sourceInspection": "indexed-image-association; source-page-blocked-or-cookie-overlay",
+      "rights": "copyright-external-reference-only",
+      "reviewedDhash64": "f32fa6b32b8e2d4d",
+      "visualReview": "Chrome contact sheet inspected on 2026-10-11; power/form matched to primary canonical text; no placeholder observed."
+    },
+    {
+      "id": "toshi-toshi-no-mi",
+      "priority": "A",
+      "holder": "Jewelry Bonney",
+      "decision": "added",
+      "physicalFruitDepicted": false,
+      "image": "https://a.storyblok.com/f/178900/1920x1080/cd963ab7c0/one-piece-episode-1151-luffy-gear-5-bonney-nika-eu_latam.png",
+      "imageKind": "transformation-avenir-anime",
+      "provenance": "https://www.crunchyroll.com/fr/news/latest/2025/12/1/one-piece-casting-urara-takano-role-joy-boy",
+      "canonicalEvidence": "https://one-piece.com/anime/76795/index.html",
+      "editorialNote": "L’épisode 1151 confirme l’avenir possible de Bonney par Distorted Future. Ce n’est ni un Zoan Nika ni un second fruit de Luffy.",
+      "browser": {
+        "width": 1920,
+        "height": 1080,
+        "complete": true
+      },
+      "sourcePageHttpStatus": 200,
+      "sourceInspection": "indexed-image-association; source-page-blocked-or-cookie-overlay",
+      "rights": "copyright-external-reference-only",
+      "reviewedDhash64": "07a56c64f3990a36",
+      "visualReview": "Chrome contact sheet inspected on 2026-10-11; power/form matched to primary canonical text; no placeholder observed."
+    },
+    {
+      "id": "fruit-mythique-bakotsu",
+      "priority": "B",
+      "holder": "Ethanbaron V. Nusjuro",
+      "decision": "held",
+      "physicalFruitDepicted": false,
+      "reason": "La forme Bakotsu est canonique, mais la classification comme fruit du démon n’est pas confirmée par la preuve officielle examinée. Le candidat officiel charge un substitut Luffy.",
+      "rights": "not-established-no-integration"
+    },
+    {
+      "id": "fruit-mythique-cerb-re",
+      "priority": "B",
+      "holder": "Épée Cerberus",
+      "decision": "added",
+      "physicalFruitDepicted": false,
+      "image": "https://statico.soapcentral.com/editor/2025/06/cc511-17509562699852.jpg?w=1460",
+      "imageKind": "transformation-arme-manga",
+      "provenance": "https://www.soapcentral.com/anime/one-piece-why-shamrock-s-sword-special",
+      "canonicalEvidence": "https://one-piece.com/anime/81577/index.html",
+      "editorialNote": "Le résumé officiel de l’épisode 1168 confirme Cerbère sortant de l’épée. Ne pas confondre avec le zombie homonyme de Thriller Bark ; aucun nom de fruit n’est ajouté.",
+      "browser": {
+        "width": 1460,
+        "height": 821,
+        "complete": true
+      },
+      "sourcePageHttpStatus": 403,
+      "sourceInspection": "indexed-image-association; source-page-blocked-or-cookie-overlay",
+      "rights": "copyright-external-reference-only",
+      "reviewedDhash64": "4d44f553d993222f",
+      "visualReview": "Chrome contact sheet inspected on 2026-10-11; power/form matched to primary canonical text; no placeholder observed."
+    },
+    {
+      "id": "fruit-mythique-fengxi",
+      "priority": "B",
+      "holder": "Topman Warcury",
+      "decision": "held",
+      "physicalFruitDepicted": false,
+      "reason": "La forme Fengxi est canonique, mais la classification comme fruit du démon reste non établie. Le candidat officiel charge un substitut Luffy.",
+      "rights": "not-established-no-integration"
+    },
+    {
+      "id": "fruit-mythique-gyuki",
+      "priority": "B",
+      "holder": "Jaygarcia Saturn",
+      "decision": "held",
+      "physicalFruitDepicted": false,
+      "reason": "La forme Gyuki est canonique ; le commentaire officiel consulté présente encore l’hypothèse Zoan comme une interrogation, pas une confirmation. Le candidat officiel charge un substitut Luffy.",
+      "rights": "not-established-no-integration"
+    },
+    {
+      "id": "fruit-mythique-itsumade",
+      "priority": "B",
+      "holder": "Marcus Mars",
+      "decision": "held",
+      "physicalFruitDepicted": false,
+      "reason": "La forme Itsumade est canonique, mais l’assimilation à un fruit mythique n’est pas prouvée par la source primaire. Le candidat officiel charge un substitut Luffy.",
+      "rights": "not-established-no-integration"
+    },
+    {
+      "id": "fruit-mythique-sandworm",
+      "priority": "B",
+      "holder": "Shepherd Ju Peter",
+      "decision": "held",
+      "physicalFruitDepicted": false,
+      "reason": "La forme Sandworm est canonique, mais son statut de fruit du démon reste non établi. Le candidat officiel charge un substitut Luffy.",
+      "rights": "not-established-no-integration"
+    },
+    {
+      "id": "iku-iku-no-mi",
+      "priority": "B",
+      "holder": "Biblo",
+      "decision": "held",
+      "physicalFruitDepicted": false,
+      "reason": "La fiche officielle confirme l’agrandissement des livres inorganiques dans la bibliothèque. Le panneau candidat montre surtout Biblo et le dialogue, sans effet de changement d’échelle identifiable.",
+      "rights": "not-established-no-integration"
+    },
+    {
+      "id": "kuri-kuri-no-mi",
+      "priority": "B",
+      "holder": "Charlotte Opera",
+      "decision": "added",
+      "physicalFruitDepicted": false,
+      "image": "https://staticg.sportskeeda.com/editor/2022/11/983d9-16673133482544.png",
+      "imageKind": "manifestation-pouvoir-anime",
+      "provenance": "https://wiki.sportskeeda.com/one-piece/kuri-kuri-no-mi-in-one-piece",
+      "canonicalEvidence": "https://one-piece.com/character/Charlotte_Opera/index.html",
+      "editorialNote": "Manifestation du Kuri Kuri nommé par la fiche officielle ; la crème est visible. Aucune forme de fruit physique n’est proposée.",
+      "browser": {
+        "width": 1600,
+        "height": 899,
+        "complete": true
+      },
+      "sourcePageHttpStatus": 405,
+      "sourceInspection": "indexed-image-association; source-page-blocked-or-cookie-overlay",
+      "rights": "copyright-external-reference-only",
+      "reviewedDhash64": "c4d52e4ec4ce4e0d",
+      "visualReview": "Chrome contact sheet inspected on 2026-10-11; power/form matched to primary canonical text; no placeholder observed."
+    },
+    {
+      "id": "risu-risu-no-mi-mod-le-ratatoskr",
+      "priority": "B",
+      "holder": "Ragnir",
+      "decision": "held",
+      "physicalFruitDepicted": false,
+      "reason": "Les références récentes et les montages autour de Ragnir n’offrent pas une chaîne primaire et une image vérifiée suffisantes dans cet audit. Aucun nom ou design supplémentaire n’est déduit.",
+      "rights": "not-established-no-integration"
+    },
+    {
+      "id": "ryu-ryu-no-mi-mod-le-kirin",
+      "priority": "B",
+      "holder": "Killingham",
+      "decision": "added",
+      "physicalFruitDepicted": false,
+      "image": "https://staticg.sportskeeda.com/editor/2025/06/34088-17493407903239-1920.jpg",
+      "imageKind": "transformation-zoan-manga",
+      "provenance": "https://www.sportskeeda.com/anime/one-piece-is-killingham-fish-man-explored",
+      "canonicalEvidence": "https://one-piece.com/character/Saint_Rimoshifu_Killingham/index.html",
+      "editorialNote": "La fiche officielle confirme Ryu Ryu, modèle Kirin. Montage éditorial de panneaux en noir et blanc ; la théorie « homme-poisson » du titre de l’article n’est pas adoptée.",
+      "browser": {
+        "width": 1920,
+        "height": 1080,
+        "complete": true
+      },
+      "sourcePageHttpStatus": 405,
+      "sourceInspection": "indexed-image-association; source-page-blocked-or-cookie-overlay",
+      "rights": "copyright-external-reference-only",
+      "reviewedDhash64": "b4b89a5a97a7d656",
+      "visualReview": "Chrome contact sheet inspected on 2026-10-11; power/form matched to primary canonical text; no placeholder observed."
+    },
+    {
+      "id": "fruit-sans-nom-d-urouge",
+      "priority": "C",
+      "holder": "Urouge",
+      "decision": "added",
+      "physicalFruitDepicted": false,
+      "image": "https://staticg.sportskeeda.com/editor/2024/08/91dbb-17250298392518-1920.jpg?w=1600",
+      "imageKind": "manifestation-pouvoir-anime",
+      "provenance": "https://www.sportskeeda.com/anime/will-urouge-play-major-role-one-piece-s-final-saga-explored",
+      "canonicalEvidence": "https://one-piece.com/anime/402/index.html",
+      "editorialNote": "Le résumé officiel de l’épisode 402 mentionne Urouge géant. Le nom du fruit et son mécanisme exact restent indéterminés ; ses ailes ne sont pas attribuées au fruit.",
+      "browser": {
+        "width": 1600,
+        "height": 900,
+        "complete": true
+      },
+      "sourcePageHttpStatus": 405,
+      "sourceInspection": "indexed-image-association; source-page-blocked-or-cookie-overlay",
+      "rights": "copyright-external-reference-only",
+      "reviewedDhash64": "8161a19594302aba",
+      "visualReview": "Chrome contact sheet inspected on 2026-10-11; power/form matched to primary canonical text; no placeholder observed."
+    },
+    {
+      "id": "fruit-sans-nom-de-laffitte",
+      "priority": "C",
+      "holder": "Laffitte",
+      "decision": "held",
+      "physicalFruitDepicted": false,
+      "reason": "Des ailes sont rapportées et des hypothèses Zoan circulent, mais le nom et le modèle du fruit ne sont pas établis. Les candidats trouvés sont des fan-arts ou montages insuffisamment traçables.",
+      "rights": "not-established-no-integration"
+    },
+    {
+      "id": "minokoala-fruit-inconnu",
+      "priority": "C",
+      "holder": "Minokoala",
+      "decision": "held",
+      "physicalFruitDepicted": false,
+      "reason": "La bête gardienne est canonique ; le nom du fruit reste inconnu. Le seul lien de portrait candidat échoue dans ce Chrome ; les figurines de studios tiers ne prouvent pas une illustration canonique.",
+      "rights": "not-established-no-integration"
+    },
+    {
+      "id": "minorhinoceros-fruit-inconnu",
+      "priority": "C",
+      "holder": "Minorhinoceros",
+      "decision": "held",
+      "physicalFruitDepicted": false,
+      "reason": "La bête gardienne est canonique ; aucun nom ou fruit physique n’est établi. Le portrait candidat ne charge pas ; les figurines de studios tiers sont écartées.",
+      "rights": "not-established-no-integration"
+    },
+    {
+      "id": "minotaurus-fruit-inconnu",
+      "priority": "C",
+      "holder": "Minotaurus",
+      "decision": "held",
+      "physicalFruitDepicted": false,
+      "reason": "La bête gardienne et l’éveil Zoan sont rapportés dans le manga. Le portrait candidat ne charge pas dans ce Chrome ; les photos de figurines ne remplacent pas une scène canonique.",
+      "rights": "not-established-no-integration"
+    },
+    {
+      "id": "minozebra-fruit-inconnu",
+      "priority": "C",
+      "holder": "Minozebra",
+      "decision": "held",
+      "physicalFruitDepicted": false,
+      "reason": "La bête gardienne est canonique ; nom et apparence physique du fruit inconnus. Le candidat de portrait ne charge pas et les figurines non licenciées ne sont pas retenues.",
+      "rights": "not-established-no-integration"
+    }
+  ],
+  "candidates": [
+    {
+      "id": "kibi-kibi-no-mi",
+      "source": "https://wiki.sportskeeda.com/one-piece/kibi-kibi-no-mi-in-one-piece",
+      "image": "https://staticg.sportskeeda.com/editor/2022/11/7d0fc-16693089641114.png",
+      "browser": {
+        "width": 1000,
+        "height": 563,
+        "complete": true
+      },
+      "decision": "rejected-alternative",
+      "reason": "Autre plan de Tama, moins explicite que l’extraction du dango."
+    },
+    {
+      "id": "kibi-kibi-no-mi",
+      "source": "https://wiki.sportskeeda.com/one-piece/kibi-kibi-no-mi-in-one-piece",
+      "image": "https://staticg.sportskeeda.com/editor/2022/11/a2f46-16693089648279.png",
+      "browser": {
+        "width": 1600,
+        "height": 900,
+        "complete": true
+      },
+      "decision": "selected",
+      "reason": "Le résumé officiel de l’épisode 893 décrit le dango extrait de la joue de Tama. La boule montrée est un dango, pas un fruit du démon."
+    },
+    {
+      "id": "oshi-oshi-no-mi",
+      "source": "https://alfabetajuega.com/one-piece/los-gigantes-mas-fuertes-y-poderosos-de-one-piece",
+      "image": "https://cdn.alfabetajuega.com/alfabetajuega/2024/08/morley-es-un-gigante-perteneciente-al-ejercito-revolucionario-y-que-domina-el-haki-y-tiene-el-poder-de-una-fruta.jpg",
+      "browser": {
+        "width": 1440,
+        "height": 810,
+        "complete": true
+      },
+      "decision": "rejected-alternative",
+      "reason": "Page source 404 malgré le chargement de l’image."
+    },
+    {
+      "id": "gabu-gabu-no-mi",
+      "source": "https://renote.net/articles/323208",
+      "image": "https://renote.net/files/blobs/proxy/eyJfcmFpbHMiOnsiZGF0YSI6ODU5NDY1NSwicHVyIjoiYmxvYl9pZCJ9fQ%3D%3D--3e0dde8567060aec182c081e99faf17f64f32009/latest.png",
+      "browser": {
+        "width": 560,
+        "height": 421,
+        "complete": true
+      },
+      "decision": "selected",
+      "reason": "Le Gabu Gabu est nommé par la fiche officielle ; le panneau de manga reproduit la technique alcoolisée enflammée, et non un fruit physique."
+    },
+    {
+      "id": "gabu-gabu-no-mi",
+      "source": "https://duniagames.co.id/amp/discover/article/terungkapnya-buah-iblis-vasco-shot-dan-sanjuan-wolf-di-one-piece-episode-1113/en",
+      "image": "https://api.duniagames.co.id/api/content/upload/file/9506794921722249686.jpg",
+      "browser": {
+        "width": 800,
+        "height": 450,
+        "complete": true
+      },
+      "decision": "rejected-alternative",
+      "reason": "Présentation du personnage avec cartouche, pas démonstration du pouvoir."
+    },
+    {
+      "id": "hito-hito-no-mi-mod-le-onyudo",
+      "source": "https://www.korsanfan.com/konu/en-sevdiginiz-wano-karakteri.7933/",
+      "image": "https://vignette.wikia.nocookie.net/onepiece/images/d/d2/Onimaru_as_Gyukimaru.png/revision/latest?cb=20190322132241",
+      "browser": {
+        "width": 0,
+        "height": 0,
+        "complete": true
+      },
+      "decision": "rejected-alternative",
+      "reason": "Image non chargée dans Chrome (0 × 0)."
+    },
+    {
+      "id": "hito-hito-no-mi-mod-le-onyudo",
+      "source": "https://gear5world.com/en/blogs/one-piece-actualites-tops-analyses/le-fruit-de-l-humain-dans-one-piece",
+      "image": "https://cdn.shopify.com/s/files/1/0770/3425/8763/files/gyukimaru_wano_yokai_grand_moine_one_piece.jpg?v=1704381561",
+      "browser": {
+        "width": 1543,
+        "height": 867,
+        "complete": true
+      },
+      "decision": "selected",
+      "reason": "La fiche officielle identifie Gyukimaru comme Onimaru transformé par le Hito Hito, modèle Onyudo."
+    },
+    {
+      "id": "inu-inu-no-mi-mod-le-dachshund",
+      "source": "https://www.serieously.com/one-piece-comment-un-objet-peut-il-manger-un-fruit-du-demon/",
+      "image": "https://www.serieously.com/app/uploads/2025/06/lassou-chien-bazooka-desert-alabasta-one-piece-1024x576.jpg",
+      "browser": {
+        "width": 1024,
+        "height": 576,
+        "complete": true
+      },
+      "decision": "selected",
+      "reason": "Transformation de l’arme en dachshund ; le modèle est confirmé par la fiche officielle. Ce n’est pas l’apparence du fruit."
+    },
+    {
+      "id": "inu-inu-no-mi-mod-le-dachshund",
+      "source": "https://www.reddit.com/r/respectthreads/comments/u6b687/respect_mr_4_miss_merry_christmas_and_lassoo_one/",
+      "image": "https://i.imgur.com/0VHcaW7.png",
+      "browser": {
+        "width": 780,
+        "height": 1200,
+        "complete": true
+      },
+      "decision": "rejected-alternative",
+      "reason": "Page manga colorisée ; colorisation et provenance du dérivé non établies."
+    },
+    {
+      "id": "nomi-nomi-no-mi",
+      "source": "https://www.animegeek.com/dr-vegapunk-a-fraud-one-piece-chapter-1067-reveals-dr-vegapunks-devil-fruit-brain-brain/",
+      "image": "https://i0.wp.com/www.animegeek.com/wp-content/uploads/2022/11/Vegapunk.jpg?fit=1200%2C535&ssl=1",
+      "browser": {
+        "width": 1200,
+        "height": 535,
+        "complete": true
+      },
+      "decision": "selected",
+      "reason": "Extrait explicatif du chapitre 1067 crédité à Shueisha par la source. Il illustre l’explication du pouvoir, pas une attaque ni l’apparence physique du fruit."
+    },
+    {
+      "id": "nomi-nomi-no-mi",
+      "source": "https://www.larazon.es/videojuegos/one-piece/one-piece-explica-el-poder-de-la-fruta-del-diablo-del-dr-vegapunk_202211236996e6869243cc133c526edf.html",
+      "image": "https://fotografias-2.larazon.es/assets/videojuegos/2022/11/Vegapunk-se-ha-convertido-en-un-Hombre-Cerebro-debido-a-la-hablidad-que-le-ha-otorgado-su-fruta-del-diablo.jpg",
+      "browser": {
+        "width": 1356,
+        "height": 631,
+        "complete": true
+      },
+      "decision": "rejected-alternative",
+      "reason": "Autre reprise du même panneau explicatif ; marge et crop éditorial inutiles."
+    },
+    {
+      "id": "toshi-toshi-no-mi",
+      "source": "https://duniaku.idntimes.com/anime-manga/one-piece/fakta-toshi-toshi-no-mi-jewelry-boney-one-piece-00-rgfzd-v5ylyw",
+      "image": "https://image.idntimes.com/post/20221024/old-luffy-old-chopper-young-jinbe-young-bonney-one-piece-1064-bf6aa9dd620bdb734d0cf5a7ab44da50.jpg",
+      "browser": {
+        "width": 800,
+        "height": 420,
+        "complete": true
+      },
+      "decision": "rejected-alternative",
+      "reason": "Panneau teinté et retouché ; alternative officielle promotionnelle préférée."
+    },
+    {
+      "id": "poke-poke-no-mi",
+      "source": "https://wiki.sportskeeda.com/one-piece/poke-poke-no-mi-in-one-piece",
+      "image": "https://staticg.sportskeeda.com/editor/2022/10/7bd0a-16669783298797-1920.jpg",
+      "browser": {
+        "width": 1400,
+        "height": 700,
+        "complete": true
+      },
+      "decision": "selected",
+      "reason": "La fiche officielle décrit précisément le maillet géant stocké dans une poche du corps. L’objet montré est un marteau, pas un tambour."
+    },
+    {
+      "id": "shari-shari-no-mi",
+      "source": "https://wiki.sportskeeda.com/one-piece/shari-shari-no-mi",
+      "image": "https://staticg.sportskeeda.com/editor/2022/12/16274-16703188013216.png?w=1200",
+      "browser": {
+        "width": 1063,
+        "height": 752,
+        "complete": true
+      },
+      "decision": "rejected-alternative",
+      "reason": "Colorisation manga non attestée comme officielle."
+    },
+    {
+      "id": "tori-tori-no-mi-mod-le-albatros",
+      "source": "https://wiki.sportskeeda.com/one-piece/tori-tori-no-mi-model-albatross-in-one-piece",
+      "image": "https://staticg.sportskeeda.com/editor/2022/12/fd1fc-16704229609690.png",
+      "browser": {
+        "width": 1600,
+        "height": 900,
+        "complete": true
+      },
+      "decision": "selected",
+      "reason": "Le modèle Albatros est nommé par la fiche officielle. La forme humaine n’est pas montrée et aucune capacité de vol n’est déduite."
+    },
+    {
+      "id": "tori-tori-no-mi-mod-le-albatros",
+      "source": "https://onepiece.fandom.com/wiki/Morgans",
+      "image": "https://vignette.wikia.nocookie.net/onepiece/images/7/79/Morgans_Anime_Concept_Art.png/revision/latest?cb=20180912233306",
+      "browser": {
+        "width": 0,
+        "height": 0,
+        "complete": true
+      },
+      "decision": "rejected-alternative",
+      "reason": "Image non chargée dans Chrome (0 × 0)."
+    },
+    {
+      "id": "toshi-toshi-no-mi",
+      "source": "https://www.crunchyroll.com/fr/news/latest/2025/12/1/one-piece-casting-urara-takano-role-joy-boy",
+      "image": "https://a.storyblok.com/f/178900/1920x1080/cd963ab7c0/one-piece-episode-1151-luffy-gear-5-bonney-nika-eu_latam.png",
+      "browser": {
+        "width": 1920,
+        "height": 1080,
+        "complete": true
+      },
+      "decision": "selected",
+      "reason": "L’épisode 1151 confirme l’avenir possible de Bonney par Distorted Future. Ce n’est ni un Zoan Nika ni un second fruit de Luffy."
+    },
+    {
+      "id": "kuri-kuri-no-mi",
+      "source": "https://wiki.sportskeeda.com/one-piece/kuri-kuri-no-mi-in-one-piece",
+      "image": "https://staticg.sportskeeda.com/editor/2022/11/983d9-16673133482544.png",
+      "browser": {
+        "width": 1600,
+        "height": 899,
+        "complete": true
+      },
+      "decision": "selected",
+      "reason": "Manifestation du Kuri Kuri nommé par la fiche officielle ; la crème est visible. Aucune forme de fruit physique n’est proposée."
+    },
+    {
+      "id": "fruit-mythique-cerb-re",
+      "source": "https://www.soapcentral.com/anime/one-piece-why-shamrock-s-sword-special",
+      "image": "https://statico.soapcentral.com/editor/2025/06/cc511-17509562699852.jpg?w=1460",
+      "browser": {
+        "width": 1460,
+        "height": 821,
+        "complete": true
+      },
+      "decision": "selected",
+      "reason": "Le résumé officiel de l’épisode 1168 confirme Cerbère sortant de l’épée. Ne pas confondre avec le zombie homonyme de Thriller Bark ; aucun nom de fruit n’est ajouté."
+    },
+    {
+      "id": "ryu-ryu-no-mi-mod-le-kirin",
+      "source": "https://www.sportskeeda.com/anime/one-piece-is-killingham-fish-man-explored",
+      "image": "https://staticg.sportskeeda.com/editor/2025/06/34088-17493407903239-1920.jpg",
+      "browser": {
+        "width": 1920,
+        "height": 1080,
+        "complete": true
+      },
+      "decision": "selected",
+      "reason": "La fiche officielle confirme Ryu Ryu, modèle Kirin. Montage éditorial de panneaux en noir et blanc ; la théorie « homme-poisson » du titre de l’article n’est pas adoptée."
+    },
+    {
+      "id": "iku-iku-no-mi",
+      "source": "https://wartabulukumba.pikiran-rakyat.com/entertainment/pr-878941144/review-manga-one-piece-chapter-1135-intrik-politik-kekuatan-gaib-dan-kembalinya-legenda",
+      "image": "https://assets.pikiran-rakyat.com/crop/91x15%3A1093x674/720x0/webp/photo/2025/01/05/3571380834.jpg",
+      "browser": {
+        "width": 720,
+        "height": 474,
+        "complete": true
+      },
+      "decision": "rejected-alternative",
+      "reason": "Dialogue de bibliothèque, sans agrandissement visuellement démontré."
+    },
+    {
+      "id": "fruit-sans-nom-d-urouge",
+      "source": "https://www.sportskeeda.com/anime/will-urouge-play-major-role-one-piece-s-final-saga-explored",
+      "image": "https://staticg.sportskeeda.com/editor/2024/08/91dbb-17250298392518-1920.jpg?w=1600",
+      "browser": {
+        "width": 1600,
+        "height": 900,
+        "complete": true
+      },
+      "decision": "selected",
+      "reason": "Le résumé officiel de l’épisode 402 mentionne Urouge géant. Le nom du fruit et son mécanisme exact restent indéterminés ; ses ailes ne sont pas attribuées au fruit."
+    },
+    {
+      "id": "minotaurus-fruit-inconnu",
+      "source": "https://onepiece.fandom.com/wiki/Minotaurus",
+      "image": "https://static.wikia.nocookie.net/onepiece/images/4/43/Minotaurus_Portrait.png/revision/latest",
+      "browser": {
+        "width": 0,
+        "height": 0,
+        "complete": true
+      },
+      "decision": "rejected-alternative",
+      "reason": "Portrait non chargé (0 × 0) ; ne pas le compter comme nouvelle illustration."
+    },
+    {
+      "id": "minorhinoceros-fruit-inconnu",
+      "source": "https://onepiece.fandom.com/wiki/Minorhinoceros",
+      "image": "https://static.wikia.nocookie.net/onepiece/images/5/52/Minorhinoceros_Portrait.png/revision/latest",
+      "browser": {
+        "width": 0,
+        "height": 0,
+        "complete": true
+      },
+      "decision": "rejected-alternative",
+      "reason": "Portrait non chargé (0 × 0)."
+    },
+    {
+      "id": "minozebra-fruit-inconnu",
+      "source": "https://onepiece.fandom.com/wiki/Minozebra",
+      "image": "https://static.wikia.nocookie.net/onepiece/images/9/9b/Minozebra_Portrait.png/revision/latest",
+      "browser": {
+        "width": 0,
+        "height": 0,
+        "complete": true
+      },
+      "decision": "rejected-alternative",
+      "reason": "Portrait non chargé (0 × 0)."
+    },
+    {
+      "id": "minokoala-fruit-inconnu",
+      "source": "https://onepiece.fandom.com/wiki/Minokoala",
+      "image": "https://static.wikia.nocookie.net/onepiece/images/8/82/Minokoala_Portrait.png/revision/latest",
+      "browser": {
+        "width": 0,
+        "height": 0,
+        "complete": true
+      },
+      "decision": "rejected-alternative",
+      "reason": "Portrait non chargé (0 × 0)."
+    },
+    {
+      "source": "https://one-piece.com/anime/o5027/index.html",
+      "image": "https://one-piece.com/o/assets/uploads/tvstory/20190513/a52e283037d4dca541d060c9107a0663.jpg",
+      "browser": {
+        "src": "https://one-piece.com/o/assets/uploads/tvstory/20190513/a52e283037d4dca541d060c9107a0663.jpg",
+        "width": 1200,
+        "height": 630,
+        "complete": true
+      },
+      "decision": "rejected-placeholder",
+      "reason": "Réponse image chargée mais substitut générique rouge de Luffy, constaté visuellement ; HTTP 200 et dimensions ne suffisent pas."
+    },
+    {
+      "source": "https://one-piece.com/anime/o5027/index.html",
+      "image": "https://one-piece.com/o/assets/uploads/tvstory/20190513/cb6033e56540d74aaf461755eb871851.jpg",
+      "browser": {
+        "src": "https://one-piece.com/o/assets/uploads/tvstory/20190513/cb6033e56540d74aaf461755eb871851.jpg",
+        "width": 1200,
+        "height": 630,
+        "complete": true
+      },
+      "decision": "rejected-placeholder",
+      "reason": "Réponse image chargée mais substitut générique rouge de Luffy, constaté visuellement ; HTTP 200 et dimensions ne suffisent pas."
+    },
+    {
+      "source": "https://one-piece.com/anime/o5027/index.html",
+      "image": "https://one-piece.com/o/assets/uploads/tvstory/20190513/95c1e888979169e08fc5efdc3463d099.jpg",
+      "browser": {
+        "src": "https://one-piece.com/o/assets/uploads/tvstory/20190513/95c1e888979169e08fc5efdc3463d099.jpg",
+        "width": 1200,
+        "height": 630,
+        "complete": true
+      },
+      "decision": "rejected-placeholder",
+      "reason": "Réponse image chargée mais substitut générique rouge de Luffy, constaté visuellement ; HTTP 200 et dimensions ne suffisent pas."
+    },
+    {
+      "source": "https://one-piece.com/anime/o5027/index.html",
+      "image": "https://one-piece.com/o/assets/uploads/tvstory/20190513/cfffb2b0711d429e6e4ebf0624eed376.jpg",
+      "browser": {
+        "src": "https://one-piece.com/o/assets/uploads/tvstory/20190513/cfffb2b0711d429e6e4ebf0624eed376.jpg",
+        "width": 1200,
+        "height": 630,
+        "complete": true
+      },
+      "decision": "rejected-placeholder",
+      "reason": "Réponse image chargée mais substitut générique rouge de Luffy, constaté visuellement ; HTTP 200 et dimensions ne suffisent pas."
+    },
+    {
+      "source": "https://one-piece.com/anime/o5093/index.html",
+      "image": "https://one-piece.com/o/assets/uploads/tvstory/20190717/07d8cab6dd75784f1f3d9196d3c8d321.jpg",
+      "browser": {
+        "src": "https://one-piece.com/o/assets/uploads/tvstory/20190717/07d8cab6dd75784f1f3d9196d3c8d321.jpg",
+        "width": 1200,
+        "height": 630,
+        "complete": true
+      },
+      "decision": "rejected-placeholder",
+      "reason": "Réponse image chargée mais substitut générique rouge de Luffy, constaté visuellement ; HTTP 200 et dimensions ne suffisent pas."
+    },
+    {
+      "source": "https://one-piece.com/anime/o5093/index.html",
+      "image": "https://one-piece.com/o/assets/uploads/tvstory/20190717/d74b2ce98f872f855b0d88e06c296f14.jpg",
+      "browser": {
+        "src": "https://one-piece.com/o/assets/uploads/tvstory/20190717/d74b2ce98f872f855b0d88e06c296f14.jpg",
+        "width": 1200,
+        "height": 630,
+        "complete": true
+      },
+      "decision": "rejected-placeholder",
+      "reason": "Réponse image chargée mais substitut générique rouge de Luffy, constaté visuellement ; HTTP 200 et dimensions ne suffisent pas."
+    },
+    {
+      "source": "https://one-piece.com/anime/o5093/index.html",
+      "image": "https://one-piece.com/o/assets/uploads/tvstory/20190717/517fcd8026284c0b3b281a3e60b9a912.jpg",
+      "browser": {
+        "src": "https://one-piece.com/o/assets/uploads/tvstory/20190717/517fcd8026284c0b3b281a3e60b9a912.jpg",
+        "width": 1200,
+        "height": 630,
+        "complete": true
+      },
+      "decision": "rejected-placeholder",
+      "reason": "Réponse image chargée mais substitut générique rouge de Luffy, constaté visuellement ; HTTP 200 et dimensions ne suffisent pas."
+    },
+    {
+      "source": "https://one-piece.com/anime/o5093/index.html",
+      "image": "https://one-piece.com/o/assets/uploads/tvstory/20190717/980568947a4ab633d1dafa40686b99ca.jpg",
+      "browser": {
+        "src": "https://one-piece.com/o/assets/uploads/tvstory/20190717/980568947a4ab633d1dafa40686b99ca.jpg",
+        "width": 1200,
+        "height": 630,
+        "complete": true
+      },
+      "decision": "rejected-placeholder",
+      "reason": "Réponse image chargée mais substitut générique rouge de Luffy, constaté visuellement ; HTTP 200 et dimensions ne suffisent pas."
+    },
+    {
+      "source": "https://one-piece.com/anime/65681/index.html",
+      "image": "https://one-piece.com/img/anime/tvanime_1097_1.png",
+      "browser": {
+        "src": "https://one-piece.com/img/anime/tvanime_1097_1.png",
+        "width": 1200,
+        "height": 630,
+        "complete": true
+      },
+      "decision": "rejected-placeholder",
+      "reason": "Réponse image chargée mais substitut générique rouge de Luffy, constaté visuellement ; HTTP 200 et dimensions ne suffisent pas."
+    },
+    {
+      "source": "https://one-piece.com/anime/65681/index.html",
+      "image": "https://one-piece.com/img/anime/tvanime_1097_2.png",
+      "browser": {
+        "src": "https://one-piece.com/img/anime/tvanime_1097_2.png",
+        "width": 1200,
+        "height": 630,
+        "complete": true
+      },
+      "decision": "rejected-placeholder",
+      "reason": "Réponse image chargée mais substitut générique rouge de Luffy, constaté visuellement ; HTTP 200 et dimensions ne suffisent pas."
+    },
+    {
+      "source": "https://one-piece.com/anime/65678/index.html",
+      "image": "https://one-piece.com/img/anime/tvanime_1094_1.png",
+      "browser": {
+        "src": "https://one-piece.com/img/anime/tvanime_1094_1.png",
+        "width": 1200,
+        "height": 630,
+        "complete": true
+      },
+      "decision": "rejected-placeholder",
+      "reason": "Réponse image chargée mais substitut générique rouge de Luffy, constaté visuellement ; HTTP 200 et dimensions ne suffisent pas."
+    },
+    {
+      "source": "https://one-piece.com/anime/65678/index.html",
+      "image": "https://one-piece.com/img/anime/tvanime_1094_2.png",
+      "browser": {
+        "src": "https://one-piece.com/img/anime/tvanime_1094_2.png",
+        "width": 1200,
+        "height": 630,
+        "complete": true
+      },
+      "decision": "rejected-placeholder",
+      "reason": "Réponse image chargée mais substitut générique rouge de Luffy, constaté visuellement ; HTTP 200 et dimensions ne suffisent pas."
+    },
+    {
+      "source": "https://one-piece.com/anime/o5415/index.html",
+      "image": "https://one-piece.com/o/assets/uploads/tvstory/20200723/e828ce67abf4418a861ca566333b6c74.jpg",
+      "browser": {
+        "src": "https://one-piece.com/o/assets/uploads/tvstory/20200723/e828ce67abf4418a861ca566333b6c74.jpg",
+        "width": 1200,
+        "height": 630,
+        "complete": true
+      },
+      "decision": "rejected-placeholder",
+      "reason": "Réponse image chargée mais substitut générique rouge de Luffy, constaté visuellement ; HTTP 200 et dimensions ne suffisent pas."
+    },
+    {
+      "source": "https://one-piece.com/anime/o5415/index.html",
+      "image": "https://one-piece.com/o/assets/uploads/tvstory/20200723/d0a9b826eb0506962e41379e7db469e1.jpg",
+      "browser": {
+        "src": "https://one-piece.com/o/assets/uploads/tvstory/20200723/d0a9b826eb0506962e41379e7db469e1.jpg",
+        "width": 1200,
+        "height": 630,
+        "complete": true
+      },
+      "decision": "rejected-placeholder",
+      "reason": "Réponse image chargée mais substitut générique rouge de Luffy, constaté visuellement ; HTTP 200 et dimensions ne suffisent pas."
+    },
+    {
+      "source": "https://one-piece.com/anime/o5563/index.html",
+      "image": "https://one-piece.com/o/assets/uploads/tvstory/20201215/391382bc942f114d12227108e68645c2.jpg",
+      "browser": {
+        "src": "https://one-piece.com/o/assets/uploads/tvstory/20201215/391382bc942f114d12227108e68645c2.jpg",
+        "width": 1200,
+        "height": 630,
+        "complete": true
+      },
+      "decision": "rejected-placeholder",
+      "reason": "Réponse image chargée mais substitut générique rouge de Luffy, constaté visuellement ; HTTP 200 et dimensions ne suffisent pas."
+    },
+    {
+      "source": "https://one-piece.com/anime/o5563/index.html",
+      "image": "https://one-piece.com/o/assets/uploads/tvstory/20201215/b28d7aed9b5e2000f2cf46b4bdb0fbc7.jpg",
+      "browser": {
+        "src": "https://one-piece.com/o/assets/uploads/tvstory/20201215/b28d7aed9b5e2000f2cf46b4bdb0fbc7.jpg",
+        "width": 1200,
+        "height": 630,
+        "complete": true
+      },
+      "decision": "rejected-placeholder",
+      "reason": "Réponse image chargée mais substitut générique rouge de Luffy, constaté visuellement ; HTTP 200 et dimensions ne suffisent pas."
+    },
+    {
+      "source": "https://one-piece.com/anime/114/index.html",
+      "image": "https://one-piece.com/img/anime/story/img_story_114.jpg",
+      "browser": {
+        "src": "https://one-piece.com/img/anime/story/img_story_114.jpg",
+        "width": 1200,
+        "height": 630,
+        "complete": true
+      },
+      "decision": "rejected-placeholder",
+      "reason": "Réponse image chargée mais substitut générique rouge de Luffy, constaté visuellement ; HTTP 200 et dimensions ne suffisent pas."
+    },
+    {
+      "source": "https://one-piece.com/character/Morgans/index.html",
+      "image": "https://one-piece.com/o/assets/uploads/anime/character/characters/20180522/8693cd6c38c5fd98ac2048cdb6e978e2.png",
+      "browser": {
+        "src": "https://one-piece.com/o/assets/uploads/anime/character/characters/20180522/8693cd6c38c5fd98ac2048cdb6e978e2.png",
+        "width": 1200,
+        "height": 630,
+        "complete": true
+      },
+      "decision": "rejected-placeholder",
+      "reason": "Réponse image chargée mais substitut générique rouge de Luffy, constaté visuellement ; HTTP 200 et dimensions ne suffisent pas."
+    },
+    {
+      "source": "https://one-piece.com/anime/69144/index.html",
+      "image": "https://one-piece.com/img/anime/tvanime_1121_1.png",
+      "browser": {
+        "src": "https://one-piece.com/img/anime/tvanime_1121_1.png",
+        "width": 1200,
+        "height": 630,
+        "complete": true
+      },
+      "decision": "rejected-placeholder",
+      "reason": "Réponse image chargée mais substitut générique rouge de Luffy, constaté visuellement ; HTTP 200 et dimensions ne suffisent pas."
+    },
+    {
+      "source": "https://one-piece.com/anime/69144/index.html",
+      "image": "https://one-piece.com/img/anime/tvanime_1121_2.png",
+      "browser": {
+        "src": "https://one-piece.com/img/anime/tvanime_1121_2.png",
+        "width": 1200,
+        "height": 630,
+        "complete": true
+      },
+      "decision": "rejected-placeholder",
+      "reason": "Réponse image chargée mais substitut générique rouge de Luffy, constaté visuellement ; HTTP 200 et dimensions ne suffisent pas."
+    },
+    {
+      "source": "https://one-piece.com/anime/464/index.html",
+      "image": "https://one-piece.com/img/anime/story/img_story_464.jpg",
+      "browser": {
+        "src": "https://one-piece.com/img/anime/story/img_story_464.jpg",
+        "width": 1200,
+        "height": 630,
+        "complete": true
+      },
+      "decision": "rejected-placeholder",
+      "reason": "Réponse image chargée mais substitut générique rouge de Luffy, constaté visuellement ; HTTP 200 et dimensions ne suffisent pas."
+    },
+    {
+      "source": "https://one-piece.com/character/Gyukimaru/index.html",
+      "image": "https://one-piece.com/o/assets/uploads/anime/character/characters/20210319/57797dd6bed65c527fe75ec01599b1c4.jpg",
+      "browser": {
+        "src": "https://one-piece.com/o/assets/uploads/anime/character/characters/20210319/57797dd6bed65c527fe75ec01599b1c4.jpg",
+        "width": 1200,
+        "height": 630,
+        "complete": true
+      },
+      "decision": "rejected-placeholder",
+      "reason": "Réponse image chargée mais substitut générique rouge de Luffy, constaté visuellement ; HTTP 200 et dimensions ne suffisent pas."
+    },
+    {
+      "source": "https://one-piece.com/character/Morley/index.html",
+      "image": "https://one-piece.com/img/character/Morley_main.jpg",
+      "browser": {
+        "src": "https://one-piece.com/img/character/Morley_main.jpg",
+        "width": 1200,
+        "height": 630,
+        "complete": true
+      },
+      "decision": "rejected-placeholder",
+      "reason": "Réponse image chargée mais substitut générique rouge de Luffy, constaté visuellement ; HTTP 200 et dimensions ne suffisent pas."
+    },
+    {
+      "source": "https://one-piece.com/character/Vegapunk/index.html",
+      "image": "https://one-piece.com/img/character/vegapunk_main.jpg",
+      "browser": {
+        "src": "https://one-piece.com/img/character/vegapunk_main.jpg",
+        "width": 1200,
+        "height": 630,
+        "complete": true
+      },
+      "decision": "rejected-placeholder",
+      "reason": "Réponse image chargée mais substitut générique rouge de Luffy, constaté visuellement ; HTTP 200 et dimensions ne suffisent pas."
+    },
+    {
+      "source": "https://one-piece.com/character/Jewelry_Bonney/index.html",
+      "image": "https://one-piece.com/o/assets/images/anime/character/data/Jewelry_Bonney/img.jpg",
+      "browser": {
+        "src": "https://one-piece.com/o/assets/images/anime/character/data/Jewelry_Bonney/img.jpg",
+        "width": 1200,
+        "height": 630,
+        "complete": true
+      },
+      "decision": "rejected-placeholder",
+      "reason": "Réponse image chargée mais substitut générique rouge de Luffy, constaté visuellement ; HTTP 200 et dimensions ne suffisent pas."
+    },
+    {
+      "source": "https://one-piece.com/character/Vasco_Shot/index.html",
+      "image": "https://one-piece.com/o/assets/images/anime/character/data/Vasco_Shot/img.jpg",
+      "browser": {
+        "src": "https://one-piece.com/o/assets/images/anime/character/data/Vasco_Shot/img.jpg",
+        "width": 1200,
+        "height": 630,
+        "complete": true
+      },
+      "decision": "rejected-placeholder",
+      "reason": "Réponse image chargée mais substitut générique rouge de Luffy, constaté visuellement ; HTTP 200 et dimensions ne suffisent pas."
+    },
+    {
+      "source": "https://one-piece.com/anime/75128/index.html",
+      "image": "https://one-piece.com/img/anime/tvanime_1144_1.png",
+      "browser": {
+        "src": "https://one-piece.com/img/anime/tvanime_1144_1.png",
+        "width": 1200,
+        "height": 630,
+        "complete": true
+      },
+      "decision": "rejected-placeholder",
+      "reason": "Réponse image chargée mais substitut générique rouge de Luffy, constaté visuellement ; HTTP 200 et dimensions ne suffisent pas."
+    },
+    {
+      "source": "https://one-piece.com/anime/75128/index.html",
+      "image": "https://one-piece.com/img/anime/tvanime_1144_2.png",
+      "browser": {
+        "src": "https://one-piece.com/img/anime/tvanime_1144_2.png",
+        "width": 1200,
+        "height": 630,
+        "complete": true
+      },
+      "decision": "rejected-placeholder",
+      "reason": "Réponse image chargée mais substitut générique rouge de Luffy, constaté visuellement ; HTTP 200 et dimensions ne suffisent pas."
+    },
+    {
+      "source": "https://one-piece.com/character/Minotaur/index.html",
+      "image": "https://one-piece.com/o/assets/images/anime/character/data/Minotaur/img.jpg",
+      "browser": {
+        "src": "https://one-piece.com/o/assets/images/anime/character/data/Minotaur/img.jpg",
+        "width": 1200,
+        "height": 630,
+        "complete": true
+      },
+      "decision": "rejected-placeholder",
+      "reason": "Réponse image chargée mais substitut générique rouge de Luffy, constaté visuellement ; HTTP 200 et dimensions ne suffisent pas."
+    },
+    {
+      "id": "oshi-oshi-no-mi",
+      "source": "https://gorontalo.pikiran-rakyat.com/entertainment/pr-1966682975/masa-lalu-morley-di-one-piece-terungkap-mantan-bajak-laut-dan-punya-sejarah-mengerikan-di-impel-down?page=all",
+      "image": "https://assets.pikiran-rakyat.com/crop/108x72%3A972x649/x/photo/2023/05/20/2386535532.jpg",
+      "browser": {
+        "width": 864,
+        "height": 577,
+        "complete": true
+      },
+      "decision": "rejected-alternative",
+      "reason": "Bandeau ajouté « DEVIL FRUIT » ; page source 403. Alternative éditoriale non retenue."
+    }
+  ]
+}

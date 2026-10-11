@@ -1,0 +1,10 @@
+# Audit captures are local / CI review artifacts, not rehosted third-party works.
+/reports/screenshots/v49e/
+/reports/media-inventory-v49d.json
+/reports/media-browser-audit-v49d.json
+/reports/media-candidate-probe-v49d.json
+/reports/media-candidate-contact-v49d.jpg
+/reports/media-actual-page-v49d2.jpg
+/reports/media-illustration-backlog-v49d2.json
+/reports/illustration-browser-audit-v49e.json
+__pycache__/
