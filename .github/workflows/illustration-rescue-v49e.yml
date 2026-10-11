@@ -1,0 +1,53 @@
+name: V4.9.e illustration rescue
+
+on:
+  pull_request:
+    paths:
+      - "data/**"
+      - "app.js"
+      - "index.html"
+      - "media-check.html"
+      - "reports/illustration-evidence-v49e.json"
+      - "scripts/check_v49e.js"
+      - "scripts/audit_media_browser_v49e.py"
+      - ".github/workflows/illustration-rescue-v49e.yml"
+  workflow_dispatch:
+
+jobs:
+  illustration-evidence-and-browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Freeze PR 5 baseline and verify guarded additions
+        run: |
+          node scripts/inventory_media_v49d.js
+          python scripts/triage_missing_visuals_v49d2.py
+          node --check data/power-art-v49e.js
+          node scripts/check_v49e.js
+      - name: Install screenshot and browser runtime
+        run: python -m pip install --quiet playwright Pillow
+      - name: Verify real Chrome integration and reviewed artwork fingerprints
+        run: python scripts/audit_media_browser_v49e.py
+      - name: Preserve browser evidence without rehosting original artworks
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: DemonFruitzDex-V49e-illustration-audit
+          retention-days: 14
+          if-no-files-found: error
+          path: |
+            reports/illustration-browser-audit-v49e.json
+            reports/illustration-evidence-v49e.json
+            reports/illustration-rescue-v49e.md
+            reports/screenshots/v49e/**

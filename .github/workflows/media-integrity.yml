@@ -56,6 +56,7 @@ jobs:
           python scripts/validate_clips.py
           python scripts/check_v45.py
           python scripts/check_v46.py
+          python scripts/check_v47.py
           python scripts/check_v48.py
           python scripts/check_v49.py
           python scripts/check_v49a.py

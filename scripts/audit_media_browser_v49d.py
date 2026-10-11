@@ -5,7 +5,7 @@ DO NOT equate a failed image on GitHub's network with a globally dead image.
 Browser observations are grouped by outcome; network restrictions stay UNKNOWN.
 No media copies, image scraping or repo data mutations.
 """
-import argparse, asyncio, collections, json, pathlib, re
+import argparse, asyncio, collections, json, pathlib, re, os, platform
 from datetime import datetime, timezone
 from playwright.async_api import async_playwright
 
@@ -62,7 +62,7 @@ async def run(limit=None):
     kinds={k:dict(collections.Counter(x['classification'] for x in results if x['kind']==k)) for k in ('portrait','visual')}
     report={'schema':'demonfruitzdex.media-browser-audit.v49d',
       'date':datetime.now(timezone.utc).isoformat(),
-      'environment':'GitHub Actions Linux Chrome; NOT a France browser; remote host may block CI/hotlink',
+      'environment':('GitHub Actions' if os.environ.get('GITHUB_ACTIONS') else 'Local')+' '+platform.system()+' Chrome; location not inferred; remote host may block CI/hotlink',
       'timeoutMs':TIMEOUT_MS,'concurrency':CONCURRENCY,
       'scope':{'fruits':166,'mediaReferencesTested':len(results),'expectedFullMediaReferences':manifest['stats']['directReferences'],
                'subset':bool(limit)},

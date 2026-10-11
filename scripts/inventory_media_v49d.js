@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 'use strict';
-// Build the REAL browser catalogue, including all sequential JS sidecars.
+// Freeze the V4.9.d baseline, before the V4.9.e illustration overlay.
 // No external connections, no image downloads and no data rewrites.
 const fs=require('node:fs'),vm=require('node:vm'),path=require('node:path');
 const root=path.resolve(__dirname,'..'),context={window:{}};

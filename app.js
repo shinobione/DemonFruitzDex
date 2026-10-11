@@ -101,13 +101,23 @@
   },true);
   function portrait(f, large=false){const name=enc(f.primary_user||f.u);return `<div class="portrait-frame ${large?'portrait-large':''}" style="--accent:${colors[f.t]||'#9d77fc'}" title="Portrait : ${name}"><span>${enc(f.avatar||'OP')}</span>${f.portrait?`<img loading="lazy" alt="Portrait de ${name}" src="${enc(f.portrait)}" data-media-fallback="${enc(wikiRedirect(f.portrait_file))}" referrerpolicy="no-referrer">`:''}</div>`}
   function art(f, modal=false){
-    if(f.image)return `<img class="artwork" loading="lazy" decoding="async" referrerpolicy="no-referrer" alt="Illustration de ${enc(f.fr)}" src="${enc(f.image)}" data-media-fallback="${enc(wikiRedirect(f.file))}">`;
+    if(f.image)return `<img class="artwork" loading="lazy" decoding="async" referrerpolicy="no-referrer" alt="${enc(f.visual_description||('Illustration de '+f.fr))}" src="${enc(f.image)}" data-media-fallback="${enc(wikiRedirect(f.file))}">`;
     // If the fruit has never been illustrated, a large CHARACTER portrait is useful.
     // Never confuse this substitution with a depiction of the actual physical fruit.
     if(!modal && f.portrait && f.id!=='smile')return `<img class="artwork artwork-user-substitute" loading="lazy" decoding="async" referrerpolicy="no-referrer" alt="Portrait de ${enc(f.primary_user||f.u)} : apparence physique du fruit non documentée" src="${enc(f.portrait)}" data-media-fallback="${enc(wikiRedirect(f.portrait_file))}">`;
     return '';
   }
-  function imageLabel(f){if(!f.image)return f.portrait?'PORTEUR · ILLUSTRATION DU POUVOIR ABSENTE':'AUCUNE ILLUSTRATION RÉFÉRENCÉE';return f.visual==='fruit'?'FRUIT PHYSIQUE RÉFÉRENCÉ':f.image_kind==='pouvoir-animé'?'ANIMATION DU POUVOIR':f.visual==='pouvoir'?'ILLUSTRATION DU POUVOIR':f.visual==='artificiel'?'FRUIT ARTIFICIEL':'INTERPRÉTATION SYMBOLIQUE'}
+  const artworkLabels={
+    'pouvoir-action-anime':'POUVOIR EN ACTION · ANIMÉ',
+    'pouvoir-action-manga':'POUVOIR EN ACTION · MANGA',
+    'transformation-zoan-anime':'TRANSFORMATION ZOAN · ANIMÉ',
+    'transformation-zoan-manga':'TRANSFORMATION ZOAN · MANGA',
+    'transformation-arme-manga':'TRANSFORMATION D’UNE ARME · MANGA',
+    'explication-pouvoir-manga':'EXPLICATION DU POUVOIR · MANGA',
+    'manifestation-pouvoir-anime':'MANIFESTATION DU POUVOIR · ANIMÉ',
+    'transformation-avenir-anime':'AVENIR POSSIBLE · ANIMÉ'
+  };
+  function imageLabel(f){if(!f.image)return f.portrait?'PORTEUR · ILLUSTRATION DU POUVOIR ABSENTE':'AUCUNE ILLUSTRATION RÉFÉRENCÉE';return artworkLabels[f.image_kind]||(f.visual==='fruit'?'FRUIT PHYSIQUE RÉFÉRENCÉ':f.image_kind==='pouvoir-animé'?'ANIMATION DU POUVOIR':f.visual==='pouvoir'?'ILLUSTRATION DU POUVOIR':f.visual==='artificiel'?'FRUIT ARTIFICIEL':'INTERPRÉTATION SYMBOLIQUE')}
   function card(f){
     const selected=state.compare.includes(f.id),saved=favorites.has(f.id);
     const color=colors[f.t]||'#f4c36b';
@@ -182,7 +192,7 @@
             ${portrait(f,true)}
             <div class="character-overlay"><span>PORTEUR DU POUVOIR</span><strong>${enc(f.primary_user||f.u)}</strong><small>${enc(f.t)} · TIER ${enc(f.r)}</small></div>
           </div>
-          <div class="detail-fruit-strip"><div class="detail-fruit-mini"><div class="art-fallback">${enc(f.icon||'✦')}</div>${art(f,true)}</div><div><span>LE FRUIT</span><strong>${enc(f.fr)}</strong><small>${imageLabel(f)}</small></div></div>
+          <div class="detail-fruit-strip"><div class="detail-fruit-mini"><div class="art-fallback">${enc(f.icon||'✦')}</div>${art(f,true)}</div><div><span>${f.visual==='pouvoir'?'LE POUVOIR':'LE FRUIT'}</span><strong>${enc(f.fr)}</strong><small>${imageLabel(f)}</small></div></div>
           <div class="detail-info-row"><div><span>Famille</span><strong>${enc(f.t)}</strong></div><div><span>Rang éditorial</span><strong style="color:var(--gold)">TIER ${enc(f.r)}</strong></div><div><span>Éveil</span><strong>${f.w?'⚡ Confirmé':'Non confirmé'}</strong></div><div><span>Fruit physique</span><strong>${String(f.a||'').startsWith('Connu')?'Apparence rapportée':'Non identifié'}</strong></div></div>
         </div>
         <div class="scene-column">
@@ -191,7 +201,7 @@
           ${videoBody}
           ${openSearch}${auditNotice}${videos.length&&clip.note?`<p class="clip-note">${enc(clip.note)}</p>`:''}${socialBody}
           <div class="clip-note">YouTube est accessible indépendamment de Crunchyroll, mais certaines vidéos peuvent être limitées selon le pays. Les épisodes Crunchyroll restent des références facultatives ; le lecteur dépend des droits du diffuseur.</div>
-          <div class="detail-source">${f.file?`<a target="_blank" rel="noopener noreferrer" href="https://onepiece.fandom.com/wiki/File:${safeFile}">↗ Source du visuel du fruit / pouvoir</a>`:`Apparence officielle du fruit non documentée ici · <a target="_blank" rel="noopener noreferrer" href="https://onepiece.fandom.com/wiki/Special:Search?query=${encodeURIComponent(f.n)}">⌕ Explorer les illustrations du pouvoir</a>`}<br>
+          <div class="detail-source">${f.visual_credit?`<a target="_blank" rel="noopener noreferrer" href="${enc(f.visual_provenance)}">↗ Source de l’illustration</a> · <a target="_blank" rel="noopener noreferrer" href="${enc(f.visual_proof)}">Preuve canonique</a><br>${enc(f.visual_credit)}<br>${enc(f.visual_canon_note)}<br>Image externe sous copyright · aucune licence de redistribution documentée.`:f.file?`<a target="_blank" rel="noopener noreferrer" href="https://onepiece.fandom.com/wiki/File:${safeFile}">↗ Source du visuel du fruit / pouvoir</a>`:`Apparence officielle du fruit non documentée ici · <a target="_blank" rel="noopener noreferrer" href="https://onepiece.fandom.com/wiki/Special:Search?query=${encodeURIComponent(f.n)}">⌕ Explorer les illustrations du pouvoir</a>`}<br>
           ${f.portrait_file?`<a target="_blank" rel="noopener noreferrer" href="https://onepiece.fandom.com/wiki/File:${safePortraitFile}">↗ Source du portrait utilisateur${f.portrait_kind==='portrait-jeu'?' (illustration de jeu)':''}</a>`:'Portrait utilisateur de secours · <a target="_blank" rel="noopener noreferrer" href="https://onepiece.fandom.com/wiki/Special:Search?query=${encodeURIComponent(f.primary_user||f.u)}">⌕ Rechercher ce personnage</a>'}</div>
           <div class="detail-action-row"><button type="button" id="detailFavorite">${favorites.has(f.id)?'♥ EN FAVORI':'♡ AJOUTER AUX FAVORIS'}</button><button type="button" id="detailCompare">${state.compare.includes(f.id)?'✓ SÉLECTIONNÉ POUR LE DUEL':'+ AJOUTER AU DUEL'}</button></div>
         </div>
