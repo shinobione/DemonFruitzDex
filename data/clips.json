@@ -82,14 +82,28 @@
     "verificationStatus": "legacy-unverified"
   },
   "ito-ito-no-mi": {
-    "sourcePolicy": "publisher-linked",
-    "reviewedOn": "2026-10-10",
+    "sourcePolicy": "community-video",
+    "reviewedOn": "2026-10-11",
     "auditV46": {
       "state": "clip-corrected",
       "checkedOn": "2026-10-10",
       "note": "Ancien lien vidéo retiré : montre surtout l'attaque combinée de Luffy et Law, et non une démonstration des fils de Doflamingo. Épisodes 727 et 731 conservés; lecture non contrôlée.",
       "playback": "not-tested"
-    }
+    },
+    "youtubeId": "ow1Hpfnlri4",
+    "title": "Donquixote Doflamingo | All Attacks",
+    "channel": "Koi 鯉",
+    "episode": "Dressrosa",
+    "powerShown": "Ito Ito : fils, attaques et Birdcage (à confirmer au visionnage)",
+    "published": "2025-02-10",
+    "source": "https://www.youtube.com/watch?v=ow1Hpfnlri4",
+    "sourceEvidence": "https://www.youtube.com/watch?v=ow1Hpfnlri4",
+    "contentKind": "compilation",
+    "verificationStatus": "public-metadata-verified",
+    "publisherType": "community-upload",
+    "playbackStatus": "not-tested",
+    "embedStatus": "not-tested",
+    "regionalStatus": "not-tested"
   },
   "jiki-jiki-no-mi": {
     "youtubeId": "HBpihtBqB7I",
@@ -515,15 +529,29 @@
     "verificationStatus": "legacy-unverified"
   },
   "gasu-gasu-no-mi": {
-    "sourcePolicy": "publisher-linked",
-    "reviewedOn": "2026-10-10",
+    "sourcePolicy": "community-video",
+    "reviewedOn": "2026-10-11",
     "auditV46": {
       "state": "legacy-pending-editorial-review",
       "checkedOn": "2026-10-10",
       "metadata": "record-shape-and-source-urls-checked",
       "playback": "not-tested",
       "note": "Références historiques à confirmer par lecture et validation de l'adéquation du pouvoir."
-    }
+    },
+    "youtubeId": "NKgXWO2RK-A",
+    "title": "Caesar Clown — Gasu Gasu no Mi, attaques et capacités",
+    "channel": "Rensuka Ren",
+    "episode": "Punk Hazard",
+    "source": "https://www.youtube.com/watch?v=NKgXWO2RK-A",
+    "sourceEvidence": "https://www.youtube.com/watch?v=NKgXWO2RK-A",
+    "contentKind": "compilation",
+    "powerShown": "Gasu Gasu no Mi : transformations et attaques gazeuses",
+    "published": "2024-09-14",
+    "verificationStatus": "public-metadata-verified",
+    "publisherType": "community-upload",
+    "playbackStatus": "not-tested",
+    "embedStatus": "not-tested",
+    "regionalStatus": "not-tested"
   },
   "inu-inu-no-mi-mod-le-okuchi-no-makami": {
     "sourcePolicy": "publisher-linked",
@@ -576,26 +604,73 @@
     "verificationStatus": "legacy-unverified"
   },
   "kage-kage-no-mi": {
-    "sourcePolicy": "publisher-linked",
-    "reviewedOn": "2026-10-10",
+    "sourcePolicy": "community-video",
+    "reviewedOn": "2026-10-11",
     "auditV46": {
       "state": "legacy-pending-editorial-review",
       "checkedOn": "2026-10-10",
       "metadata": "record-shape-and-source-urls-checked",
       "playback": "not-tested",
       "note": "Références historiques à confirmer par lecture et validation de l'adéquation du pouvoir."
-    }
+    },
+    "youtubeId": "fSgU4NEqa4s",
+    "title": "Gecko Moria — techniques du Kage Kage no Mi",
+    "channel": "Rensuka Ren",
+    "episode": "Thriller Bark",
+    "source": "https://www.youtube.com/watch?v=fSgU4NEqa4s",
+    "sourceEvidence": "https://www.youtube.com/watch?v=fSgU4NEqa4s",
+    "contentKind": "compilation",
+    "powerShown": "Kage Kage : extraction et maîtrise des ombres",
+    "uploadDate": "2024-05-26",
+    "verificationStatus": "public-metadata-verified",
+    "publisherType": "community-upload",
+    "playbackStatus": "not-tested",
+    "embedStatus": "not-tested",
+    "regionalStatus": "not-tested"
   },
   "nikyu-nikyu-no-mi": {
-    "sourcePolicy": "publisher-linked",
-    "reviewedOn": "2026-10-10",
+    "sourcePolicy": "community-video",
+    "reviewedOn": "2026-10-11",
     "auditV46": {
       "state": "legacy-pending-editorial-review",
       "checkedOn": "2026-10-10",
       "metadata": "record-shape-and-source-urls-checked",
       "playback": "not-tested",
       "note": "Références historiques à confirmer par lecture et validation de l'adéquation du pouvoir."
-    }
+    },
+    "youtubeId": "ofJ3DkkOo7Y",
+    "title": "Kuma crée son Ursus Shock",
+    "channel": "DapperDarius",
+    "episode": "Thriller Bark",
+    "contentKind": "clip",
+    "powerShown": "Nikyu Nikyu no Mi — Ursus Shock",
+    "published": "2024-08-05",
+    "source": "https://www.youtube.com/watch?v=ofJ3DkkOo7Y",
+    "sourceEvidence": "https://www.youtube.com/watch?v=ofJ3DkkOo7Y",
+    "verificationStatus": "public-metadata-verified",
+    "publisherType": "community-upload",
+    "playbackStatus": "not-tested",
+    "embedStatus": "not-tested",
+    "regionalStatus": "not-tested",
+    "moreVideos": [
+      {
+        "youtubeId": "PvODesQjMgU",
+        "title": "Kuma utilise Ursus Shock contre l'équipage au chapeau de paille",
+        "channel": "Yonko Level",
+        "episode": "Thriller Bark",
+        "contentKind": "clip",
+        "powerShown": "Nikyu Nikyu no Mi — Ursus Shock",
+        "published": "2022-09-25",
+        "source": "https://www.youtube.com/watch?v=PvODesQjMgU",
+        "sourceEvidence": "https://www.youtube.com/watch?v=PvODesQjMgU",
+        "verificationStatus": "public-metadata-verified",
+        "publisherType": "community-upload",
+        "reviewedOn": "2026-10-11",
+        "playbackStatus": "not-tested",
+        "embedStatus": "not-tested",
+        "regionalStatus": "not-tested"
+      }
+    ]
   },
   "bara-bara-no-mi": {
     "sourcePolicy": "publisher-linked",
@@ -609,15 +684,29 @@
     }
   },
   "doku-doku-no-mi": {
-    "sourcePolicy": "publisher-linked",
-    "reviewedOn": "2026-10-10",
+    "sourcePolicy": "community-video",
+    "reviewedOn": "2026-10-11",
     "auditV46": {
       "state": "legacy-pending-editorial-review",
       "checkedOn": "2026-10-10",
       "metadata": "record-shape-and-source-urls-checked",
       "playback": "not-tested",
       "note": "Références historiques à confirmer par lecture et validation de l'adéquation du pouvoir."
-    }
+    },
+    "youtubeId": "592XWC7Abkc",
+    "title": "Magellan — toutes les attaques du Doku Doku no Mi",
+    "channel": "Koi 鯉",
+    "episode": "Impel Down",
+    "source": "https://www.youtube.com/watch?v=592XWC7Abkc",
+    "sourceEvidence": "https://www.youtube.com/watch?v=592XWC7Abkc",
+    "contentKind": "compilation",
+    "powerShown": "Doku Doku : hydre de poison et attaques toxiques",
+    "uploadDate": "2025-05-09",
+    "verificationStatus": "public-metadata-verified",
+    "publisherType": "community-upload",
+    "playbackStatus": "not-tested",
+    "embedStatus": "not-tested",
+    "regionalStatus": "not-tested"
   },
   "mero-mero-no-mi": {
     "sourcePolicy": "publisher-linked",
@@ -765,12 +854,59 @@
     "reviewedOn": "2026-10-10"
   },
   "horo-horo-no-mi": {
-    "sourcePolicy": "publisher-linked",
-    "reviewedOn": "2026-10-10"
+    "sourcePolicy": "community-video",
+    "reviewedOn": "2026-10-11",
+    "youtubeId": "p5KF8XZlqEk",
+    "title": "Perona — toutes les attaques du Horo Horo no Mi",
+    "channel": "Rensuka Ren",
+    "episode": "Thriller Bark",
+    "source": "https://www.youtube.com/watch?v=p5KF8XZlqEk",
+    "sourceEvidence": "https://www.youtube.com/watch?v=p5KF8XZlqEk",
+    "contentKind": "compilation",
+    "powerShown": "Horo Horo : fantômes et Negative Hollow",
+    "uploadDate": "2022-10-08",
+    "verificationStatus": "public-metadata-verified",
+    "publisherType": "community-upload",
+    "playbackStatus": "not-tested",
+    "embedStatus": "not-tested",
+    "regionalStatus": "not-tested"
   },
   "bari-bari-no-mi": {
-    "sourcePolicy": "publisher-linked",
-    "reviewedOn": "2026-10-10"
+    "sourcePolicy": "community-video",
+    "reviewedOn": "2026-10-11",
+    "youtubeId": "AdM7PV5kako",
+    "title": "Bartolomeo bloque King Punch avec sa barrière",
+    "channel": "Portgas D. Ace",
+    "episode": "Épisode 638",
+    "source": "https://www.youtube.com/watch?v=AdM7PV5kako",
+    "sourceEvidence": "https://www.youtube.com/watch?v=AdM7PV5kako",
+    "contentKind": "clip",
+    "powerShown": "Bari Bari : barrières, Barrier Crash",
+    "uploadDate": "2014-03-31",
+    "verificationStatus": "public-metadata-verified",
+    "publisherType": "community-upload",
+    "playbackStatus": "not-tested",
+    "embedStatus": "not-tested",
+    "regionalStatus": "not-tested",
+    "moreVideos": [
+      {
+        "youtubeId": "Zupy-QIf-8U",
+        "title": "Bartolomeo — sa barrière contre King Punch",
+        "channel": "BULLBOOJI",
+        "episode": "Épisode 638",
+        "source": "https://www.youtube.com/watch?v=Zupy-QIf-8U",
+        "sourceEvidence": "https://www.youtube.com/watch?v=Zupy-QIf-8U",
+        "contentKind": "clip",
+        "powerShown": "Bari Bari : barrière contre King Punch",
+        "uploadDate": "2026-01-31",
+        "verificationStatus": "public-metadata-verified",
+        "publisherType": "community-upload",
+        "reviewedOn": "2026-10-11",
+        "playbackStatus": "not-tested",
+        "embedStatus": "not-tested",
+        "regionalStatus": "not-tested"
+      }
+    ]
   },
   "bisu-bisu-no-mi": {
     "sourcePolicy": "publisher-linked",
@@ -805,8 +941,22 @@
     "reviewedOn": "2026-10-10"
   },
   "yuki-yuki-no-mi": {
-    "sourcePolicy": "publisher-linked",
-    "reviewedOn": "2026-10-10"
+    "sourcePolicy": "community-video",
+    "reviewedOn": "2026-10-11",
+    "youtubeId": "oLRxJVxoWWo",
+    "title": "Monet — Yuki Yuki no Mi | All Attacks and Abilities",
+    "channel": "Rensuka Ren",
+    "episode": "Punk Hazard",
+    "source": "https://www.youtube.com/watch?v=oLRxJVxoWWo",
+    "sourceEvidence": "https://www.youtube.com/watch?v=oLRxJVxoWWo",
+    "contentKind": "compilation",
+    "powerShown": "Yuki Yuki : transformation et attaques de neige",
+    "published": "2022-11-22",
+    "verificationStatus": "public-metadata-verified",
+    "publisherType": "community-upload",
+    "playbackStatus": "not-tested",
+    "embedStatus": "not-tested",
+    "regionalStatus": "not-tested"
   },
   "fruit-artificiel-seiryu": {
     "sourcePolicy": "publisher-linked",
@@ -868,14 +1018,40 @@
     "note": "Épisode identifié dans le catalogue Crunchyroll ; minutage du pouvoir non vérifié."
   },
   "noro-noro-no-mi": {
-    "sourcePolicy": "publisher-linked",
-    "reviewedOn": "2026-10-10",
-    "note": "Épisode identifié dans le catalogue Crunchyroll ; minutage du pouvoir non vérifié."
+    "sourcePolicy": "community-video",
+    "reviewedOn": "2026-10-11",
+    "youtubeId": "1hh_5xUZ5Mw",
+    "title": "Foxy — Noro Noro no Mi | All Attacks and Abilities",
+    "channel": "Rensuka Ren",
+    "episode": "Long Ring Long Land",
+    "source": "https://www.youtube.com/watch?v=1hh_5xUZ5Mw",
+    "sourceEvidence": "https://www.youtube.com/watch?v=1hh_5xUZ5Mw",
+    "contentKind": "compilation",
+    "powerShown": "Noro Noro : rayons ralentissants",
+    "published": "2023-10-18",
+    "verificationStatus": "public-metadata-verified",
+    "publisherType": "community-upload",
+    "playbackStatus": "not-tested",
+    "embedStatus": "not-tested",
+    "regionalStatus": "not-tested"
   },
   "doa-doa-no-mi": {
-    "sourcePolicy": "publisher-linked",
-    "reviewedOn": "2026-10-10",
-    "note": "Épisode identifié dans le catalogue Crunchyroll ; minutage du pouvoir non vérifié."
+    "sourcePolicy": "community-video",
+    "reviewedOn": "2026-10-11",
+    "youtubeId": "HnsL-5GHUrc",
+    "title": "Blueno — Doa Doa no Mi | All Attacks and Abilities",
+    "channel": "Rensuka Ren",
+    "episode": "Enies Lobby",
+    "source": "https://www.youtube.com/watch?v=HnsL-5GHUrc",
+    "sourceEvidence": "https://www.youtube.com/watch?v=HnsL-5GHUrc",
+    "contentKind": "compilation",
+    "powerShown": "Doa Doa : portes créées sur les surfaces et dans l'air",
+    "published": "2023-05-30",
+    "verificationStatus": "public-metadata-verified",
+    "publisherType": "community-upload",
+    "playbackStatus": "not-tested",
+    "embedStatus": "not-tested",
+    "regionalStatus": "not-tested"
   },
   "awa-awa-no-mi": {
     "sourcePolicy": "publisher-linked",
@@ -901,5 +1077,23 @@
     "sourcePolicy": "publisher-linked",
     "reviewedOn": "2026-10-10",
     "note": "Épisode identifié dans le catalogue Crunchyroll ; minutage du pouvoir non vérifié."
+  },
+  "pero-pero-no-mi": {
+    "youtubeId": "5r92RNbFpz4",
+    "title": "Perospero | All Attacks",
+    "channel": "Koi 鯉",
+    "episode": "Whole Cake / Wano",
+    "powerShown": "Pero Pero : créations et attaques de bonbon (à confirmer au visionnage)",
+    "published": "2024-12-31",
+    "source": "https://www.youtube.com/watch?v=5r92RNbFpz4",
+    "sourceEvidence": "https://www.youtube.com/watch?v=5r92RNbFpz4",
+    "contentKind": "compilation",
+    "verificationStatus": "public-metadata-verified",
+    "publisherType": "community-upload",
+    "playbackStatus": "not-tested",
+    "embedStatus": "not-tested",
+    "regionalStatus": "not-tested",
+    "reviewedOn": "2026-10-11",
+    "sourcePolicy": "community-video"
   }
 }
