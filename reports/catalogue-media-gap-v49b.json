@@ -6,8 +6,8 @@
     "fruits": 166,
     "withPortrait": 162,
     "withVisual": 140,
-    "withYouTube": 34,
-    "youtubeAssociations": 48
+    "withYouTube": 36,
+    "youtubeAssociations": 50
   },
   "limitations": [
     "References do not certify loading in user's browser",
@@ -17,7 +17,8 @@
     "V4.9.b community uploads have public metadata only; embed / region / playback / duration are not certified",
     "Two Kuma Nikyu clips added from public search metadata only; actual YouTube embed playback not tested.",
     "Caesar Gasu montage has publicly indexed metadata but playback/embed duration not verified",
-    "Foxy, Blueno, Monet clips are indexed by public YouTube metadata, actual iframe/France no-login playback untested."
+    "Foxy, Blueno, Monet clips are indexed by public YouTube metadata, actual iframe/France no-login playback untested.",
+    "Koi channel Doflamingo and Perospero montages: titles/metadata indexed, exact fruit moves and iframe play untested."
   ],
   "records": [
     {
@@ -2102,8 +2103,10 @@
         "kind": "fruit"
       },
       "youtube": {
-        "associations": 0,
-        "ids": []
+        "associations": 1,
+        "ids": [
+          "ow1Hpfnlri4"
+        ]
       },
       "sourceCrosscheck": {
         "poster": "unverified",
@@ -2112,7 +2115,7 @@
         "imgur": "unverified",
         "scribd": "unverified"
       },
-      "priority": "high"
+      "priority": "medium"
     },
     {
       "id": "noro-noro-no-mi",
@@ -3420,8 +3423,10 @@
         "kind": "pouvoir"
       },
       "youtube": {
-        "associations": 0,
-        "ids": []
+        "associations": 1,
+        "ids": [
+          "5r92RNbFpz4"
+        ]
       },
       "sourceCrosscheck": {
         "poster": "unverified",
@@ -3430,7 +3435,7 @@
         "imgur": "unverified",
         "scribd": "unverified"
       },
-      "priority": "high"
+      "priority": "medium"
     },
     {
       "id": "bisu-bisu-no-mi",
