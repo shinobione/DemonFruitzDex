@@ -47,3 +47,19 @@
 ### Suite proposée
 
 V4.9.b.2 : vérifier en conditions réelles ce lot de 5 vidéos, remplacer les vidéos géobloquées/non intégrables, puis rechercher les pouvoirs manquants chez les 137 fiches sans clip sélectionné. Les archives de l'anime ne doivent pas être hébergées dans le dépôt.
+
+
+## Lot complémentaire V4.9.b2 — Kuma
+
+| Fruit | ID | Chaîne | Scène annoncée | Statut |
+|---|---|---|---|---|
+| Nikyu Nikyu no Mi | [ofJ3DkkOo7Y](https://www.youtube.com/watch?v=ofJ3DkkOo7Y) | DapperDarius | « Kuma Creates His Ursus Shock » | Métadonnées indexées, lecture non testée |
+| Nikyu Nikyu no Mi | [PvODesQjMgU](https://www.youtube.com/watch?v=PvODesQjMgU) | Yonko Level | « Kuma Ursus Shock vs Strawhat Pirates at Thriller Bark » | Métadonnées indexées, lecture non testée |
+
+**Nouveau total : 44 associations YouTube sur 30 fruits** ; 136 fiches sans clip (166 - 30), en attendant les validations. La CI vérifie la concordance JSON/JS et les références, pas la possibilité de lecture ou l'intégration.
+
+### CLIP CHECK
+
+Le dépôt propose maintenant `clip-check.html`. Les vidéos sont chargées dans un iframe YouTube sur demande. Le réviseur ouvre aussi la page YouTube directe, idéalement en fenêtre privée et déconnecté. Il choisit un verdict explicite (iframe OK / YouTube seulement / connexion requise / indisponible / mauvais pouvoir / à revoir), ajoute éventuellement le minutage et exporte un rapport JSON. Les résultats sont stockés localement dans le navigateur et **ne changent pas automatiquement le statut public des vidéos**. L'iframe chargée ne signifie jamais « lecture certifiée ».
+
+**Contrôles hors ligne :** `python scripts/check_v49b2.py`, plus tests précédents. **Validation d'usage réelle : à effectuer sur navigateur en France.**
