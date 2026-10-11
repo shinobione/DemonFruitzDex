@@ -28,10 +28,10 @@ document.addEventListener('DOMContentLoaded',()=>{
  let missingCount=0;
  const safe=(s)=>String(s||'');
  const redirect=(file)=>file?'https://onepiece.fandom.com/wiki/Special:Redirect/file/'+encodeURIComponent(file.replaceAll(' ','_')):'';
- function check(url,alt){return new Promise(resolve=>{
+ function check(url,alt,type){return new Promise(resolve=>{
    let done=false;let img=new Image();let timeout;
    function finish(ok,final,reason){if(done)return;done=true;clearTimeout(timeout);img.onload=img.onerror=null;resolve({ok,final,reason});}
-   function tryOne(u,second){clearTimeout(timeout);img.onload=()=>finish(true,u,second?'redirect':'direct');img.onerror=()=>{if(!second&&alt&&alt!==url)tryOne(alt,true);else finish(false,u,'error')};
+   function tryOne(u,second){clearTimeout(timeout);img.onload=()=>{if(type==='portrait'&&img.naturalWidth===300&&img.naturalHeight===171){if(!second&&alt&&alt!==url)tryOne(alt,true);else finish(false,u,'wiki-placeholder')}else finish(true,u,second?'redirect':'direct')};img.onerror=()=>{if(!second&&alt&&alt!==url)tryOne(alt,true);else finish(false,u,'error')};
      timeout=setTimeout(()=>{if(!second&&alt&&alt!==url)tryOne(alt,true);else finish(false,u,'timeout')},10000);img.src=u;
    }
    tryOne(url,false);
@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded',()=>{
      row.children[2].className=check.ok?'ok':check.reason==='missing-reference'?'pending':'failed';const td=document.createElement('td');if(check.final){const a=document.createElement('a');a.textContent='Voir fichier';a.href=check.final;a.target='_blank';a.rel='noopener noreferrer';td.append(a)}else td.textContent='—';row.append(td);tbody.append(row);
    }
    async function worker(){
-     while(index<items.length){const item=items[index++],status=item.missing?{ok:false,final:'',reason:'missing-reference'}:await check(item.url,item.alt);results.push({...item,...status});if(status.ok)ok++;else if(status.reason==='missing-reference')missing++;else failed++;
+     while(index<items.length){const item=items[index++],status=item.missing?{ok:false,final:'',reason:'missing-reference'}:await check(item.url,item.alt,item.type);results.push({...item,...status});if(status.ok)ok++;else if(status.reason==='missing-reference')missing++;else failed++;
        append(item,status);progress.value=results.length;summary.textContent=results.length+' / '+items.length+' emplacements audités · '+ok+' visibles · '+missing+' sans référence · '+failed+' échecs navigateur';
      }
    }
