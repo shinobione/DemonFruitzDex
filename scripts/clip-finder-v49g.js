@@ -5,7 +5,9 @@
  const F=window.SHINO_DATA, C=window.SHINO_CLIPS;
  if(!Array.isArray(F)||!C)return;
  const $=id=>document.getElementById(id);
- const observed=new Set();
+ const candidates=Array.isArray(window.SHINO_CLIP_CANDIDATES_V49G)?window.SHINO_CLIP_CANDIDATES_V49G:[];
+ const candidateByFruit=new Map();
+ for(const item of candidates){const bucket=candidateByFruit.get(item.fruitId)||[];bucket.push(item);candidateByFruit.set(item.fruitId,bucket)}
  const ranked=new Set([
   'mera-mera-no-mi','bara-bara-no-mi','zushi-zushi-no-mi',
   'mero-mero-no-mi','inu-inu-no-mi-mod-le-okuchi-no-makami',
@@ -29,6 +31,7 @@
  $('statVideos').textContent=String(count);
  $('statCovered').textContent=String(rows.length-missing.length);
  $('statMissing').textContent=String(missing.length);
+ $('statCandidates').textContent=String(candidates.length);
  const allProposals=(()=>{
   try {
    const c=JSON.parse(localStorage.getItem('demonfruitzdex.clip-proposals.v49b')||'{}');
@@ -64,12 +67,15 @@
    const state=document.createElement('td'),stateText=document.createElement('span');
    stateText.className='state';
    const proposed=proposalCounts[r.id]||0;
+   const pending=candidateByFruit.get(r.id)||[];
    stateText.textContent=r.videos?String(r.videos)+' vidéo(s) sélectionnée(s)':
-    'Aucun clip'+(proposed?' · '+proposed+' proposition(s) locale(s)':'');
+    'Aucun clip publié'+(pending.length?' · '+pending.length+' candidat(s) officiels':'')+(proposed?' · '+proposed+' proposition(s) locale(s)':'');
    state.append(stateText);
    const td=document.createElement('td'),actions=document.createElement('div');
    actions.className='buttonline';
    actions.append(link('https://www.youtube.com/results?search_query='+encodeURIComponent(searchTerms(r)),'⌕ Chercher sur YouTube'));
+   const waiting=candidateByFruit.get(r.id)||[];
+   if(waiting.length)actions.append(link('clip-check.html?fruit='+encodeURIComponent(r.id)+'&video='+encodeURIComponent(waiting[0].videoId),'▶ Tester le candidat'));
    actions.append(link('clip-check.html?fruit='+encodeURIComponent(r.id)+'&suggest=1','＋ Proposer / vérifier'));
    actions.append(link('index.html?fruit='+encodeURIComponent(r.id),'↗ Voir la fiche'));
    td.append(actions);
@@ -82,13 +88,13 @@
  function exportBacklog(){
   const entries=selected().map(r=>({
    fruitId:r.id,fruit:r.fruit,user:r.user,priority:r.priority,
-   selectedVideos:r.videos,localProposals:proposalCounts[r.id]||0,
+   selectedVideos:r.videos,publisherCandidates:(candidateByFruit.get(r.id)||[]).map(x=>({videoId:x.videoId,source:x.url,verificationStatus:x.verificationStatus,editorialState:x.editorialState})),localProposals:proposalCounts[r.id]||0,
    youtubeSearch:'https://www.youtube.com/results?search_query='+encodeURIComponent(searchTerms(r)),
    reviewStatus:r.videos?'published-association-needs-browser-review':'source-research-needed'
   }));
   const payload={schema:'demonfruitzdex.clip-discovery.v49g',
-   generatedAt:new Date().toISOString(),totals:{fruits:rows.length,clips:count,covered:rows.length-missing.length,uncovered:missing.length},
-   note:'YouTube search URLs are NOT vetted clips. No video IDs are invented. Playback, legality, clip scope and attribution require human checks.',
+   generatedAt:new Date().toISOString(),totals:{fruits:rows.length,clips:count,covered:rows.length-missing.length,uncovered:missing.length,candidates:candidates.length},
+   note:'YouTube search URLs are NOT vetted clips. Three official publisher candidates are awaiting actual clip playback and exact power review, not published. Playback, region, embed and copyright still require checks.',
    items:entries};
   const blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json;charset=utf-8'});
   const url=URL.createObjectURL(blob),a=link(url,'');
@@ -98,5 +104,5 @@
  for(const el of ['query','filter','tier'])$(el).addEventListener(el==='query'?'input':'change',render);
  $('export').addEventListener('click',exportBacklog);
  render();
- window.SHINO_CLIP_FINDER_AUDIT=Object.freeze({fruits:rows.length,clips:count,covered:rows.length-missing.length,uncovered:missing.length});
+ window.SHINO_CLIP_FINDER_AUDIT=Object.freeze({fruits:rows.length,clips:count,covered:rows.length-missing.length,uncovered:missing.length,candidates:candidates.length});
 })();
