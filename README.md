@@ -206,3 +206,12 @@ Rapport détaillé : [reports/media-audit-v48.md](reports/media-audit-v48.md).
 - **Caesar Clown / Gasu Gasu no Mi** : [montage « All Attacks and Abilities » par Rensuka Ren](https://www.youtube.com/watch?v=NKgXWO2RK-A), indexé à partir des métadonnées publiques. **Lecture effective, durée et autorisation d'intégration à contrôler.**
 - **Bilan actuel : 45 associations YouTube pour 31 fiches** (+8 vidéos, +6 fruits depuis V4.9.a). Les autres fiches gardent leur recherche externe.
 - Le contrôle utilisateur passe par **[CLIP CHECK](clip-check.html)** ; le verdict n'est jamais déduit de la simple existence de la miniature.
+
+## V4.9.b3 — 50 clips / 36 fruits, audit et proposition en un clic
+
+- **+5 montages d'attaques documentés via YouTube** : Foxy, Blueno, Monet, Doflamingo, Perospero. **50 associations sur 36 fiches**, 130 fiches sans clip sélectionné.
+- Les métadonnées concordent avec les personnages / fruits, mais la lecture et l'intégration sans compte en France ne sont **pas** certifiées. Voir [audit V4.9.b3](reports/clip-review-v49b3.md).
+- Un verdict CLIP CHECK enregistré sur ce navigateur est visible sur la fiche : un clip localement signalé indisponible/mauvais pouvoir ne peut plus démarrer dans l'iframe locale. Lien YouTube et revue disponibles. Ceci ne remplace pas une revue éditoriale globale.
+- Import d'un audit JSON CLIP CHECK antérieur (validation du schéma, des couples fruit/ID, date et taille ≤1 Mo). Les observations personnelles ne sont ni partagées ni envoyées automatiquement.
+- Depuis chaque fiche, bouton **« J'ai trouvé une vidéo de ce pouvoir »** : soumission locale avec normalisation de l'URL YouTube et export d'un dossier de candidats non vérifiés, sans modification du catalogue public.
+- Gate `python scripts/check_v49b3.py` ajouté à la CI. **PR Draft** tant qu'aucune vérification de lecture réelle n'est effectuée.
